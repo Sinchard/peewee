@@ -1,0 +1,809 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/relationships.rst:4
+msgid "Relationships and Joins"
+msgstr ""
+
+#: ../../peewee/relationships.rst:6
+msgid ""
+"In this document we'll cover how Peewee handles relationships between "
+"models."
+msgstr ""
+
+#: ../../peewee/relationships.rst:9
+msgid "Model definitions"
+msgstr ""
+
+#: ../../peewee/relationships.rst:11
+msgid "We'll use the following model definitions for our examples:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:38
+msgid ""
+"Peewee uses :py:class:`ForeignKeyField` to define foreign-key "
+"relationships between models. Every foreign-key field has an implied "
+"back-reference, which is exposed as a pre-filtered :py:class:`Select` "
+"query using the provided ``backref`` attribute."
+msgstr ""
+
+#: ../../peewee/relationships.rst:44
+msgid "Creating test data"
+msgstr ""
+
+#: ../../peewee/relationships.rst:46
+msgid ""
+"To follow along with the examples, let's populate this database with some"
+" test data:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:74
+msgid "This gives us the following:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:77
+msgid "User"
+msgstr ""
+
+#: ../../peewee/relationships.rst:77
+msgid "Tweet"
+msgstr ""
+
+#: ../../peewee/relationships.rst:77
+msgid "Favorited by"
+msgstr ""
+
+#: ../../peewee/relationships.rst:79 ../../peewee/relationships.rst:80
+#: ../../peewee/relationships.rst:81 ../../peewee/relationships.rst:83
+msgid "huey"
+msgstr ""
+
+#: ../../peewee/relationships.rst:79
+msgid "meow"
+msgstr ""
+
+#: ../../peewee/relationships.rst:79
+msgid "zaizee"
+msgstr ""
+
+#: ../../peewee/relationships.rst:80
+msgid "hiss"
+msgstr ""
+
+#: ../../peewee/relationships.rst:81
+msgid "purr"
+msgstr ""
+
+#: ../../peewee/relationships.rst:81
+msgid "mickey, zaizee"
+msgstr ""
+
+#: ../../peewee/relationships.rst:82 ../../peewee/relationships.rst:83
+msgid "mickey"
+msgstr ""
+
+#: ../../peewee/relationships.rst:82
+msgid "woof"
+msgstr ""
+
+#: ../../peewee/relationships.rst:83
+msgid "whine"
+msgstr ""
+
+#: ../../peewee/relationships.rst:87
+msgid ""
+"In the following examples we will be executing a number of queries. If "
+"you are unsure how many queries are being executed, you can add the "
+"following code, which will log all queries to the console:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:99
+msgid ""
+"In SQLite, foreign keys are not enabled by default. Most things, "
+"including the Peewee foreign-key API, will work fine, but ON DELETE "
+"behaviour will be ignored, even if you explicitly specify ``on_delete`` "
+"in your :py:class:`ForeignKeyField`. In conjunction with the default "
+":py:class:`AutoField` behaviour (where deleted record IDs can be reused),"
+" this can lead to subtle bugs. To avoid problems, I recommend that you "
+"enable foreign-key constraints when using SQLite, by setting "
+"``pragmas={'foreign_keys': 1}`` when you instantiate "
+":py:class:`SqliteDatabase`."
+msgstr ""
+
+#: ../../peewee/relationships.rst:114
+msgid "Performing simple joins"
+msgstr ""
+
+#: ../../peewee/relationships.rst:116
+msgid ""
+"As an exercise in learning how to perform joins with Peewee, let's write "
+"a query to print out all the tweets by \"huey\". To do this we'll select "
+"from the ``Tweet`` model and join on the ``User`` model, so we can then "
+"filter on the ``User.username`` field:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:132
+msgid ""
+"We did not have to explicitly specify the join predicate (the \"ON\" "
+"clause), because Peewee inferred from the models that when we joined from"
+" Tweet to User, we were joining on the ``Tweet.user`` foreign-key."
+msgstr ""
+
+#: ../../peewee/relationships.rst:136
+msgid "The following code is equivalent, but more explicit:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:145
+msgid ""
+"If we already had a reference to the ``User`` object for \"huey\", we "
+"could use the ``User.tweets`` back-reference to list all of huey's "
+"tweets:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:158
+msgid ""
+"Taking a closer look at ``huey.tweets``, we can see that it is just a "
+"simple pre-filtered ``SELECT`` query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:171
+msgid "Joining multiple tables"
+msgstr ""
+
+#: ../../peewee/relationships.rst:173
+msgid ""
+"Let's take another look at joins by querying the list of users and "
+"getting the count of how many tweet's they've authored that were "
+"favorited. This will require us to join twice: from user to tweet, and "
+"from tweet to favorite. We'll add the additional requirement that users "
+"should be included who have not created any tweets, as well as users "
+"whose tweets have not been favorited. The query, expressed in SQL, would "
+"be:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:189
+msgid ""
+"In the above query both joins are LEFT OUTER, since a user may not have "
+"any tweets or, if they have tweets, none of them may have been favorited."
+msgstr ""
+
+#: ../../peewee/relationships.rst:192
+msgid ""
+"Peewee has a concept of a *join context*, meaning that whenever we call "
+"the :py:meth:`~ModelSelect.join` method, we are implicitly joining on the"
+" previously-joined model (or if this is the first call, the model we are "
+"selecting from). Since we are joining straight through, from user to "
+"tweet, then from tweet to favorite, we can simply write:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:206
+msgid "Iterating over the results:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:217
+msgid ""
+"For a more complicated example involving multiple joins and switching "
+"join contexts, let's find all the tweets by Huey and the number of times "
+"they've been favorited. To do this we'll need to perform two joins and "
+"we'll also use an aggregate function to calculate the favorite count."
+msgstr ""
+
+#: ../../peewee/relationships.rst:222
+msgid "Here is how we would write this query in SQL:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:234
+msgid ""
+"We use a LEFT OUTER join from tweet to favorite since a tweet may not "
+"have any favorites, yet we still wish to display it's content (along with"
+" a count of zero) in the result set."
+msgstr ""
+
+#: ../../peewee/relationships.rst:238
+msgid ""
+"With Peewee, the resulting Python code looks very similar to what we "
+"would write in SQL:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:251
+msgid ""
+"Note the call to :py:meth:`~ModelSelect.switch` - that instructs Peewee "
+"to set the *join context* back to ``Tweet``. If we had omitted the "
+"explicit call to switch, Peewee would have used ``User`` (the last model "
+"we joined) as the join context and constructed the join from User to "
+"Favorite using the ``Favorite.user`` foreign-key, which would have given "
+"us incorrect results."
+msgstr ""
+
+#: ../../peewee/relationships.rst:257
+msgid ""
+"If we wanted to omit the join-context switching we could instead use the "
+":py:meth:`~ModelSelect.join_from` method. The following query is "
+"equivalent to the previous one:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:270
+msgid ""
+"We can iterate over the results of the above query to print the tweet's "
+"content and the favorite count:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:285
+msgid "Selecting from multiple sources"
+msgstr ""
+
+#: ../../peewee/relationships.rst:287
+msgid ""
+"If we wished to list all the tweets in the database, along with the "
+"username of their author, you might try writing this:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:301
+msgid ""
+"There is a big problem with the above loop: it executes an additional "
+"query for every tweet to look up the ``tweet.user`` foreign-key. For our "
+"small table the performance penalty isn't obvious, but we would find the "
+"delays grew as the number of rows increased."
+msgstr ""
+
+#: ../../peewee/relationships.rst:306
+msgid ""
+"If you're familiar with SQL, you might remember that it's possible to "
+"SELECT from multiple tables, allowing us to get the tweet content *and* "
+"the username in a single query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:316
+msgid ""
+"Peewee makes this quite easy. In fact, we only need to modify our query a"
+" little bit. We tell Peewee we wish to select ``Tweet.content`` as well "
+"as the ``User.username`` field, then we include a join from tweet to "
+"user. To make it a bit more obvious that it's doing the correct thing, we"
+" can ask Peewee to return the rows as dictionaries."
+msgstr ""
+
+#: ../../peewee/relationships.rst:333
+msgid ""
+"Now we'll leave off the call to \".dicts()\" and return the rows as "
+"``Tweet`` objects. Notice that Peewee assigns the ``username`` value to "
+"``tweet.user.username`` -- NOT ``tweet.username``!  Because there is a "
+"foreign-key from tweet to user, and we have selected fields from both "
+"models, Peewee will reconstruct the model-graph for us:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:350
+msgid ""
+"If we wish to, we can control where Peewee puts the joined ``User`` "
+"instance in the above query, by specifying an ``attr`` in the ``join()`` "
+"method:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:365
+msgid ""
+"Conversely, if we simply wish *all* attributes we select to be attributes"
+" of the ``Tweet`` instance, we can add a call to "
+":py:meth:`~ModelSelect.objects` at the end of our query (similar to how "
+"we called ``dicts()``):"
+msgstr ""
+
+#: ../../peewee/relationships.rst:378
+msgid "More complex example"
+msgstr ""
+
+#: ../../peewee/relationships.rst:380
+msgid ""
+"As a more complex example, in this query, we will write a single query "
+"that selects all the favorites, along with the user who created the "
+"favorite, the tweet that was favorited, and that tweet's author."
+msgstr ""
+
+#: ../../peewee/relationships.rst:384
+msgid "In SQL we would write:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:394
+msgid ""
+"Note that we are selecting from the user table twice - once in the "
+"context of the user who created the favorite, and again as the author of "
+"the tweet."
+msgstr ""
+
+#: ../../peewee/relationships.rst:397
+msgid ""
+"With Peewee, we use :py:meth:`Model.alias` to alias a model class so it "
+"can be referenced twice in a single query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:410
+msgid ""
+"We can iterate over the results and access the joined values in the "
+"following way. Note how Peewee has resolved the fields from the various "
+"models we selected and reconstructed the model graph:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:427
+msgid "Subqueries"
+msgstr ""
+
+#: ../../peewee/relationships.rst:429
+msgid ""
+"Peewee allows you to join on any table-like object, including subqueries "
+"or common table expressions (CTEs). To demonstrate joining on a subquery,"
+" let's query for all users and their latest tweet."
+msgstr ""
+
+#: ../../peewee/relationships.rst:433 ../../peewee/relationships.rst:503
+msgid "Here is the SQL:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:446
+msgid ""
+"We'll do this by creating a subquery which selects each user and the "
+"timestamp of their latest tweet. Then we can query the tweets table in "
+"the outer query and join on the user and timestamp combination from the "
+"subquery."
+msgstr ""
+
+#: ../../peewee/relationships.rst:472
+msgid "Iterating over the query, we can see each user and their latest tweet."
+msgstr ""
+
+#: ../../peewee/relationships.rst:482
+msgid ""
+"There are a couple things you may not have seen before in the code we "
+"used to create the query in this section:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:485
+msgid ""
+"We used :py:meth:`~ModelSelect.join_from` to explicitly specify the join "
+"context. We wrote ``.join_from(Tweet, User)``, which is equivalent to "
+"``.switch(Tweet).join(User)``."
+msgstr ""
+
+#: ../../peewee/relationships.rst:488
+msgid ""
+"We referenced columns in the subquery using the magic ``.c`` attribute, "
+"for example ``latest_query.c.max_ts``. The ``.c`` attribute is used to "
+"dynamically create column references."
+msgstr ""
+
+#: ../../peewee/relationships.rst:491
+msgid ""
+"Instead of passing individual fields to ``Tweet.select()``, we passed the"
+" ``Tweet`` and ``User`` models. This is shorthand for selecting all "
+"fields on the given model."
+msgstr ""
+
+#: ../../peewee/relationships.rst:496
+msgid "Common-table Expressions"
+msgstr ""
+
+#: ../../peewee/relationships.rst:498
+msgid ""
+"In the previous section we joined on a subquery, but we could just as "
+"easily have used a :ref:`common-table expression (CTE) <cte>`. We will "
+"repeat the same query as before, listing users and their latest tweets, "
+"but this time we will do it using a CTE."
+msgstr ""
+
+#: ../../peewee/relationships.rst:518
+msgid "This example looks very similar to the previous example with the subquery:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:543
+msgid ""
+"We can iterate over the result-set, which consists of the latest tweets "
+"for each user:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:555
+msgid ""
+"For more information about using CTEs, including information on writing "
+"recursive CTEs, see the :ref:`cte` section of the \"Querying\" document."
+msgstr ""
+
+#: ../../peewee/relationships.rst:559
+msgid "Multiple foreign-keys to the same Model"
+msgstr ""
+
+#: ../../peewee/relationships.rst:561
+msgid ""
+"When there are multiple foreign keys to the same model, it is good "
+"practice to explicitly specify which field you are joining on."
+msgstr ""
+
+#: ../../peewee/relationships.rst:564
+msgid ""
+"Referring back to the :ref:`example app's models <example-app-models>`, "
+"consider the *Relationship* model, which is used to denote when one user "
+"follows another. Here is the model definition:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:580
+msgid ""
+"Since there are two foreign keys to *User*, we should always specify "
+"which field we are using in a join."
+msgstr ""
+
+#: ../../peewee/relationships.rst:583
+msgid "For example, to determine which users I am following, I would write:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:592
+msgid ""
+"On the other hand, if I wanted to determine which users are following me,"
+" I would instead join on the *from_user* column and filter on the "
+"relationship's *to_user*:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:604
+msgid "Joining on arbitrary fields"
+msgstr ""
+
+#: ../../peewee/relationships.rst:606
+msgid ""
+"If a foreign key does not exist between two tables you can still perform "
+"a join, but you must manually specify the join predicate."
+msgstr ""
+
+#: ../../peewee/relationships.rst:609
+msgid ""
+"In the following example, there is no explicit foreign-key between *User*"
+" and *ActivityLog*, but there is an implied relationship between the "
+"*ActivityLog.object_id* field and *User.id*. Rather than joining on a "
+"specific :py:class:`Field`, we will join using an :py:class:`Expression`."
+msgstr ""
+
+#: ../../peewee/relationships.rst:634
+msgid ""
+"Recall that we can control the attribute Peewee will assign the joined "
+"instance to by specifying the ``attr`` parameter in the ``join()`` "
+"method. In the previous example, we used the following *join*:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:642
+msgid ""
+"Then when iterating over the query, we were able to directly access the "
+"joined *ActivityLog* without incurring an additional query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:651
+msgid "Self-joins"
+msgstr ""
+
+#: ../../peewee/relationships.rst:653
+msgid "Peewee supports constructing queries containing a self-join."
+msgstr ""
+
+#: ../../peewee/relationships.rst:656
+msgid "Using model aliases"
+msgstr ""
+
+#: ../../peewee/relationships.rst:658
+msgid ""
+"To join on the same model (table) twice, it is necessary to create a "
+"model alias to represent the second instance of the table in a query. "
+"Consider the following model:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:668
+msgid ""
+"What if we wanted to query all categories whose parent category is "
+"*Electronics*. One way would be to perform a self-join:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:679
+msgid ""
+"When performing a join that uses a :py:class:`ModelAlias`, it is "
+"necessary to specify the join condition using the ``on`` keyword "
+"argument. In this case we are joining the category with its parent "
+"category."
+msgstr ""
+
+#: ../../peewee/relationships.rst:684
+msgid "Using subqueries"
+msgstr ""
+
+#: ../../peewee/relationships.rst:686
+msgid ""
+"Another less common approach involves the use of subqueries. Here is "
+"another way we might construct a query to get all the categories whose "
+"parent category is *Electronics* using a subquery:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:702
+msgid "This will generate the following SQL query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:713
+msgid ""
+"To access the ``id`` value from the subquery, we use the ``.c`` magic "
+"lookup which will generate the appropriate SQL expression:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:724
+msgid "Implementing Many to Many"
+msgstr ""
+
+#: ../../peewee/relationships.rst:726
+msgid ""
+"Peewee provides a field for representing many-to-many relationships, much"
+" like Django does. This feature was added due to many requests from "
+"users, but I strongly advocate against using it, since it conflates the "
+"idea of a field with a junction table and hidden joins. It's just a nasty"
+" hack to provide convenient accessors."
+msgstr ""
+
+#: ../../peewee/relationships.rst:732
+msgid ""
+"To implement many-to-many **correctly** with peewee, you will therefore "
+"create the intermediary table yourself and query through it:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:747
+msgid ""
+"To query, let's say we want to find students who are enrolled in math "
+"class:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:759
+msgid "To query what classes a given student is enrolled in:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:772
+msgid ""
+"To efficiently iterate over a many-to-many relation, i.e., list all "
+"students and their respective courses, we will query the *through* model "
+"``StudentCourse`` and *precompute* the Student and Course:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:785
+msgid "To print a list of students and their courses you might do the following:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:792
+msgid ""
+"Since we selected all fields from ``Student`` and ``Course`` in the "
+"*select* clause of the query, these foreign key traversals are \"free\" "
+"and we've done the whole iteration with just 1 query."
+msgstr ""
+
+#: ../../peewee/relationships.rst:797
+msgid "ManyToManyField"
+msgstr ""
+
+#: ../../peewee/relationships.rst:799
+msgid ""
+"The :py:class:`ManyToManyField` provides a *field-like* API over many-to-"
+"many fields. For all but the simplest many-to-many situations, you're "
+"better off using the standard peewee APIs. But, if your models are very "
+"simple and your querying needs are not very complex, "
+":py:class:`ManyToManyField` may work."
+msgstr ""
+
+#: ../../peewee/relationships.rst:804
+msgid "Modeling students and courses using :py:class:`ManyToManyField`:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:859
+msgid ""
+"Before many-to-many relationships can be added, the objects being "
+"referenced will need to be saved first. In order to create relationships "
+"in the many-to-many through table, Peewee needs to know the primary keys "
+"of the models being referenced."
+msgstr ""
+
+#: ../../peewee/relationships.rst:865
+msgid ""
+"It is **strongly recommended** that you do not attempt to subclass models"
+" containing :py:class:`ManyToManyField` instances."
+msgstr ""
+
+#: ../../peewee/relationships.rst:868
+msgid ""
+"A :py:class:`ManyToManyField`, despite its name, is not a field in the "
+"usual sense. Instead of being a column on a table, the many-to-many field"
+" covers the fact that behind-the-scenes there's actually a separate table"
+" with two foreign-key pointers (the *through table*)."
+msgstr ""
+
+#: ../../peewee/relationships.rst:873
+msgid ""
+"Therefore, when a subclass is created that inherits a many-to-many field,"
+" what actually needs to be inherited is the *through table*. Because of "
+"the potential for subtle bugs, Peewee does not attempt to automatically "
+"subclass the through model and modify its foreign-key pointers. As a "
+"result, many-to-many fields typically will not work with inheritance."
+msgstr ""
+
+#: ../../peewee/relationships.rst:879
+msgid "For more examples, see:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:881
+msgid ":py:meth:`ManyToManyField.add`"
+msgstr ""
+
+#: ../../peewee/relationships.rst:882
+msgid ":py:meth:`ManyToManyField.remove`"
+msgstr ""
+
+#: ../../peewee/relationships.rst:883
+msgid ":py:meth:`ManyToManyField.clear`"
+msgstr ""
+
+#: ../../peewee/relationships.rst:884
+msgid ":py:meth:`ManyToManyField.get_through_model`"
+msgstr ""
+
+#: ../../peewee/relationships.rst:889
+msgid "Avoiding the N+1 problem"
+msgstr ""
+
+#: ../../peewee/relationships.rst:891
+msgid ""
+"The *N+1 problem* refers to a situation where an application performs a "
+"query, then for each row of the result set, the application performs at "
+"least one other query (another way to conceptualize this is as a nested "
+"loop). In many cases, these *n* queries can be avoided through the use of"
+" a SQL join or subquery. The database itself may do a nested loop, but it"
+" will usually be more performant than doing *n* queries in your "
+"application code, which involves latency communicating with the database "
+"and may not take advantage of indices or other optimizations employed by "
+"the database when joining or executing a subquery."
+msgstr ""
+
+#: ../../peewee/relationships.rst:901
+msgid ""
+"Peewee provides several APIs for mitigating *N+1* query behavior. "
+"Recollecting the models used throughout this document, *User* and "
+"*Tweet*, this section will try to outline some common *N+1* scenarios, "
+"and how peewee can help you avoid them."
+msgstr ""
+
+#: ../../peewee/relationships.rst:907
+msgid ""
+"In some cases, N+1 queries will not result in a significant or measurable"
+" performance hit. It all depends on the data you are querying, the "
+"database you are using, and the latency involved in executing queries and"
+" retrieving results. As always when making optimizations, profile before "
+"and after to ensure the changes do what you expect them to."
+msgstr ""
+
+#: ../../peewee/relationships.rst:914
+msgid "List recent tweets"
+msgstr ""
+
+#: ../../peewee/relationships.rst:916
+msgid ""
+"The twitter timeline displays a list of tweets from multiple users. In "
+"addition to the tweet's content, the username of the tweet's author is "
+"also displayed. The N+1 scenario here would be:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:920
+msgid "Fetch the 10 most recent tweets."
+msgstr ""
+
+#: ../../peewee/relationships.rst:921
+msgid "For each tweet, select the author (10 queries)."
+msgstr ""
+
+#: ../../peewee/relationships.rst:923
+msgid ""
+"By selecting both tables and using a *join*, peewee makes it possible to "
+"accomplish this in a single query:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:937
+msgid ""
+"Without the join, accessing ``tweet.user.username`` would trigger a query"
+" to resolve the foreign key ``tweet.user`` and retrieve the associated "
+"user. But since we have selected and joined on ``User``, peewee will "
+"automatically resolve the foreign-key for us."
+msgstr ""
+
+#: ../../peewee/relationships.rst:943
+msgid "This technique is discussed in more detail in :ref:`multiple-sources`."
+msgstr ""
+
+#: ../../peewee/relationships.rst:946
+msgid "List users and all their tweets"
+msgstr ""
+
+#: ../../peewee/relationships.rst:948
+msgid ""
+"Let's say you want to build a page that shows several users and all of "
+"their tweets. The N+1 scenario would be:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:951
+msgid "Fetch some users."
+msgstr ""
+
+#: ../../peewee/relationships.rst:952
+msgid "For each user, fetch their tweets."
+msgstr ""
+
+#: ../../peewee/relationships.rst:954
+msgid ""
+"This situation is similar to the previous example, but there is one "
+"important difference: when we selected tweets, they only have a single "
+"associated user, so we could directly assign the foreign key. The reverse"
+" is not true, however, as one user may have any number of tweets (or none"
+" at all)."
+msgstr ""
+
+#: ../../peewee/relationships.rst:959
+msgid ""
+"Peewee provides an approach to avoiding *O(n)* queries in this situation."
+" Fetch users first, then fetch all the tweets associated with those "
+"users.  Once peewee has the big list of tweets, it will assign them out, "
+"matching them with the appropriate user. This method is usually faster "
+"but will involve a query for each table being selected."
+msgstr ""
+
+#: ../../peewee/relationships.rst:968
+msgid "Using prefetch"
+msgstr ""
+
+#: ../../peewee/relationships.rst:970
+msgid ""
+"peewee supports pre-fetching related data using sub-queries. This method "
+"requires the use of a special API, :py:func:`prefetch`. Prefetch, as its "
+"name implies, will eagerly load the appropriate tweets for the given "
+"users using subqueries. This means instead of *O(n)* queries for *n* "
+"rows, we will do *O(k)* queries for *k* tables."
+msgstr ""
+
+#: ../../peewee/relationships.rst:976
+msgid ""
+"Here is an example of how we might fetch several users and any tweets "
+"they created within the past week."
+msgstr ""
+
+#: ../../peewee/relationships.rst:996
+msgid ""
+"Note that neither the ``User`` query, nor the ``Tweet`` query contained a"
+" JOIN clause. When using :py:func:`prefetch` you do not need to specify "
+"the join."
+msgstr ""
+
+#: ../../peewee/relationships.rst:1000
+msgid ""
+":py:func:`prefetch` can be used to query an arbitrary number of tables. "
+"Check the API documentation for more examples."
+msgstr ""
+
+#: ../../peewee/relationships.rst:1003
+msgid "Some things to consider when using :py:func:`prefetch`:"
+msgstr ""
+
+#: ../../peewee/relationships.rst:1005
+msgid "Foreign keys must exist between the models being prefetched."
+msgstr ""
+
+#: ../../peewee/relationships.rst:1006
+msgid ""
+"`LIMIT` works as you'd expect on the outer-most query, but may be "
+"difficult to implement correctly if trying to limit the size of the sub-"
+"selects."
+msgstr ""
+

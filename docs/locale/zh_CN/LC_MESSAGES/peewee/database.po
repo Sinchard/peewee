@@ -1,0 +1,1603 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/database.rst:4
+msgid "Database"
+msgstr ""
+
+#: ../../peewee/database.rst:6
+msgid ""
+"The Peewee :py:class:`Database` object represents a connection to a "
+"database. The :py:class:`Database` class is instantiated with all the "
+"information needed to open a connection to a database, and then can be "
+"used to:"
+msgstr ""
+
+#: ../../peewee/database.rst:10
+msgid "Open and close connections."
+msgstr ""
+
+#: ../../peewee/database.rst:11
+msgid "Execute queries."
+msgstr ""
+
+#: ../../peewee/database.rst:12
+msgid "Manage transactions (and savepoints)."
+msgstr ""
+
+#: ../../peewee/database.rst:13
+msgid "Introspect tables, columns, indexes, and constraints."
+msgstr ""
+
+#: ../../peewee/database.rst:15
+msgid ""
+"Peewee comes with support for SQLite, MySQL and Postgres. Each database "
+"class provides some basic, database-specific configuration options."
+msgstr ""
+
+#: ../../peewee/database.rst:35
+msgid ""
+"Peewee provides advanced support for SQLite, Postgres and CockroachDB via"
+" database-specific extension modules. To use the extended-functionality, "
+"import the appropriate database-specific module and use the database "
+"class provided:"
+msgstr ""
+
+#: ../../peewee/database.rst:59
+msgid "For more information on database extensions, see:"
+msgstr ""
+
+#: ../../peewee/database.rst:61
+msgid ":ref:`postgres_ext`"
+msgstr ""
+
+#: ../../peewee/database.rst:62
+msgid ":ref:`sqlite_ext`"
+msgstr ""
+
+#: ../../peewee/database.rst:63
+msgid ":ref:`crdb`"
+msgstr ""
+
+#: ../../peewee/database.rst:64
+msgid ":ref:`sqlcipher_ext` (encrypted SQLite database)."
+msgstr ""
+
+#: ../../peewee/database.rst:65
+msgid ":ref:`apsw`"
+msgstr ""
+
+#: ../../peewee/database.rst:66
+msgid ":ref:`sqliteq`"
+msgstr ""
+
+#: ../../peewee/database.rst:69
+msgid "Initializing a Database"
+msgstr ""
+
+#: ../../peewee/database.rst:71
+msgid ""
+"The :py:class:`Database` initialization method expects the name of the "
+"database as the first parameter. Subsequent keyword arguments are passed "
+"to the underlying database driver when establishing the connection, "
+"allowing you to pass vendor-specific parameters easily."
+msgstr ""
+
+#: ../../peewee/database.rst:76
+msgid ""
+"For instance, with Postgresql it is common to need to specify the "
+"``host``, ``user`` and ``password`` when creating your connection. These "
+"are not standard Peewee :py:class:`Database` parameters, so they will be "
+"passed directly back to ``psycopg2`` when creating connections:"
+msgstr ""
+
+#: ../../peewee/database.rst:89
+msgid ""
+"As another example, the ``pymysql`` driver accepts a ``charset`` "
+"parameter which is not a standard Peewee :py:class:`Database` parameter. "
+"To set this value, simply pass in ``charset`` alongside your other "
+"values:"
+msgstr ""
+
+#: ../../peewee/database.rst:97
+msgid "Consult your database driver's documentation for the available parameters:"
+msgstr ""
+
+#: ../../peewee/database.rst:99
+msgid ""
+"Postgres: `psycopg2 "
+"<http://initd.org/psycopg/docs/module.html#psycopg2.connect>`_"
+msgstr ""
+
+#: ../../peewee/database.rst:100
+msgid ""
+"MySQL: `MySQLdb <http://mysql-python.sourceforge.net/MySQLdb.html#some-"
+"mysql-examples>`_"
+msgstr ""
+
+#: ../../peewee/database.rst:101
+msgid ""
+"MySQL: `pymysql "
+"<https://github.com/PyMySQL/PyMySQL/blob/f08f01fe8a59e8acfb5f5add4a8fe874bec2a196/pymysql/connections.py#L494-L513>`_"
+msgstr ""
+
+#: ../../peewee/database.rst:102
+msgid ""
+"SQLite: `sqlite3 "
+"<https://docs.python.org/2/library/sqlite3.html#sqlite3.connect>`_"
+msgstr ""
+
+#: ../../peewee/database.rst:103
+msgid ""
+"CockroachDB: see `psycopg2 "
+"<http://initd.org/psycopg/docs/module.html#psycopg2.connect>`_"
+msgstr ""
+
+#: ../../peewee/database.rst:108
+msgid "Using Postgresql"
+msgstr ""
+
+#: ../../peewee/database.rst:110
+msgid ""
+"To connect to a Postgresql database, we will use "
+":py:class:`PostgresqlDatabase`. The first parameter is always the name of"
+" the database, and after that you can specify arbitrary `psycopg2 "
+"parameters "
+"<http://initd.org/psycopg/docs/module.html#psycopg2.connect>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:127
+msgid ""
+"The :ref:`playhouse` contains a :ref:`Postgresql extension module "
+"<postgres_ext>` which provides many postgres-specific features such as:"
+msgstr ""
+
+#: ../../peewee/database.rst:130
+msgid ":ref:`Arrays <pgarrays>`"
+msgstr ""
+
+#: ../../peewee/database.rst:131
+msgid ":ref:`HStore <hstore>`"
+msgstr ""
+
+#: ../../peewee/database.rst:132
+msgid ":ref:`JSON <pgjson>`"
+msgstr ""
+
+#: ../../peewee/database.rst:133
+msgid ":ref:`Server-side cursors <server_side_cursors>`"
+msgstr ""
+
+#: ../../peewee/database.rst:134
+msgid "And more!"
+msgstr ""
+
+#: ../../peewee/database.rst:136
+msgid ""
+"If you would like to use these awesome features, use the "
+":py:class:`PostgresqlExtDatabase` from the ``playhouse.postgres_ext`` "
+"module:"
+msgstr ""
+
+#: ../../peewee/database.rst:147
+msgid "Isolation level"
+msgstr ""
+
+#: ../../peewee/database.rst:149
+msgid ""
+"As of Peewee 3.9.7, the isolation level can be specified as an "
+"initialization parameter, using the symbolic constants in "
+"``psycopg2.extensions``:"
+msgstr ""
+
+#: ../../peewee/database.rst:161
+msgid ""
+"In older versions, you can manually set the isolation level on the "
+"underlying psycopg2 connection. This can be done in a one-off fashion:"
+msgstr ""
+
+#: ../../peewee/database.rst:172
+msgid ""
+"To run this every time a connection is created, subclass and implement "
+"the ``_initialize_database()`` hook, which is designed for this purpose:"
+msgstr ""
+
+#: ../../peewee/database.rst:185
+msgid "Using CockroachDB"
+msgstr ""
+
+#: ../../peewee/database.rst:187
+msgid ""
+"Connect to CockroachDB (CRDB) using the :py:class:`CockroachDatabase` "
+"database class, defined in ``playhouse.cockroachdb``:"
+msgstr ""
+
+#: ../../peewee/database.rst:196
+msgid ""
+"CRDB provides client-side transaction retries, which are available using "
+"a special :py:meth:`CockroachDatabase.run_transaction` helper-method. "
+"This method accepts a callable, which is responsible for executing any "
+"transactional statements that may need to be retried."
+msgstr ""
+
+#: ../../peewee/database.rst:201
+msgid ""
+"Simplest possible example of "
+":py:meth:`~CockroachDatabase.run_transaction`:"
+msgstr ""
+
+#: ../../peewee/database.rst:216
+msgid ""
+"The ``cockroachdb.ExceededMaxAttempts`` exception will be raised if the "
+"transaction cannot be committed after the given number of attempts. If "
+"the SQL is mal-formed, violates a constraint, etc., then the function "
+"will raise the exception to the caller."
+msgstr ""
+
+#: ../../peewee/database.rst:221 ../../peewee/database.rst:470
+msgid "For more information, see:"
+msgstr ""
+
+#: ../../peewee/database.rst:223
+msgid ":ref:`CRDB extension documentation <crdb>`"
+msgstr ""
+
+#: ../../peewee/database.rst:224
+msgid ":ref:`Arrays <pgarrays>` (postgres-specific, but applies to CRDB)"
+msgstr ""
+
+#: ../../peewee/database.rst:225
+msgid ":ref:`JSON <pgjson>` (postgres-specific, but applies to CRDB)"
+msgstr ""
+
+#: ../../peewee/database.rst:230
+msgid "Using SQLite"
+msgstr ""
+
+#: ../../peewee/database.rst:232
+msgid ""
+"To connect to a SQLite database, we will use :py:class:`SqliteDatabase`. "
+"The first parameter is the filename containing the database, or the "
+"string ``':memory:'`` to create an in-memory database. After the database"
+" filename, you can specify a list or pragmas or any other arbitrary "
+"`sqlite3 parameters "
+"<https://docs.python.org/2/library/sqlite3.html#sqlite3.connect>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:251
+msgid ""
+"Peewee includes a :ref:`SQLite extension module <sqlite_ext>` which "
+"provides many SQLite-specific features such as :ref:`full-text search "
+"<sqlite-fts>`, :ref:`json extension support <sqlite-json1>`, and much, "
+"much more. If you would like to use these awesome features, use the "
+":py:class:`SqliteExtDatabase` from the ``playhouse.sqlite_ext`` module:"
+msgstr ""
+
+#: ../../peewee/database.rst:269
+msgid "PRAGMA statements"
+msgstr ""
+
+#: ../../peewee/database.rst:271
+msgid ""
+"SQLite allows run-time configuration of a number of parameters through "
+"``PRAGMA`` statements (`SQLite documentation "
+"<https://www.sqlite.org/pragma.html>`_). These statements are typically "
+"run when a new database connection is created. To run one or more "
+"``PRAGMA`` statements against new connections, you can specify them as a "
+"dictionary or a list of 2-tuples containing the pragma name and value:"
+msgstr ""
+
+#: ../../peewee/database.rst:286
+msgid ""
+"PRAGMAs may also be configured dynamically using either the "
+":py:meth:`~SqliteDatabase.pragma` method or the special properties "
+"exposed on the :py:class:`SqliteDatabase` object:"
+msgstr ""
+
+#: ../../peewee/database.rst:309
+msgid ""
+"Pragmas set using the :py:meth:`~SqliteDatabase.pragma` method, by "
+"default, do not persist after the connection is closed. To configure a "
+"pragma to be run whenever a connection is opened, specify "
+"``permanent=True``."
+msgstr ""
+
+#: ../../peewee/database.rst:314
+msgid ""
+"A full list of PRAGMA settings, their meaning and accepted values can be "
+"found in the SQLite documentation: http://sqlite.org/pragma.html"
+msgstr ""
+
+#: ../../peewee/database.rst:318
+msgid "Recommended Settings"
+msgstr ""
+
+#: ../../peewee/database.rst:320
+msgid ""
+"The following settings are what I use with SQLite for a typical web "
+"application database."
+msgstr ""
+
+#: ../../peewee/database.rst:324
+msgid "pragma"
+msgstr ""
+
+#: ../../peewee/database.rst:324
+msgid "recommended setting"
+msgstr ""
+
+#: ../../peewee/database.rst:324
+msgid "explanation"
+msgstr ""
+
+#: ../../peewee/database.rst:326
+msgid "journal_mode"
+msgstr ""
+
+#: ../../peewee/database.rst:326
+msgid "wal"
+msgstr ""
+
+#: ../../peewee/database.rst:326
+msgid "allow readers and writers to co-exist"
+msgstr ""
+
+#: ../../peewee/database.rst:327
+msgid "cache_size"
+msgstr ""
+
+#: ../../peewee/database.rst:327
+msgid "-1 * data_size_kb"
+msgstr ""
+
+#: ../../peewee/database.rst:327
+msgid "set page-cache size in KiB, e.g. -32000 = 32MB"
+msgstr ""
+
+#: ../../peewee/database.rst:328
+msgid "foreign_keys"
+msgstr ""
+
+#: ../../peewee/database.rst:328
+msgid "1"
+msgstr ""
+
+#: ../../peewee/database.rst:328
+msgid "enforce foreign-key constraints"
+msgstr ""
+
+#: ../../peewee/database.rst:329
+msgid "ignore_check_constraints"
+msgstr ""
+
+#: ../../peewee/database.rst:329 ../../peewee/database.rst:330
+msgid "0"
+msgstr ""
+
+#: ../../peewee/database.rst:329
+msgid "enforce CHECK constraints"
+msgstr ""
+
+#: ../../peewee/database.rst:330
+msgid "synchronous"
+msgstr ""
+
+#: ../../peewee/database.rst:330
+msgid "let OS handle fsync (use with caution)"
+msgstr ""
+
+#: ../../peewee/database.rst:333
+msgid "Example database using the above options:"
+msgstr ""
+
+#: ../../peewee/database.rst:347
+msgid "User-defined functions"
+msgstr ""
+
+#: ../../peewee/database.rst:349
+msgid ""
+"SQLite can be extended with user-defined Python code. The "
+":py:class:`SqliteDatabase` class supports three types of user-defined "
+"extensions:"
+msgstr ""
+
+#: ../../peewee/database.rst:353
+msgid "Functions - which take any number of parameters and return a single value."
+msgstr ""
+
+#: ../../peewee/database.rst:354
+msgid ""
+"Aggregates - which aggregate parameters from multiple rows and return a "
+"single value."
+msgstr ""
+
+#: ../../peewee/database.rst:356
+msgid "Collations - which describe how to sort some value."
+msgstr ""
+
+#: ../../peewee/database.rst:359
+msgid ""
+"For even more extension support, see :py:class:`SqliteExtDatabase`, which"
+" is in the ``playhouse.sqlite_ext`` module."
+msgstr ""
+
+#: ../../peewee/database.rst:362
+msgid "Example user-defined function:"
+msgstr ""
+
+#: ../../peewee/database.rst:382
+msgid "Example user-defined aggregate:"
+msgstr ""
+
+#: ../../peewee/database.rst:407
+msgid "Example collation:"
+msgstr ""
+
+#: ../../peewee/database.rst:423
+msgid ""
+"Example user-defined table-value function (see :py:class:`TableFunction` "
+"and :py:class:`~SqliteDatabase.table_function`) for additional details:"
+msgstr ""
+
+#: ../../peewee/database.rst:472
+msgid ":py:meth:`SqliteDatabase.func`"
+msgstr ""
+
+#: ../../peewee/database.rst:473
+msgid ":py:meth:`SqliteDatabase.aggregate`"
+msgstr ""
+
+#: ../../peewee/database.rst:474
+msgid ":py:meth:`SqliteDatabase.collation`"
+msgstr ""
+
+#: ../../peewee/database.rst:475
+msgid ":py:meth:`SqliteDatabase.table_function`"
+msgstr ""
+
+#: ../../peewee/database.rst:476
+msgid "For even more SQLite extensions, see :ref:`sqlite_ext`"
+msgstr ""
+
+#: ../../peewee/database.rst:481
+msgid "Set locking mode for transaction"
+msgstr ""
+
+#: ../../peewee/database.rst:483
+msgid "SQLite transactions can be opened in three different modes:"
+msgstr ""
+
+#: ../../peewee/database.rst:485
+msgid ""
+"*Deferred* (**default**) - only acquires lock when a read or write is "
+"performed. The first read creates a `shared lock "
+"<https://sqlite.org/lockingv3.html#locking>`_ and the first write creates"
+" a `reserved lock <https://sqlite.org/lockingv3.html#locking>`_. Because "
+"the acquisition of the lock is deferred until actually needed, it is "
+"possible that another thread or process could create a separate "
+"transaction and write to the database after the BEGIN on the current "
+"thread has executed."
+msgstr ""
+
+#: ../../peewee/database.rst:491
+msgid ""
+"*Immediate* - a `reserved lock "
+"<https://sqlite.org/lockingv3.html#locking>`_ is acquired immediately. In"
+" this mode, no other database may write to the database or open an "
+"*immediate* or *exclusive* transaction. Other processes can continue to "
+"read from the database, however."
+msgstr ""
+
+#: ../../peewee/database.rst:495
+msgid ""
+"*Exclusive* - opens an `exclusive lock "
+"<https://sqlite.org/lockingv3.html#locking>`_ which prevents all (except "
+"for read uncommitted) connections from accessing the database until the "
+"transaction is complete."
+msgstr ""
+
+#: ../../peewee/database.rst:499
+msgid "Example specifying the locking mode:"
+msgstr ""
+
+#: ../../peewee/database.rst:514
+msgid ""
+"For more information, see the SQLite `locking documentation "
+"<https://sqlite.org/lockingv3.html#locking>`_. To learn more about "
+"transactions in Peewee, see the :ref:`transactions` documentation."
+msgstr ""
+
+#: ../../peewee/database.rst:519
+msgid "APSW, an Advanced SQLite Driver"
+msgstr ""
+
+#: ../../peewee/database.rst:521
+msgid ""
+"Peewee also comes with an alternate SQLite database that uses "
+":ref:`apsw`, an advanced Python SQLite driver. More information on APSW "
+"can be obtained on the `APSW project website "
+"<https://code.google.com/p/apsw/>`_. APSW provides special features like:"
+msgstr ""
+
+#: ../../peewee/database.rst:526
+msgid "Virtual tables, virtual file-systems, Blob I/O, backups and file control."
+msgstr ""
+
+#: ../../peewee/database.rst:527
+msgid "Connections can be shared across threads without any additional locking."
+msgstr ""
+
+#: ../../peewee/database.rst:528
+msgid "Transactions are managed explicitly by your code."
+msgstr ""
+
+#: ../../peewee/database.rst:529
+msgid "Unicode is handled *correctly*."
+msgstr ""
+
+#: ../../peewee/database.rst:530
+msgid "APSW is faster that the standard library sqlite3 module."
+msgstr ""
+
+#: ../../peewee/database.rst:531
+msgid "Exposes pretty much the entire SQLite C API to your Python app."
+msgstr ""
+
+#: ../../peewee/database.rst:533
+msgid ""
+"If you would like to use APSW, use the :py:class:`APSWDatabase` from the "
+"`apsw_ext` module:"
+msgstr ""
+
+#: ../../peewee/database.rst:545
+msgid "Using MySQL"
+msgstr ""
+
+#: ../../peewee/database.rst:547
+msgid ""
+"To connect to a MySQL database, we will use :py:class:`MySQLDatabase`. "
+"After the database name, you can specify arbitrary connection parameters "
+"that will be passed back to the driver (either MySQLdb or pymysql)."
+msgstr ""
+
+#: ../../peewee/database.rst:565
+msgid "Error 2006: MySQL server has gone away"
+msgstr ""
+
+#: ../../peewee/database.rst:567
+msgid ""
+"This particular error can occur when MySQL kills an idle database "
+"connection. This typically happens with web apps that do not explicitly "
+"manage database connections. What happens is your application starts, a "
+"connection is opened to handle the first query that executes, and, since "
+"that connection is never closed, it remains open, waiting for more "
+"queries."
+msgstr ""
+
+#: ../../peewee/database.rst:573
+msgid ""
+"To fix this, make sure you are explicitly connecting to the database when"
+" you need to execute queries, and close your connection when you are "
+"done. In a web-application, this typically means you will open a "
+"connection when a request comes in, and close the connection when you "
+"return a response."
+msgstr ""
+
+#: ../../peewee/database.rst:578
+msgid ""
+"See the :ref:`framework-integration` section for examples of configuring "
+"common web frameworks to manage database connections."
+msgstr ""
+
+#: ../../peewee/database.rst:582
+msgid "Connecting using a Database URL"
+msgstr ""
+
+#: ../../peewee/database.rst:584
+msgid ""
+"The playhouse module :ref:`db_url` provides a helper :py:func:`connect` "
+"function that accepts a database URL and returns a :py:class:`Database` "
+"instance."
+msgstr ""
+
+#: ../../peewee/database.rst:588
+msgid "Example code:"
+msgstr ""
+
+#: ../../peewee/database.rst:605
+msgid "Example database URLs:"
+msgstr ""
+
+#: ../../peewee/database.rst:607
+msgid ""
+"``sqlite:///my_database.db`` will create a :py:class:`SqliteDatabase` "
+"instance for the file ``my_database.db`` in the current directory."
+msgstr ""
+
+#: ../../peewee/database.rst:608
+msgid ""
+"``sqlite:///:memory:`` will create an in-memory "
+":py:class:`SqliteDatabase` instance."
+msgstr ""
+
+#: ../../peewee/database.rst:609
+msgid ""
+"``postgresql://postgres:my_password@localhost:5432/my_database`` will "
+"create a :py:class:`PostgresqlDatabase` instance. A username and password"
+" are provided, as well as the host and port to connect to."
+msgstr ""
+
+#: ../../peewee/database.rst:610
+msgid ""
+"``mysql://user:passwd@ip:port/my_db`` will create a "
+":py:class:`MySQLDatabase` instance for the local MySQL database *my_db*."
+msgstr ""
+
+#: ../../peewee/database.rst:611
+msgid ":ref:`More examples in the db_url documentation <db_url>`."
+msgstr ""
+
+#: ../../peewee/database.rst:616
+msgid "Run-time database configuration"
+msgstr ""
+
+#: ../../peewee/database.rst:618
+msgid ""
+"Sometimes the database connection settings are not known until run-time, "
+"when these values may be loaded from a configuration file or the "
+"environment. In these cases, you can *defer* the initialization of the "
+"database by specifying ``None`` as the database_name."
+msgstr ""
+
+#: ../../peewee/database.rst:631
+msgid ""
+"If you try to connect or issue any queries while your database is "
+"uninitialized you will get an exception:"
+msgstr ""
+
+#: ../../peewee/database.rst:639
+msgid ""
+"To initialize your database, call the :py:meth:`~Database.init` method "
+"with the database name and any additional keyword arguments:"
+msgstr ""
+
+#: ../../peewee/database.rst:647
+msgid ""
+"For even more control over initializing your database, see the next "
+"section, :ref:`dynamic_db`."
+msgstr ""
+
+#: ../../peewee/database.rst:653
+msgid "Dynamically defining a database"
+msgstr ""
+
+#: ../../peewee/database.rst:655
+msgid ""
+"For even more control over how your database is defined/initialized, you "
+"can use the :py:class:`DatabaseProxy` helper. :py:class:`DatabaseProxy` "
+"objects act as a placeholder, and then at run-time you can swap it out "
+"for a different object. In the example below, we will swap out the "
+"database depending on how the app is configured:"
+msgstr ""
+
+#: ../../peewee/database.rst:684
+msgid ""
+"Only use this method if your actual database driver varies at run-time. "
+"For instance, if your tests and local dev environment run on SQLite, but "
+"your deployed app uses PostgreSQL, you can use the "
+":py:class:`DatabaseProxy` to swap out engines at run-time."
+msgstr ""
+
+#: ../../peewee/database.rst:689
+msgid ""
+"However, if it is only connection values that vary at run-time, such as "
+"the path to the database file, or the database host, you should instead "
+"use :py:meth:`Database.init`. See :ref:`deferring_initialization` for "
+"more details."
+msgstr ""
+
+#: ../../peewee/database.rst:695
+msgid ""
+"It may be easier to avoid the use of :py:class:`DatabaseProxy` and "
+"instead use :py:meth:`Database.bind` and related methods to set or change"
+" the database. See :ref:`binding_database` for details."
+msgstr ""
+
+#: ../../peewee/database.rst:702
+msgid "Setting the database at run-time"
+msgstr ""
+
+#: ../../peewee/database.rst:704
+msgid "We have seen three ways that databases can be configured with Peewee:"
+msgstr ""
+
+#: ../../peewee/database.rst:723
+msgid ""
+"Peewee can also set or change the database for your model classes. This "
+"technique is used by the Peewee test suite to bind test model classes to "
+"various database instances when running the tests."
+msgstr ""
+
+#: ../../peewee/database.rst:727
+msgid "There are two sets of complementary methods:"
+msgstr ""
+
+#: ../../peewee/database.rst:729
+msgid ""
+":py:meth:`Database.bind` and :py:meth:`Model.bind` - bind one or more "
+"models to a database."
+msgstr ""
+
+#: ../../peewee/database.rst:731
+msgid ""
+":py:meth:`Database.bind_ctx` and :py:meth:`Model.bind_ctx` - which are "
+"the same as their ``bind()`` counterparts, but return a context-manager "
+"and are useful when the database should only be changed temporarily."
+msgstr ""
+
+#: ../../peewee/database.rst:735
+msgid ""
+"As an example, we'll declare two models **without** specifying any "
+"database:"
+msgstr ""
+
+#: ../../peewee/database.rst:747
+msgid "Bind the models to a database at run-time:"
+msgstr ""
+
+#: ../../peewee/database.rst:767
+msgid ""
+"The :py:meth:`Model.bind` and :py:meth:`Model.bind_ctx` methods work the "
+"same for binding a given model class:"
+msgstr ""
+
+#: ../../peewee/database.rst:787
+msgid ""
+"The :ref:`testing` section of this document also contains some examples "
+"of using the ``bind()`` methods."
+msgstr ""
+
+#: ../../peewee/database.rst:791
+msgid "Connection Management"
+msgstr ""
+
+#: ../../peewee/database.rst:793
+msgid ""
+"To open a connection to a database, use the :py:meth:`Database.connect` "
+"method:"
+msgstr ""
+
+#: ../../peewee/database.rst:801
+msgid ""
+"If we try to call ``connect()`` on an already-open database, we get a "
+":py:class:`OperationalError`:"
+msgstr ""
+
+#: ../../peewee/database.rst:813
+msgid ""
+"To prevent this exception from being raised, we can call ``connect()`` "
+"with an additional argument, ``reuse_if_open``:"
+msgstr ""
+
+#: ../../peewee/database.rst:825
+msgid ""
+"Note that the call to ``connect()`` returns ``False`` if the database "
+"connection was already open."
+msgstr ""
+
+#: ../../peewee/database.rst:828
+msgid "To close a connection, use the :py:meth:`Database.close` method:"
+msgstr ""
+
+#: ../../peewee/database.rst:835
+msgid ""
+"Calling ``close()`` on an already-closed connection will not result in an"
+" exception, but will return ``False``:"
+msgstr ""
+
+#: ../../peewee/database.rst:847
+msgid ""
+"You can test whether the database is closed using the "
+":py:meth:`Database.is_closed` method:"
+msgstr ""
+
+#: ../../peewee/database.rst:856
+msgid "Using autoconnect"
+msgstr ""
+
+#: ../../peewee/database.rst:858
+msgid ""
+"It is not necessary to explicitly connect to the database before using it"
+" if the database is initialized with ``autoconnect=True`` (the default). "
+"Managing connections explicitly is considered a **best practice**, "
+"therefore you may consider disabling the ``autoconnect`` behavior."
+msgstr ""
+
+#: ../../peewee/database.rst:863
+msgid ""
+"It is very helpful to be explicit about your connection lifetimes. If the"
+" connection fails, for instance, the exception will be caught when the "
+"connection is being opened, rather than some arbitrary time later when a "
+"query is executed. Furthermore, if using a :ref:`connection pool <pool>`,"
+" it is necessary to call :py:meth:`~Database.connect` and "
+":py:meth:`~Database.close` to ensure connections are recycled properly."
+msgstr ""
+
+#: ../../peewee/database.rst:870
+msgid "For the best guarantee of correctness, disable ``autoconnect``:"
+msgstr ""
+
+#: ../../peewee/database.rst:877
+msgid "Thread Safety"
+msgstr ""
+
+#: ../../peewee/database.rst:879
+msgid ""
+"Peewee keeps track of the connection state using thread-local storage, "
+"making the Peewee :py:class:`Database` object safe to use with multiple "
+"threads. Each thread will have it's own connection, and as a result any "
+"given thread will only have a single connection open at a given time."
+msgstr ""
+
+#: ../../peewee/database.rst:885
+msgid "Context managers"
+msgstr ""
+
+#: ../../peewee/database.rst:887
+msgid ""
+"The database object itself can be used as a context-manager, which opens "
+"a connection for the duration of the wrapped block of code. Additionally,"
+" a transaction is opened at the start of the wrapped block and committed "
+"before the connection is closed (unless an error occurs, in which case "
+"the transaction is rolled back)."
+msgstr ""
+
+#: ../../peewee/database.rst:904
+msgid ""
+"If you want to manage transactions separately, you can use the "
+":py:meth:`Database.connection_context` context manager."
+msgstr ""
+
+#: ../../peewee/database.rst:916
+msgid "The ``connection_context()`` method can also be used as a decorator:"
+msgstr ""
+
+#: ../../peewee/database.rst:929
+msgid "DB-API Connection Object"
+msgstr ""
+
+#: ../../peewee/database.rst:931
+msgid ""
+"To obtain a reference to the underlying DB-API 2.0 connection, use the "
+":py:meth:`Database.connection` method. This method will return the "
+"currently-open connection object, if one exists, otherwise it will open a"
+" new connection."
+msgstr ""
+
+#: ../../peewee/database.rst:944
+msgid "Connection Pooling"
+msgstr ""
+
+#: ../../peewee/database.rst:946
+msgid ""
+"Connection pooling is provided by the :ref:`pool module <pool>`, included"
+" in the :ref:`playhouse <playhouse>` extensions library. The pool "
+"supports:"
+msgstr ""
+
+#: ../../peewee/database.rst:949
+msgid "Timeout after which connections will be recycled."
+msgstr ""
+
+#: ../../peewee/database.rst:950
+msgid "Upper bound on the number of open connections."
+msgstr ""
+
+#: ../../peewee/database.rst:966
+msgid "The following pooled database classes are available:"
+msgstr ""
+
+#: ../../peewee/database.rst:968
+msgid ":py:class:`PooledPostgresqlDatabase`"
+msgstr ""
+
+#: ../../peewee/database.rst:969
+msgid ":py:class:`PooledPostgresqlExtDatabase`"
+msgstr ""
+
+#: ../../peewee/database.rst:970
+msgid ":py:class:`PooledMySQLDatabase`"
+msgstr ""
+
+#: ../../peewee/database.rst:971
+msgid ":py:class:`PooledSqliteDatabase`"
+msgstr ""
+
+#: ../../peewee/database.rst:972
+msgid ":py:class:`PooledSqliteExtDatabase`"
+msgstr ""
+
+#: ../../peewee/database.rst:974
+msgid ""
+"For an in-depth discussion of peewee's connection pool, see the "
+":ref:`pool` section of the :ref:`playhouse <playhouse>` documentation."
+msgstr ""
+
+#: ../../peewee/database.rst:980
+msgid "Testing Peewee Applications"
+msgstr ""
+
+#: ../../peewee/database.rst:982
+msgid ""
+"When writing tests for an application that uses Peewee, it may be "
+"desirable to use a special database for tests. Another common practice is"
+" to run tests against a clean database, which means ensuring tables are "
+"empty at the start of each test."
+msgstr ""
+
+#: ../../peewee/database.rst:987
+msgid ""
+"To bind your models to a database at run-time, you can use the following "
+"methods:"
+msgstr ""
+
+#: ../../peewee/database.rst:990
+msgid ""
+":py:meth:`Database.bind_ctx`, which returns a context-manager that will "
+"bind the given models to the database instance for the duration of the "
+"wrapped block."
+msgstr ""
+
+#: ../../peewee/database.rst:993
+msgid ""
+":py:meth:`Model.bind_ctx`, which likewise returns a context-manager that "
+"binds the model (and optionally its dependencies) to the given database "
+"for the duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/database.rst:996
+msgid ""
+":py:meth:`Database.bind`, which is a one-time operation that binds the "
+"models (and optionally its dependencies) to the given database."
+msgstr ""
+
+#: ../../peewee/database.rst:998
+msgid ""
+":py:meth:`Model.bind`, which is a one-time operation that binds the model"
+" (and optionally its dependencies) to the given database."
+msgstr ""
+
+#: ../../peewee/database.rst:1001
+msgid ""
+"Depending on your use-case, one of these options may make more sense. For"
+" the examples below, I will use :py:meth:`Model.bind`."
+msgstr ""
+
+#: ../../peewee/database.rst:1004
+msgid "Example test-case setup:"
+msgstr ""
+
+#: ../../peewee/database.rst:1038
+msgid ""
+"As an aside, and speaking from experience, I recommend testing your "
+"application using the same database backend you use in production, so as "
+"to avoid any potential compatibility issues."
+msgstr ""
+
+#: ../../peewee/database.rst:1042
+msgid ""
+"If you'd like to see some more examples of how to run tests using Peewee,"
+" check out Peewee's own `test-suite "
+"<https://github.com/coleifer/peewee/tree/master/tests>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1046
+msgid "Async with Gevent"
+msgstr ""
+
+#: ../../peewee/database.rst:1048
+msgid ""
+"`gevent <http://www.gevent.org/>`_ is recommended for doing asynchronous "
+"I/O with Postgresql or MySQL. Reasons I prefer gevent:"
+msgstr ""
+
+#: ../../peewee/database.rst:1051
+msgid ""
+"No need for special-purpose \"loop-aware\" re-implementations of "
+"*everything*. Third-party libraries using asyncio usually have to re-"
+"implement layers and layers of code as well as re-implementing the "
+"protocols themselves."
+msgstr ""
+
+#: ../../peewee/database.rst:1054
+msgid ""
+"Gevent allows you to write your application in normal, clean, idiomatic "
+"Python. No need to litter every line with \"async\", \"await\" and other "
+"noise. No callbacks, futures, tasks, promises. No cruft."
+msgstr ""
+
+#: ../../peewee/database.rst:1057
+msgid "Gevent works with both Python 2 *and* Python 3."
+msgstr ""
+
+#: ../../peewee/database.rst:1058
+msgid "Gevent is *Pythonic*. Asyncio is an un-pythonic abomination."
+msgstr ""
+
+#: ../../peewee/database.rst:1060
+msgid ""
+"Besides monkey-patching socket, no special steps are required if you are "
+"using **MySQL** with a pure Python driver like `pymysql "
+"<https://github.com/PyMySQL/PyMySQL>`_ or are using `mysql-connector "
+"<https://dev.mysql.com/doc/connector-python/en/>`_ in pure-python mode. "
+"MySQL drivers written in C will require special configuration which is "
+"beyond the scope of this document."
+msgstr ""
+
+#: ../../peewee/database.rst:1066
+msgid ""
+"For **Postgres** and `psycopg2 <http://initd.org/psycopg>`_, which is a C"
+" extension, you can use the following code snippet to register event "
+"hooks that will make your connection async:"
+msgstr ""
+
+#: ../../peewee/database.rst:1091
+msgid ""
+"**SQLite**, because it is embedded in the Python application itself, does"
+" not do any socket operations that would be a candidate for non-blocking."
+" Async has no effect one way or the other on SQLite databases."
+msgstr ""
+
+#: ../../peewee/database.rst:1098
+msgid "Framework Integration"
+msgstr ""
+
+#: ../../peewee/database.rst:1100
+msgid ""
+"For web applications, it is common to open a connection when a request is"
+" received, and to close the connection when the response is delivered. In"
+" this section I will describe how to add hooks to your web app to ensure "
+"the database connection is handled properly."
+msgstr ""
+
+#: ../../peewee/database.rst:1105
+msgid ""
+"These steps will ensure that regardless of whether you're using a simple "
+"SQLite database, or a pool of multiple Postgres connections, peewee will "
+"handle the connections correctly."
+msgstr ""
+
+#: ../../peewee/database.rst:1110
+msgid ""
+"Applications that receive lots of traffic may benefit from using a "
+":ref:`connection pool <pool>` to mitigate the cost of setting up and "
+"tearing down connections on every request."
+msgstr ""
+
+#: ../../peewee/database.rst:1115
+msgid "Flask"
+msgstr ""
+
+#: ../../peewee/database.rst:1117
+msgid ""
+"Flask and peewee are a great combo and my go-to for projects of any size."
+" Flask provides two hooks which we will use to open and close our db "
+"connection. We'll open the connection when a request is received, then "
+"close it when the response is returned."
+msgstr ""
+
+#: ../../peewee/database.rst:1144
+msgid "Django"
+msgstr ""
+
+#: ../../peewee/database.rst:1146
+msgid ""
+"While it's less common to see peewee used with Django, it is actually "
+"very easy to use the two. To manage your peewee database connections with"
+" Django, the easiest way in my opinion is to add a middleware to your "
+"app. The middleware should be the very first in the list of middlewares, "
+"to ensure it runs first when a request is handled, and last when the "
+"response is returned."
+msgstr ""
+
+#: ../../peewee/database.rst:1152
+msgid ""
+"If you have a django project named *my_blog* and your peewee database is "
+"defined in the module ``my_blog.db``, you might add the following "
+"middleware class:"
+msgstr ""
+
+#: ../../peewee/database.rst:1184
+msgid ""
+"To ensure this middleware gets executed, add it to your ``settings`` "
+"module:"
+msgstr ""
+
+#: ../../peewee/database.rst:1205
+msgid "Bottle"
+msgstr ""
+
+#: ../../peewee/database.rst:1207
+msgid ""
+"I haven't used bottle myself, but looking at the documentation I believe "
+"the following code should ensure the database connections are properly "
+"managed:"
+msgstr ""
+
+#: ../../peewee/database.rst:1230
+msgid "Web.py"
+msgstr ""
+
+#: ../../peewee/database.rst:1232
+msgid ""
+"See the documentation for `application processors "
+"<http://webpy.org/cookbook/application_processors>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1250
+msgid "Tornado"
+msgstr ""
+
+#: ../../peewee/database.rst:1252
+msgid ""
+"It looks like Tornado's ``RequestHandler`` class implements two hooks "
+"which can be used to open and close connections when a request is "
+"handled."
+msgstr ""
+
+#: ../../peewee/database.rst:1271
+msgid ""
+"In your app, instead of extending the default ``RequestHandler``, now you"
+" can extend ``PeeweeRequestHandler``."
+msgstr ""
+
+#: ../../peewee/database.rst:1274
+msgid ""
+"Note that this does not address how to use peewee asynchronously with "
+"Tornado or another event loop."
+msgstr ""
+
+#: ../../peewee/database.rst:1278
+msgid "Wheezy.web"
+msgstr ""
+
+#: ../../peewee/database.rst:1280
+msgid ""
+"The connection handling code can be placed in a `middleware "
+"<https://pythonhosted.org/wheezy.http/userguide.html#middleware>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1299
+msgid "Thanks to GitHub user *@tuukkamustonen* for submitting this code."
+msgstr ""
+
+#: ../../peewee/database.rst:1302
+msgid "Falcon"
+msgstr ""
+
+#: ../../peewee/database.rst:1304
+msgid ""
+"The connection handling code can be placed in a `middleware component "
+"<https://falcon.readthedocs.io/en/stable/api/middleware.html>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1328
+msgid "Pyramid"
+msgstr ""
+
+#: ../../peewee/database.rst:1330
+msgid ""
+"Set up a Request factory that handles database connection lifetime as "
+"follows:"
+msgstr ""
+
+#: ../../peewee/database.rst:1348
+msgid ""
+"In your application `main()` make sure `MyRequest` is used as "
+"`request_factory`:"
+msgstr ""
+
+#: ../../peewee/database.rst:1358
+msgid "CherryPy"
+msgstr ""
+
+#: ../../peewee/database.rst:1360
+msgid ""
+"See `Publish/Subscribe pattern "
+"<http://docs.cherrypy.org/en/latest/extend.html#publish-subscribe-"
+"pattern>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1376
+msgid "Sanic"
+msgstr ""
+
+#: ../../peewee/database.rst:1378
+msgid ""
+"In Sanic, the connection handling code can be placed in the request and "
+"response middleware `sanic middleware "
+"<http://sanic.readthedocs.io/en/latest/sanic/middleware.html>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1394
+msgid "FastAPI"
+msgstr ""
+
+#: ../../peewee/database.rst:1396
+msgid ""
+"Similar to Flask, FastAPI provides two event based hooks which we will "
+"use to open and close our db connection. We'll open the connection when a"
+" request is received, then close it when the response is returned."
+msgstr ""
+
+#: ../../peewee/database.rst:1424
+msgid "Other frameworks"
+msgstr ""
+
+#: ../../peewee/database.rst:1426
+msgid ""
+"Don't see your framework here? Please `open a GitHub ticket "
+"<https://github.com/coleifer/peewee/issues/new>`_ and I'll see about "
+"adding a section, or better yet, submit a documentation pull-request."
+msgstr ""
+
+#: ../../peewee/database.rst:1431
+msgid "Executing Queries"
+msgstr ""
+
+#: ../../peewee/database.rst:1433
+msgid ""
+"SQL queries will typically be executed by calling ``execute()`` on a "
+"query constructed using the query-builder APIs (or by simply iterating "
+"over a query object in the case of a :py:class:`Select` query). For cases"
+" where you wish to execute SQL directly, you can use the "
+":py:meth:`Database.execute_sql` method."
+msgstr ""
+
+#: ../../peewee/database.rst:1455
+msgid "Managing Transactions"
+msgstr ""
+
+#: ../../peewee/database.rst:1457
+msgid ""
+"Peewee provides several interfaces for working with transactions. The "
+"most general is the :py:meth:`Database.atomic` method, which also "
+"supports nested transactions. :py:meth:`~Database.atomic` blocks will be "
+"run in a transaction or savepoint, depending on the level of nesting."
+msgstr ""
+
+#: ../../peewee/database.rst:1462
+msgid ""
+"If an exception occurs in a wrapped block, the current "
+"transaction/savepoint will be rolled back. Otherwise the statements will "
+"be committed at the end of the wrapped block."
+msgstr ""
+
+#: ../../peewee/database.rst:1467
+msgid ""
+"While inside a block wrapped by the :py:meth:`~Database.atomic` context "
+"manager, you can explicitly rollback or commit at any point by calling "
+":py:meth:`Transaction.rollback` or :py:meth:`Transaction.commit`. When "
+"you do this inside a wrapped block of code, a new transaction will be "
+"started automatically."
+msgstr ""
+
+#: ../../peewee/database.rst:1491
+msgid ""
+":py:meth:`~Database.atomic` can be used as either a **context manager** "
+"or a **decorator**."
+msgstr ""
+
+#: ../../peewee/database.rst:1495
+msgid "Context manager"
+msgstr ""
+
+#: ../../peewee/database.rst:1497
+msgid "Using ``atomic`` as context manager:"
+msgstr ""
+
+#: ../../peewee/database.rst:1520
+msgid ""
+"You can use the ``atomic`` method to perform *get or create* operations "
+"as well:"
+msgstr ""
+
+#: ../../peewee/database.rst:1533
+msgid "Decorator"
+msgstr ""
+
+#: ../../peewee/database.rst:1535
+msgid "Using ``atomic`` as a decorator:"
+msgstr ""
+
+#: ../../peewee/database.rst:1548
+msgid "Nesting Transactions"
+msgstr ""
+
+#: ../../peewee/database.rst:1550
+msgid ""
+":py:meth:`~Database.atomic` provides transparent nesting of transactions."
+" When using :py:meth:`~Database.atomic`, the outer-most call will be "
+"wrapped in a transaction, and any nested calls will use savepoints."
+msgstr ""
+
+#: ../../peewee/database.rst:1562
+msgid ""
+"Peewee supports nested transactions through the use of savepoints (for "
+"more information, see :py:meth:`~Database.savepoint`)."
+msgstr ""
+
+#: ../../peewee/database.rst:1566
+msgid "Explicit transaction"
+msgstr ""
+
+#: ../../peewee/database.rst:1568
+msgid ""
+"If you wish to explicitly run code in a transaction, you can use "
+":py:meth:`~Database.transaction`. Like :py:meth:`~Database.atomic`, "
+":py:meth:`~Database.transaction` can be used as a context manager or as a"
+" decorator."
+msgstr ""
+
+#: ../../peewee/database.rst:1573
+msgid ""
+"If an exception occurs in a wrapped block, the transaction will be rolled"
+" back. Otherwise the statements will be committed at the end of the "
+"wrapped block."
+msgstr ""
+
+#: ../../peewee/database.rst:1584
+msgid ""
+"Transactions can be explicitly committed or rolled-back within the "
+"wrapped block. When this happens, a new transaction will be started."
+msgstr ""
+
+#: ../../peewee/database.rst:1608
+msgid ""
+"If you attempt to nest transactions with peewee using the "
+":py:meth:`~Database.transaction` context manager, only the outer-most "
+"transaction will be used. However if an exception occurs in a nested "
+"block, this can lead to unpredictable behavior, so it is strongly "
+"recommended that you use :py:meth:`~Database.atomic`."
+msgstr ""
+
+#: ../../peewee/database.rst:1615
+msgid "Explicit Savepoints"
+msgstr ""
+
+#: ../../peewee/database.rst:1617
+msgid ""
+"Just as you can explicitly create transactions, you can also explicitly "
+"create savepoints using the :py:meth:`~Database.savepoint` method. "
+"Savepoints must occur within a transaction, but can be nested arbitrarily"
+" deep."
+msgstr ""
+
+#: ../../peewee/database.rst:1632
+msgid ""
+"If you manually commit or roll back a savepoint, a new savepoint **will "
+"not** automatically be created. This differs from the behavior of "
+":py:class:`transaction`, which will automatically open a new transaction "
+"after manual commit/rollback."
+msgstr ""
+
+#: ../../peewee/database.rst:1638
+msgid "Autocommit Mode"
+msgstr ""
+
+#: ../../peewee/database.rst:1640
+msgid ""
+"By default, Peewee operates in *autocommit mode*, such that any "
+"statements executed outside of a transaction are run in their own "
+"transaction. To group multiple statements into a transaction, Peewee "
+"provides the :py:meth:`~Database.atomic` context-manager/decorator. This "
+"should cover all use-cases, but in the unlikely event you want to "
+"temporarily disable Peewee's transaction management completely, you can "
+"use the :py:meth:`Database.manual_commit` context-manager/decorator."
+msgstr ""
+
+#: ../../peewee/database.rst:1648
+msgid ""
+"Here is how you might emulate the behavior of the "
+":py:meth:`~Database.transaction` context manager:"
+msgstr ""
+
+#: ../../peewee/database.rst:1667
+msgid ""
+"Again -- I don't anticipate anyone needing this, but it's here just in "
+"case."
+msgstr ""
+
+#: ../../peewee/database.rst:1672
+msgid "Database Errors"
+msgstr ""
+
+#: ../../peewee/database.rst:1674
+msgid ""
+"The Python DB-API 2.0 spec describes `several types of exceptions "
+"<https://www.python.org/dev/peps/pep-0249/#exceptions>`_. Because most "
+"database drivers have their own implementations of these exceptions, "
+"Peewee simplifies things by providing its own wrappers around any "
+"implementation-specific exception classes. That way, you don't need to "
+"worry about importing any special exception classes, you can just use the"
+" ones from peewee:"
+msgstr ""
+
+#: ../../peewee/database.rst:1676
+msgid "``DatabaseError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1677
+msgid "``DataError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1678
+msgid "``IntegrityError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1679
+msgid "``InterfaceError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1680
+msgid "``InternalError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1681
+msgid "``NotSupportedError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1682
+msgid "``OperationalError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1683
+msgid "``ProgrammingError``"
+msgstr ""
+
+#: ../../peewee/database.rst:1685
+msgid "All of these error classes extend ``PeeweeException``."
+msgstr ""
+
+#: ../../peewee/database.rst:1688
+msgid "Logging queries"
+msgstr ""
+
+#: ../../peewee/database.rst:1690
+msgid ""
+"All queries are logged to the *peewee* namespace using the standard "
+"library ``logging`` module. Queries are logged using the *DEBUG* level.  "
+"If you're interested in doing something with the queries, you can simply "
+"register a handler."
+msgstr ""
+
+#: ../../peewee/database.rst:1704
+msgid "Adding a new Database Driver"
+msgstr ""
+
+#: ../../peewee/database.rst:1706
+msgid ""
+"Peewee comes with built-in support for Postgres, MySQL and SQLite. These "
+"databases are very popular and run the gamut from fast, embeddable "
+"databases to heavyweight servers suitable for large-scale deployments.  "
+"That being said, there are a ton of cool databases out there and adding "
+"support for your database-of-choice should be really easy, provided the "
+"driver supports the `DB-API 2.0 spec "
+"<http://www.python.org/dev/peps/pep-0249/>`_."
+msgstr ""
+
+#: ../../peewee/database.rst:1713
+msgid ""
+"The DB-API 2.0 spec should be familiar to you if you've used the standard"
+" library sqlite3 driver, psycopg2 or the like. Peewee currently relies on"
+" a handful of parts:"
+msgstr ""
+
+#: ../../peewee/database.rst:1717
+msgid "`Connection.commit`"
+msgstr ""
+
+#: ../../peewee/database.rst:1718
+msgid "`Connection.execute`"
+msgstr ""
+
+#: ../../peewee/database.rst:1719
+msgid "`Connection.rollback`"
+msgstr ""
+
+#: ../../peewee/database.rst:1720
+msgid "`Cursor.description`"
+msgstr ""
+
+#: ../../peewee/database.rst:1721
+msgid "`Cursor.fetchone`"
+msgstr ""
+
+#: ../../peewee/database.rst:1723
+msgid ""
+"These methods are generally wrapped up in higher-level abstractions and "
+"exposed by the :py:class:`Database`, so even if your driver doesn't do "
+"these exactly you can still get a lot of mileage out of peewee.  An "
+"example is the `apsw sqlite driver <http://code.google.com/p/apsw/>`_ in "
+"the \"playhouse\" module."
+msgstr ""
+
+#: ../../peewee/database.rst:1728
+msgid ""
+"The first thing is to provide a subclass of :py:class:`Database` that "
+"will open a connection."
+msgstr ""
+
+#: ../../peewee/database.rst:1741
+msgid ""
+"The :py:class:`Database` provides a higher-level API and is responsible "
+"for executing queries, creating tables and indexes, and introspecting the"
+" database to get lists of tables. The above implementation is the "
+"absolute minimum needed, though some features will not work -- for best "
+"results you will want to additionally add a method for extracting a list "
+"of tables and indexes for a table from the database.  We'll pretend that "
+"``FooDB`` is a lot like MySQL and has special \"SHOW\" statements:"
+msgstr ""
+
+#: ../../peewee/database.rst:1759
+msgid "Other things the database handles that are not covered here include:"
+msgstr ""
+
+#: ../../peewee/database.rst:1761
+msgid ":py:meth:`~Database.last_insert_id` and :py:meth:`~Database.rows_affected`"
+msgstr ""
+
+#: ../../peewee/database.rst:1762
+msgid ""
+":py:attr:`~Database.param` and :py:attr:`~Database.quote`, which tell the"
+" SQL-generating code how to add parameter placeholders and quote entity "
+"names."
+msgstr ""
+
+#: ../../peewee/database.rst:1764
+msgid ""
+":py:attr:`~Database.field_types` for mapping data-types like INT or TEXT "
+"to their vendor-specific type names."
+msgstr ""
+
+#: ../../peewee/database.rst:1766
+msgid ""
+":py:attr:`~Database.operations` for mapping operations such as "
+"\"LIKE/ILIKE\" to their database equivalent"
+msgstr ""
+
+#: ../../peewee/database.rst:1768
+msgid ""
+"Refer to the :py:class:`Database` API reference or the `source code "
+"<https://github.com/coleifer/peewee/blob/master/peewee.py>`_. for "
+"details."
+msgstr ""
+
+#: ../../peewee/database.rst:1772
+msgid ""
+"If your driver conforms to the DB-API 2.0 spec, there shouldn't be much "
+"work needed to get up and running."
+msgstr ""
+
+#: ../../peewee/database.rst:1775
+msgid ""
+"Our new database can be used just like any of the other database "
+"subclasses:"
+msgstr ""
+

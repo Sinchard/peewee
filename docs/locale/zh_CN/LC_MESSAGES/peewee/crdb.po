@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/crdb.rst:4
+msgid "Cockroach Database"
+msgstr ""
+
+#: ../../peewee/crdb.rst:6
+msgid ""
+"`CockroachDB <https://www.cockroachlabs.com>`_ (CRDB) is well supported "
+"by peewee."
+msgstr ""
+
+#: ../../peewee/crdb.rst:15
+msgid ""
+"The ``playhouse.cockroachdb`` extension module provides the following "
+"classes and helpers:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:18
+msgid ""
+":py:class:`CockroachDatabase` - a subclass of "
+":py:class:`PostgresqlDatabase`, designed specifically for working with "
+"CRDB."
+msgstr ""
+
+#: ../../peewee/crdb.rst:20
+msgid ""
+":py:class:`PooledCockroachDatabase` - like the above, but implements "
+"connection-pooling."
+msgstr ""
+
+#: ../../peewee/crdb.rst:22
+msgid ""
+":py:meth:`~CockroachDatabase.run_transaction` - runs a function inside a "
+"transaction and provides automatic client-side retry logic."
+msgstr ""
+
+#: ../../peewee/crdb.rst:25
+msgid "Special field-types that may be useful when using CRDB:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:27
+msgid ""
+":py:class:`UUIDKeyField` - a primary-key field implementation that uses "
+"CRDB's ``UUID`` type with a default randomly-generated UUID."
+msgstr ""
+
+#: ../../peewee/crdb.rst:29
+msgid ""
+":py:class:`RowIDField` - a primary-key field implementation that uses "
+"CRDB's ``INT`` type with a default ``unique_rowid()``."
+msgstr ""
+
+#: ../../peewee/crdb.rst:31
+msgid ""
+":py:class:`JSONField` - same as the Postgres :py:class:`BinaryJSONField`,"
+" as CRDB treats JSON as JSONB."
+msgstr ""
+
+#: ../../peewee/crdb.rst:33
+msgid ""
+":py:class:`ArrayField` - same as the Postgres extension (but does not "
+"support multi-dimensional arrays)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:36
+msgid ""
+"CRDB is compatible with Postgres' wire protocol and exposes a very "
+"similar SQL interface, so it is possible (though **not recommended**) to "
+"use :py:class:`PostgresqlDatabase` with CRDB:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:40
+msgid ""
+"CRDB does not support nested transactions (savepoints), so the "
+":py:meth:`~Database.atomic` method has been implemented to enforce this "
+"when using :py:class:`CockroachDatabase`. For more info :ref:`crdb-"
+"transactions`."
+msgstr ""
+
+#: ../../peewee/crdb.rst:43
+msgid ""
+"CRDB may have subtle differences in field-types, date functions and "
+"introspection from Postgres."
+msgstr ""
+
+#: ../../peewee/crdb.rst:45
+msgid ""
+"CRDB-specific features are exposed by the :py:class:`CockroachDatabase`, "
+"such as specifying a transaction priority or the ``AS OF SYSTEM TIME`` "
+"clause."
+msgstr ""
+
+#: ../../peewee/crdb.rst:52
+msgid "CRDB Transactions"
+msgstr ""
+
+#: ../../peewee/crdb.rst:54
+msgid ""
+"CRDB does not support nested transactions (savepoints), so the "
+":py:meth:`~Database.atomic` method on the :py:class:`CockroachDatabase` "
+"has been modified to raise an exception if an invalid nesting is "
+"encountered. If you would like to be able to nest transactional code, you"
+" can use the :py:meth:`~Database.transaction` method, which will ensure "
+"that the outer-most block will manage the transaction (e.g., exiting a "
+"nested-block will not cause an early commit)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:62
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:87
+msgid ""
+"CRDB provides client-side transaction retries, which are available using "
+"a special :py:meth:`~CockroachDatabase.run_transaction` helper. This "
+"helper method accepts a callable, which is responsible for executing any "
+"transactional statements that may need to be retried."
+msgstr ""
+
+#: ../../peewee/crdb.rst:92
+msgid ""
+"Simplest possible example of "
+":py:meth:`~CockroachDatabase.run_transaction`:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:107
+msgid ""
+"The ``cockroachdb.ExceededMaxAttempts`` exception will be raised if the "
+"transaction cannot be committed after the given number of attempts. If "
+"the SQL is mal-formed, violates a constraint, etc., then the function "
+"will raise the exception to the caller."
+msgstr ""
+
+#: ../../peewee/crdb.rst:112
+msgid ""
+"Example of using :py:meth:`~CockroachDatabase.run_transaction` to "
+"implement client-side retries for a transaction that transfers an amount "
+"from one account to another:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:158
+msgid "CRDB APIs"
+msgstr ""
+
+#: ../../peewee/crdb.rst:162
+msgid ""
+"CockroachDB implementation, based on the :py:class:`PostgresqlDatabase` "
+"and using the ``psycopg2`` driver."
+msgstr ""
+
+#: ../../peewee/crdb.rst:165
+msgid ""
+"Additional keyword arguments are passed to the psycopg2 connection "
+"constructor, and may be used to specify the database ``user``, ``port``, "
+"etc."
+msgstr ""
+
+#: ../../peewee/crdb.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../peewee/crdb.rst:171
+msgid ""
+"callable that accepts a single ``db`` parameter (which will be the "
+"database instance this method is called from)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:173
+msgid "max number of times to try before giving up."
+msgstr ""
+
+#: ../../peewee/crdb.rst:174
+msgid ""
+"execute the transaction ``AS OF SYSTEM TIME`` with respect to the given "
+"value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:176
+msgid "either \"low\", \"normal\" or \"high\"."
+msgstr ""
+
+#: ../../peewee/crdb.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../peewee/crdb.rst:177
+msgid "returns the value returned by the callback."
+msgstr ""
+
+#: ../../peewee/crdb.rst
+msgid "raises"
+msgstr ""
+
+#: ../../peewee/crdb.rst:178
+msgid "``ExceededMaxAttempts`` if ``max_attempts`` is exceeded."
+msgstr ""
+
+#: ../../peewee/crdb.rst:180
+msgid "Run SQL in a transaction with automatic client-side retries."
+msgstr ""
+
+#: ../../peewee/crdb.rst:182
+msgid "User-provided ``callback``:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:184
+msgid ""
+"**Must** accept one parameter, the ``db`` instance representing the "
+"connection the transaction is running under."
+msgstr ""
+
+#: ../../peewee/crdb.rst:186
+msgid ""
+"**Must** not attempt to commit, rollback or otherwise manage the "
+"transaction."
+msgstr ""
+
+#: ../../peewee/crdb.rst:188
+msgid "**May** be called more than one time."
+msgstr ""
+
+#: ../../peewee/crdb.rst:189
+msgid "**Should** ideally only contain SQL operations."
+msgstr ""
+
+#: ../../peewee/crdb.rst:191
+msgid ""
+"Additionally, the database must not have any open transactions at the "
+"time this function is called, as CRDB does not support nested "
+"transactions. Attempting to do so will raise a ``NotImplementedError``."
+msgstr ""
+
+#: ../../peewee/crdb.rst:195
+msgid "Simplest possible example:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:209
+msgid ""
+"CockroachDB connection-pooling implementation, based on "
+":py:class:`PooledPostgresqlDatabase`. Implements the same APIs as "
+":py:class:`CockroachDatabase`, but will do client-side connection "
+"pooling."
+msgstr ""
+
+#: ../../peewee/crdb.rst:215
+msgid ""
+"Run SQL in a transaction with automatic client-side retries. See "
+":py:meth:`CockroachDatabase.run_transaction` for details."
+msgstr ""
+
+#: ../../peewee/crdb.rst:218
+msgid "database instance."
+msgstr ""
+
+#: ../../peewee/crdb.rst:219
+msgid ""
+"callable that accepts a single ``db`` parameter (which will be the same "
+"as the value passed above)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:223
+msgid ""
+"This function is equivalent to the identically-named method on the "
+":py:class:`CockroachDatabase` class."
+msgstr ""
+
+#: ../../peewee/crdb.rst:228
+msgid ""
+"UUID primary-key field that uses the CRDB ``gen_random_uuid()`` function "
+"to automatically populate the initial value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:233
+msgid ""
+"Auto-incrementing integer primary-key field that uses the CRDB "
+"``unique_rowid()`` function to automatically populate the initial value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:236
+msgid "See also:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:238
+msgid ""
+":py:class:`BinaryJSONField` from the Postgresql extension (available in "
+"the ``cockroachdb`` extension module, and aliased to ``JSONField``)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:240
+msgid ":py:class:`ArrayField` from the Postgresql extension."
+msgstr ""
+

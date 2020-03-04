@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/hacks.rst:4
+msgid "Hacks"
+msgstr ""
+
+#: ../../peewee/hacks.rst:6
+msgid ""
+"Collected hacks using peewee. Have a cool hack you'd like to share? Open "
+"`an issue on GitHub <https://github.com/coleifer/peewee/issues/new>`_ or "
+"`contact me <http://charlesleifer.com/contact/>`_."
+msgstr ""
+
+#: ../../peewee/hacks.rst:11
+msgid "Optimistic Locking"
+msgstr ""
+
+#: ../../peewee/hacks.rst:13
+msgid ""
+"Optimistic locking is useful in situations where you might ordinarily use"
+" a *SELECT FOR UPDATE* (or in SQLite, *BEGIN IMMEDIATE*). For example, "
+"you might fetch a user record from the database, make some modifications,"
+" then save the modified user record. Typically this scenario would "
+"require us to lock the user record for the duration of the transaction, "
+"from the moment we select it, to the moment we save our changes."
+msgstr ""
+
+#: ../../peewee/hacks.rst:20
+msgid ""
+"In optimistic locking, on the other hand, we do *not* acquire any lock "
+"and instead rely on an internal *version* column in the row we're "
+"modifying. At read time, we see what version the row is currently at, and"
+" on save, we ensure that the update takes place only if the version is "
+"the same as the one we initially read. If the version is higher, then "
+"some other process must have snuck in and changed the row -- to save our "
+"modified version could result in the loss of important changes."
+msgstr ""
+
+#: ../../peewee/hacks.rst:28
+msgid ""
+"It's quite simple to implement optimistic locking in Peewee, here is a "
+"base class that you can use as a starting point:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:72
+msgid ""
+"Here's an example of how this works. Let's assume we have the following "
+"model definition. Note that there's a unique constraint on the username "
+"-- this is important as it provides a way to prevent double-inserts."
+msgstr ""
+
+#: ../../peewee/hacks.rst:82
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:122
+msgid "Top object per group"
+msgstr ""
+
+#: ../../peewee/hacks.rst:124
+msgid ""
+"These examples describe several ways to query the single top item per "
+"group. For a thorough discuss of various techniques, check out my blog "
+"post `Querying the top item by group with Peewee ORM "
+"<http://charlesleifer.com/blog/techniques-for-querying-lists-of-objects-"
+"and-determining-the-top-related-item/>`_. If you are interested in the "
+"more general problem of querying the top *N* items, see the section below"
+" :ref:`top_n_per_group`."
+msgstr ""
+
+#: ../../peewee/hacks.rst:126
+msgid ""
+"In these examples we will use the *User* and *Tweet* models to find each "
+"user and their most-recent tweet."
+msgstr ""
+
+#: ../../peewee/hacks.rst:128
+msgid ""
+"The most efficient method I found in my testing uses the ``MAX()`` "
+"aggregate function."
+msgstr ""
+
+#: ../../peewee/hacks.rst:130
+msgid ""
+"We will perform the aggregation in a non-correlated subquery, so we can "
+"be confident this method will be performant. The idea is that we will "
+"select the posts, grouped by their author, whose timestamp is equal to "
+"the max observed timestamp for that user."
+msgstr ""
+
+#: ../../peewee/hacks.rst:157
+msgid ""
+"SQLite and MySQL are a bit more lax and permit grouping by a subset of "
+"the columns that are selected. This means we can do away with the "
+"subquery and express it quite concisely:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:170
+msgid "Top N objects per group"
+msgstr ""
+
+#: ../../peewee/hacks.rst:172
+msgid ""
+"These examples describe several ways to query the top *N* items per group"
+" reasonably efficiently. For a thorough discussion of various techniques,"
+" check out my blog post `Querying the top N objects per group with Peewee"
+" ORM <http://charlesleifer.com/blog/querying-the-top-n-objects-per-group-"
+"with-peewee-orm/>`_."
+msgstr ""
+
+#: ../../peewee/hacks.rst:174
+msgid ""
+"In these examples we will use the *User* and *Tweet* models to find each "
+"user and their three most-recent tweets."
+msgstr ""
+
+#: ../../peewee/hacks.rst:177
+msgid "Postgres lateral joins"
+msgstr ""
+
+#: ../../peewee/hacks.rst:179
+msgid ""
+"`Lateral joins <http://blog.heapanalytics.com/postgresqls-powerful-new-"
+"join-type-lateral/>`_ are a neat Postgres feature that allow reasonably "
+"efficient correlated subqueries. They are often described as SQL ``for "
+"each`` loops."
+msgstr ""
+
+#: ../../peewee/hacks.rst:181 ../../peewee/hacks.rst:244
+msgid "The desired SQL is:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:194
+msgid "To accomplish this with peewee is quite straightforward:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:215
+msgid ""
+"To implement an equivalent query from the \"perspective\" of the Tweet "
+"model, we can instead write:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:240
+msgid "Window functions"
+msgstr ""
+
+#: ../../peewee/hacks.rst:242
+msgid ""
+"`Window functions <http://www.postgresql.org/docs/9.1/static/tutorial-"
+"window.html>`_, which are :ref:`supported by peewee <window-functions>`, "
+"provide scalable, efficient performance."
+msgstr ""
+
+#: ../../peewee/hacks.rst:262
+msgid ""
+"To accomplish this with peewee, we will wrap the ranked Tweets in an "
+"outer query that performs the filtering."
+msgstr ""
+
+#: ../../peewee/hacks.rst:289
+msgid "Other methods"
+msgstr ""
+
+#: ../../peewee/hacks.rst:291
+msgid ""
+"If you're not using Postgres, then unfortunately you're left with options"
+" that exhibit less-than-ideal performance. For a more complete overview "
+"of common methods, check out `this blog post "
+"<http://charlesleifer.com/blog/querying-the-top-n-objects-per-group-with-"
+"peewee-orm/>`_. Below I will summarize the approaches and the "
+"corresponding SQL."
+msgstr ""
+
+#: ../../peewee/hacks.rst:293
+msgid ""
+"Using ``COUNT``, we can get all tweets where there exist less than *N* "
+"tweets with more recent timestamps:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:314
+msgid ""
+"We can achieve similar results by doing a self-join and performing the "
+"filtering in the ``HAVING`` clause:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:332
+msgid "The last example uses a ``LIMIT`` clause in a correlated subquery."
+msgstr ""
+
+#: ../../peewee/hacks.rst:354
+msgid "Writing custom functions with SQLite"
+msgstr ""
+
+#: ../../peewee/hacks.rst:356
+msgid ""
+"SQLite is very easy to extend with custom functions written in Python, "
+"that are then callable from your SQL statements. By using the "
+":py:class:`SqliteExtDatabase` and the :py:meth:`~SqliteExtDatabase.func` "
+"decorator, you can very easily define your own functions."
+msgstr ""
+
+#: ../../peewee/hacks.rst:358
+msgid ""
+"Here is an example function that generates a hashed version of a user-"
+"supplied password. We can also use this to implement ``login`` "
+"functionality for matching a user and password."
+msgstr ""
+
+#: ../../peewee/hacks.rst:383
+msgid ""
+"Here is how you can use the function to add a new user, storing a hashed "
+"password:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:391
+msgid ""
+"If we retrieve the user from the database, the password that's stored is "
+"hashed and salted:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:399
+msgid ""
+"To implement ``login``-type functionality, you could write something like"
+" this:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:418
+msgid "Date math"
+msgstr ""
+
+#: ../../peewee/hacks.rst:420
+msgid ""
+"Each of the databases supported by Peewee implement their own set of "
+"functions and semantics for date/time arithmetic."
+msgstr ""
+
+#: ../../peewee/hacks.rst:423
+msgid ""
+"This section will provide a short scenario and example code demonstrating"
+" how you might utilize Peewee to do dynamic date manipulation in SQL."
+msgstr ""
+
+#: ../../peewee/hacks.rst:426
+msgid ""
+"Scenario: we need to run certain tasks every *X* seconds, and both the "
+"task intervals and the task themselves are defined in the database. We "
+"need to write some code that will tell us which tasks we should run at a "
+"given time:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:441
+msgid "Our logic will essentially boil down to::"
+msgstr ""
+
+#: ../../peewee/hacks.rst:445
+msgid ""
+"# e.g., if the task was last run at 12:00:05, and the associated interval"
+" # is 10 seconds, the next occurrence should be 12:00:15. So we check # "
+"whether the current time (now) is 12:00:15 or later. now >= task.last_run"
+" + schedule.interval"
+msgstr ""
+
+#: ../../peewee/hacks.rst:450
+msgid "So we can write the following code:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:465
+msgid ""
+"For Postgresql we will multiple a static 1-second interval to calculate "
+"the offsets dynamically:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:473
+msgid "For MySQL we can reference the schedule's interval directly:"
+msgstr ""
+
+#: ../../peewee/hacks.rst:482
+msgid ""
+"For SQLite, things are slightly tricky because SQLite does not have a "
+"dedicated datetime type. So for SQLite, we convert to a unix timestamp, "
+"add the schedule seconds, then convert back to a comparable datetime "
+"representation:"
+msgstr ""
+

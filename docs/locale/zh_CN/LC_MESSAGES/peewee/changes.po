@@ -1,0 +1,430 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/changes.rst:4
+msgid "Changes in 3.0"
+msgstr ""
+
+#: ../../peewee/changes.rst:6
+msgid ""
+"This document describes changes to be aware of when switching from 2.x to"
+" 3.x."
+msgstr ""
+
+#: ../../peewee/changes.rst:9
+msgid "Backwards-incompatible"
+msgstr ""
+
+#: ../../peewee/changes.rst:11
+msgid ""
+"I tried to keep changes backwards-compatible as much as possible. In some"
+" places, APIs that have changed will trigger a ``DeprecationWarning``."
+msgstr ""
+
+#: ../../peewee/changes.rst:15
+msgid "Database"
+msgstr ""
+
+#: ../../peewee/changes.rst:17
+msgid "``get_conn()`` has changed to :py:meth:`Database.connection`"
+msgstr ""
+
+#: ../../peewee/changes.rst:18
+msgid "``get_cursor()`` has changed to :py:meth:`Database.cursor`"
+msgstr ""
+
+#: ../../peewee/changes.rst:19
+msgid ""
+"``execution_context()`` is replaced by simply using the database instance"
+" as a context-manager."
+msgstr ""
+
+#: ../../peewee/changes.rst:21
+msgid ""
+"For a connection context *without* a transaction, use "
+":py:meth:`Database.connection_context`."
+msgstr ""
+
+#: ../../peewee/changes.rst:23
+msgid ""
+":py:meth:`Database.create_tables` and :py:meth:`Database.drop_tables`, as"
+" well as :py:meth:`Model.create_table` and :py:meth:`Model.drop_table` "
+"all default to ``safe=True`` (``create_table`` will create if not exists,"
+" ``drop_table`` will drop if exists)."
+msgstr ""
+
+#: ../../peewee/changes.rst:26
+msgid "``connect_kwargs`` attribute has been renamed to ``connect_params``"
+msgstr ""
+
+#: ../../peewee/changes.rst:27
+msgid ""
+"initialization parameter for custom field-type definitions has changed "
+"from ``fields`` to ``field_types``."
+msgstr ""
+
+#: ../../peewee/changes.rst:31
+msgid "Model Meta options"
+msgstr ""
+
+#: ../../peewee/changes.rst:33
+msgid "``db_table`` has changed to ``table_name``"
+msgstr ""
+
+#: ../../peewee/changes.rst:34
+msgid "``db_table_func`` has changed to ``table_function``"
+msgstr ""
+
+#: ../../peewee/changes.rst:35
+msgid ""
+"``order_by`` has been removed (used for specifying a default ordering to "
+"be applied to SELECT queries)."
+msgstr ""
+
+#: ../../peewee/changes.rst:37
+msgid ""
+"``validate_backrefs`` has been removed. Back-references are no longer "
+"validated."
+msgstr ""
+
+#: ../../peewee/changes.rst:41
+msgid "Models"
+msgstr ""
+
+#: ../../peewee/changes.rst:43
+msgid ":py:class:`BaseModel` has been renamed to :py:class:`ModelBase`"
+msgstr ""
+
+#: ../../peewee/changes.rst:44
+msgid ""
+"Accessing raw model data is now done using ``__data__`` instead of "
+"``_data``"
+msgstr ""
+
+#: ../../peewee/changes.rst:45
+msgid "The ``_prepare_instance()`` Model method has been removed."
+msgstr ""
+
+#: ../../peewee/changes.rst:46
+msgid ""
+"The ``sqlall()`` method, which output the DDL statements to generate a "
+"model and its associated indexes, has been removed."
+msgstr ""
+
+#: ../../peewee/changes.rst:50
+msgid "Fields"
+msgstr ""
+
+#: ../../peewee/changes.rst:52
+msgid "``db_column`` has changed to ``column_name``"
+msgstr ""
+
+#: ../../peewee/changes.rst:53
+msgid ""
+"``db_field`` class attribute changed to ``field_type`` (used if you are "
+"implementing custom field subclasses)"
+msgstr ""
+
+#: ../../peewee/changes.rst:55
+msgid "``model_class`` attribute has changed to ``model``"
+msgstr ""
+
+#: ../../peewee/changes.rst:56
+msgid ":py:class:`PrimaryKeyField` has been renamed to :py:class:`AutoField`"
+msgstr ""
+
+#: ../../peewee/changes.rst:57
+msgid ":py:class:`ForeignKeyField` constructor has the following changes:"
+msgstr ""
+
+#: ../../peewee/changes.rst:59
+msgid "``rel_model`` has changed to ``model``"
+msgstr ""
+
+#: ../../peewee/changes.rst:60
+msgid "``to_field`` has changed to ``field``"
+msgstr ""
+
+#: ../../peewee/changes.rst:61
+msgid "``related_name`` has changed to ``backref``"
+msgstr ""
+
+#: ../../peewee/changes.rst:63
+msgid ""
+":py:class:`ManyToManyField` is now included in the main ``peewee.py`` "
+"module"
+msgstr ""
+
+#: ../../peewee/changes.rst:64
+msgid ""
+"Removed the extension fields ``PasswordField``, ``PickledField`` and "
+"``AESEncryptedField``."
+msgstr ""
+
+#: ../../peewee/changes.rst:68
+msgid "Querying"
+msgstr ""
+
+#: ../../peewee/changes.rst:70
+msgid ""
+"``JOIN_INNER``, ``JOIN_LEFT_OUTER``, etc are now ``JOIN.INNER``, "
+"``JOIN.LEFT_OUTER``, etc."
+msgstr ""
+
+#: ../../peewee/changes.rst:73
+msgid ""
+"The C extension that contained implementations of the query result "
+"wrappers has been removed."
+msgstr ""
+
+#: ../../peewee/changes.rst:76
+msgid ""
+"Additionally, :py:meth:`Select.aggregate_rows` has been removed. This "
+"helper was used to de-duplicate left-join queries to give the appearance "
+"of efficiency when iterating a model and its relations. In practice, the "
+"complexity of the code and its somewhat limited usefulness convinced me "
+"to scrap it. You can instead use :py:func:`prefetch` to achieve the same "
+"result."
+msgstr ""
+
+#: ../../peewee/changes.rst:82
+msgid ""
+":py:class:`Select` query attribute ``_select`` has changed to "
+"``_returning``"
+msgstr ""
+
+#: ../../peewee/changes.rst:83
+msgid ""
+"The ``naive()`` method is now :py:meth:`~BaseQuery.objects`, which "
+"defaults to using the model class as the constructor, but accepts any "
+"callable to use as an alternate constructor."
+msgstr ""
+
+#: ../../peewee/changes.rst:86
+msgid "The ``annotate()`` query method is no longer supported."
+msgstr ""
+
+#: ../../peewee/changes.rst:88
+msgid ""
+"The :py:func:`Case` helper has moved from the ``playhouse.shortcuts`` "
+"module into the main peewee module."
+msgstr ""
+
+#: ../../peewee/changes.rst:91
+msgid ""
+"The :py:meth:`~BaseColumn.cast` method is no longer a function, but "
+"instead is a method on all column-like objects."
+msgstr ""
+
+#: ../../peewee/changes.rst:94
+msgid ""
+"The ``InsertQuery.return_id_list()`` method has been replaced by a more "
+"general pattern of using :py:meth:`_WriteQuery.returning`."
+msgstr ""
+
+#: ../../peewee/changes.rst:97
+msgid ""
+"The ``InsertQuery.upsert()`` method has been replaced by the more general"
+" and flexible :py:meth:`Insert.on_conflict` method."
+msgstr ""
+
+#: ../../peewee/changes.rst:100
+msgid ""
+"When using :py:func:`prefetch`, the collected instances will be stored in"
+" the same attribute as the foreign-key's ``backref``. Previously, you "
+"would access joined instances using ``(backref)_prefetch``."
+msgstr ""
+
+#: ../../peewee/changes.rst:104
+msgid ""
+"The :py:class:`SQL` object, used to create a composable a SQL string, now"
+" expects the second parameter to be a list/tuple of parameters."
+msgstr ""
+
+#: ../../peewee/changes.rst:108
+msgid "Removed Extensions"
+msgstr ""
+
+#: ../../peewee/changes.rst:110
+msgid "The following extensions are no longer included in the ``playhouse``:"
+msgstr ""
+
+#: ../../peewee/changes.rst:112
+msgid "``berkeleydb``"
+msgstr ""
+
+#: ../../peewee/changes.rst:113
+msgid "``csv_utils``"
+msgstr ""
+
+#: ../../peewee/changes.rst:114
+msgid "``djpeewee``"
+msgstr ""
+
+#: ../../peewee/changes.rst:115
+msgid "``gfk``"
+msgstr ""
+
+#: ../../peewee/changes.rst:116
+msgid "``kv``"
+msgstr ""
+
+#: ../../peewee/changes.rst:117
+msgid "``pskel``"
+msgstr ""
+
+#: ../../peewee/changes.rst:118
+msgid "``read_slave``"
+msgstr ""
+
+#: ../../peewee/changes.rst:121 ../../peewee/changes.rst:178
+msgid "SQLite Extension"
+msgstr ""
+
+#: ../../peewee/changes.rst:123
+msgid ""
+"The SQLite extension module's :py:class:`VirtualModel` class accepts "
+"slightly different ``Meta`` options:"
+msgstr ""
+
+#: ../../peewee/changes.rst:126
+msgid ""
+"``arguments`` - used to specify arbitrary arguments appended after any "
+"columns being defined on the virtual table. Should be a list of strings."
+msgstr ""
+
+#: ../../peewee/changes.rst:128
+msgid "``extension_module`` (unchanged)"
+msgstr ""
+
+#: ../../peewee/changes.rst:129
+msgid ""
+"``options`` (replaces ``extension_options``) - arbitrary options for the "
+"virtual table that appear after columns and ``arguments``."
+msgstr ""
+
+#: ../../peewee/changes.rst:131
+msgid ""
+"``prefix_arguments`` - a list of strings that should appear before any "
+"arguments or columns in the virtual table declaration."
+msgstr ""
+
+#: ../../peewee/changes.rst:134
+msgid ""
+"So, when declaring a model for a virtual table, it will be constructed "
+"roughly like this:"
+msgstr ""
+
+#: ../../peewee/changes.rst:146
+msgid "Postgresql Extension"
+msgstr ""
+
+#: ../../peewee/changes.rst:148
+msgid ""
+"The `PostgresqlExtDatabase` no longer registers the `hstore` extension by"
+" default. To use the `hstore` extension in 3.0 and onwards, pass "
+"`register_hstore=True` when initializing the database object."
+msgstr ""
+
+#: ../../peewee/changes.rst:153
+msgid "Signals Extension"
+msgstr ""
+
+#: ../../peewee/changes.rst:155
+msgid "The ``post_init`` signal has been removed."
+msgstr ""
+
+#: ../../peewee/changes.rst:158
+msgid "New stuff"
+msgstr ""
+
+#: ../../peewee/changes.rst:160
+msgid ""
+"The query-builder has been rewritten from the ground-up to be more "
+"flexible and powerful. There is now a generic, :ref:`lower-level API "
+"<query-builder>` for constructing queries."
+msgstr ""
+
+#: ../../peewee/changes.rst:165
+msgid "SQLite"
+msgstr ""
+
+#: ../../peewee/changes.rst:167
+msgid ""
+"Many SQLite-specific features have been moved from the "
+"``playhouse.sqlite_ext`` module into ``peewee``, such as:"
+msgstr ""
+
+#: ../../peewee/changes.rst:170
+msgid "User-defined functions, aggregates, collations, and table-functions."
+msgstr ""
+
+#: ../../peewee/changes.rst:171
+msgid "Loading extensions."
+msgstr ""
+
+#: ../../peewee/changes.rst:172
+msgid "Specifying pragmas."
+msgstr ""
+
+#: ../../peewee/changes.rst:174
+msgid ""
+"See the :ref:`\"Using SQLite\" section <using_sqlite>` and :ref:`\"SQLite"
+" extensions\" <sqlite_ext>` documents for more details."
+msgstr ""
+
+#: ../../peewee/changes.rst:180
+msgid ""
+"The virtual-table implementation from `sqlite-vtfunc "
+"<https://github.com/coleifer/sqlite-vtfunc>`_ has been folded into the "
+"peewee codebase."
+msgstr ""
+
+#: ../../peewee/changes.rst:183
+msgid "Support for SQLite online backup API."
+msgstr ""
+
+#: ../../peewee/changes.rst:184
+msgid "Murmurhash implementation has been corrected."
+msgstr ""
+
+#: ../../peewee/changes.rst:185
+msgid "Couple small quirks in the BM25 ranking code have been addressed."
+msgstr ""
+
+#: ../../peewee/changes.rst:186
+msgid "Numerous user-defined functions for hashing and ranking are now included."
+msgstr ""
+
+#: ../../peewee/changes.rst:187
+msgid ":py:class:`BloomFilter` implementation."
+msgstr ""
+
+#: ../../peewee/changes.rst:188
+msgid "Incremental :py:class:`Blob` I/O support."
+msgstr ""
+
+#: ../../peewee/changes.rst:189
+msgid "Support for update, commit and rollback hooks."
+msgstr ""
+
+#: ../../peewee/changes.rst:190
+msgid ":py:class:`LSMTable` implementation to support the lsm1 extension."
+msgstr ""
+

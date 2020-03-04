@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../index.rst:7
+msgid "peewee"
+msgstr ""
+
+#: ../../index.rst:11
+msgid ""
+"Peewee is a simple and small ORM. It has few (but expressive) concepts, "
+"making it easy to learn and intuitive to use."
+msgstr ""
+
+#: ../../index.rst:14
+msgid "a small, expressive ORM"
+msgstr ""
+
+#: ../../index.rst:15
+msgid "python 2.7+ and 3.4+ (developed with 3.6)"
+msgstr ""
+
+#: ../../index.rst:16
+msgid "supports sqlite, mysql, postgresql and cockroachdb"
+msgstr ""
+
+#: ../../index.rst:17
+msgid ":ref:`tons of extensions <playhouse>`"
+msgstr ""
+
+#: ../../index.rst:35
+msgid ""
+"Peewee's source code hosted on `GitHub "
+"<https://github.com/coleifer/peewee>`_."
+msgstr ""
+
+#: ../../index.rst:37
+msgid "New to peewee? These may help:"
+msgstr ""
+
+#: ../../index.rst:39
+msgid ":ref:`Quickstart <quickstart>`"
+msgstr ""
+
+#: ../../index.rst:40
+msgid ":ref:`Example twitter app <example-app>`"
+msgstr ""
+
+#: ../../index.rst:41
+msgid ":ref:`Using peewee interactively <interactive>`"
+msgstr ""
+
+#: ../../index.rst:42
+msgid ":ref:`Models and fields <models>`"
+msgstr ""
+
+#: ../../index.rst:43
+msgid ":ref:`Querying <querying>`"
+msgstr ""
+
+#: ../../index.rst:44
+msgid ":ref:`Relationships and joins <relationships>`"
+msgstr ""
+
+#: ../../index.rst:47
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:72
+msgid "Note"
+msgstr ""
+
+#: ../../index.rst:74
+msgid ""
+"If you find any bugs, odd behavior, or have an idea for a new feature "
+"please don't hesitate to `open an issue "
+"<https://github.com/coleifer/peewee/issues?state=open>`_ on GitHub or "
+"`contact me <http://charlesleifer.com/contact/>`_."
+msgstr ""
+
+#: ../../index.rst:77
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:79
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:80
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:81
+msgid ":ref:`search`"
+msgstr ""
+

@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/query_builder.rst:4
+msgid "Query Builder"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:6
+msgid ""
+"Peewee's high-level :py:class:`Model` and :py:class:`Field` APIs are "
+"built upon lower-level :py:class:`Table` and :py:class:`Column` "
+"counterparts. While these lower-level APIs are not documented in as much "
+"detail as their high-level counterparts, this document will present an "
+"overview with examples that should hopefully allow you to experiment."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:12
+msgid "We'll use the following schema:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:35
+msgid "Declaring tables"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:37
+msgid ""
+"There are two ways we can declare :py:class:`Table` objects for working "
+"with these tables:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:50
+msgid ""
+"Typically we will want to :py:meth:`~Table.bind` our tables to a "
+"database. This saves us having to pass the database explicitly every time"
+" we wish to execute a query on the table:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:62
+msgid "Select queries"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:64
+msgid "To select the first three notes and print their content, we can write:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:73
+msgid ""
+"By default, rows will be returned as dictionaries. You can use the "
+":py:meth:`~BaseQuery.tuples`, :py:meth:`~BaseQuery.namedtuples` or "
+":py:meth:`~BaseQuery.objects` methods to specify a different container "
+"for the row data, if you wish."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:78
+msgid ""
+"Because we didn't specify any columns, all the columns we defined in the "
+"note's :py:class:`Table` constructor will be selected. This won't work "
+"for Reminder, as we didn't specify any columns at all."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:82
+msgid ""
+"To select all notes published in 2018 along with the name of the creator,"
+" we will use :py:meth:`~BaseQuery.join`. We'll also request that rows be "
+"returned as *namedtuple* objects:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:98
+msgid ""
+"Let's query for the most prolific people, that is, get the people who "
+"have created the most notes. This introduces calling a SQL function "
+"(COUNT), which is accomplished using the ``fn`` object:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:113
+msgid "There are a couple things to note in the above query:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:115
+msgid "We store an expression in a variable (``name``), then use it in the query."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:116
+msgid ""
+"We call SQL functions using ``fn.<function>(...)`` passing arguments as "
+"if it were a normal Python function."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:118
+msgid ""
+"The :py:meth:`~ColumnBase.alias` method is used to specify the name used "
+"for a column or calculation."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:121
+msgid ""
+"As a more complex example, we'll generate a list of all people and the "
+"contents and timestamp of their most recently-published note. To do this,"
+" we will end up using the Note table twice in different contexts within "
+"the same query, which will require us to use a table alias."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:148
+msgid ""
+"In the join predicate for the join on the *max_note* subquery, we can "
+"reference columns in the subquery using the magical \".c\" attribute. So,"
+" *max_note.c.max_ts* is translated into \"the max_ts column value from "
+"the max_note subquery\"."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:153
+msgid ""
+"We can also use the \".c\" magic attribute to access columns on tables "
+"that do not explicitly define their columns, like we did with the "
+"Reminder table. Here's a simple query to get all reminders for today, "
+"along with their associated note content:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:172
+msgid ""
+"The \".c\" attribute will not work on tables that explicitly define their"
+" columns, to prevent confusion."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:176
+msgid "Insert queries"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:178
+msgid ""
+"Inserting data is straightforward. We can specify data to "
+":py:meth:`~Table.insert` in two different ways (in both cases, the ID of "
+"the new row is returned):"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:193
+msgid "It is easy to bulk-insert data, just pass in either:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:195
+msgid "A list of dictionaries (all must have the same keys/columns)."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:196
+msgid "A list of tuples, if the columns are specified explicitly."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:198 ../../peewee/query_builder.rst:224
+msgid "Examples:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:219
+msgid "Update queries"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:221
+msgid ""
+":py:meth:`~Table.update` queries accept either keyword arguments or a "
+"dictionary mapping column to value, just like :py:meth:`~Table.insert`."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:242
+msgid ""
+"You can also use expressions as the value to perform an atomic update. "
+"Imagine we have a *PageView* table and we need to atomically increment "
+"the page-view count for some URL:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:255
+msgid "Delete queries"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:257
+msgid ""
+":py:meth:`~Table.delete` queries are simplest of all, as they do not "
+"accept any arguments:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:265
+msgid ""
+"Because DELETE (and UPDATE) queries do not support joins, we can use "
+"subqueries to delete rows based on values in related tables. For example,"
+" here is how you would delete all notes by anyone whose last name is "
+"\"Foo\":"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:278
+msgid "Query Objects"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:280
+msgid ""
+"One of the fundamental limitations of the abstractions provided by Peewee"
+" 2.x was the absence of a class that represented a structured query with "
+"no relation to a given model class."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:284
+msgid ""
+"An example of this might be computing aggregate values over a subquery. "
+"For example, the :py:meth:`~SelectBase.count` method, which returns the "
+"count of rows in an arbitrary query, is implemented by wrapping the "
+"query:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:292
+msgid "To accomplish this with Peewee, the implementation is written in this way:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:302
+msgid ""
+"We can actually express this more concisely using the "
+":py:meth:`~SelectBase.scalar` method, which is suitable for returning "
+"values from aggregate queries:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:312
+msgid ""
+"The :ref:`query_examples` document has a more complex example, in which "
+"we write a query for a facility with the highest number of available "
+"slots booked:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:315
+msgid "The SQL we wish to express is:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:327
+msgid ""
+"We can express this fairly elegantly by using a plain :py:class:`Select` "
+"for the outer query:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:350
+msgid ""
+"For another example, let's create a recursive common table expression to "
+"calculate the first 10 fibonacci numbers:"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:384
+msgid "More"
+msgstr ""
+
+#: ../../peewee/query_builder.rst:386
+msgid ""
+"For a description of the various classes used to describe a SQL AST, see "
+"the :ref:`query builder API documentation <query-builder-api>`."
+msgstr ""
+
+#: ../../peewee/query_builder.rst:389
+msgid ""
+"If you're interested in learning more, you can also check out the "
+"`project source code <https://github.com/coleifer/peewee>`_."
+msgstr ""
+

@@ -1,0 +1,4015 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/playhouse.rst:4
+msgid "Playhouse, extensions to Peewee"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:6
+msgid ""
+"Peewee comes with numerous extension modules which are collected under "
+"the ``playhouse`` namespace. Despite the silly name, there are some very "
+"useful extensions, particularly those that expose vendor-specific "
+"database features like the :ref:`sqlite_ext` and :ref:`postgres_ext` "
+"extensions."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:11
+msgid ""
+"Below you will find a loosely organized listing of the various modules "
+"that make up the ``playhouse``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:14
+msgid "**Database drivers / vendor-specific database functionality**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:16
+msgid ":ref:`sqlite_ext` (on its own page)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:17
+msgid ":ref:`sqliteq`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:18
+msgid ":ref:`sqlite_udf`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:19
+msgid ":ref:`apsw`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:20
+msgid ":ref:`sqlcipher_ext`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:21
+msgid ":ref:`postgres_ext`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:22
+msgid ":ref:`crdb`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:23
+msgid ":ref:`mysql_ext`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:25
+msgid "**High-level features**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:27
+msgid ":ref:`extra-fields`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:28
+msgid ":ref:`shortcuts`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:29
+msgid ":ref:`hybrid`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:30
+msgid ":ref:`kv`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:31
+msgid ":ref:`signals`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:32
+msgid ":ref:`dataset`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:34
+msgid "**Database management and framework integration**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:36
+msgid ":ref:`pwiz`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:37
+msgid ":ref:`migrate`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:38
+msgid ":ref:`pool`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:39
+msgid ":ref:`reflection`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:40
+msgid ":ref:`db_url`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:41
+msgid ":ref:`test_utils`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:42
+msgid ":ref:`flask_utils`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:45
+msgid "Sqlite Extensions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:47
+msgid ""
+"The Sqlite extensions have been moved to :ref:`their own page "
+"<sqlite_ext>`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:52
+msgid "SqliteQ"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:54
+msgid ""
+"The ``playhouse.sqliteq`` module provides a subclass of "
+":py:class:`SqliteExtDatabase`, that will serialize concurrent writes to a"
+" SQLite database. :py:class:`SqliteQueueDatabase` can be used as a drop-"
+"in replacement for the regular :py:class:`SqliteDatabase` if you want "
+"simple **read and write** access to a SQLite database from **multiple "
+"threads**."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:60
+msgid ""
+"SQLite only allows one connection to write to the database at any given "
+"time. As a result, if you have a multi-threaded application (like a web-"
+"server, for example) that needs to write to the database, you may see "
+"occasional errors when one or more of the threads attempting to write "
+"cannot acquire the lock."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:65
+msgid ""
+":py:class:`SqliteQueueDatabase` is designed to simplify things by sending"
+" all write queries through a single, long-lived connection. The benefit "
+"is that you get the appearance of multiple threads writing to the "
+"database without conflicts or timeouts. The downside, however, is that "
+"you cannot issue write transactions that encompass multiple queries -- "
+"all writes run in autocommit mode, essentially."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:73
+msgid ""
+"The module gets its name from the fact that all write queries get put "
+"into a thread-safe queue. A single worker thread listens to the queue and"
+" executes all queries that are sent to it."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:78
+msgid "Transactions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:80
+msgid ""
+"Because all queries are serialized and executed by a single worker "
+"thread, it is possible for transactional SQL from separate threads to be "
+"executed out-of-order. In the example below, the transaction started by "
+"thread \"B\" is rolled back by thread \"A\" (with bad consequences!):"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:85
+msgid "Thread A: UPDATE transplants SET organ='liver', ...;"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:86
+msgid "Thread B: BEGIN TRANSACTION;"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:87
+msgid "Thread B: UPDATE life_support_system SET timer += 60 ...;"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:88
+msgid "Thread A: ROLLBACK; -- Oh no...."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:90
+msgid ""
+"Since there is a potential for queries from separate transactions to be "
+"interleaved, the :py:meth:`~SqliteQueueDatabase.transaction` and "
+":py:meth:`~SqliteQueueDatabase.atomic` methods are disabled on "
+":py:class:`SqliteQueueDatabase`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:94
+msgid ""
+"For cases when you wish to temporarily write to the database from a "
+"different thread, you can use the :py:meth:`~SqliteQueueDatabase.pause` "
+"and :py:meth:`~SqliteQueueDatabase.unpause` methods. These methods block "
+"the caller until the writer thread is finished with its current workload."
+" The writer then disconnects and the caller takes over until ``unpause`` "
+"is called."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:100
+msgid ""
+"The :py:meth:`~SqliteQueueDatabase.stop`, "
+":py:meth:`~SqliteQueueDatabase.start`, and "
+":py:meth:`~SqliteQueueDatabase.is_stopped` methods can also be used to "
+"control the writer thread."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:105
+msgid ""
+"Take a look at SQLite's `isolation "
+"<https://www.sqlite.org/isolation.html>`_ documentation for more "
+"information about how SQLite handles concurrent connections."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:110
+msgid "Code sample"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:112
+msgid ""
+"Creating a database instance does not require any special handling. The "
+":py:class:`SqliteQueueDatabase` accepts some special parameters which you"
+" should be aware of, though. If you are using `gevent "
+"<http://gevent.org>`_, you must specify ``use_gevent=True`` when "
+"instantiating your database -- this way Peewee will know to use the "
+"appropriate objects for handling queueing, thread creation, and locking."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:131
+msgid ""
+"If ``autostart=False``, as in the above example, you will need to call "
+":py:meth:`~SqliteQueueDatabase.start` to bring up the worker threads that"
+" will do the actual write query execution."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:141
+msgid ""
+"If you plan on performing SELECT queries or generally wanting to access "
+"the database, you will need to call :py:meth:`~Database.connect` and "
+":py:meth:`~Database.close` as you would with any other database instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:145
+msgid ""
+"When your application is ready to terminate, use the "
+":py:meth:`~SqliteQueueDatabase.stop` method to shut down the worker "
+"thread. If there was a backlog of work, then this method will block until"
+" all pending work is finished (though no new work is allowed)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:159
+msgid ""
+"Lastly, the :py:meth:`~SqliteQueueDatabase.is_stopped` method can be used"
+" to determine whether the database writer is up and running."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:165
+msgid "Sqlite User-Defined Functions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:167
+msgid ""
+"The ``sqlite_udf`` playhouse module contains a number of user-defined "
+"functions, aggregates, and table-valued functions, which you may find "
+"useful. The functions are grouped in collections and you can register "
+"these user-defined extensions individually, by collection, or register "
+"everything."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:172
+msgid ""
+"Scalar functions are functions which take a number of parameters and "
+"return a single value. For example, converting a string to upper-case, or"
+" calculating the MD5 hex digest."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:176
+msgid ""
+"Aggregate functions are like scalar functions that operate on multiple "
+"rows of data, producing a single result. For example, calculating the sum"
+" of a list of integers, or finding the smallest value in a particular "
+"column."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:180
+msgid ""
+"Table-valued functions are simply functions that can return multiple rows"
+" of data. For example, a regular-expression search function that returns "
+"all the matches in a given string, or a function that accepts two dates "
+"and generates all the intervening days."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:186
+msgid ""
+"To use table-valued functions, you will need to build the "
+"``playhouse._sqlite_ext`` C extension."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:189
+msgid "Registering user-defined functions:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:211
+msgid "Using a library function (\"hostname\"):"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:229
+msgid "Functions, listed by collection name"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:231
+msgid ""
+"Scalar functions are indicated by ``(f)``, aggregate functions by "
+"``(a)``, and table-valued functions by ``(t)``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:234
+msgid "**CONTROL_FLOW**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:238
+msgid ""
+"Simple ternary-type operator, where, depending on the truthiness of the "
+"``cond`` parameter, either the ``truthy`` or ``falsey`` value will be "
+"returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:242
+msgid "**DATE**"
+msgstr ""
+
+#: ../../peewee/crdb.rst ../../peewee/playhouse.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:246
+msgid "A datetime, encoded as a string."
+msgstr ""
+
+#: ../../peewee/crdb.rst ../../peewee/playhouse.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:247
+msgid "The datetime with any timezone info stripped off."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:249
+msgid "The time is not adjusted in any way, the timezone is simply removed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:253
+msgid "Number of seconds, total, in timedelta."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:254
+msgid "Fragment to join values."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:255
+msgid "Easy-to-read description of timedelta."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:257
+msgid "Example, 86471 -> \"1 day, 1 minute, 11 seconds\""
+msgstr ""
+
+#: ../../peewee/playhouse.rst:261 ../../peewee/playhouse.rst:269
+#: ../../peewee/playhouse.rst:277
+msgid "A date-time."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:262
+msgid "Minimum difference between any two values in list."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:264
+msgid ""
+"Aggregate function that computes the minimum difference between any two "
+"datetimes."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:270
+msgid "Average difference between values in list."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:272
+msgid ""
+"Aggregate function that computes the average difference between "
+"consecutive values in the list."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:278
+msgid "Duration from smallest to largest value in list, in seconds."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:280
+msgid ""
+"Aggregate function that computes the duration from the smallest to the "
+"largest value in the list, returned in seconds."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:285
+msgid "Start datetime"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:286
+msgid "Stop datetime"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:287
+msgid "Number of seconds comprising a step."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:289
+msgid ""
+"Table-value function that returns rows consisting of the date/+time "
+"values encountered iterating from start to stop, ``step_seconds`` at a "
+"time."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:292
+msgid ""
+"Additionally, if start does not have a time component and step_seconds is"
+" greater-than-or-equal-to one day (86400 seconds), the values returned "
+"will be dates. Conversely, if start does not have a date component, "
+"values will be returned as times. Otherwise values are returned as "
+"datetimes."
+msgstr ""
+
+#: ../../peewee/crdb.rst:62 ../../peewee/playhouse.rst:297
+#: ../../peewee/playhouse.rst:476 ../../peewee/playhouse.rst:928
+#: ../../peewee/playhouse.rst:1437 ../../peewee/playhouse.rst:1539
+#: ../../peewee/playhouse.rst:1582 ../../peewee/playhouse.rst:2069
+#: ../../peewee/playhouse.rst:2108 ../../peewee/playhouse.rst:2132
+#: ../../peewee/playhouse.rst:2288 ../../peewee/playhouse.rst:2340
+#: ../../peewee/playhouse.rst:2362 ../../peewee/playhouse.rst:2392
+#: ../../peewee/playhouse.rst:3172 ../../peewee/playhouse.rst:3688
+#: ../../peewee/playhouse.rst:3717
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:312
+msgid "**FILE**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:316
+msgid "Filename to extract extension from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:317
+msgid "Returns the file extension, including the leading \".\"."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:321
+msgid "Filename to read."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:322
+msgid "Contents of the file."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:324
+msgid "**HELPER**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:328
+msgid "Data to compress."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:329
+msgid "Compression level (9 is max)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:330
+msgid "Compressed binary data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:334
+msgid "Compressed data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:335
+msgid "Uncompressed binary data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:339
+msgid "URL to extract hostname from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:340
+msgid "hostname portion of URL"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:344
+msgid "Key to toggle."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:346
+msgid "Toggle a key between True/False state. Example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:359
+msgid "Key to set/retrieve."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:360
+msgid "Value to set."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:361
+msgid "Value associated with key."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:363
+msgid ""
+"Store/retrieve a setting in memory and persist during lifetime of "
+"application. To get the current value, only specify the key. To set a new"
+" value, call with key and new value."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:369
+msgid "Clears all state associated with the :py:func:`toggle` function."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:373
+msgid "Clears all state associated with the :py:func:`setting` function."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:375
+msgid "**MATH**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:379
+msgid "Start of range (inclusive)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:380
+msgid "End of range(not inclusive)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:381
+msgid "Interval at which to return a value."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:383
+msgid "Return a random integer between ``[start, end)``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:387
+msgid "Mean value"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:388
+msgid "Standard deviation"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:392
+msgid "Calculate the square root of ``n``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:396
+msgid "String to convert to number."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:397
+msgid "Integer, floating-point or NULL on failure."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:401
+msgid "Numbers in list."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:402
+msgid "The mode, or most-common, number observed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:404
+msgid "Aggregate function which calculates *mode* of values."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:408 ../../peewee/playhouse.rst:416
+#: ../../peewee/playhouse.rst:424 ../../peewee/playhouse.rst:431
+msgid "Value"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:409
+msgid "Min difference between two values."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:411
+msgid ""
+"Aggregate function which calculates the minimal distance between two "
+"numbers in the sequence."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:417
+msgid "Average difference between values."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:419
+msgid ""
+"Aggregate function which calculates the average distance between two "
+"consecutive numbers in the sequence."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:425
+msgid "The range from the smallest to largest value in sequence."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:427
+msgid "Aggregate function which returns range of values observed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:432
+msgid "The median, or middle, value in a sequence."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:434
+msgid "Aggregate function which calculates the middle value in a sequence."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:436 ../../peewee/playhouse.rst:453
+#: ../../peewee/playhouse.rst:459 ../../peewee/playhouse.rst:466
+msgid "Only available if you compiled the ``_sqlite_udf`` extension."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:438
+msgid "**STRING**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:442
+msgid "Returns number of times ``needle`` appears in ``haystack``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:446
+msgid "Strips any characters in ``chars`` from beginning and end of ``haystack``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:450
+msgid ""
+"Computes the edit distance from s1 to s2 using the damerau variant of the"
+" levenshtein algorithm."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:457
+msgid "Computes the edit distance from s1 to s2 using the levenshtein algorithm."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:463
+msgid ""
+"Computes the edit distance from s1 to s2 using the standard library "
+"SequenceMatcher's algorithm."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:470
+msgid "Regular expression"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:471
+msgid "String to search for instances of regex."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:473
+msgid ""
+"Table-value function that searches a string for substrings that match the"
+" provided ``regex``. Returns rows for each match found."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:492
+msgid "apsw, an advanced sqlite driver"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:494
+msgid ""
+"The ``apsw_ext`` module contains a database class suitable for use with "
+"the apsw sqlite driver."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:497
+msgid "APSW Project page: https://github.com/rogerbinns/apsw"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:499
+msgid ""
+"APSW is a really neat library that provides a thin wrapper on top of "
+"SQLite's C interface, making it possible to use all of SQLite's advanced "
+"features."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:502
+msgid "Here are just a few reasons to use APSW, taken from the documentation:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:504
+msgid ""
+"APSW gives all functionality of SQLite, including virtual tables, virtual"
+" file system, blob i/o, backups and file control."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:506
+msgid "Connections can be shared across threads without any additional locking."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:507
+msgid "Transactions are managed explicitly by your code."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:508
+msgid "APSW can handle nested transactions."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:509
+msgid "Unicode is handled correctly."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:510
+msgid "APSW is faster."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:512
+msgid ""
+"For more information on the differences between apsw and pysqlite, check "
+"`the apsw docs <http://rogerbinns.github.io/apsw/>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:516
+msgid "How to use the APSWDatabase"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:534
+msgid "apsw_ext API notes"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:536
+msgid ""
+":py:class:`APSWDatabase` extends the :py:class:`SqliteExtDatabase` and "
+"inherits its advanced features."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:541
+msgid "filename of sqlite database"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:542
+msgid "keyword arguments passed to apsw when opening a connection"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:546
+msgid ""
+"Provides a way of globally registering a module. For more information, "
+"see the `documentation on virtual tables "
+"<http://rogerbinns.github.io/apsw/vtable.html>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:549 ../../peewee/playhouse.rst:556
+msgid "name to use for module"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:550
+msgid ""
+"an object implementing the `Virtual Table "
+"<http://rogerbinns.github.io/apsw/vtable.html#vttable-class>`_ interface"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:554
+msgid "Unregister a module."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:559
+msgid ""
+"Be sure to use the ``Field`` subclasses defined in the ``apsw_ext`` "
+"module, as they will properly handle adapting the data types for storage."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:562
+msgid ""
+"For example, instead of using ``peewee.DateTimeField``, be sure you are "
+"importing and using ``playhouse.apsw_ext.DateTimeField``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:569
+msgid "Sqlcipher backend"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:571
+msgid ""
+"Although this extention's code is short, it has not been properly peer-"
+"reviewed yet and may have introduced vulnerabilities."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:574
+msgid ""
+"Also note that this code relies on pysqlcipher_ and sqlcipher_, and the "
+"code there might have vulnerabilities as well, but since these are widely"
+" used crypto modules, we can expect \"short zero days\" there."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:582
+msgid "sqlcipher_ext API notes"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:586
+msgid ""
+"Subclass of :py:class:`SqliteDatabase` that stores the database "
+"encrypted. Instead of the standard ``sqlite3`` backend, it uses "
+"pysqlcipher_: a python wrapper for sqlcipher_, which -- in turn -- is an "
+"encrypted wrapper around ``sqlite3``, so the API is *identical* to "
+":py:class:`SqliteDatabase`'s, except for object construction parameters:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:592
+msgid "Path to encrypted database filename to open [or create]."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:593
+msgid ""
+"Database encryption passphrase: should be at least 8 character long, but "
+"it is *strongly advised* to enforce better `passphrase strength`_ "
+"criteria in your implementation."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:597
+msgid ""
+"If the ``database`` file doesn't exist, it will be *created* with "
+"encryption by a key derived from ``passhprase``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:599
+msgid ""
+"When trying to open an existing database, ``passhprase`` should be "
+"identical to the ones used when it was created. If the passphrase is "
+"incorrect, an error will be raised when first attempting to access the "
+"database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:606
+msgid "New passphrase for database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:608
+msgid "Change the passphrase for database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:613
+msgid ""
+"SQLCipher can be configured using a number of extension PRAGMAs. The list"
+" of PRAGMAs and their descriptions can be found in the `SQLCipher "
+"documentation <https://www.zetetic.net/sqlcipher/sqlcipher-api/>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:616
+msgid ""
+"For example to specify the number of PBKDF2 iterations for the key "
+"derivation (64K in SQLCipher 3.x, 256K in SQLCipher 4.x by default):"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:624
+msgid "To use a cipher page-size of 16KB and a cache-size of 10,000 pages:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:633
+msgid "Example of prompting the user for a passphrase:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:668
+msgid ""
+"See also: a slightly more elaborate `example "
+"<https://gist.github.com/thedod/11048875#file-testpeeweesqlcipher-py>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:673
+msgid "Postgresql Extensions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:675
+msgid ""
+"The postgresql extensions module provides a number of \"postgres-only\" "
+"functions, currently:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:678
+msgid ":ref:`json support <pgjson>`, including *jsonb* for Postgres 9.4."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:679
+msgid ":ref:`hstore support <hstore>`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:680
+msgid ":ref:`server-side cursors <server_side_cursors>`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:681
+msgid ":ref:`full-text search <pg_fts>`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:682
+msgid ":py:class:`ArrayField` field type, for storing arrays."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:683
+msgid ":py:class:`HStoreField` field type, for storing key/value pairs."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:684
+msgid ":py:class:`IntervalField` field type, for storing ``timedelta`` objects."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:685
+msgid ":py:class:`JSONField` field type, for storing JSON data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:686
+msgid ":py:class:`BinaryJSONField` field type for the ``jsonb`` JSON data type."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:687
+msgid ":py:class:`TSVectorField` field type, for storing full-text search data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:688
+msgid ":py:class:`DateTimeTZ` field type, a timezone-aware datetime field."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:690
+msgid ""
+"In the future I would like to add support for more of postgresql's "
+"features. If there is a particular feature you would like to see added, "
+"please `open a Github issue "
+"<https://github.com/coleifer/peewee/issues>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:694
+msgid ""
+"In order to start using the features described below, you will need to "
+"use the extension :py:class:`PostgresqlExtDatabase` class instead of "
+":py:class:`PostgresqlDatabase`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:696
+msgid ""
+"The code below will assume you are using the following database and base "
+"model:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:711
+msgid "JSON Support"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:713
+msgid ""
+"peewee has basic support for Postgres' native JSON data type, in the form"
+" of :py:class:`JSONField`. As of version 2.4.7, peewee also supports the "
+"Postgres 9.4 binary json ``jsonb`` type, via :py:class:`BinaryJSONField`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:718
+msgid ""
+"Postgres supports a JSON data type natively as of 9.2 (full support in "
+"9.3). In order to use this functionality you must be using the correct "
+"version of Postgres with `psycopg2` version 2.5 or greater."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:722
+msgid ""
+"To use :py:class:`BinaryJSONField`, which has many performance and "
+"querying advantages, you must have Postgres 9.4 or later."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:726
+msgid ""
+"You must be sure your database is an instance of "
+":py:class:`PostgresqlExtDatabase` in order to use the `JSONField`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:729
+msgid "Here is an example of how you might declare a model with a JSON field:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:772
+msgid ""
+"The :py:class:`BinaryJSONField` works the same and supports the same "
+"operations as the regular :py:class:`JSONField`, but provides several "
+"additional operations for testing **containment**. Using the binary json "
+"field, you can test whether your JSON data contains other partial JSON "
+"structures (:py:meth:`~BinaryJSONField.contains`, "
+":py:meth:`~BinaryJSONField.contains_any`, "
+":py:meth:`~BinaryJSONField.contains_all`), or whether it is a subset of a"
+" larger JSON document (:py:meth:`~BinaryJSONField.contained_by`)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:780
+msgid ""
+"For more examples, see the :py:class:`JSONField` and "
+":py:class:`BinaryJSONField` API documents below."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:786
+msgid "hstore support"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:788
+msgid ""
+"`Postgresql hstore "
+"<http://www.postgresql.org/docs/current/static/hstore.html>`_ is an "
+"embedded key/value store. With hstore, you can store arbitrary key/value "
+"pairs in your database alongside structured relational data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:792
+msgid ""
+"To use ``hstore``, you need to specify an additional parameter when "
+"instantiating your :py:class:`PostgresqlExtDatabase`:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:800
+msgid "Currently the ``postgres_ext`` module supports the following operations:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:802
+msgid "Store and retrieve arbitrary dictionaries"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:803
+msgid "Filter by key(s) or partial dictionary"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:804
+msgid "Update/add one or more keys to an existing dictionary"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:805
+msgid "Delete one or more keys from an existing dictionary"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:806
+msgid "Select keys, values, or zip keys and values"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:807
+msgid "Retrieve a slice of keys/values"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:808
+msgid "Test for the existence of a key"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:809
+msgid "Test that a key has a non-NULL value"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:812
+msgid "Using hstore"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:814
+msgid ""
+"To start with, you will need to import the custom database class and the "
+"hstore functions from ``playhouse.postgres_ext`` (see above code "
+"snippet). Then, it is as simple as adding a :py:class:`HStoreField` to "
+"your model:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:824
+msgid "You can now store arbitrary key/value pairs on ``House`` instances:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:836
+msgid "You can filter by individual key, multiple keys or partial dictionary:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:845
+msgid "Suppose you want to do an atomic update to the house:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:857
+msgid "Or, alternatively an atomic delete:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:868
+msgid "Multiple keys can be deleted at the same time:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:874
+msgid "You can select just keys, just values, or zip the two:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:893
+msgid "You can retrieve a slice of data, for example, all the garage data:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:903
+msgid "You can check for the existence of a key and filter rows accordingly:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:920
+msgid "Interval support"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:922
+msgid ""
+"Postgres supports durations through the ``INTERVAL`` data-type (`docs "
+"<https://www.postgresql.org/docs/current/static/datatype-"
+"datetime.html>`_)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:926
+msgid "Field class capable of storing Python ``datetime.timedelta`` instances."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:953
+msgid "Server-side cursors"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:955
+msgid ""
+"When psycopg2 executes a query, normally all results are fetched and "
+"returned to the client by the backend. This can cause your application to"
+" use a lot of memory when making large queries. Using server-side "
+"cursors, results are returned a little at a time (by default 2000 "
+"records). For the definitive reference, please see the `psycopg2 "
+"documentation <http://initd.org/psycopg/docs/usage.html#server-side-"
+"cursors>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:961
+msgid ""
+"To use server-side (or named) cursors, you must be using "
+":py:class:`PostgresqlExtDatabase`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:963
+msgid ""
+"To execute a query using a server-side cursor, simply wrap your select "
+"query using the :py:func:`ServerSide` helper:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:977
+msgid ""
+"If you would like all ``SELECT`` queries to automatically use a server-"
+"side cursor, you can specify this when creating your "
+":py:class:`PostgresqlExtDatabase`:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:987
+msgid ""
+"Server-side cursors live only as long as the transaction, so for this "
+"reason peewee will not automatically call ``commit()`` after executing a "
+"``SELECT`` query. If you do not ``commit`` after you are done iterating, "
+"you will not release the server-side resources until the connection is "
+"closed (or the transaction is committed later). Furthermore, since peewee"
+" will by default cache rows returned by the cursor, you should always "
+"call ``.iterator()`` when iterating over a large query."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:995
+msgid ""
+"If you are using the :py:func:`ServerSide` helper, the transaction and "
+"call to ``iterator()`` will be handled transparently."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1002
+msgid "Full-text search"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1004
+msgid ""
+"Postgresql provides `sophisticated full-text search "
+"<http://www.postgresql.org/docs/9.3/static/textsearch.html>`_ using "
+"special data-types (``tsvector`` and ``tsquery``). Documents should be "
+"stored or converted to the ``tsvector`` type, and search queries should "
+"be converted to ``tsquery``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1010
+msgid ""
+"For simple cases, you can simply use the :py:func:`Match` function, which"
+" will automatically perform the appropriate conversions, and requires no "
+"schema changes:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1021
+msgid ""
+"The :py:func:`Match` function will automatically convert the left-hand "
+"operand to a ``tsvector``, and the right-hand operand to a ``tsquery``. "
+"For better performance, it is recommended you create a ``GIN`` index on "
+"the column you plan to search:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1030
+msgid ""
+"Alternatively, you can use the :py:class:`TSVectorField` to maintain a "
+"dedicated column for storing ``tsvector`` data:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1040
+msgid ":py:class:`TSVectorField`, will automatically be created with a GIN index."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1042
+msgid ""
+"You will need to explicitly convert the incoming text data to "
+"``tsvector`` when inserting or updating the ``search_content`` field:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1052
+msgid "To perform a full-text search, use :py:meth:`TSVectorField.match`:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1059
+msgid ""
+"For more information, see the `Postgres full-text search docs "
+"<https://www.postgresql.org/docs/current/textsearch.html>`_."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1063
+msgid "postgres_ext API notes"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1067
+msgid ""
+"Identical to :py:class:`PostgresqlDatabase` but required in order to "
+"support:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1069
+msgid "Name of database to connect to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1070
+msgid "Whether ``SELECT`` queries should utilize server-side cursors."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1072
+msgid "Register the HStore extension with the connection."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1074
+msgid ":ref:`server_side_cursors`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1075
+msgid ":py:class:`ArrayField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1076
+msgid ":py:class:`DateTimeTZField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1077
+msgid ":py:class:`JSONField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1078
+msgid ":py:class:`BinaryJSONField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1079
+msgid ":py:class:`HStoreField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1080
+msgid ":py:class:`TSVectorField`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1082
+msgid ""
+"If you wish to use the HStore extension, you must specify "
+"``register_hstore=True``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1084
+msgid ""
+"If using ``server_side_cursors``, also be sure to wrap your queries with "
+":py:func:`ServerSide`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1089
+msgid "a :py:class:`SelectQuery` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst
+msgid "rtype generator"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1092
+msgid ""
+"Wrap the given select query in a transaction, and call it's "
+":py:meth:`~SelectQuery.iterator` method to avoid caching row instances. "
+"In order for the server-side resources to be released, be sure to exhaust"
+" the generator (iterate over all the rows)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1097 ../../peewee/playhouse.rst:3026
+#: ../../peewee/playhouse.rst:3277 ../../peewee/playhouse.rst:3342
+msgid "Usage:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1112
+msgid "a subclass of :py:class:`Field`, e.g. :py:class:`IntegerField`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1113
+msgid "arguments to initialize ``field_class``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1114
+msgid "dimensions of array."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1115
+msgid "apply ``field_class`` value conversion to array data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1117
+msgid "Field capable of storing arrays of the provided `field_class`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1120
+msgid ""
+"By default ArrayField will use a GIN index. To disable this, initialize "
+"the field with ``index=False``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1123
+msgid "You can store and retrieve lists (or lists-of-lists):"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1134
+msgid ""
+"Additionally, you can use the ``__getitem__`` API to query values or "
+"slices in the database:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1148
+msgid "Get a slice of values:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1161
+msgid "One or more items that must be in the given array field."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1170
+msgid "One or more items to search for in the given array field."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1172
+msgid ""
+"Like :py:meth:`~ArrayField.contains`, except will match rows where the "
+"array contains *any* of the given items."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1182
+msgid "A timezone-aware subclass of :py:class:`DateTimeField`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1186
+msgid ""
+"A field for storing and retrieving arbitrary key/value pairs. For details"
+" on usage, see :ref:`hstore`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1190
+msgid ""
+"To use the :py:class:`HStoreField` you will need to be sure the *hstore* "
+"extension is registered with the connection. To accomplish this, "
+"instantiate the :py:class:`PostgresqlExtDatabase` with "
+"``register_hstore=True``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1196
+msgid ""
+"By default ``HStoreField`` will use a *GiST* index. To disable this, "
+"initialize the field with ``index=False``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1201
+msgid "Returns the keys for a given row."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1212
+msgid "Return the values for a given row."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1223
+msgid "Like python's ``dict``, return the keys and values in a list-of-lists:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1234
+msgid "Return a slice of data given a list of keys."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1245
+msgid "Query for whether the given key exists."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1261
+msgid "Query for whether the given key has a value associated with it."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1265
+msgid "Perform an atomic update to the keys/values for a given row or rows."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1276
+msgid "Delete the provided keys for a given row or rows."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1278
+msgid "We will use an ``UPDATE`` query."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1288
+msgid "Either a ``dict``, a ``list`` of keys, or a single key."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1290
+msgid "Query rows for the existence of either:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1292
+msgid "a partial dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1293
+msgid "a list of keys."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1294
+msgid "a single key."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1305
+msgid "One or more keys to search for."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1307
+msgid "Query rows for the existence of *any* key."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1311 ../../peewee/playhouse.rst:1416
+msgid ""
+"The default is to call json.dumps() or the dumps function. You can "
+"override this method to create a customized JSON wrapper."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1314
+msgid ""
+"Field class suitable for storing and querying arbitrary JSON. When using "
+"this on a model, set the field's value to a Python object (either a "
+"``dict`` or a ``list``). When you retrieve your value from the database "
+"it will be returned as a Python data structure."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1319
+msgid "You must be using Postgres 9.2 / psycopg2 2.5 or greater."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1322
+msgid ""
+"If you are using Postgres 9.4, strongly consider using the "
+":py:class:`BinaryJSONField` instead as it offers better performance and "
+"more powerful querying options."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1326
+msgid "Example model declaration:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1339
+msgid "Example of storing JSON data:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1349
+msgid ""
+"To query, use Python's ``[]`` operators to specify nested key or array "
+"lookups:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1356
+msgid ""
+"To illustrate the use of the ``[]`` operators, imagine we have the "
+"following data stored in an ``APIResponse``:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1371
+msgid "Here are the results of a few queries:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1419
+msgid ""
+"Store and query arbitrary JSON documents. Data should be stored using "
+"normal Python ``dict`` and ``list`` objects, and when data is returned "
+"from the database, it will be returned using ``dict`` and ``list`` as "
+"well."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1423
+msgid ""
+"For examples of basic query operations, see the above code samples for "
+":py:class:`JSONField`. The example queries below will use the same "
+"``APIResponse`` model described above."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1428
+msgid ""
+"By default BinaryJSONField will use a GiST index. To disable this, "
+"initialize the field with ``index=False``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1431
+msgid ""
+"You must be using Postgres 9.4 / psycopg2 2.5 or newer. If you are using "
+"Postgres 9.2 or 9.3, you can use the regular :py:class:`JSONField` "
+"instead."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1435
+msgid "Test whether the given JSON data contains the given JSON fragment or key."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1455
+msgid ""
+"We can pass in simple keys as well. To find APIResponses that contain the"
+" key ``foo`` at the top-level:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1461
+msgid "We can also search sub-keys using square-brackets:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1470
+msgid "Search for the presence of one or more of the given items."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1477
+msgid "Like :py:meth:`~BinaryJSONField.contains`, we can also search sub-keys:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1486
+msgid "Search for the presence of all of the given items."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1493
+msgid ""
+"Like :py:meth:`~BinaryJSONField.contains_any`, we can also search sub-"
+"keys:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1502
+msgid ""
+"Test whether the given JSON document is contained by (is a subset of) the"
+" given JSON document. This method is the inverse of "
+":py:meth:`~BinaryJSONField.contains`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1521
+msgid ""
+"Concatentate two field data and the provided data. Note that this "
+"operation does not merge or do a \"deep concat\"."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1526
+msgid "Test whether the key exists at the top-level of the JSON object."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1530
+msgid "Remove one or more keys from the top-level of the JSON object."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1535
+msgid ""
+"Generate a full-text search expression, automatically converting the "
+"left-hand operand to a ``tsvector``, and the right-hand operand to a "
+"``tsquery``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1550
+msgid ""
+"Field type suitable for storing ``tsvector`` data. This field will "
+"automatically be created with a ``GIN`` index for improved search "
+"performance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1555
+msgid ""
+"Data stored in this field will still need to be manually converted to the"
+" ``tsvector`` type."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1559
+msgid ""
+"By default TSVectorField will use a GIN index. To disable this, "
+"initialize the field with ``index=False``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1562 ../../peewee/playhouse.rst:1603
+#: ../../peewee/playhouse.rst:2616
+msgid "Example usage:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1577
+msgid "the full-text search query."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1578
+msgid "language name (optional)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1579
+msgid "parse search query using plain (simple) parser."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1580
+msgid "an expression representing full-text search/match."
+msgstr ""
+
+#: ../../peewee/crdb.rst:4
+msgid "Cockroach Database"
+msgstr ""
+
+#: ../../peewee/crdb.rst:6
+msgid ""
+"`CockroachDB <https://www.cockroachlabs.com>`_ (CRDB) is well supported "
+"by peewee."
+msgstr ""
+
+#: ../../peewee/crdb.rst:15
+msgid ""
+"The ``playhouse.cockroachdb`` extension module provides the following "
+"classes and helpers:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:18
+msgid ""
+":py:class:`CockroachDatabase` - a subclass of "
+":py:class:`PostgresqlDatabase`, designed specifically for working with "
+"CRDB."
+msgstr ""
+
+#: ../../peewee/crdb.rst:20
+msgid ""
+":py:class:`PooledCockroachDatabase` - like the above, but implements "
+"connection-pooling."
+msgstr ""
+
+#: ../../peewee/crdb.rst:22
+msgid ""
+":py:meth:`~CockroachDatabase.run_transaction` - runs a function inside a "
+"transaction and provides automatic client-side retry logic."
+msgstr ""
+
+#: ../../peewee/crdb.rst:25
+msgid "Special field-types that may be useful when using CRDB:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:27
+msgid ""
+":py:class:`UUIDKeyField` - a primary-key field implementation that uses "
+"CRDB's ``UUID`` type with a default randomly-generated UUID."
+msgstr ""
+
+#: ../../peewee/crdb.rst:29
+msgid ""
+":py:class:`RowIDField` - a primary-key field implementation that uses "
+"CRDB's ``INT`` type with a default ``unique_rowid()``."
+msgstr ""
+
+#: ../../peewee/crdb.rst:31
+msgid ""
+":py:class:`JSONField` - same as the Postgres :py:class:`BinaryJSONField`,"
+" as CRDB treats JSON as JSONB."
+msgstr ""
+
+#: ../../peewee/crdb.rst:33
+msgid ""
+":py:class:`ArrayField` - same as the Postgres extension (but does not "
+"support multi-dimensional arrays)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:36
+msgid ""
+"CRDB is compatible with Postgres' wire protocol and exposes a very "
+"similar SQL interface, so it is possible (though **not recommended**) to "
+"use :py:class:`PostgresqlDatabase` with CRDB:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:40
+msgid ""
+"CRDB does not support nested transactions (savepoints), so the "
+":py:meth:`~Database.atomic` method has been implemented to enforce this "
+"when using :py:class:`CockroachDatabase`. For more info :ref:`crdb-"
+"transactions`."
+msgstr ""
+
+#: ../../peewee/crdb.rst:43
+msgid ""
+"CRDB may have subtle differences in field-types, date functions and "
+"introspection from Postgres."
+msgstr ""
+
+#: ../../peewee/crdb.rst:45
+msgid ""
+"CRDB-specific features are exposed by the :py:class:`CockroachDatabase`, "
+"such as specifying a transaction priority or the ``AS OF SYSTEM TIME`` "
+"clause."
+msgstr ""
+
+#: ../../peewee/crdb.rst:52
+msgid "CRDB Transactions"
+msgstr ""
+
+#: ../../peewee/crdb.rst:54
+msgid ""
+"CRDB does not support nested transactions (savepoints), so the "
+":py:meth:`~Database.atomic` method on the :py:class:`CockroachDatabase` "
+"has been modified to raise an exception if an invalid nesting is "
+"encountered. If you would like to be able to nest transactional code, you"
+" can use the :py:meth:`~Database.transaction` method, which will ensure "
+"that the outer-most block will manage the transaction (e.g., exiting a "
+"nested-block will not cause an early commit)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:87
+msgid ""
+"CRDB provides client-side transaction retries, which are available using "
+"a special :py:meth:`~CockroachDatabase.run_transaction` helper. This "
+"helper method accepts a callable, which is responsible for executing any "
+"transactional statements that may need to be retried."
+msgstr ""
+
+#: ../../peewee/crdb.rst:92
+msgid ""
+"Simplest possible example of "
+":py:meth:`~CockroachDatabase.run_transaction`:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:107
+msgid ""
+"The ``cockroachdb.ExceededMaxAttempts`` exception will be raised if the "
+"transaction cannot be committed after the given number of attempts. If "
+"the SQL is mal-formed, violates a constraint, etc., then the function "
+"will raise the exception to the caller."
+msgstr ""
+
+#: ../../peewee/crdb.rst:112
+msgid ""
+"Example of using :py:meth:`~CockroachDatabase.run_transaction` to "
+"implement client-side retries for a transaction that transfers an amount "
+"from one account to another:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:158
+msgid "CRDB APIs"
+msgstr ""
+
+#: ../../peewee/crdb.rst:162
+msgid ""
+"CockroachDB implementation, based on the :py:class:`PostgresqlDatabase` "
+"and using the ``psycopg2`` driver."
+msgstr ""
+
+#: ../../peewee/crdb.rst:165
+msgid ""
+"Additional keyword arguments are passed to the psycopg2 connection "
+"constructor, and may be used to specify the database ``user``, ``port``, "
+"etc."
+msgstr ""
+
+#: ../../peewee/crdb.rst:171
+msgid ""
+"callable that accepts a single ``db`` parameter (which will be the "
+"database instance this method is called from)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:173
+msgid "max number of times to try before giving up."
+msgstr ""
+
+#: ../../peewee/crdb.rst:174
+msgid ""
+"execute the transaction ``AS OF SYSTEM TIME`` with respect to the given "
+"value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:176
+msgid "either \"low\", \"normal\" or \"high\"."
+msgstr ""
+
+#: ../../peewee/crdb.rst:177
+msgid "returns the value returned by the callback."
+msgstr ""
+
+#: ../../peewee/crdb.rst ../../peewee/playhouse.rst
+msgid "raises"
+msgstr ""
+
+#: ../../peewee/crdb.rst:178
+msgid "``ExceededMaxAttempts`` if ``max_attempts`` is exceeded."
+msgstr ""
+
+#: ../../peewee/crdb.rst:180
+msgid "Run SQL in a transaction with automatic client-side retries."
+msgstr ""
+
+#: ../../peewee/crdb.rst:182
+msgid "User-provided ``callback``:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:184
+msgid ""
+"**Must** accept one parameter, the ``db`` instance representing the "
+"connection the transaction is running under."
+msgstr ""
+
+#: ../../peewee/crdb.rst:186
+msgid ""
+"**Must** not attempt to commit, rollback or otherwise manage the "
+"transaction."
+msgstr ""
+
+#: ../../peewee/crdb.rst:188
+msgid "**May** be called more than one time."
+msgstr ""
+
+#: ../../peewee/crdb.rst:189
+msgid "**Should** ideally only contain SQL operations."
+msgstr ""
+
+#: ../../peewee/crdb.rst:191
+msgid ""
+"Additionally, the database must not have any open transactions at the "
+"time this function is called, as CRDB does not support nested "
+"transactions. Attempting to do so will raise a ``NotImplementedError``."
+msgstr ""
+
+#: ../../peewee/crdb.rst:195
+msgid "Simplest possible example:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:209
+msgid ""
+"CockroachDB connection-pooling implementation, based on "
+":py:class:`PooledPostgresqlDatabase`. Implements the same APIs as "
+":py:class:`CockroachDatabase`, but will do client-side connection "
+"pooling."
+msgstr ""
+
+#: ../../peewee/crdb.rst:215
+msgid ""
+"Run SQL in a transaction with automatic client-side retries. See "
+":py:meth:`CockroachDatabase.run_transaction` for details."
+msgstr ""
+
+#: ../../peewee/crdb.rst:218
+msgid "database instance."
+msgstr ""
+
+#: ../../peewee/crdb.rst:219
+msgid ""
+"callable that accepts a single ``db`` parameter (which will be the same "
+"as the value passed above)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:223
+msgid ""
+"This function is equivalent to the identically-named method on the "
+":py:class:`CockroachDatabase` class."
+msgstr ""
+
+#: ../../peewee/crdb.rst:228
+msgid ""
+"UUID primary-key field that uses the CRDB ``gen_random_uuid()`` function "
+"to automatically populate the initial value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:233
+msgid ""
+"Auto-incrementing integer primary-key field that uses the CRDB "
+"``unique_rowid()`` function to automatically populate the initial value."
+msgstr ""
+
+#: ../../peewee/crdb.rst:236
+msgid "See also:"
+msgstr ""
+
+#: ../../peewee/crdb.rst:238
+msgid ""
+":py:class:`BinaryJSONField` from the Postgresql extension (available in "
+"the ``cockroachdb`` extension module, and aliased to ``JSONField``)."
+msgstr ""
+
+#: ../../peewee/crdb.rst:240
+msgid ":py:class:`ArrayField` from the Postgresql extension."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1597
+msgid "MySQL Extensions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1599
+msgid ""
+"Peewee provides an alternate database implementation for using the "
+"`mysql-connector <https://dev.mysql.com/doc/connector-python/en/>`_ "
+"driver. The implementation can be found in ``playhouse.mysql_ext``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1612
+msgid "Additional MySQL-specific helpers:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1616
+msgid ""
+"Extends :py:class:`TextField` and implements transparent JSON encoding "
+"and decoding in Python."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1621
+msgid "a single :py:class:`Field` or a tuple of multiple fields."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1622
+msgid "the full-text search expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1623
+msgid "optional modifiers for the search, e.g. *'in boolean mode'*."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1625
+msgid "Helper class for constructing MySQL full-text search queries of the form:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1634
+msgid "DataSet"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1636
+msgid ""
+"The *dataset* module contains a high-level API for working with databases"
+" modeled after the popular `project of the same name "
+"<https://dataset.readthedocs.io/en/latest/index.html>`_. The aims of the "
+"*dataset* module are to provide:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1640
+msgid ""
+"A simplified API for working with relational data, along the lines of "
+"working with JSON."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1641
+msgid "An easy way to export relational data as JSON or CSV."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1642
+msgid "An easy way to import JSON or CSV data into a relational database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1644
+msgid "A minimal data-loading script might look like this:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1665
+msgid "You can insert, update or delete using the dictionary APIs as well:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1685
+msgid ""
+"You can export or import data using :py:meth:`~DataSet.freeze` and "
+":py:meth:`~DataSet.thaw`:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1699
+msgid "Getting started"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1701
+msgid ""
+":py:class:`DataSet` objects are initialized by passing in a database URL "
+"of the format ``dialect://user:password@host/dbname``. See the "
+":ref:`db_url` section for examples of connecting to various databases."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1711
+msgid "Storing data"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1713
+msgid ""
+"To store data, we must first obtain a reference to a table. If the table "
+"does not exist, it will be created automatically:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1721
+msgid ""
+"We can now :py:meth:`~Table.insert` new rows into the table. If the "
+"columns do not exist, they will be created automatically:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1729
+msgid ""
+"To update existing entries in the table, pass in a dictionary containing "
+"the new values and filter conditions. The list of columns to use as "
+"filters is specified in the *columns* argument. If no filter columns are "
+"specified, then all rows will be updated."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1743
+msgid "Importing data"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1745
+msgid ""
+"To import data from an external source, such as a JSON or CSV file, you "
+"can use the :py:meth:`~Table.thaw` method. By default, new columns will "
+"be created for any attributes encountered. If you wish to only populate "
+"columns that are already defined on a table, you can pass in "
+"``strict=True``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1764
+msgid "Using transactions"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1766
+msgid "DataSet supports nesting transactions using a simple context manager."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1782
+msgid "Inspecting the database"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1784
+msgid ""
+"You can use the :py:meth:`tables` method to list the tables in the "
+"current database:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1792
+msgid "And for a given table, you can print the columns:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1800
+msgid "We can also find out how many rows are in a table:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1808
+msgid "Reading data"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1810
+msgid "To retrieve all rows, you can use the :py:meth:`~Table.all` method:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1821
+msgid ""
+"Specific objects can be retrieved using :py:meth:`~Table.find` and "
+":py:meth:`~Table.find_one`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1833
+msgid "Exporting data"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1835
+msgid ""
+"To export data, use the :py:meth:`~DataSet.freeze` method, passing in the"
+" query you wish to export:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1844
+msgid "API"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1848
+msgid ""
+"A database URL or a :py:class:`Database` instance. For details on using a"
+" URL, see :ref:`db_url` for examples."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1851
+msgid ""
+"The *DataSet* class provides a high-level API for working with relational"
+" databases."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1856
+msgid ""
+"Return a list of tables stored in the database. This list is computed "
+"dynamically each time it is accessed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1861
+msgid ""
+"Provide a :py:class:`Table` reference to the specified table. If the "
+"table does not exist, it will be created."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1866
+msgid "A SQL query."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1867
+msgid "Optional parameters for the query."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1868
+msgid "Whether the query should be committed upon execution."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1869
+msgid "A database cursor."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1871
+msgid "Execute the provided query against the database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1875
+msgid "Create a context manager representing a new transaction (or savepoint)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1879
+msgid ""
+"A :py:class:`SelectQuery`, generated using :py:meth:`~Table.all` or "
+"`~Table.find`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1880 ../../peewee/playhouse.rst:1983
+msgid "Output format. By default, *csv* and *json* are supported."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1881 ../../peewee/playhouse.rst:1984
+msgid "Filename to write output to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1882 ../../peewee/playhouse.rst:1985
+msgid "File-like object to write output to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1883 ../../peewee/playhouse.rst:1986
+msgid "Arbitrary parameters for export-specific functionality."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1887
+msgid "The name of the table to load data into."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1888 ../../peewee/playhouse.rst:1990
+msgid "Input format. By default, *csv* and *json* are supported."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1889 ../../peewee/playhouse.rst:1991
+msgid "Filename to read data from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1890 ../../peewee/playhouse.rst:1992
+msgid "File-like object to read data from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1891 ../../peewee/playhouse.rst:1993
+msgid ""
+"Whether to store values for columns that do not already exist on the "
+"table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1892 ../../peewee/playhouse.rst:1994
+msgid "Arbitrary parameters for import-specific functionality."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1896
+msgid ""
+"Open a connection to the underlying database. If a connection is not "
+"opened explicitly, one will be opened the first time a query is executed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1902
+msgid "Close the connection to the underlying database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst
+msgid "noindex"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1908
+msgid "Provides a high-level API for working with rows in a given table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1912
+msgid "Return a list of columns in the given table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1916
+msgid "A dynamically-created :py:class:`Model` class."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1920
+msgid "Create an index on the given columns:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1929
+msgid ""
+"Insert the given data dictionary into the table, creating new columns as "
+"needed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1934
+msgid ""
+"Update the table using the provided data. If one or more columns are "
+"specified in the *columns* parameter, then those columns' values in the "
+"*data* dictionary will be used to determine which rows to update."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1948
+msgid ""
+"Query the table for rows matching the specified equality conditions. If "
+"no query is specified, then all rows are returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1957
+msgid ""
+"Return a single row matching the specified equality conditions. If no "
+"matching row is found then ``None`` will be returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1966
+msgid "Return all rows in the given table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1970
+msgid ""
+"Delete all rows matching the given equality conditions. If no query is "
+"provided, then all rows will be deleted."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:1999
+msgid "Fields"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2001
+msgid "These fields can be found in the ``playhouse.fields`` module."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2005
+msgid "A value from 0 to 9."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2006
+msgid "Either ``'zlib'`` or ``'bz2'``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2008
+msgid ""
+"Stores compressed data using the specified algorithm. This field extends "
+":py:class:`BlobField`, transparently storing a compressed representation "
+"of the data in the database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2014
+msgid ""
+"Stores arbitrary Python data by transparently pickling and un-pickling "
+"data stored in the field. This field extends :py:class:`BlobField`. If "
+"the ``cPickle`` module is available, it will be used."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2021
+msgid "Hybrid Attributes"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2023
+msgid ""
+"Hybrid attributes encapsulate functionality that operates at both the "
+"Python *and* SQL levels. The idea for hybrid attributes comes from a "
+"feature of the `same name in SQLAlchemy "
+"<http://docs.sqlalchemy.org/en/improve_toc/orm/extensions/hybrid.html>`_."
+" Consider the following example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2042
+msgid ""
+"The *hybrid attribute* gets its name from the fact that the ``length`` "
+"attribute will behave differently depending on whether it is accessed via"
+" the ``Interval`` class or an ``Interval`` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2046
+msgid "If accessed via an instance, then it behaves just as you would expect."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2048
+msgid ""
+"If accessed via the ``Interval.length`` class attribute, however, the "
+"length calculation will be expressed as a SQL expression. For example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2055
+msgid "This query will be equivalent to the following SQL:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2063
+msgid ""
+"The ``playhouse.hybrid`` module also contains a decorator for "
+"implementing hybrid methods which can accept parameters. As with hybrid "
+"properties, when accessed via a model instance, then the function "
+"executes normally as-written. When the hybrid method is called on the "
+"class, however, it will generate a SQL expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2075 ../../peewee/playhouse.rst:2114
+msgid "This query is equivalent to the following SQL:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2083
+msgid ""
+"There is an additional API for situations where the python implementation"
+" differs slightly from the SQL implementation. Let's add a ``radius`` "
+"method to the ``Interval`` model. Because this method calculates an "
+"absolute value, we will use the Python ``abs()`` function for the "
+"instance portion and the ``fn.ABS()`` SQL function for the class portion."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2103
+msgid ""
+"What is neat is that both the ``radius`` implementations refer to the "
+"``length`` hybrid attribute! When accessed via an ``Interval`` instance, "
+"the radius calculation will be executed in Python. When invoked via an "
+"``Interval`` class, we will get the appropriate SQL."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2122
+msgid "Pretty neat, right? Thanks for the cool idea, SQLAlchemy!"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2125
+msgid "Hybrid API"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2129
+msgid ""
+"Method decorator that allows the definition of a Python object method "
+"with both instance-level and class-level behavior."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2144
+msgid ""
+"When called with an ``Interval`` instance, the ``contains`` method will "
+"behave as you would expect. When called as a classmethod, though, a SQL "
+"expression will be generated:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2152 ../../peewee/playhouse.rst:2201
+msgid "Would generate the following SQL:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2162
+msgid "Method decorator for specifying the SQL-expression producing method."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2166
+msgid ""
+"Method decorator that allows the definition of a Python object property "
+"with both instance-level and class-level behavior."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2169 ../../peewee/playhouse.rst:2315
+#: ../../peewee/playhouse.rst:2460 ../../peewee/playhouse.rst:2511
+#: ../../peewee/playhouse.rst:3320
+msgid "Examples:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2189
+msgid ""
+"When accessed on an ``Interval`` instance, the ``length`` and ``radius`` "
+"properties will behave as you would expect. When accessed as class "
+"attributes, though, a SQL expression will be generated instead:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2215
+msgid "Key/Value Store"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2217
+msgid ""
+"The ``playhouse.kv`` module contains the implementation of a persistent "
+"dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2222
+msgid ""
+"field to use for key. Defaults to :py:class:`CharField`. **Must have** "
+"``primary_key=True``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2224
+msgid "field to use for value. Defaults to :py:class:`PickleField`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2226
+msgid "data should be returned in key-sorted order."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2227
+msgid ""
+"database where key/value data is stored. If not specified, an in-memory "
+"SQLite database will be used."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2229
+msgid "table name for data storage."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2231
+msgid ""
+"Dictionary-like API for storing key/value data. Like dictionaries, "
+"supports the expected APIs, but also has the added capability of "
+"accepting expressions for getting, setting and deleting items."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2235
+msgid ""
+"Table is created automatically (if it doesn't exist) when the "
+"``KeyValue`` is instantiated."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2238
+msgid ""
+"Uses efficient upsert implementation for setting and updating/overwriting"
+" key/value pairs."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2241
+msgid "Basic examples:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2285
+msgid "a single key or an expression"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2286
+msgid "Boolean whether key/expression exists."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2307
+msgid "Count of items stored."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2311 ../../peewee/playhouse.rst:2334
+#: ../../peewee/playhouse.rst:2357 ../../peewee/playhouse.rst:2414
+#: ../../peewee/playhouse.rst:2424
+msgid "a single key or an expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2312
+msgid "value(s) corresponding to key/expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2313
+msgid "``KeyError`` if single key given and not found."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2335
+msgid "value to set for key(s)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2337
+msgid ""
+"Set value for the given key. If ``expr`` is an expression, then any keys "
+"matching the expression will have their value updated."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2359
+msgid ""
+"Delete the given key. If an expression is given, delete all keys that "
+"match the expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2378
+msgid "an iterable of all keys in the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2382
+msgid "an iterable of all values in the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2386
+msgid "an iterable of all key/value pairs in the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2390
+msgid "Efficiently bulk-insert or replace the given key/value pairs."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2415
+msgid "default value if key not found."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2416 ../../peewee/playhouse.rst:2426
+msgid "value of given key/expr or default if single key not found."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2418
+msgid ""
+"Get the value at the given key. If the key does not exist, the default "
+"value is returned, unless the key is an expression in which case an empty"
+" list will be returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2425
+msgid "default value if key does not exist."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2428
+msgid ""
+"Get value and delete the given key. If the key does not exist, the "
+"default value is returned, unless the key is an expression in which case "
+"an empty list is returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2434
+msgid "Remove all items from the key-value table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2440
+msgid "Shortcuts"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2442
+msgid ""
+"This module contains helper functions for expressing things that would "
+"otherwise be somewhat verbose or cumbersome using peewee's APIs. There "
+"are also helpers for serializing models to dictionaries and vice-versa."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2448
+msgid "Whether foreign-keys should be recursed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2449
+msgid "Whether lists of related objects should be recursed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2450
+msgid ""
+"A list (or set) of field instances which should be included in the result"
+" dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2451
+msgid ""
+"A list (or set) of field instances which should be excluded from the "
+"result dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2452
+msgid ""
+"A list of attribute or method names on the instance which should be "
+"included in the dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2453
+msgid ""
+"The :py:class:`SelectQuery` that created this model instance. Only the "
+"fields and values explicitly selected by the query will be serialized."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2454
+msgid "Maximum depth when recursing."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2455
+msgid "Process many-to-many fields."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2457
+msgid ""
+"Convert a model instance (and optionally any related instances) to a "
+"dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2496
+msgid ""
+"The implementation of ``model_to_dict`` is fairly complex, owing to the "
+"various usages it attempts to support. If you have a special usage, I "
+"strongly advise that you do **not** attempt to shoe-horn some crazy "
+"combination of parameters into this function. Just write a simple "
+"function that accomplishes exactly what you're attempting to do."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2504
+msgid "The model class to construct."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2505 ../../peewee/playhouse.rst:2544
+msgid ""
+"A dictionary of data. Foreign keys can be included as nested "
+"dictionaries, and back-references as lists of dictionaries."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2506 ../../peewee/playhouse.rst:2545
+msgid "Whether to allow unrecognized (non-field) attributes."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2508
+msgid ""
+"Convert a dictionary of data to a model instance, creating related "
+"instances where appropriate."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2543
+msgid "The model instance to update."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2547
+msgid "Update a model instance with the given data dictionary."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2552
+msgid "Signal support"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2554
+msgid ""
+"Models with hooks for signals (a-la django) are provided in "
+"``playhouse.signals``. To use the signals, you will need all of your "
+"project's models to be a subclass of ``playhouse.signals.Model``, which "
+"overrides the necessary methods to provide support for the various "
+"signals."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2572
+msgid ""
+"For what I hope are obvious reasons, Peewee signals do not work when you "
+"use the :py:meth:`Model.insert`, :py:meth:`Model.update`, or "
+":py:meth:`Model.delete` methods. These methods generate queries that "
+"execute beyond the scope of the ORM, and the ORM does not know about "
+"which model instances might or might not be affected when the query "
+"executes."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2578
+msgid ""
+"Signals work by hooking into the higher-level peewee APIs like "
+":py:meth:`Model.save` and :py:meth:`Model.delete_instance`, where the "
+"affected model instance is known ahead of time."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2582
+msgid "The following signals are provided:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2586
+msgid "``pre_save``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2585
+msgid ""
+"Called immediately before an object is saved to the database. Provides an"
+" additional keyword argument ``created``, indicating whether the model is"
+" being saved for the first time or updated."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2590
+msgid "``post_save``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2589
+msgid ""
+"Called immediately after an object is saved to the database. Provides an "
+"additional keyword argument ``created``, indicating whether the model is "
+"being saved for the first time or updated."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2593
+msgid "``pre_delete``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2593
+msgid ""
+"Called immediately before an object is deleted from the database when "
+":py:meth:`Model.delete_instance` is used."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2596
+msgid "``post_delete``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2596
+msgid ""
+"Called immediately after an object is deleted from the database when "
+":py:meth:`Model.delete_instance` is used."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2600
+msgid "``pre_init``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2599
+msgid "Called when a model class is first instantiated"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2603
+msgid "Connecting handlers"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2605
+msgid ""
+"Whenever a signal is dispatched, it will call any handlers that have been"
+" registered. This allows totally separate code to respond to events like "
+"model save and delete."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2609
+msgid ""
+"The :py:class:`Signal` class provides a :py:meth:`~Signal.connect` "
+"method, which takes a callback function and two optional parameters for "
+"\"sender\" and \"name\". If specified, the \"sender\" parameter should be"
+" a single model class and allows your callback to only receive signals "
+"from that one model class. The \"name\" parameter is used as a convenient"
+" alias in the event you wish to unregister your signal handler."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2628
+msgid ""
+"All signal handlers accept as their first two arguments ``sender`` and "
+"``instance``, where ``sender`` is the model class and ``instance`` is the"
+" actual model being acted upon."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2632
+msgid ""
+"If you'd like, you can also use a decorator to connect signal handlers. "
+"This is functionally equivalent to the above example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2643
+msgid "Signal API"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2647
+msgid ""
+"Stores a list of receivers (callbacks) and calls them when the \"send\" "
+"method is invoked."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2652
+msgid ""
+"a callable that takes at least two parameters, a \"sender\", which is the"
+" Model subclass that triggered the signal, and an \"instance\", which is "
+"the actual model instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2655
+msgid ""
+"if specified, only instances of this model class will trigger the "
+"receiver callback."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2657 ../../peewee/playhouse.rst:2672
+msgid "a short alias"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2659
+msgid ""
+"Add the receiver to the internal list of receivers, which will be called "
+"whenever the signal is sent."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2671
+msgid "the callback to disconnect"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2674
+msgid ""
+"Disconnect the given receiver (or the receiver with the given name alias)"
+" so that it no longer is called. Either the receiver or the name must be "
+"provided."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2684
+msgid "a model instance"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2686
+msgid ""
+"Iterates over the receivers and will call them in the order in which they"
+" were connected. If the receiver specified a sender, it will only be "
+"called if the instance is an instance of the sender."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2707
+msgid "pwiz, a model generator"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2709
+msgid ""
+"``pwiz`` is a little script that ships with peewee and is capable of "
+"introspecting an existing database and generating model code suitable for"
+" interacting with the underlying data. If you have a database already, "
+"pwiz can give you a nice boost by generating skeleton code with correct "
+"column affinities and foreign keys."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2715
+msgid ""
+"If you install peewee using ``setup.py install``, pwiz will be installed "
+"as a \"script\" and you can just run:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2722
+msgid "This will print a bunch of models to standard output. So you can do this:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2735
+msgid "Command-line options"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2737
+msgid "pwiz accepts the following command-line options:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2740
+msgid "Option"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2740
+msgid "Meaning"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2740
+msgid "Example"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2742
+msgid "-h"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2742
+msgid "show help"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2743
+msgid "-e"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2743
+msgid "database backend"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2743
+msgid "-e mysql"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2744
+msgid "-H"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2744
+msgid "host to connect to"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2744
+msgid "-H remote.db.server"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2745
+msgid "-p"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2745
+msgid "port to connect on"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2745
+msgid "-p 9001"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2746
+msgid "-u"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2746
+msgid "database user"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2746
+msgid "-u postgres"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2747
+msgid "-P"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2747
+msgid "database password"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2747
+msgid "-P (will be prompted for password)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2748
+msgid "-s"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2748
+msgid "schema"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2748
+msgid "-s public"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2749
+msgid "-t"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2749
+msgid "tables to generate"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2749
+msgid "-t tweet,users,relationships"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2750
+msgid "-v"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2750
+msgid "generate models for VIEWs"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2750 ../../peewee/playhouse.rst:2751
+#: ../../peewee/playhouse.rst:2752
+msgid "(no argument)"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2751
+msgid "-i"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2751
+msgid "add info metadata to generated file"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2752
+msgid "-o"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2752
+msgid "table column order is preserved"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2755
+msgid "The following are valid parameters for the ``engine`` (``-e``):"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2757
+msgid "sqlite"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2758
+msgid "mysql"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2759
+msgid "postgresql"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2762
+msgid ""
+"If a password is required to access your database, you will be prompted "
+"to enter it using a secure prompt."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2765
+msgid ""
+"**The password will be included in the output**. Specifically, at the top"
+" of the file a :py:class:`Database` will be defined along with any "
+"required parameters -- including the password."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2770
+msgid "pwiz examples"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2772
+msgid "Examples of introspecting various databases:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2786
+msgid "Full example:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2803
+msgid "Produces the following output:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2832
+msgid "Observations:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2834
+msgid "The foreign-key ``Tweet.user_id`` is detected and mapped correctly."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2835
+msgid "The ``User.username`` UNIQUE constraint is detected."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2836
+msgid ""
+"Each model explicitly declares its table name, even in cases where it is "
+"not necessary (as Peewee would automatically translate the class name "
+"into the appropriate table name)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2839
+msgid ""
+"All the parameters of the :py:class:`ForeignKeyField` are explicitly "
+"declared, even though they follow the conventions Peewee uses by default."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2843
+msgid ""
+"The ``UnknownField`` is a placeholder that is used in the event your "
+"schema contains a column declaration that Peewee doesn't know how to map "
+"to a field class."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2850
+msgid "Schema Migrations"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2852
+msgid ""
+"Peewee now supports schema migrations, with well-tested support for "
+"Postgresql, SQLite and MySQL. Unlike other schema migration tools, "
+"peewee's migrations do not handle introspection and database "
+"\"versioning\". Rather, peewee provides a number of helper functions for "
+"generating and running schema-altering statements. This engine provides "
+"the basis on which a more sophisticated tool could some day be built."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2859
+msgid ""
+"Migrations can be written as simple python scripts and executed from the "
+"command-line. Since the migrations only depend on your applications "
+":py:class:`Database` object, it should be easy to manage changing your "
+"model definitions and maintaining a set of migration scripts without "
+"introducing dependencies."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2866
+msgid "Example usage"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2868
+msgid "Begin by importing the helpers from the `migrate` module:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2874
+msgid ""
+"Instantiate a ``migrator``. The :py:class:`SchemaMigrator` class is "
+"responsible for generating schema altering operations, which can then be "
+"run sequentially by the :py:func:`migrate` helper."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2888
+msgid "Use :py:func:`migrate` to execute one or more operations:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2902
+msgid ""
+"Migrations are not run inside a transaction. If you wish the migration to"
+" run in a transaction you will need to wrap the call to `migrate` in a "
+":py:meth:`~Database.atomic` context-manager, e.g."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2912
+msgid "Supported Operations"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2914
+msgid "Add new field(s) to an existing model:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2929
+msgid "Renaming a field:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2939
+msgid "Dropping a field:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2947
+msgid "Making a field nullable or not nullable:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2961
+msgid "Altering a field's data-type:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2970
+msgid "Renaming a table:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2978
+msgid "Adding an index:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:2995
+msgid "Dropping an index:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3002
+msgid "Adding or dropping table constraints:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3020
+msgid "Migrations API"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3024
+msgid "Execute one or more schema altering operations."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3037 ../../peewee/playhouse.rst:3271
+msgid "a :py:class:`Database` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3039
+msgid ""
+"The :py:class:`SchemaMigrator` is responsible for generating schema-"
+"altering statements."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3044
+msgid "Name of the table to add column to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3045
+msgid "Name of the new column."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3046
+msgid "A :py:class:`Field` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3048
+msgid ""
+"Add a new column to the provided table. The ``field`` provided will be "
+"used to generate the appropriate column definition."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3051
+msgid "If the field is not nullable it must specify a default value."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3054
+msgid ""
+"For non-null fields, the field will initially be added as a null field, "
+"then an ``UPDATE`` statement will be executed to populate the column with"
+" the default value. Finally, the column will be marked as not null."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3060
+msgid "Name of the table to drop column from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3061
+msgid "Name of the column to drop."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3062
+msgid "Whether the column should be dropped with `CASCADE`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3066
+msgid "Name of the table containing column to rename."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3067
+msgid "Current name of the column."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3068
+msgid "New name for the column."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3072 ../../peewee/playhouse.rst:3077
+msgid "Name of table containing column."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3073
+msgid "Name of the column to make not nullable."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3078
+msgid "Name of the column to make nullable."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3082
+msgid "Name of the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3083
+msgid "Name of the column to modify."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3084
+msgid ":py:class:`Field` instance representing new data type."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3086
+msgid ""
+"(postgres-only) specify a cast expression if the data-types are "
+"incompatible, e.g. ``column_name::int``. Can be provided as either a "
+"string or a :py:class:`Cast` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3090
+msgid ""
+"Alter the data-type of a column. This method should be used with care, as"
+" using incompatible types may not be well-supported by your database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3095
+msgid "Current name of the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3096
+msgid "New name for the table."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3100
+msgid "Name of table on which to create the index."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3101
+msgid "List of columns which should be indexed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3102
+msgid "Whether the new index should specify a unique constraint."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3103
+msgid "Index type (where supported), e.g. GiST or GIN."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3107
+msgid "Name of the table containing the index to be dropped."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3108
+msgid "Name of the index to be dropped."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3112 ../../peewee/playhouse.rst:3124
+msgid "Table to add constraint to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3113
+msgid "Name used to identify the constraint."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3114
+msgid ""
+"either a :py:func:`Check` constraint or for adding an arbitrary "
+"constraint use :py:class:`SQL`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3119
+msgid "Table to drop constraint from."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3120
+msgid "Name of constraint to drop."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3125
+msgid "One or more columns for UNIQUE constraint."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3129
+msgid "Generate migrations for Postgresql databases."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3133
+msgid "Schema to use."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3135
+msgid "Set the search path (schema) for the subsequent operations."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3139
+msgid "Generate migrations for SQLite databases."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3141
+msgid ""
+"SQLite has limited support for ``ALTER TABLE`` queries, so the following "
+"operations are currently not supported for SQLite:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3144
+msgid "``add_constraint``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3145
+msgid "``drop_constraint``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3146
+msgid "``add_unique``"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3150
+msgid "Generate migrations for MySQL databases."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3156
+msgid "Reflection"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3158
+msgid ""
+"The reflection module contains helpers for introspecting existing "
+"databases. This module is used internally by several other modules in the"
+" playhouse, including :ref:`dataset` and :ref:`pwiz`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3164
+msgid "database instance to introspect."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3165
+msgid "optional schema to introspect."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3166
+msgid ""
+"arbitrary options, see :py:meth:`Introspector.generate_models` for "
+"details."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3167
+msgid "a ``dict`` mapping table names to model classes."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3169
+msgid ""
+"Generate models for the tables in the given database. For an example of "
+"how to use this function, see the section :ref:`interactive`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3193
+msgid "model class to print"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3194 ../../peewee/playhouse.rst:3231
+msgid "no return value"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3196
+msgid ""
+"Print a user-friendly description of a model class, useful for debugging "
+"or interactive use. Currently this prints the table name, and all fields "
+"along with their data-types. The :ref:`interactive` section contains an "
+"example."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3200 ../../peewee/playhouse.rst:3238
+msgid "Example output:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3230
+msgid "model to print"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3233
+msgid ""
+"Prints the SQL ``CREATE TABLE`` for the given model class, which may be "
+"useful for debugging or interactive use. See the :ref:`interactive` "
+"section for example usage. Note that indexes and constraints are not "
+"included in the output of this function."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3264
+msgid ""
+"Metadata can be extracted from a database by instantiating an "
+":py:class:`Introspector`. Rather than instantiating this class directly, "
+"it is recommended to use the factory method "
+":py:meth:`~Introspector.from_database`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3272
+msgid "an optional schema (supported by some databases)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3274
+msgid ""
+"Creates an :py:class:`Introspector` instance suitable for use with the "
+"given database."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3292
+msgid "Skip tables whose names are invalid python identifiers."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3294
+msgid ""
+"List of table names to generate. If unspecified, models are generated for"
+" all tables."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3296
+msgid ""
+"Use column-names as-is. By default, column names are \"python-ized\", "
+"i.e. mixed-case becomes lower-case."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3298
+msgid "**SQLite-only**. Do not specify data-types for introspected columns."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3300
+msgid "generate models for VIEWs as well."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3301
+msgid "A dictionary mapping table-names to model classes."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3303
+msgid ""
+"Introspect the database, reading in the tables, columns, and foreign key "
+"constraints, then generate a dictionary mapping each database table to a "
+"dynamically-generated :py:class:`Model` class."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3311
+msgid "Database URL"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3313
+msgid ""
+"This module contains a helper function to generate a database connection "
+"from a URL connection string."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3318
+msgid "Create a :py:class:`Database` instance from the given connection URL."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3322
+msgid ""
+"*sqlite:///my_database.db* will create a :py:class:`SqliteDatabase` "
+"instance for the file ``my_database.db`` in the current directory."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3323
+msgid ""
+"*sqlite:///:memory:* will create an in-memory :py:class:`SqliteDatabase` "
+"instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3324
+msgid ""
+"*postgresql://postgres:my_password@localhost:5432/my_database* will "
+"create a :py:class:`PostgresqlDatabase` instance. A username and password"
+" are provided, as well as the host and port to connect to."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3325
+msgid ""
+"*mysql://user:passwd@ip:port/my_db* will create a "
+":py:class:`MySQLDatabase` instance for the local MySQL database *my_db*."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3326
+msgid ""
+"*mysql+pool://user:passwd@ip:port/my_db?max_connections=20&stale_timeout=300*"
+" will create a :py:class:`PooledMySQLDatabase` instance for the local "
+"MySQL database *my_db* with max_connections set to 20 and a stale_timeout"
+" setting of 300 seconds."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3328
+msgid "Supported schemes:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3330
+msgid "``apsw``: :py:class:`APSWDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3331
+msgid "``mysql``: :py:class:`MySQLDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3332
+msgid "``mysql+pool``: :py:class:`PooledMySQLDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3333
+msgid "``postgres``: :py:class:`PostgresqlDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3334
+msgid "``postgres+pool``: :py:class:`PooledPostgresqlDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3335
+msgid "``postgresext``: :py:class:`PostgresqlExtDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3336
+msgid "``postgresext+pool``: :py:class:`PooledPostgresqlExtDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3337
+msgid "``sqlite``: :py:class:`SqliteDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3338
+msgid "``sqliteext``: :py:class:`SqliteExtDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3339
+msgid "``sqlite+pool``: :py:class:`PooledSqliteDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3340
+msgid "``sqliteext+pool``: :py:class:`PooledSqliteExtDatabase`"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3355
+msgid ""
+"Parse the information in the given URL into a dictionary containing "
+"``database``, ``host``, ``port``, ``user`` and/or ``password``. "
+"Additional connection arguments can be passed in the URL query string."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3359
+msgid ""
+"If you are using a custom database class, you can use the ``parse()`` "
+"function to extract information from a URL which can then be passed in to"
+" your database object."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3365
+msgid "A subclass of :py:class:`Database`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3366
+msgid ""
+"A list of names to use as the scheme in the URL, e.g. 'sqlite' or "
+"'firebird'"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3368
+msgid ""
+"Register additional database class under the specified names. This "
+"function can be used to extend the ``connect()`` function to support "
+"additional schemes. Suppose you have a custom database class for "
+"``Firebird`` named ``FirebirdDatabase``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3383
+msgid "Connection pool"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3385
+msgid ""
+"The ``pool`` module contains a number of :py:class:`Database` classes "
+"that provide connection pooling for PostgreSQL, MySQL and SQLite "
+"databases. The pool works by overriding the methods on the "
+":py:class:`Database` class that open and close connections to the "
+"backend. The pool can specify a timeout after which connections are "
+"recycled, as well as an upper bound on the number of open connections."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3392
+msgid ""
+"In a multi-threaded application, up to `max_connections` will be opened. "
+"Each thread (or, if using gevent, greenlet) will have it's own "
+"connection."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3395
+msgid ""
+"In a single-threaded application, only one connection will be created. It"
+" will be continually recycled until either it exceeds the stale timeout "
+"or is closed explicitly (using `.manual_close()`)."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3399
+msgid ""
+"**By default, all your application needs to do is ensure that connections"
+" are closed when you are finished with them, and they will be returned to"
+" the pool**. For web applications, this typically means that at the "
+"beginning of a request, you will open a connection, and when you return a"
+" response, you will close the connection."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3405
+msgid "Simple Postgres pool example code:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3422
+msgid ""
+"That's it! If you would like finer-grained control over the pool of "
+"connections, check out the :ref:`advanced_connection_management` section."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3426
+msgid "Pool APIs"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3430
+msgid "The name of the database or database file."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3431
+msgid "Maximum number of connections. Provide ``None`` for unlimited."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3432
+msgid "Number of seconds to allow connections to be used."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3433
+msgid ""
+"Number of seconds to block when pool is full. By default peewee does not "
+"block when the pool is full but simply throws an exception. To block "
+"indefinitely set this value to ``0``."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3434
+msgid "Arbitrary keyword arguments passed to database class."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3436
+msgid "Mixin class intended to be used with a subclass of :py:class:`Database`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3438
+msgid ""
+"Connections will not be closed exactly when they exceed their "
+"`stale_timeout`. Instead, stale connections are only closed when a new "
+"connection is requested."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3440
+msgid ""
+"If the number of open connections exceeds `max_connections`, a "
+"`ValueError` will be raised."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3444
+msgid "Close the currently-open connection without returning it to the pool."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3448
+msgid ""
+"Close all idle connections. This does not include any connections that "
+"are currently in-use -- only those that were previously created but have "
+"since been returned back to the pool."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3454
+msgid "Age at which a connection should be considered stale."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3455
+msgid "Number of connections closed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3457
+msgid ""
+"Close connections which are in-use but exceed the given age. **Use "
+"caution when calling this method!**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3462
+msgid ""
+"Close all connections. This includes any connections that may be in use "
+"at the time. **Use caution when calling this method!**"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3467
+msgid ""
+"Subclass of :py:class:`PostgresqlDatabase` that mixes in the "
+":py:class:`PooledDatabase` helper."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3471
+msgid ""
+"Subclass of :py:class:`PostgresqlExtDatabase` that mixes in the "
+":py:class:`PooledDatabase` helper. The :py:class:`PostgresqlExtDatabase` "
+"is a part of the :ref:`postgres_ext` module and provides support for many"
+" Postgres-specific features."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3477
+msgid ""
+"Subclass of :py:class:`MySQLDatabase` that mixes in the "
+":py:class:`PooledDatabase` helper."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3481
+msgid "Persistent connections for SQLite apps."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3485
+msgid ""
+"Persistent connections for SQLite apps, using the :ref:`sqlite_ext` "
+"advanced database driver :py:class:`SqliteExtDatabase`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3490
+msgid "Test Utils"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3492
+msgid "Contains utilities helpful when testing peewee projects."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3496
+msgid ""
+"Context manager that will count the number of queries executed within the"
+" context."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3499
+msgid "Only count *SELECT* queries."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3511
+msgid "The number of queries executed."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3515
+msgid ""
+"Return a list of 2-tuples consisting of the SQL query and a list of "
+"parameters."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3521
+msgid ""
+"Function or method decorator that will raise an ``AssertionError`` if the"
+" number of queries executed in the decorated function does not equal the "
+"expected number."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3535
+msgid "This function can also be used as a context manager:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3548
+msgid "Flask Utils"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3550
+msgid ""
+"The ``playhouse.flask_utils`` module contains several helpers for "
+"integrating peewee with the `Flask <http://flask.pocoo.org/>`_ web "
+"framework."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3554
+msgid "Database Wrapper"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3556
+msgid ""
+"The :py:class:`FlaskDB` class is a wrapper for configuring and "
+"referencing a Peewee database from within a Flask application. Don't let "
+"it's name fool you: it is **not the same thing as a peewee database**. "
+"``FlaskDB`` is designed to remove the following boilerplate from your "
+"flask app:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3561
+msgid "Dynamically create a Peewee database instance based on app config data."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3562
+msgid "Create a base class from which all your application's models will descend."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3563
+msgid ""
+"Register hooks at the start and end of a request to handle opening and "
+"closing a database connection."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3566
+msgid "Basic usage:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3590
+msgid ""
+"The above code example will create and instantiate a peewee "
+":py:class:`PostgresqlDatabase` specified by the given database URL. "
+"Request hooks will be configured to establish a connection when a request"
+" is received, and automatically close the connection when the response is"
+" sent. Lastly, the :py:class:`FlaskDB` class exposes a "
+":py:attr:`FlaskDB.Model` property which can be used as a base for your "
+"application's models."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3597
+msgid ""
+"Here is how you can access the wrapped Peewee database instance that is "
+"configured for you by the ``FlaskDB`` wrapper:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3612
+msgid ""
+"The actual peewee database can be accessed using the ``FlaskDB.database``"
+" attribute."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3614
+msgid "Here is another way to configure a Peewee database using ``FlaskDB``:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3621
+msgid ""
+"While the above examples show using a database URL, for more advanced "
+"usages you can specify a dictionary of configuration options, or simply "
+"pass in a peewee :py:class:`Database` instance:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3641
+msgid "Using a peewee :py:class:`Database` object:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3651
+msgid "Database with Application Factory"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3653
+msgid ""
+"If you prefer to use the `application factory pattern "
+"<http://flask.pocoo.org/docs/0.10/patterns/appfactories/>`_, the "
+":py:class:`FlaskDB` class implements an ``init_app()`` method."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3656
+msgid "Using as a factory:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3675
+msgid "Query utilities"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3677
+msgid ""
+"The ``flask_utils`` module provides several helpers for managing queries "
+"in your web app. Some common patterns include:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3681
+msgid ""
+"Either a :py:class:`Model` class or a pre-filtered "
+":py:class:`SelectQuery`."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3682
+msgid "An arbitrarily complex peewee expression."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3684
+msgid ""
+"Retrieve the object matching the given query, or return a 404 not found "
+"response. A common use-case might be a detail page for a weblog. You want"
+" to either retrieve the post matching the given URL, or return a 404."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3700
+msgid "The name of the template to render."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3701
+msgid "A :py:class:`SelectQuery` instance to paginate."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3702
+msgid "The context variable name to use for the paginated object list."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3703 ../../peewee/playhouse.rst:3743
+msgid "Number of objects per-page."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3704 ../../peewee/playhouse.rst:3744
+msgid "The name of the ``GET`` argument which contains the page."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3705 ../../peewee/playhouse.rst:3745
+msgid ""
+"Whether to check that the given page is a valid page. If ``check_bounds``"
+" is ``True`` and an invalid page is specified, then a 404 will be "
+"returned."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3706
+msgid "Arbitrary key/value pairs to pass into the template context."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3708
+msgid ""
+"Retrieve a paginated list of objects specified by the given query. The "
+"paginated object list will be dropped into the context using the given "
+"``context_variable``, as well as metadata about the current page and "
+"total number of pages, and finally any arbitrary context data passed as "
+"keyword-arguments."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3714
+msgid ""
+"The page is specified using the ``page`` ``GET`` argument, e.g. ``/my-"
+"object-list/?page=3`` would return the third page of objects."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3734
+msgid "The template will have the following context:"
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3736
+msgid "``post_list``, which contains a list of up to 10 posts."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3737
+msgid ""
+"``page``, which contains the current page based on the value of the "
+"``page`` ``GET`` parameter."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3738
+msgid "``pagination``, a :py:class:`PaginatedQuery` instance."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3742
+msgid ""
+"Either a :py:class:`Model` or a :py:class:`SelectQuery` instance "
+"containing the collection of records you wish to paginate."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3747
+msgid "Helper class to perform pagination based on ``GET`` arguments."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3751
+msgid ""
+"Return the currently selected page, as indicated by the value of the "
+"``page_var`` ``GET`` parameter. If no page is explicitly selected, then "
+"this method will return 1, indicating the first page."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3757
+msgid "Return the total number of possible pages."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3761
+msgid ""
+"Using the value of :py:meth:`~PaginatedQuery.get_page`, return the page "
+"of objects requested by the user. The return value is a "
+":py:class:`SelectQuery` with the appropriate ``LIMIT`` and ``OFFSET`` "
+"clauses."
+msgstr ""
+
+#: ../../peewee/playhouse.rst:3766
+msgid ""
+"If ``check_bounds`` was set to ``True`` and the requested page contains "
+"no objects, then a 404 will be raised."
+msgstr ""
+

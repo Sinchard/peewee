@@ -1,0 +1,1688 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/sqlite_ext.rst:4
+msgid "SQLite Extensions"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:6
+msgid ""
+"The default :py:class:`SqliteDatabase` already includes many SQLite-"
+"specific features:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:9
+msgid ":ref:`General notes on using SQLite <using_sqlite>`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:10
+msgid ":ref:`Configuring SQLite using PRAGMA statements <sqlite-pragma>`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:11
+msgid ""
+":ref:`User-defined functions, aggregate and collations <sqlite-user-"
+"functions>`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:12
+msgid ":ref:`Locking modes for transactions <sqlite-locking>`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:14
+msgid ""
+"The ``playhouse.sqlite_ext`` includes even more SQLite features, "
+"including:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:16
+msgid ":ref:`Full-text search <sqlite-fts>`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:17
+msgid ":ref:`JSON extension integration <sqlite-json1>`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:18
+msgid ":ref:`Closure table extension support <sqlite-closure-table>`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:19
+msgid ":ref:`LSM1 extension support <sqlite-lsm1>`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:20
+msgid ":ref:`User-defined table functions <sqlite-vtfunc>`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:21
+msgid ""
+"Support for online backups using backup API: "
+":py:meth:`~CSqliteExtDatabase.backup_to_file`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:22
+msgid ":ref:`BLOB API support, for efficient binary data storage <sqlite-blob>`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:23
+msgid ":ref:`Additional helpers <sqlite-extras>`, including bloom filter, more."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:26
+msgid "Getting started"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:28
+msgid ""
+"To get started with the features described in this document, you will "
+"want to use the :py:class:`SqliteExtDatabase` class from the "
+"``playhouse.sqlite_ext`` module. Furthermore, some features require the "
+"``playhouse._sqlite_ext`` C extension -- these features will be noted in "
+"the documentation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:33
+msgid "Instantiating a :py:class:`SqliteExtDatabase`:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:45
+msgid "APIs"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:49 ../../peewee/sqlite_ext.rst:65
+msgid ""
+"A list of 2-tuples containing pragma key and value to set every time a "
+"connection is opened."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:51 ../../peewee/sqlite_ext.rst:67
+msgid "Set the busy-timeout on the SQLite driver (in seconds)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:52 ../../peewee/sqlite_ext.rst:68
+msgid ""
+"Declare that C extension speedups must/must-not be used. If set to "
+"``True`` and the extension module is not available, will raise an "
+":py:class:`ImproperlyConfigured` exception."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:55 ../../peewee/sqlite_ext.rst:71
+msgid "Make search result ranking functions available."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:56 ../../peewee/sqlite_ext.rst:72
+msgid "Make hashing functions available (md5, sha1, etc)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:57 ../../peewee/sqlite_ext.rst:73
+msgid "Make the REGEXP function available."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:58 ../../peewee/sqlite_ext.rst:74
+msgid "Make the :ref:`bloom filter <sqlite-extras>` available."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:60
+msgid ""
+"Extends :py:class:`SqliteDatabase` and inherits methods for declaring "
+"user-defined functions, pragmas, etc."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:75
+msgid "Use a smarter busy-handler implementation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:77
+msgid ""
+"Extends :py:class:`SqliteExtDatabase` and requires that the "
+"``playhouse._sqlite_ext`` extension module be available."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:82
+msgid ""
+"Register a callback to be executed whenever a transaction is committed on"
+" the current connection. The callback accepts no parameters and the "
+"return value is ignored."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:86
+msgid ""
+"However, if the callback raises a :py:class:`ValueError`, the transaction"
+" will be aborted and rolled-back."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:89 ../../peewee/sqlite_ext.rst:105
+#: ../../peewee/sqlite_ext.rst:126 ../../peewee/sqlite_ext.rst:147
+#: ../../peewee/sqlite_ext.rst:173 ../../peewee/sqlite_ext.rst:197
+#: ../../peewee/sqlite_ext.rst:219 ../../peewee/sqlite_ext.rst:247
+#: ../../peewee/sqlite_ext.rst:461 ../../peewee/sqlite_ext.rst:656
+#: ../../peewee/sqlite_ext.rst:965 ../../peewee/sqlite_ext.rst:1381
+#: ../../peewee/sqlite_ext.rst:1489
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:101
+msgid ""
+"Register a callback to be executed whenever a transaction is rolled back "
+"on the current connection. The callback accepts no parameters and the "
+"return value is ignored."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:115
+msgid ""
+"Register a callback to be executed whenever the database is written to "
+"(via an *UPDATE*, *INSERT* or *DELETE* query). The callback should accept"
+" the following parameters:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:119
+msgid "``query`` - the type of query, either *INSERT*, *UPDATE* or *DELETE*."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:120
+msgid "database name - the default database is named *main*."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:121
+msgid "table name - name of table being modified."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:122
+msgid "rowid - the rowid of the row being modified."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:124
+msgid "The callback's return value is ignored."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:139
+msgid "Return the number of rows modified in the currently-open transaction."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:143
+msgid ""
+"Property which returns a boolean indicating if autocommit is enabled. By "
+"default, this value will be ``True`` except when inside a transaction (or"
+" :py:meth:`~Database.atomic` block)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:163
+msgid "Database object to serve as destination for the backup."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:165 ../../peewee/sqlite_ext.rst:186
+msgid ""
+"Number of pages per iteration. Default value of -1 indicates all pages "
+"should be backed-up in a single step."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:167 ../../peewee/sqlite_ext.rst:188
+msgid ""
+"Name of source database (may differ if you used ATTACH DATABASE to load "
+"multiple databases). Defaults to \"main\"."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:169 ../../peewee/sqlite_ext.rst:190
+msgid ""
+"Progress callback, called with three parameters: the number of pages "
+"remaining, the total page count, and whether the backup is complete."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:185
+msgid "Filename to store the database backup."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:194
+msgid ""
+"Backup the current database to a file. The backed-up data is not a "
+"database dump, but an actual SQLite database file."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:209
+msgid "Name of table containing data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:210
+msgid "Name of column containing data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:211
+msgid "ID of row to retrieve."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:212
+msgid "Open the blob for reading only."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:213
+msgid ""
+":py:class:`Blob` instance which provides efficient access to the "
+"underlying binary data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst
+msgid "Return type"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:217
+msgid "See :py:class:`Blob` and :py:class:`ZeroBlob` for more information."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:244
+msgid ""
+"Primary-key field that corresponds to the SQLite ``rowid`` field. For "
+"more information, see the SQLite documentation on `rowid tables "
+"<https://www.sqlite.org/rowidtable.html>`_.."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:258
+msgid ""
+"Subclass of :py:class:`RowIDField` for use on virtual tables that "
+"specifically use the convention of ``docid`` for the primary key. As far "
+"as I know this only pertains to tables using the FTS3 and FTS4 full-text "
+"search extensions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:264
+msgid ""
+"In FTS3 and FTS4, \"docid\" is simply an alias for \"rowid\". To reduce "
+"confusion, it's probably best to just always use :py:class:`RowIDField` "
+"and never use :py:class:`DocIDField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:279
+msgid ""
+"SQLite, by default, may reuse primary key values after rows are deleted. "
+"To ensure that the primary key is *always* monotonically increasing, "
+"regardless of deletions, you should use :py:class:`AutoIncrementField`. "
+"There is a small performance cost for this feature. For more information,"
+" see the SQLite docs on `autoincrement "
+"<https://sqlite.org/autoinc.html>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:289
+msgid ""
+"Field class suitable for storing JSON data, with special methods designed"
+" to work with the `json1 extension <https://sqlite.org/json1.html>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:292
+msgid ""
+"SQLite 3.9.0 added `JSON support <https://www.sqlite.org/json1.html>`_ in"
+" the form of an extension library. The SQLite json1 extension provides a "
+"number of helper functions for working with JSON data. These APIs are "
+"exposed as methods of a special field-type, :py:class:`JSONField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:297
+msgid ""
+"To access or modify specific object keys or array indexes in a JSON "
+"structure, you can treat the :py:class:`JSONField` as if it were a "
+"dictionary/list."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:301
+msgid ""
+"(optional) function for serializing data to JSON strings. If not "
+"provided, will use the stdlib ``json.dumps``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:303
+msgid ""
+"(optional) function for de-serializing JSON to Python objects. If not "
+"provided, will use the stdlib ``json.loads``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:307
+msgid ""
+"To customize the JSON serialization or de-serialization, you can specify "
+"a custom ``json_dumps`` and ``json_loads`` callables. These functions "
+"should accept a single paramter: the object to serialize, and the JSON "
+"string, respectively. To modify the parameters of the stdlib JSON "
+"functions, you can use ``functools.partial``:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:322
+msgid ""
+"Let's look at some examples of using the SQLite json1 extension with "
+"Peewee. Here we'll prepare a database and a simple model for testing the "
+"`json1 extension <http://sqlite.org/json1.html>`_:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:339
+msgid ""
+"Storing data works as you might expect. There's no need to serialize "
+"dictionaries or lists as JSON, as this is done automatically by Peewee:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:349
+msgid "We can access specific parts of the JSON data using dictionary lookups:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:356
+msgid ""
+"It's possible to update a JSON value in-place using the "
+":py:meth:`~JSONField.update` method. Note that \"k1=v1\" is preserved:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:366
+msgid ""
+"We can also update existing data atomically, or remove keys by setting "
+"their value to ``None``. In the following example, we'll update the value"
+" of \"k1\" and remove \"k3\" (\"k2\" will not be modified):"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:377
+msgid ""
+"We can also set individual parts of the JSON data using the "
+":py:meth:`~JSONField.set` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:386
+msgid ""
+"The :py:meth:`~JSONField.set` method can also be used with objects, in "
+"addition to scalar values:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:396
+msgid ""
+"Individual parts of the JSON data can be removed atomically as well, "
+"using :py:meth:`~JSONField.remove`:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:406
+msgid ""
+"We can also get the type of value stored at a specific location in the "
+"JSON data using the :py:meth:`~JSONField.json_type` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:414
+msgid ""
+"Let's add a nested value and then see how to iterate through it's "
+"contents recursively using the :py:meth:`~JSONField.tree` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:434
+msgid ""
+"The :py:meth:`~JSONField.tree` and :py:meth:`~JSONField.children` methods"
+" are powerful. For more information on how to utilize them, see the "
+"`json1 extension documentation <http://sqlite.org/json1.html#jtree>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:438
+msgid "Also note, that :py:class:`JSONField` lookups can be chained:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:449
+msgid ""
+"For more information, refer to the `sqlite json1 documentation "
+"<http://sqlite.org/json1.html>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:453
+msgid "Access a specific key or array index in the JSON data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:454
+msgid "a special object exposing access to the JSON data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:457
+msgid ""
+"Access a specific key or array index in the JSON data. Returns a "
+":py:class:`JSONPath` object, which exposes convenient methods for reading"
+" or modifying a particular part of a JSON object."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:469
+msgid "For more examples see the :py:class:`JSONPath` API documentation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:473 ../../peewee/sqlite_ext.rst:669
+msgid "a scalar value, list, or dictionary."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:474 ../../peewee/sqlite_ext.rst:670
+msgid ""
+"force the value to be treated as JSON, in which case it will be "
+"serialized as JSON in Python beforehand. By default, lists and "
+"dictionaries are treated as JSON to be serialized, while strings and "
+"integers are passed as-is."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:479
+msgid "Set the value stored in a :py:class:`JSONField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:481 ../../peewee/sqlite_ext.rst:677
+msgid ""
+"Uses the `json_set() <http://sqlite.org/json1.html#jset>`_ function from "
+"the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:486
+msgid ""
+"a scalar value, list or dictionary to merge with the data currently "
+"stored in a :py:class:`JSONField`. To remove a particular key, set that "
+"key to ``None`` in the updated data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:490
+msgid ""
+"Merge new data into the JSON value using the RFC-7396 MergePatch "
+"algorithm to apply a patch (``data`` parameter) against the column data. "
+"MergePatch can add, modify, or delete elements of a JSON object, which "
+"means :py:meth:`~JSONField.update` is a generalized replacement for both "
+":py:meth:`~JSONField.set` and :py:meth:`~JSONField.remove`. MergePatch "
+"treats JSON array objects as atomic, so ``update()`` cannot append to an "
+"array, nor modify individual elements of an array."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:498 ../../peewee/sqlite_ext.rst:694
+msgid ""
+"For more information as well as examples, see the SQLite `json_patch() "
+"<http://sqlite.org/json1.html#jpatch>`_ function documentation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:503
+msgid "Remove the data stored in the :py:class:`JSONField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:505
+msgid ""
+"Uses the `json_remove <https://www.sqlite.org/json1.html#jrm>`_ function "
+"from the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:510
+msgid "Return a string identifying the type of value stored in the column."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:512 ../../peewee/sqlite_ext.rst:709
+msgid "The type returned will be one of:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:514 ../../peewee/sqlite_ext.rst:711
+msgid "object"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:515 ../../peewee/sqlite_ext.rst:712
+msgid "array"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:516 ../../peewee/sqlite_ext.rst:713
+msgid "integer"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:517 ../../peewee/sqlite_ext.rst:714
+msgid "real"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:518 ../../peewee/sqlite_ext.rst:715
+msgid "true"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:519 ../../peewee/sqlite_ext.rst:716
+msgid "false"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:520 ../../peewee/sqlite_ext.rst:717
+msgid "text"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:521 ../../peewee/sqlite_ext.rst:718
+msgid "null  <-- the string \"null\" means an actual NULL value"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:522 ../../peewee/sqlite_ext.rst:719
+msgid "NULL  <-- an actual NULL value means the path was not found"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:524 ../../peewee/sqlite_ext.rst:721
+msgid ""
+"Uses the `json_type <https://www.sqlite.org/json1.html#jtype>`_ function "
+"from the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:529
+msgid "Return the length of the array stored in the column."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:531 ../../peewee/sqlite_ext.rst:729
+msgid ""
+"Uses the `json_array_length "
+"<https://www.sqlite.org/json1.html#jarraylen>`_ function from the json1 "
+"extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:536
+msgid ""
+"The ``children`` function corresponds to ``json_each``, a table-valued "
+"function that walks the JSON value provided and returns the immediate "
+"children of the top-level array or object. If a path is specified, then "
+"that path is treated as the top-most element."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:541
+msgid ""
+"The rows returned by calls to ``children()`` have the following "
+"attributes:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:544 ../../peewee/sqlite_ext.rst:592
+msgid "``key``: the key of the current element relative to its parent."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:545 ../../peewee/sqlite_ext.rst:593
+msgid "``value``: the value of the current element."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:546 ../../peewee/sqlite_ext.rst:594
+msgid "``type``: one of the data-types (see :py:meth:`~JSONField.json_type`)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:547 ../../peewee/sqlite_ext.rst:595
+msgid ""
+"``atom``: the scalar value for primitive types, ``NULL`` for arrays and "
+"objects."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:548 ../../peewee/sqlite_ext.rst:596
+msgid "``id``: a unique ID referencing the current node in the tree."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:549 ../../peewee/sqlite_ext.rst:597
+msgid "``parent``: the ID of the containing node."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:550 ../../peewee/sqlite_ext.rst:598
+msgid "``fullkey``: the full path describing the current element."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:551 ../../peewee/sqlite_ext.rst:599
+msgid "``path``: the path to the container of the current row."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:553
+msgid ""
+"Internally this method uses the `json_each "
+"<https://www.sqlite.org/json1.html#jeach>`_ (documentation link) function"
+" from the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:556
+msgid "Example usage (compare to :py:meth:`~JSONField.tree` method):"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:584
+msgid ""
+"The ``tree`` function corresponds to ``json_tree``, a table-valued "
+"function that recursively walks the JSON value provided and returns "
+"information about the keys at each level. If a path is specified, then "
+"that path is treated as the top-most element."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:589
+msgid ""
+"The rows returned by calls to ``tree()`` have the same attributes as rows"
+" returned by calls to :py:meth:`~JSONField.children`:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:601
+msgid ""
+"Internally this method uses the `json_tree "
+"<https://www.sqlite.org/json1.html#jtree>`_ (documentation link) function"
+" from the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:604
+msgid "Example usage:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:638
+msgid "the field object we intend to access."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:639
+msgid "Components comprising the JSON path."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:641
+msgid ""
+"A convenient, Pythonic way of representing JSON paths for use with "
+":py:class:`JSONField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:644
+msgid ""
+"The ``JSONPath`` object implements ``__getitem__``, accumulating path "
+"components, which it can turn into the corresponding json-path "
+"expression."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:649
+msgid "Access a sub-key key or array index."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:650
+msgid "a :py:class:`JSONPath` representing the new path."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:652
+msgid ""
+"Access a sub-key or array index in the JSON data. Returns a "
+":py:class:`JSONPath` object, which exposes convenient methods for reading"
+" or modifying a particular part of a JSON object."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:675
+msgid "Set the value at the given location in the JSON data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:682
+msgid ""
+"a scalar value, list or dictionary to merge with the data at the given "
+"location in the JSON data. To remove a particular key, set that key to "
+"``None`` in the updated data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:686
+msgid ""
+"Merge new data into the JSON value using the RFC-7396 MergePatch "
+"algorithm to apply a patch (``data`` parameter) against the column data. "
+"MergePatch can add, modify, or delete elements of a JSON object, which "
+"means :py:meth:`~JSONPath.update` is a generalized replacement for both "
+":py:meth:`~JSONPath.set` and :py:meth:`~JSONPath.remove`. MergePatch "
+"treats JSON array objects as atomic, so ``update()`` cannot append to an "
+"array, nor modify individual elements of an array."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:699
+msgid "Remove the data stored in at the given location in the JSON data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:701
+msgid ""
+"Uses the `json_type <https://www.sqlite.org/json1.html#jrm>`_ function "
+"from the json1 extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:706
+msgid ""
+"Return a string identifying the type of value stored at the given "
+"location in the JSON data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:726
+msgid ""
+"Return the length of the array stored at the given location in the JSON "
+"data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:734
+msgid ""
+"Table-valued function that exposes the direct descendants of a JSON "
+"object at the given location. See also :py:meth:`JSONField.children`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:739
+msgid ""
+"Table-valued function that exposes all descendants, recursively, of a "
+"JSON object at the given location. See also :py:meth:`JSONField.tree`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:745
+msgid ""
+"Field-class to be used for columns on models representing full-text "
+"search virtual tables. The full-text search extensions prohibit the "
+"specification of any typing or constraints on columns. This behavior is "
+"enforced by the :py:class:`SearchField`, which raises an exception if any"
+" configuration is attempted that would be incompatible with the full-text"
+" search extensions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:751
+msgid ""
+"Example model for document search index (timestamp is stored in the table"
+" but it's data is not searchable):"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:764
+msgid "full-text search query/terms"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:765
+msgid "a :py:class:`Expression` corresponding to the ``MATCH`` operator."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:768
+msgid ""
+"Sqlite's full-text search supports searching either the full table, "
+"including all indexed columns, **or** searching individual columns. The "
+":py:meth:`~SearchField.match` method can be used to restrict search to a "
+"single column:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:786
+msgid ""
+"To instead search *all* indexed columns, use the "
+":py:meth:`FTSModel.match` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:801
+msgid ""
+"Model class designed to be used to represent virtual tables. The default "
+"metadata settings are slightly different, to match those frequently used "
+"by virtual tables."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:805
+msgid "Metadata options:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:807
+msgid "``arguments`` - arguments passed to the virtual table constructor."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:808
+msgid "``extension_module`` - name of extension to use for virtual table."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:809
+msgid "``options`` - a dictionary of settings to apply in virtual table"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:810
+msgid "constructor."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:811
+msgid "``primary_key`` - defaults to ``False``, indicating no primary key."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:813
+msgid "These all are combined in the following way:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:825
+msgid ""
+"Subclass of :py:class:`VirtualModel` to be used with the `FTS3 and FTS4 "
+"<https://sqlite.org/fts3.html>`_ full-text search extensions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:828
+msgid ""
+"FTSModel subclasses should be defined normally, however there are a "
+"couple caveats:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:831
+msgid ""
+"Unique constraints, not null constraints, check constraints and foreign "
+"keys are not supported."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:833
+msgid "Indexes on fields and multi-column indexes are ignored completely"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:834
+msgid ""
+"Sqlite will treat all column types as ``TEXT`` (although you can store "
+"other data types, Sqlite will treat them as text)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:836
+msgid ""
+"FTS models contain a ``rowid`` field which is automatically created and "
+"managed by SQLite (unless you choose to explicitly set it during model "
+"creation). Lookups on this column **are fast and efficient**."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:840
+msgid ""
+"Given these constraints, it is strongly recommended that all fields "
+"declared on an ``FTSModel`` subclass be instances of "
+":py:class:`SearchField` (though an exception is made for explicitly "
+"declaring a :py:class:`RowIDField`). Using :py:class:`SearchField` will "
+"help prevent you accidentally creating invalid column constraints. If you"
+" wish to store metadata in the index but would not like it to be included"
+" in the full-text index, then specify ``unindexed=True`` when "
+"instantiating the :py:class:`SearchField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:849
+msgid ""
+"The only exception to the above is for the ``rowid`` primary key, which "
+"can be declared using :py:class:`RowIDField`. Lookups on the ``rowid`` "
+"are very efficient. If you are using FTS4 you can also use "
+":py:class:`DocIDField`, which is an alias for the rowid (though there is "
+"no benefit to doing so)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:854
+msgid ""
+"Because of the lack of secondary indexes, it usually makes sense to use "
+"the ``rowid`` primary key as a pointer to a row in a regular table. For "
+"example:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:881
+msgid ""
+"To store a document in the document index, we will ``INSERT`` a row into "
+"the ``DocumentIndex`` table, manually setting the ``rowid`` so that it "
+"matches the primary-key of the corresponding ``Document``:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:893
+msgid ""
+"To perform a search and return ranked results, we can query the "
+"``Document`` table and join on the ``DocumentIndex``. This join will be "
+"efficient because lookups on an FTSModel's ``rowid`` field are fast:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:911
+msgid ""
+"All SQL queries on ``FTSModel`` classes will be full-table scans "
+"**except** full-text searches and ``rowid`` lookups."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:914
+msgid ""
+"If the primary source of the content you are indexing exists in a "
+"separate table, you can save some disk space by instructing SQLite to not"
+" store an additional copy of the search index content. SQLite will still "
+"create the metadata and data-structures needed to perform searches on the"
+" content, but the content itself will not be stored in the search index."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:920
+msgid ""
+"To accomplish this, you can specify a table or column using the "
+"``content`` option. The `FTS4 documentation "
+"<http://sqlite.org/fts3.html#section_6_2>`_ has more information."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:924
+msgid "Here is a short example illustrating how to implement this with peewee:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:952
+msgid ""
+"The ``content`` option accepts either a single :py:class:`Field` or a "
+":py:class:`Model` and can reduce the amount of storage used by the "
+"database file. However, content will need to be manually moved to/from "
+"the associated ``FTSModel``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:959
+msgid "Search term or expression."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:961
+msgid ""
+"Generate a SQL expression representing a search for the given term or "
+"expression in the table. SQLite uses the ``MATCH`` operator to indicate a"
+" full-text search."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:980 ../../peewee/sqlite_ext.rst:1019
+#: ../../peewee/sqlite_ext.rst:1171
+msgid "Search term to use."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:981 ../../peewee/sqlite_ext.rst:1020
+#: ../../peewee/sqlite_ext.rst:1172
+msgid ""
+"A list of weights for the columns, ordered with respect to the column's "
+"position in the table. **Or**, a dictionary keyed by the field or field "
+"name and mapped to a value."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:984 ../../peewee/sqlite_ext.rst:1023
+#: ../../peewee/sqlite_ext.rst:1175
+msgid "Whether the score should be returned as part of the ``SELECT`` statement."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:986 ../../peewee/sqlite_ext.rst:1025
+#: ../../peewee/sqlite_ext.rst:1177
+msgid ""
+"Alias to use for the calculated rank score. This is the attribute you "
+"will use to access the score if ``with_score=True``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:989 ../../peewee/sqlite_ext.rst:1028
+#: ../../peewee/sqlite_ext.rst:1180
+msgid ""
+"Order using full SQL function to calculate rank, as opposed to simply "
+"referencing the score alias in the ORDER BY clause."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:993
+msgid ""
+"Shorthand way of searching for a term and sorting results by the quality "
+"of the match."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:997
+msgid ""
+"This method uses a simplified algorithm for determining the relevance "
+"rank of results. For more sophisticated result ranking, use the "
+":py:meth:`~FTSModel.search_bm25` method."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1032
+msgid ""
+"Shorthand way of searching for a term and sorting results by the quality "
+"of the match using the BM25 algorithm."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1036
+msgid ""
+"The BM25 ranking algorithm is only available for FTS4. If you are using "
+"FTS3, use the :py:meth:`~FTSModel.search` method instead."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1041
+msgid ""
+"Same as :py:meth:`FTSModel.search_bm25`, but using the BM25f variant of "
+"the BM25 ranking algorithm."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1046
+msgid ""
+"Same as :py:meth:`FTSModel.search_bm25`, but using the result ranking "
+"algorithm from the Lucene search engine."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1051 ../../peewee/sqlite_ext.rst:1084
+#: ../../peewee/sqlite_ext.rst:1214
+msgid ""
+"(Optional) weight to give to the *ith* column of the model. By default "
+"all columns have a weight of ``1.0``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1054
+msgid ""
+"Generate an expression that will calculate and return the quality of the "
+"search match. This ``rank`` can be used to sort the search results. A "
+"higher rank score indicates a better match."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1058
+msgid ""
+"The ``rank`` function accepts optional parameters that allow you to "
+"specify weights for the various columns. If no weights are specified, all"
+" columns are considered of equal importance."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1063
+msgid ""
+"The algorithm used by :py:meth:`~FTSModel.rank` is simple and relatively "
+"quick. For more sophisticated result ranking, use:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1066
+msgid ":py:meth:`~FTSModel.bm25`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1067
+msgid ":py:meth:`~FTSModel.bm25f`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1068
+msgid ":py:meth:`~FTSModel.lucene`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1087 ../../peewee/sqlite_ext.rst:1217
+msgid ""
+"Generate an expression that will calculate and return the quality of the "
+"search match using the `BM25 algorithm "
+"<https://en.wikipedia.org/wiki/Okapi_BM25>`_. This value can be used to "
+"sort the search results, with higher scores corresponding to better "
+"matches."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1092
+msgid ""
+"Like :py:meth:`~FTSModel.rank`, ``bm25`` function accepts optional "
+"parameters that allow you to specify weights for the various columns. If "
+"no weights are specified, all columns are considered of equal importance."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1098
+msgid ""
+"The BM25 result ranking algorithm requires FTS4. If you are using FTS3, "
+"use :py:meth:`~FTSModel.rank` instead."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1114
+msgid ""
+"The above code example is equivalent to calling the "
+":py:meth:`~FTSModel.search_bm25` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1125
+msgid ""
+"Identical to :py:meth:`~FTSModel.bm25`, except that it uses the BM25f "
+"variant of the BM25 ranking algorithm."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1130
+msgid ""
+"Identical to :py:meth:`~FTSModel.bm25`, except that it uses the Lucene "
+"search result ranking algorithm."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1135
+msgid ""
+"Rebuild the search index -- this only works when the ``content`` option "
+"was specified during table creation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1140
+msgid "Optimize the search index."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1145
+msgid ""
+"Subclass of :py:class:`VirtualModel` to be used with the `FTS5 "
+"<https://sqlite.org/fts5.html>`_ full-text search extensions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1148
+msgid ""
+"FTS5Model subclasses should be defined normally, however there are a "
+"couple caveats:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1151
+msgid ""
+"FTS5 explicitly disallows specification of any constraints, data-type or "
+"indexes on columns. For that reason, all columns **must** be instances of"
+" :py:class:`SearchField`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1154
+msgid ""
+"FTS5 models contain a ``rowid`` field which is automatically created and "
+"managed by SQLite (unless you choose to explicitly set it during model "
+"creation). Lookups on this column **are fast and efficient**."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1157
+msgid "Indexes on fields and multi-column indexes are not supported."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1159
+msgid ""
+"The ``FTS5`` extension comes with a built-in implementation of the BM25 "
+"ranking function. Therefore, the ``search`` and ``search_bm25`` methods "
+"have been overridden to use the builtin ranking functions rather than "
+"user-defined functions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1166
+msgid ""
+"Return a boolean indicating whether the FTS5 extension is installed. If "
+"it is not installed, an attempt will be made to load the extension."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1184
+msgid ""
+"Shorthand way of searching for a term and sorting results by the quality "
+"of the match. The ``FTS5`` extension provides a built-in implementation "
+"of the BM25 algorithm, which is used to rank the results by relevance."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1189
+msgid "Higher scores correspond to better matches."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1209
+msgid ""
+"With FTS5, :py:meth:`~FTS5Model.search_bm25` is identical to the "
+":py:meth:`~FTS5Model.search` method."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1222
+msgid ""
+"The :py:meth:`~FTS5Model.rank` function accepts optional parameters that "
+"allow you to specify weights for the various columns.  If no weights are "
+"specified, all columns are considered of equal importance."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1239
+msgid ""
+"The above code example is equivalent to calling the "
+":py:meth:`~FTS5Model.search` method:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1250
+msgid ""
+"Because FTS5 provides built-in support for BM25, the "
+":py:meth:`~FTS5Model.bm25` method is identical to the "
+":py:meth:`~FTS5Model.rank` method."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1256
+msgid "Either 'row', 'col' or 'instance'."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1257
+msgid "Name for the vocab table. If not specified, will be \"fts5tablename_v\"."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1260
+msgid ""
+"Generate a model class suitable for accessing the `vocab table "
+"<http://sqlite.org/fts5.html#the_fts5vocab_virtual_table_module>`_ "
+"corresponding to FTS5 search index."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1267
+msgid ""
+"Implement a user-defined table-valued function. Unlike a simple "
+":ref:`scalar or aggregate <sqlite-user-functions>` function, which "
+"returns a single scalar value, a table-valued function can return any "
+"number of rows of tabular data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1272
+msgid "Simple example:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1319
+msgid ""
+"A :py:class:`TableFunction` must be registered with a database connection"
+" before it can be used. To ensure the table function is always available,"
+" you can use the :py:meth:`SqliteDatabase.table_function` decorator to "
+"register the function with the database."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1325
+msgid ""
+":py:class:`TableFunction` implementations must provide two attributes and"
+" implement two methods, described below."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1330
+msgid ""
+"A list containing the names of the columns for the data returned by the "
+"function. For example, a function that is used to split a string on a "
+"delimiter might specify 3 columns: ``[substring, start_idx, end_idx]``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1336
+msgid ""
+"The names of the parameters the function may be called with. All "
+"parameters, including optional parameters, should be listed. For example,"
+" a function that is used to split a string on a delimiter might specify 2"
+" params: ``[string, delimiter]``."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1343
+msgid ""
+"*Optional* - specify the name for the table function. If not provided, "
+"name will be taken from the class name."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1348
+msgid ""
+"Print a full traceback for any errors that occur in the table-function's "
+"callback methods. When set to False, only the generic OperationalError "
+"will be visible."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1354
+msgid "Parameters the function was called with."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1355
+msgid "No return value."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1357
+msgid ""
+"The ``initialize`` method is called to initialize the table function with"
+" the parameters the user specified when calling the function."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1362
+msgid "current iteration step"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1363
+msgid ""
+"A tuple of row data corresponding to the columns named in the "
+":py:attr:`~TableFunction.columns` attribute."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst
+msgid "Raises"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1365
+msgid "To signal that no more rows are available."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1367
+msgid ""
+"This function is called repeatedly and returns successive rows of data. "
+"The function may terminate before all rows are consumed (especially if "
+"the user specified a ``LIMIT`` on the results). Alternatively, the "
+"function can signal that no more data is available by raising a "
+"``StopIteration`` exception."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1375
+msgid "A ``sqlite3.Connection`` object."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1377
+msgid ""
+"Register the table function with a DB-API 2.0 ``sqlite3.Connection`` "
+"object. Table-valued functions **must** be registered before they can be "
+"used in a query."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1394
+msgid ""
+"To ensure the :py:class:`TableFunction` is registered every time a "
+"connection is opened, use the :py:meth:`~SqliteDatabase.table_function` "
+"decorator."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1403
+msgid "The model class containing the nodes in the tree."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1404
+msgid ""
+"The self-referential parent-node field on the model class. If not "
+"provided, peewee will introspect the model to find a suitable key."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1407
+msgid "Intermediate table for a many-to-many relationship."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1408
+msgid "For a many-to-many relationship, the originating side of the relation."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1410
+msgid "Returns a :py:class:`VirtualModel` for working with a closure table."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1412
+msgid ""
+"Factory function for creating a model class suitable for working with a "
+"`transitive closure "
+"<http://www.sqlite.org/cgi/src/artifact/636024302cde41b2bf0c542f81c40c624cfb7012>`_"
+" table. Closure tables are :py:class:`VirtualModel` subclasses that work "
+"with the transitive closure SQLite extension. These special tables are "
+"designed to make it easy to efficiently query hierarchical data. The "
+"SQLite extension manages an AVL tree behind-the-scenes, transparently "
+"updating the tree when your table changes and making it easy to perform "
+"common queries on hierarchical data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1421
+msgid "To use the closure table extension in your project, you need:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1423
+msgid ""
+"A copy of the SQLite extension. The source code can be found in the "
+"`SQLite code repository "
+"<http://www.sqlite.org/cgi/src/artifact/636024302cde41b2bf0c542f81c40c624cfb7012>`_"
+" or by cloning `this gist "
+"<https://gist.github.com/coleifer/7f3593c5c2a645913b92>`_:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1432
+msgid "Compile the extension as a shared library, e.g."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1438
+msgid ""
+"Create a model for your hierarchical data. The only requirement here is "
+"that the model has an integer primary key and a self-referential foreign "
+"key. Any additional fields are fine."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1452
+msgid ""
+"The self-referentiality can also be achieved via an intermediate table "
+"(for a many-to-many relation)."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1474
+msgid ""
+"In your application code, make sure you load the extension when you "
+"instantiate your :py:class:`Database` object. This is done by passing the"
+" path to the shared library to the "
+":py:meth:`~SqliteExtDatabase.load_extension` method."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1484
+msgid ""
+"There are two caveats you should be aware of when using the "
+"``transitive_closure`` extension. First, it requires that your *source "
+"model* have an integer primary key. Second, it is strongly recommended "
+"that you create an index on the self-referential foreign key."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1504
+msgid ""
+"It is now possible to perform interesting queries using the data from the"
+" closure table:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1531
+msgid "API of the :py:class:`VirtualModel` returned by :py:func:`ClosureTable`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1537
+msgid "A field for the primary key of the given node."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1541
+msgid "A field representing the relative depth of the given node."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1545
+msgid "A field representing the relative root node."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1549
+msgid ""
+"Retrieve all descendants of the given node. If a depth is specified, only"
+" nodes at that depth (relative to the given node) will be returned."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1569
+msgid ""
+"Retrieve all ancestors of the given node. If a depth is specified, only "
+"nodes at that depth (relative to the given node) will be returned."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1585
+msgid "Retrieve all nodes that are children of the specified node's parent."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1589
+msgid ""
+"For an in-depth discussion of the SQLite transitive closure extension, "
+"check out this blog post, `Querying Tree Structures in SQLite using "
+"Python and the Transitive Closure Extension "
+"<http://charlesleifer.com/blog/querying-tree-structures-in-sqlite-using-"
+"python-and-the-transitive-closure-extension/>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1596
+msgid ""
+":py:class:`VirtualModel` subclass suitable for working with the `lsm1 "
+"extension <http://charlesleifer.com/blog/lsm-key-value-storage-in-"
+"sqlite3/>`_ The *lsm1* extension is a virtual table that provides a SQL "
+"interface to the `lsm key/value storage engine from SQLite4 "
+"<http://sqlite.org/src4/doc/trunk/www/lsmusr.wiki>`_."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1601
+msgid ""
+"The LSM1 extension has not been released yet (SQLite version 3.22 at time"
+" of writing), so consider this feature experimental with potential to "
+"change in subsequent releases."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1605
+msgid ""
+"LSM tables define one primary key column and an arbitrary number of "
+"additional value columns (which are serialized and stored in a single "
+"value field in the storage engine). The primary key must be all of the "
+"same type and use one of the following field types:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1610
+msgid ":py:class:`IntegerField`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1611
+msgid ":py:class:`TextField`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1612
+msgid ":py:class:`BlobField`"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1614
+msgid ""
+"Since the LSM storage engine is a key/value store, primary keys "
+"(including integers) must be specified by the application."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1618
+msgid ""
+"Secondary indexes are not supported by the LSM engine, so the only "
+"efficient queries will be lookups (or range queries) on the primary key."
+"  Other fields can be queried and filtered on, but may result in a full "
+"table-scan."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1623
+msgid "Example model declaration:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1643
+msgid "Example queries:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1672
+msgid "Simple key/value model declaration:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1686
+msgid ""
+"For tables consisting of a single value field, Peewee will return the "
+"value directly when getting a single item. You can also request slices of"
+" rows, in which case Peewee returns a corresponding :py:class:`Select` "
+"query, which can be iterated over. Below are some examples:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1716
+msgid "You can also index the :py:class:`LSMTable` using expressions:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1729
+msgid ""
+"You can delete single rows using ``del`` or multiple rows using slices or"
+" expressions:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1745
+msgid ""
+"Attempting to get a single non-existant key will result in a "
+"``KeyError``, but slices will not raise an exception:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1762
+msgid "Size of blob in bytes."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1764
+msgid ""
+":py:class:`ZeroBlob` is used solely to reserve space for storing a BLOB "
+"that supports incremental I/O. To use the `SQLite BLOB-store "
+"<https://www.sqlite.org/c3ref/blob_open.html>`_ it is necessary to first "
+"insert a ZeroBlob of the desired size into the row you wish to use with "
+"incremental I/O."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1769
+msgid "For example, see :py:class:`Blob`."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1773
+msgid ":py:class:`SqliteExtDatabase` instance."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1774
+msgid "Name of table being accessed."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1775
+msgid "Name of column being accessed."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1776
+msgid "Primary-key of row being accessed."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1777
+msgid "Prevent any modifications to the blob data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1779
+msgid ""
+"Open a blob, stored in the given table/column/row, for incremental I/O. "
+"To allocate storage for new data, you can use the :py:class:`ZeroBlob`, "
+"which is very efficient."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1807
+msgid "Only read up to *n* bytes from current position in file."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1809
+msgid ""
+"Read up to *n* bytes from the current position in the blob file. If *n* "
+"is not specified, the entire blob will be read."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1814
+msgid "Seek to the given offset in the file."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1815
+msgid "Seek relative to the specified frame of reference."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1817
+msgid "Values for ``whence``:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1819
+msgid "``0``: beginning of file"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1820
+msgid "``1``: current position"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1821
+msgid "``2``: end of file"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1825
+msgid "Return current offset within the file."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1829
+msgid "Data to be written"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1831
+msgid "Writes the given data, starting at the current position in the file."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1835
+msgid "Close the file and free associated resources."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1839
+msgid "Primary key of row to open."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1841
+msgid ""
+"If a blob has already been opened for a given table/column, you can use "
+"the :py:meth:`~Blob.reopen` method to re-use the same :py:class:`Blob` "
+"object for accessing multiple rows in the table."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1848
+msgid "Additional Features"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1850
+msgid ""
+"The :py:class:`SqliteExtDatabase` accepts an initialization option to "
+"register support for a simple `bloom filter "
+"<https://en.wikipedia.org/wiki/Bloom_filter>`_. The bloom filter, once "
+"initialized, can then be used for efficient membership queries on large "
+"set of data."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1855
+msgid "Here's an example:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1888
+msgid ""
+"The :py:class:`SqliteExtDatabase` can also register other useful "
+"functions:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1890
+msgid ""
+"``rank_functions`` (enabled by default): registers functions for ranking "
+"search results, such as *bm25* and *lucene*."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1892
+msgid ""
+"``hash_functions``: registers md5, sha1, sha256, adler32, crc32 and "
+"murmurhash functions."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1894
+msgid "``regexp_function``: registers a regexp function."
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1896
+msgid "Examples:"
+msgstr ""
+
+#: ../../peewee/sqlite_ext.rst:1905
+msgid ""
+"You can use the *murmurhash* function to hash bytes to an integer for "
+"compact storage:"
+msgstr ""
+

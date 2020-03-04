@@ -1,0 +1,4887 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/api.rst:4
+msgid "API Documentation"
+msgstr ""
+
+#: ../../peewee/api.rst:6
+msgid "This document specifies Peewee's APIs."
+msgstr ""
+
+#: ../../peewee/api.rst:9
+msgid "Database"
+msgstr ""
+
+#: ../../peewee/api.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../peewee/api.rst:13
+msgid ""
+"Database name or filename for SQLite (or ``None`` to :ref:`defer "
+"initialization <deferring_initialization>`, in which case you must call "
+":py:meth:`Database.init`, specifying the database name)."
+msgstr ""
+
+#: ../../peewee/api.rst:16
+msgid "Whether to store connection state in a thread-local."
+msgstr ""
+
+#: ../../peewee/api.rst:18
+msgid ""
+"Automatically rollback queries that fail when **not** in an explicit "
+"transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:20
+msgid "A mapping of additional field types to support."
+msgstr ""
+
+#: ../../peewee/api.rst:21
+msgid "A mapping of additional operations to support."
+msgstr ""
+
+#: ../../peewee/api.rst:22
+msgid ""
+"Automatically connect to database if attempting to execute a query on a "
+"closed database."
+msgstr ""
+
+#: ../../peewee/api.rst:24 ../../peewee/api.rst:83
+msgid ""
+"Arbitrary keyword arguments that will be passed to the database driver "
+"when a connection is created, for example ``password``, ``host``, etc."
+msgstr ""
+
+#: ../../peewee/api.rst:28
+msgid "The :py:class:`Database` is responsible for:"
+msgstr ""
+
+#: ../../peewee/api.rst:30
+msgid "Executing queries"
+msgstr ""
+
+#: ../../peewee/api.rst:31
+msgid "Managing connections"
+msgstr ""
+
+#: ../../peewee/api.rst:32
+msgid "Transactions"
+msgstr ""
+
+#: ../../peewee/api.rst:33
+msgid "Introspection"
+msgstr ""
+
+#: ../../peewee/api.rst:36
+msgid ""
+"The database can be instantiated with ``None`` as the database name if "
+"the database is not known until run-time. In this way you can create a "
+"database instance and then configure it elsewhere when the settings are "
+"known. This is called :ref:`deferred* initialization "
+"<deferring_initialization>`."
+msgstr ""
+
+#: ../../peewee/api.rst:41 ../../peewee/api.rst:2586 ../../peewee/api.rst:2687
+#: ../../peewee/api.rst:4487 ../../peewee/api.rst:4533
+msgid "Examples:"
+msgstr ""
+
+#: ../../peewee/api.rst:54
+msgid "Deferred initialization example:"
+msgstr ""
+
+#: ../../peewee/api.rst:73
+msgid "String used as parameter placeholder in SQL queries."
+msgstr ""
+
+#: ../../peewee/api.rst:77
+msgid ""
+"Type of quotation-mark to use to denote entities such as tables or "
+"columns."
+msgstr ""
+
+#: ../../peewee/api.rst:82
+msgid "Database name or filename for SQLite."
+msgstr ""
+
+#: ../../peewee/api.rst:87
+msgid ""
+"Initialize a *deferred* database. See :ref:`deferring_initialization` for"
+" more info."
+msgstr ""
+
+#: ../../peewee/api.rst:92
+msgid ""
+"The :py:class:`Database` instance can be used as a context-manager, in "
+"which case a connection will be held open for the duration of the wrapped"
+" block."
+msgstr ""
+
+#: ../../peewee/api.rst:96
+msgid ""
+"Additionally, any SQL executed within the wrapped block will be executed "
+"in a transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:101
+msgid ""
+"Create a context-manager that will hold open a connection for the "
+"duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/api.rst:104 ../../peewee/api.rst:205 ../../peewee/api.rst:226
+#: ../../peewee/api.rst:377 ../../peewee/api.rst:400 ../../peewee/api.rst:424
+#: ../../peewee/api.rst:437 ../../peewee/api.rst:454 ../../peewee/api.rst:1090
+#: ../../peewee/api.rst:1130 ../../peewee/api.rst:2230
+msgid "Example::"
+msgstr ""
+
+#: ../../peewee/api.rst:114
+msgid "Do not raise an exception if a connection is already opened."
+msgstr ""
+
+#: ../../peewee/api.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../peewee/api.rst:116
+msgid "whether a new connection was opened."
+msgstr ""
+
+#: ../../peewee/api.rst
+msgid "Return type"
+msgstr ""
+
+#: ../../peewee/api.rst
+msgid "raises"
+msgstr ""
+
+#: ../../peewee/api.rst:118
+msgid ""
+"``OperationalError`` if connection already open and ``reuse_if_open`` is "
+"not set to ``True``."
+msgstr ""
+
+#: ../../peewee/api.rst:121
+msgid "Open a connection to the database."
+msgstr ""
+
+#: ../../peewee/api.rst:125
+msgid ""
+"Whether a connection was closed. If the database was already closed, this"
+" returns ``False``."
+msgstr ""
+
+#: ../../peewee/api.rst:129
+msgid "Close the connection to the database."
+msgstr ""
+
+#: ../../peewee/api.rst:133
+msgid "return ``True`` if database is closed, ``False`` if open."
+msgstr ""
+
+#: ../../peewee/api.rst:138
+msgid ""
+"Return the open connection. If a connection is not open, one will be "
+"opened. The connection will be whatever the underlying database-driver "
+"uses to encapsulate a database connection."
+msgstr ""
+
+#: ../../peewee/api.rst:144
+msgid "For internal use."
+msgstr ""
+
+#: ../../peewee/api.rst:146
+msgid ""
+"Return a ``cursor`` object on the current connection. If a connection is "
+"not open, one will be opened. The cursor will be whatever the underlying "
+"database-driver uses to encapsulate a database cursor."
+msgstr ""
+
+#: ../../peewee/api.rst:152
+msgid "SQL string to execute."
+msgstr ""
+
+#: ../../peewee/api.rst:153 ../../peewee/api.rst:4098
+msgid "Parameters for query."
+msgstr ""
+
+#: ../../peewee/api.rst:154 ../../peewee/api.rst:162
+msgid "Boolean flag to override the default commit logic."
+msgstr ""
+
+#: ../../peewee/api.rst:155 ../../peewee/api.rst:164 ../../peewee/api.rst:171
+#: ../../peewee/api.rst:176
+msgid "cursor object."
+msgstr ""
+
+#: ../../peewee/api.rst:157
+msgid "Execute a SQL query and return a cursor over the results."
+msgstr ""
+
+#: ../../peewee/api.rst:161
+msgid "A :py:class:`Query` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:163
+msgid "Arbitrary options to pass to the SQL generator."
+msgstr ""
+
+#: ../../peewee/api.rst:166
+msgid ""
+"Execute a SQL query by compiling a ``Query`` instance and executing the "
+"resulting SQL."
+msgstr ""
+
+#: ../../peewee/api.rst:172
+msgid "primary key of last-inserted row."
+msgstr ""
+
+#: ../../peewee/api.rst:177
+msgid "number of rows modified by query."
+msgstr ""
+
+#: ../../peewee/api.rst:181
+msgid "whether or not a transaction is currently open."
+msgstr ""
+
+#: ../../peewee/api.rst:186
+msgid ""
+"Create a context-manager which runs any queries in the wrapped block in a"
+" transaction (or save-point if blocks are nested)."
+msgstr ""
+
+#: ../../peewee/api.rst:189
+msgid "Calls to :py:meth:`~Database.atomic` can be nested."
+msgstr ""
+
+#: ../../peewee/api.rst:191
+msgid ":py:meth:`~Database.atomic` can also be used as a decorator."
+msgstr ""
+
+#: ../../peewee/api.rst:193
+msgid "Example code::"
+msgstr ""
+
+#: ../../peewee/api.rst:201
+msgid ""
+"Transactions and save-points can be explicitly committed or rolled-back "
+"within the wrapped block. If this occurs, a new transaction or savepoint "
+"is begun after the commit/rollback."
+msgstr ""
+
+#: ../../peewee/api.rst:223
+msgid ""
+"Create a context-manager which disables all transaction management for "
+"the duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/api.rst:242
+msgid "The above code is equivalent to the following::"
+msgstr ""
+
+#: ../../peewee/api.rst:249
+msgid ""
+"Begin a new transaction (without using a context-manager or decorator). "
+"This method is useful if you intend to execute a sequence of operations "
+"inside a transaction, but using a decorator or context-manager would not "
+"be appropriate."
+msgstr ""
+
+#: ../../peewee/api.rst:255
+msgid ""
+"It is strongly advised that you use the :py:meth:`Database.atomic` method"
+" whenever possible for managing transactions/savepoints. The ``atomic`` "
+"method correctly manages nesting, uses the appropriate construction "
+"(e.g., transaction-vs-savepoint), and always cleans up after itself."
+msgstr ""
+
+#: ../../peewee/api.rst:261
+msgid ""
+"The :py:meth:`~Database.session_start` method should only be used if the "
+"sequence of operations does not easily lend itself to wrapping using "
+"either a context-manager or decorator."
+msgstr ""
+
+#: ../../peewee/api.rst:266
+msgid ""
+"You must *always* call either :py:meth:`~Database.session_commit` or "
+":py:meth:`~Database.session_rollback` after calling the ``session_start``"
+" method."
+msgstr ""
+
+#: ../../peewee/api.rst:272
+msgid ""
+"Commit any changes made during a transaction begun with "
+":py:meth:`~Database.session_start`."
+msgstr ""
+
+#: ../../peewee/api.rst:277
+msgid ""
+"Roll back any changes made during a transaction begun with "
+":py:meth:`~Database.session_start`."
+msgstr ""
+
+#: ../../peewee/api.rst:282
+msgid ""
+"Create a context-manager that runs all queries in the wrapped block in a "
+"transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:286
+msgid ""
+"Calls to ``transaction`` cannot be nested. Only the top-most call will "
+"take effect. Rolling-back or committing a nested transaction context-"
+"manager has undefined behavior."
+msgstr ""
+
+#: ../../peewee/api.rst:292
+msgid ""
+"Create a context-manager that runs all queries in the wrapped block in a "
+"savepoint. Savepoints can be nested arbitrarily."
+msgstr ""
+
+#: ../../peewee/api.rst:296
+msgid "Calls to ``savepoint`` must occur inside of a transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:300
+msgid "Begin a transaction when using manual-commit mode."
+msgstr ""
+
+#: ../../peewee/api.rst:303 ../../peewee/api.rst:311 ../../peewee/api.rst:319
+msgid ""
+"This method should only be used in conjunction with the "
+":py:meth:`~Database.manual_commit` context manager."
+msgstr ""
+
+#: ../../peewee/api.rst:308
+msgid "Manually commit the currently-active transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:316
+msgid "Manually roll-back the currently-active transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:324
+msgid "an iterable whose items will be yielded."
+msgstr ""
+
+#: ../../peewee/api.rst:325
+msgid "commit every *n* items."
+msgstr ""
+
+#: ../../peewee/api.rst:326
+msgid ""
+"an equivalent iterable to the one provided, with the addition that groups"
+" of *n* items will be yielded in a transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:329
+msgid ""
+"The purpose of this method is to simplify batching large operations, such"
+" as inserts, updates, etc. You pass in an iterable and the number of "
+"items-per-batch, and the items will be returned by an equivalent iterator"
+" that wraps each batch in a transaction."
+msgstr ""
+
+#: ../../peewee/api.rst:334 ../../peewee/api.rst:512 ../../peewee/api.rst:674
+#: ../../peewee/api.rst:718 ../../peewee/api.rst:757 ../../peewee/api.rst:799
+#: ../../peewee/api.rst:826 ../../peewee/api.rst:1216 ../../peewee/api.rst:1235
+#: ../../peewee/api.rst:1825 ../../peewee/api.rst:1923
+#: ../../peewee/api.rst:2339 ../../peewee/api.rst:2403
+#: ../../peewee/api.rst:2442 ../../peewee/api.rst:2496
+#: ../../peewee/api.rst:2522 ../../peewee/api.rst:2984
+#: ../../peewee/api.rst:3071 ../../peewee/api.rst:3582
+#: ../../peewee/api.rst:3821 ../../peewee/api.rst:3844
+#: ../../peewee/api.rst:4159 ../../peewee/api.rst:4202
+#: ../../peewee/api.rst:4281 ../../peewee/api.rst:4295
+#: ../../peewee/api.rst:4454 ../../peewee/api.rst:4584
+#: ../../peewee/api.rst:4600 ../../peewee/api.rst:4729
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/api.rst:347
+msgid ""
+"An alternative that may be more efficient is to batch the data into a "
+"multi-value ``INSERT`` statement (for example, using "
+":py:meth:`Model.insert_many`):"
+msgstr ""
+
+#: ../../peewee/api.rst:361 ../../peewee/api.rst:372 ../../peewee/api.rst:395
+#: ../../peewee/api.rst:419 ../../peewee/api.rst:431
+msgid "Table name."
+msgstr ""
+
+#: ../../peewee/api.rst:362 ../../peewee/api.rst:367 ../../peewee/api.rst:373
+#: ../../peewee/api.rst:396 ../../peewee/api.rst:420 ../../peewee/api.rst:432
+#: ../../peewee/api.rst:449
+msgid "Schema name (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:363
+msgid "``bool`` indicating whether table exists."
+msgstr ""
+
+#: ../../peewee/api.rst:368
+msgid "a list of table names in the database."
+msgstr ""
+
+#: ../../peewee/api.rst:375
+msgid "Return a list of :py:class:`IndexMetadata` tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:398
+msgid "Return a list of :py:class:`ColumnMetadata` tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:422
+msgid "Return a list of column names that comprise the primary key."
+msgstr ""
+
+#: ../../peewee/api.rst:434
+msgid ""
+"Return a list of :py:class:`ForeignKeyMetadata` tuples for keys present "
+"on the table."
+msgstr ""
+
+#: ../../peewee/api.rst:451
+msgid ""
+"Return a list of :py:class:`ViewMetadata` tuples for VIEWs present in the"
+" database."
+msgstr ""
+
+#: ../../peewee/api.rst:464
+msgid "Name of sequence."
+msgstr ""
+
+#: ../../peewee/api.rst:465
+msgid "Whether sequence exists."
+msgstr ""
+
+#: ../../peewee/api.rst:470 ../../peewee/api.rst:482
+msgid "A list of :py:class:`Model` classes."
+msgstr ""
+
+#: ../../peewee/api.rst:471
+msgid "Options to specify when calling :py:meth:`Model.create_table`."
+msgstr ""
+
+#: ../../peewee/api.rst:474
+msgid ""
+"Create tables, indexes and associated metadata for the given list of "
+"models."
+msgstr ""
+
+#: ../../peewee/api.rst:477
+msgid ""
+"Dependencies are resolved so that tables are created in the appropriate "
+"order."
+msgstr ""
+
+#: ../../peewee/api.rst:483
+msgid "Options to specify when calling :py:meth:`Model.drop_table`."
+msgstr ""
+
+#: ../../peewee/api.rst:486
+msgid "Drop tables, indexes and associated metadata for the given list of models."
+msgstr ""
+
+#: ../../peewee/api.rst:489
+msgid ""
+"Dependencies are resolved so that tables are dropped in the appropriate "
+"order."
+msgstr ""
+
+#: ../../peewee/api.rst:494
+msgid "One or more :py:class:`Model` classes to bind."
+msgstr ""
+
+#: ../../peewee/api.rst:495 ../../peewee/api.rst:4429
+msgid "Bind related models."
+msgstr ""
+
+#: ../../peewee/api.rst:496 ../../peewee/api.rst:4430
+msgid "Bind back-reference related models."
+msgstr ""
+
+#: ../../peewee/api.rst:498
+msgid "Bind the given list of models, and specified relations, to the database."
+msgstr ""
+
+#: ../../peewee/api.rst:503
+msgid "List of models to bind to the database."
+msgstr ""
+
+#: ../../peewee/api.rst:504
+msgid "Bind models that are referenced using foreign-keys."
+msgstr ""
+
+#: ../../peewee/api.rst:506
+msgid "Bind models that reference the given model with a foreign-key."
+msgstr ""
+
+#: ../../peewee/api.rst:509
+msgid ""
+"Create a context-manager that binds (associates) the given models with "
+"the current database for the duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/api.rst:539
+msgid "date part to extract, e.g. 'year'."
+msgstr ""
+
+#: ../../peewee/api.rst:540 ../../peewee/api.rst:550
+msgid ""
+"a SQL node containing a date/time, for example a "
+":py:class:`DateTimeField`."
+msgstr ""
+
+#: ../../peewee/api.rst:542
+msgid ""
+"a SQL node representing a function call that will return the provided "
+"date part."
+msgstr ""
+
+#: ../../peewee/api.rst:545
+msgid "Provides a compatible interface for extracting a portion of a datetime."
+msgstr ""
+
+#: ../../peewee/api.rst:549
+msgid "date part to truncate to, e.g. 'day'."
+msgstr ""
+
+#: ../../peewee/api.rst:552
+msgid ""
+"a SQL node representing a function call that will return the truncated "
+"date part."
+msgstr ""
+
+#: ../../peewee/api.rst:555
+msgid ""
+"Provides a compatible interface for truncating a datetime to the given "
+"resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:560
+msgid "a SQL node representing a function call that returns a random value."
+msgstr ""
+
+#: ../../peewee/api.rst:563
+msgid ""
+"A compatible interface for calling the appropriate random number "
+"generation function provided by the database. For Postgres and Sqlite, "
+"this is equivalent to ``fn.random()``, for MySQL ``fn.rand()``."
+msgstr ""
+
+#: ../../peewee/api.rst:570
+msgid ""
+"Either a dictionary or a list of 2-tuples containing pragma key and value"
+" to set every time a connection is opened."
+msgstr ""
+
+#: ../../peewee/api.rst:572
+msgid "Set the busy-timeout on the SQLite driver (in seconds)."
+msgstr ""
+
+#: ../../peewee/api.rst:574
+msgid ""
+"Sqlite database implementation. :py:class:`SqliteDatabase` that provides "
+"some advanced features only offered by Sqlite."
+msgstr ""
+
+#: ../../peewee/api.rst:577
+msgid "Register custom aggregates, collations and functions"
+msgstr ""
+
+#: ../../peewee/api.rst:578
+msgid "Load C extensions"
+msgstr ""
+
+#: ../../peewee/api.rst:579
+msgid "Advanced transactions (specify lock type)"
+msgstr ""
+
+#: ../../peewee/api.rst:580
+msgid "For even more features, see :py:class:`SqliteExtDatabase`."
+msgstr ""
+
+#: ../../peewee/api.rst:582
+msgid "Example of initializing a database and configuring some PRAGMAs:"
+msgstr ""
+
+#: ../../peewee/api.rst:596
+msgid "Setting name."
+msgstr ""
+
+#: ../../peewee/api.rst:597
+msgid "New value for the setting (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:598
+msgid "Apply this pragma whenever a connection is opened."
+msgstr ""
+
+#: ../../peewee/api.rst:600
+msgid ""
+"Execute a PRAGMA query once on the active connection. If a value is not "
+"specified, then the current value will be returned."
+msgstr ""
+
+#: ../../peewee/api.rst:603
+msgid ""
+"If ``permanent`` is specified, then the PRAGMA query will also be "
+"executed whenever a new connection is opened, ensuring it is always in-"
+"effect."
+msgstr ""
+
+#: ../../peewee/api.rst:608
+msgid ""
+"By default this only affects the current connection. If the PRAGMA being "
+"executed is not persistent, then you must specify ``permanent=True`` to "
+"ensure the pragma is set on subsequent connections."
+msgstr ""
+
+#: ../../peewee/api.rst:615
+msgid "Get or set the cache_size pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:619
+msgid "Get or set the foreign_keys pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:623
+msgid "Get or set the journal_mode pragma."
+msgstr ""
+
+#: ../../peewee/api.rst:627
+msgid "Get or set the journal_size_limit pragma."
+msgstr ""
+
+#: ../../peewee/api.rst:631
+msgid "Get or set the mmap_size pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:635
+msgid "Get or set the page_size pragma."
+msgstr ""
+
+#: ../../peewee/api.rst:639
+msgid "Get or set the read_uncommitted pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:643
+msgid "Get or set the synchronous pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:647
+msgid "Get or set the wal_autocheckpoint pragma for the current connection."
+msgstr ""
+
+#: ../../peewee/api.rst:651
+msgid "Get or set the busy timeout (seconds)."
+msgstr ""
+
+#: ../../peewee/api.rst:655
+msgid "Class implementing aggregate API."
+msgstr ""
+
+#: ../../peewee/api.rst:656
+msgid "Aggregate function name (defaults to name of class)."
+msgstr ""
+
+#: ../../peewee/api.rst:657 ../../peewee/api.rst:669
+msgid "Number of parameters the aggregate accepts, or -1 for any number."
+msgstr ""
+
+#: ../../peewee/api.rst:660
+msgid "Register a user-defined aggregate function."
+msgstr ""
+
+#: ../../peewee/api.rst:662
+msgid ""
+"The function will be registered each time a new connection is opened. "
+"Additionally, if a connection is already open, the aggregate will be "
+"registered with the open connection."
+msgstr ""
+
+#: ../../peewee/api.rst:668
+msgid "Name of the aggregate (defaults to class name)."
+msgstr ""
+
+#: ../../peewee/api.rst:672
+msgid "Class decorator to register a user-defined aggregate function."
+msgstr ""
+
+#: ../../peewee/api.rst:704
+msgid "The collation function."
+msgstr ""
+
+#: ../../peewee/api.rst:705 ../../peewee/api.rst:714
+msgid "Name of collation (defaults to function name)"
+msgstr ""
+
+#: ../../peewee/api.rst:707
+msgid ""
+"Register a user-defined collation. The collation will be registered each "
+"time a new connection is opened.  Additionally, if a connection is "
+"already open, the collation will be registered with the open connection."
+msgstr ""
+
+#: ../../peewee/api.rst:716
+msgid "Decorator to register a user-defined collation."
+msgstr ""
+
+#: ../../peewee/api.rst:732
+msgid ""
+"As you might have noticed, the original ``collate_reverse`` function has "
+"a special attribute called ``collation`` attached to it.  This extra "
+"attribute provides a shorthand way to generate the SQL necessary to use "
+"our custom collation."
+msgstr ""
+
+#: ../../peewee/api.rst:739
+msgid "The user-defined scalar function."
+msgstr ""
+
+#: ../../peewee/api.rst:740
+msgid "Name of function (defaults to function name)"
+msgstr ""
+
+#: ../../peewee/api.rst:741
+msgid "Number of arguments the function accepts, or -1 for any number."
+msgstr ""
+
+#: ../../peewee/api.rst:744
+msgid ""
+"Register a user-defined scalar function. The function will be registered "
+"each time a new connection is opened.  Additionally, if a connection is "
+"already open, the function will be registered with the open connection."
+msgstr ""
+
+#: ../../peewee/api.rst:751
+msgid "Name of the function (defaults to function name)."
+msgstr ""
+
+#: ../../peewee/api.rst:752 ../../peewee/api.rst:772 ../../peewee/api.rst:788
+msgid "Number of parameters the function accepts, or -1 for any number."
+msgstr ""
+
+#: ../../peewee/api.rst:755
+msgid "Decorator to register a user-defined scalar function."
+msgstr ""
+
+#: ../../peewee/api.rst:770
+msgid "Class implementing window function API."
+msgstr ""
+
+#: ../../peewee/api.rst:771
+msgid "Window function name (defaults to name of class)."
+msgstr ""
+
+#: ../../peewee/api.rst:775
+msgid "Register a user-defined window function."
+msgstr ""
+
+#: ../../peewee/api.rst:778
+msgid ""
+"This feature requires SQLite >= 3.25.0 **and** `pysqlite3 "
+"<https://github.com/coleifer/pysqlite3>`_ >= 0.2.0."
+msgstr ""
+
+#: ../../peewee/api.rst:781
+msgid ""
+"The window function will be registered each time a new connection is "
+"opened. Additionally, if a connection is already open, the window "
+"function will be registered with the open connection."
+msgstr ""
+
+#: ../../peewee/api.rst:787
+msgid "Name of the window function (defaults to class name)."
+msgstr ""
+
+#: ../../peewee/api.rst:791
+msgid ""
+"Class decorator to register a user-defined window function. Window "
+"functions must define the following methods:"
+msgstr ""
+
+#: ../../peewee/api.rst:794
+msgid "``step(<params>)`` - receive values from a row and update state."
+msgstr ""
+
+#: ../../peewee/api.rst:795
+msgid "``inverse(<params>)`` - inverse of ``step()`` for the given values."
+msgstr ""
+
+#: ../../peewee/api.rst:796
+msgid "``value()`` - return the current value of the window function."
+msgstr ""
+
+#: ../../peewee/api.rst:797
+msgid "``finalize()`` - return the final value of the window function."
+msgstr ""
+
+#: ../../peewee/api.rst:822
+msgid ""
+"Class-decorator for registering a :py:class:`TableFunction`. Table "
+"functions are user-defined functions that, rather than returning a "
+"single, scalar value, can return any number of rows of tabular data."
+msgstr ""
+
+#: ../../peewee/api.rst:872
+msgid "Name of the user-defined aggregate function."
+msgstr ""
+
+#: ../../peewee/api.rst:874
+msgid "Unregister the user-defined aggregate function."
+msgstr ""
+
+#: ../../peewee/api.rst:878
+msgid "Name of the user-defined collation."
+msgstr ""
+
+#: ../../peewee/api.rst:880
+msgid "Unregister the user-defined collation."
+msgstr ""
+
+#: ../../peewee/api.rst:884
+msgid "Name of the user-defined scalar function."
+msgstr ""
+
+#: ../../peewee/api.rst:886 ../../peewee/api.rst:893
+msgid "Unregister the user-defined scalar function."
+msgstr ""
+
+#: ../../peewee/api.rst:890
+msgid "Name of the user-defined table function."
+msgstr ""
+
+#: ../../peewee/api.rst:891
+msgid "True or False, depending on whether the function was removed."
+msgstr ""
+
+#: ../../peewee/api.rst:897
+msgid ""
+"Load the given C extension. If a connection is currently open in the "
+"calling thread, then the extension will be loaded for that connection as "
+"well as all subsequent connections."
+msgstr ""
+
+#: ../../peewee/api.rst:901
+msgid ""
+"For example, if you've compiled the closure table extension and wish to "
+"use it in your application, you might write:"
+msgstr ""
+
+#: ../../peewee/api.rst:911
+msgid "Database to attach (or ``:memory:`` for in-memory)"
+msgstr ""
+
+#: ../../peewee/api.rst:912 ../../peewee/api.rst:925
+msgid "Schema name for attached database."
+msgstr ""
+
+#: ../../peewee/api.rst:913 ../../peewee/api.rst:926
+msgid "boolean indicating success"
+msgstr ""
+
+#: ../../peewee/api.rst:915
+msgid ""
+"Register another database file that will be attached to every database "
+"connection. If the main database is currently connected, the new database"
+" will be attached on the open connection."
+msgstr ""
+
+#: ../../peewee/api.rst:920
+msgid ""
+"Databases that are attached using this method will be attached every time"
+" a database connection is opened."
+msgstr ""
+
+#: ../../peewee/api.rst:928
+msgid ""
+"Unregister another database file that was attached previously with a call"
+" to :py:meth:`~SqliteDatabase.attach`. If the main database is currently "
+"connected, the attached database will be detached from the open "
+"connection."
+msgstr ""
+
+#: ../../peewee/api.rst:935
+msgid "Locking strategy: DEFERRED, IMMEDIATE, EXCLUSIVE."
+msgstr ""
+
+#: ../../peewee/api.rst:937
+msgid ""
+"Create a transaction context-manager using the specified locking strategy"
+" (defaults to DEFERRED)."
+msgstr ""
+
+#: ../../peewee/api.rst:943
+msgid "Postgresql database implementation."
+msgstr ""
+
+#: ../../peewee/api.rst:945
+msgid "Additional optional keyword-parameters:"
+msgstr ""
+
+#: ../../peewee/api.rst:947
+msgid "Register unicode types."
+msgstr ""
+
+#: ../../peewee/api.rst:948
+msgid "Database encoding."
+msgstr ""
+
+#: ../../peewee/api.rst:949
+msgid "Isolation level constant, defined in the ``psycopg2.extensions`` module."
+msgstr ""
+
+#: ../../peewee/api.rst:954
+msgid "timezone name, e.g. \"US/Central\"."
+msgstr ""
+
+#: ../../peewee/api.rst:955 ../../peewee/api.rst:4152
+msgid "no return value."
+msgstr ""
+
+#: ../../peewee/api.rst:957
+msgid ""
+"Set the timezone on the current connection. If no connection is open, "
+"then one will be opened."
+msgstr ""
+
+#: ../../peewee/api.rst:963
+msgid "MySQL database implementation."
+msgstr ""
+
+#: ../../peewee/api.rst:968
+msgid "Query-builder"
+msgstr ""
+
+#: ../../peewee/api.rst:972
+msgid "Base-class for all components which make up the AST for a SQL query."
+msgstr ""
+
+#: ../../peewee/api.rst:976
+msgid ""
+"Decorator to use with Node methods that mutate the node's state. This "
+"allows method-chaining, e.g.:"
+msgstr ""
+
+#: ../../peewee/api.rst:986
+msgid ""
+"API for recursively unwrapping \"wrapped\" nodes. Base case is to return "
+"self."
+msgstr ""
+
+#: ../../peewee/api.rst:991
+msgid ""
+"API for determining if a node, at any point, has been explicitly aliased "
+"by the user."
+msgstr ""
+
+#: ../../peewee/api.rst:997
+msgid ""
+"A source of row tuples, for example a table, join, or select query. By "
+"default provides a \"magic\" attribute named \"c\" that is a factory for "
+"column/attribute lookups, for example:"
+msgstr ""
+
+#: ../../peewee/api.rst:1011
+msgid "Returns a copy of the object with the given alias applied."
+msgstr ""
+
+#: ../../peewee/api.rst:1015 ../../peewee/api.rst:1123
+msgid ""
+":py:class:`Column` instances, expressions, functions, sub-queries, or "
+"anything else that you would like to select."
+msgstr ""
+
+#: ../../peewee/api.rst:1018 ../../peewee/api.rst:1126
+msgid ""
+"Create a :py:class:`Select` query on the table. If the table explicitly "
+"declares columns and no columns are provided, then by default all the "
+"table's defined columns will be selected."
+msgstr ""
+
+#: ../../peewee/api.rst:1024 ../../peewee/api.rst:1040
+msgid "Join the table with the given destination."
+msgstr ""
+
+#: ../../peewee/api.rst:1025
+msgid "Join type."
+msgstr ""
+
+#: ../../peewee/api.rst:1026 ../../peewee/api.rst:1041
+msgid "Expression to use as join predicate."
+msgstr ""
+
+#: ../../peewee/api.rst:1027 ../../peewee/api.rst:1042
+msgid "a :py:class:`Join` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:1029 ../../peewee/api.rst:2375
+#: ../../peewee/api.rst:4677
+msgid "Join type may be one of:"
+msgstr ""
+
+#: ../../peewee/api.rst:1031 ../../peewee/api.rst:2377
+#: ../../peewee/api.rst:4679
+msgid "``JOIN.INNER``"
+msgstr ""
+
+#: ../../peewee/api.rst:1032 ../../peewee/api.rst:2378
+#: ../../peewee/api.rst:4680
+msgid "``JOIN.LEFT_OUTER``"
+msgstr ""
+
+#: ../../peewee/api.rst:1033 ../../peewee/api.rst:2379
+#: ../../peewee/api.rst:4681
+msgid "``JOIN.RIGHT_OUTER``"
+msgstr ""
+
+#: ../../peewee/api.rst:1034 ../../peewee/api.rst:2380
+#: ../../peewee/api.rst:4682
+msgid "``JOIN.FULL``"
+msgstr ""
+
+#: ../../peewee/api.rst:1035 ../../peewee/api.rst:2381
+#: ../../peewee/api.rst:4683
+msgid "``JOIN.FULL_OUTER``"
+msgstr ""
+
+#: ../../peewee/api.rst:1036 ../../peewee/api.rst:2382
+#: ../../peewee/api.rst:4684
+msgid "``JOIN.CROSS``"
+msgstr ""
+
+#: ../../peewee/api.rst:1044
+msgid ""
+"Convenience method for calling :py:meth:`~Source.join` using a LEFT OUTER"
+" join."
+msgstr ""
+
+#: ../../peewee/api.rst:1050
+msgid ""
+"Base class for table-like objects, which support JOINs via operator "
+"overloading."
+msgstr ""
+
+#: ../../peewee/api.rst:1055
+msgid "Perform an INNER join on ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:1059
+msgid "Perform a LEFT OUTER join on ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:1063
+msgid "Perform a RIGHT OUTER join on ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:1067
+msgid "Perform a FULL OUTER join on ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:1071
+msgid "Perform a CROSS join on ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:1076
+msgid ""
+"Represents a table in the database (or a table-like object such as a "
+"view)."
+msgstr ""
+
+#: ../../peewee/api.rst:1078
+msgid "Database table name"
+msgstr ""
+
+#: ../../peewee/api.rst:1079
+msgid "List of column names (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1080
+msgid "Name of primary key column."
+msgstr ""
+
+#: ../../peewee/api.rst:1081
+msgid "Schema name used to access table (if necessary)."
+msgstr ""
+
+#: ../../peewee/api.rst:1082
+msgid "Alias to use for table in SQL queries."
+msgstr ""
+
+#: ../../peewee/api.rst:1085
+msgid "If columns are specified, the magic \"c\" attribute will be disabled."
+msgstr ""
+
+#: ../../peewee/api.rst:1087
+msgid ""
+"When columns are not explicitly defined, tables have a special attribute "
+"\"c\" which is a factory that provides access to table columns "
+"dynamically."
+msgstr ""
+
+#: ../../peewee/api.rst:1097
+msgid "Equivalent example when columns **are** specified::"
+msgstr ""
+
+#: ../../peewee/api.rst:1106 ../../peewee/api.rst:1116
+msgid ":py:class:`Database` object."
+msgstr ""
+
+#: ../../peewee/api.rst:1108
+msgid "Bind this table to the given database (or unbind by leaving empty)."
+msgstr ""
+
+#: ../../peewee/api.rst:1110
+msgid ""
+"When a table is *bound* to a database, queries may be executed against it"
+" without the need to specify the database in the query's execute method."
+msgstr ""
+
+#: ../../peewee/api.rst:1118
+msgid ""
+"Return a context manager that will bind the table to the given database "
+"for the duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/api.rst:1160 ../../peewee/api.rst:1170
+msgid ""
+"A dictionary mapping column to value, an iterable that yields "
+"dictionaries (i.e. list), or a :py:class:`Select` query."
+msgstr ""
+
+#: ../../peewee/api.rst:1162 ../../peewee/api.rst:1172
+msgid ""
+"The list of columns to insert into when the data being inserted is not a "
+"dictionary."
+msgstr ""
+
+#: ../../peewee/api.rst:1164 ../../peewee/api.rst:1174
+#: ../../peewee/api.rst:1182
+msgid "Mapping of column-name to value."
+msgstr ""
+
+#: ../../peewee/api.rst:1166
+msgid "Create a :py:class:`Insert` query into the table."
+msgstr ""
+
+#: ../../peewee/api.rst:1176
+msgid ""
+"Create a :py:class:`Insert` query into the table whose conflict "
+"resolution method is to replace."
+msgstr ""
+
+#: ../../peewee/api.rst:1181
+msgid "A dictionary mapping column to value."
+msgstr ""
+
+#: ../../peewee/api.rst:1184
+msgid "Create a :py:class:`Update` query for the table."
+msgstr ""
+
+#: ../../peewee/api.rst:1188
+msgid "Create a :py:class:`Delete` query for the table."
+msgstr ""
+
+#: ../../peewee/api.rst:1193
+msgid "Represent a JOIN between to table-like objects."
+msgstr ""
+
+#: ../../peewee/api.rst:1195
+msgid "Left-hand side of the join."
+msgstr ""
+
+#: ../../peewee/api.rst:1196
+msgid "Right-hand side of the join."
+msgstr ""
+
+#: ../../peewee/api.rst:1197
+msgid "Type of join. e.g. JOIN.INNER, JOIN.LEFT_OUTER, etc."
+msgstr ""
+
+#: ../../peewee/api.rst:1198
+msgid "Expression describing the join predicate."
+msgstr ""
+
+#: ../../peewee/api.rst:1199
+msgid "Alias to apply to joined data."
+msgstr ""
+
+#: ../../peewee/api.rst:1203
+msgid "join predicate."
+msgstr ""
+
+#: ../../peewee/api.rst:1205
+msgid "Specify the predicate expression used for this join."
+msgstr ""
+
+#: ../../peewee/api.rst:1210
+msgid "Represent a values list that can be used like a table."
+msgstr ""
+
+#: ../../peewee/api.rst:1212
+msgid "a list-of-lists containing the row data to represent."
+msgstr ""
+
+#: ../../peewee/api.rst:1213
+msgid "the names to give to the columns in each row."
+msgstr ""
+
+#: ../../peewee/api.rst:1214
+msgid "alias to use for values-list."
+msgstr ""
+
+#: ../../peewee/api.rst:1233
+msgid "names to apply to the columns of data."
+msgstr ""
+
+#: ../../peewee/api.rst:1250
+msgid "Represent a common-table-expression. For example queries, see :ref:`cte`."
+msgstr ""
+
+#: ../../peewee/api.rst:1252
+msgid "Name for the CTE."
+msgstr ""
+
+#: ../../peewee/api.rst:1253
+msgid ":py:class:`Select` query describing CTE."
+msgstr ""
+
+#: ../../peewee/api.rst:1254
+msgid "Whether the CTE is recursive."
+msgstr ""
+
+#: ../../peewee/api.rst:1255
+msgid "Explicit list of columns produced by CTE (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1259
+msgid ""
+"Create a SELECT query that utilizes the given common table expression as "
+"the source for a new query."
+msgstr ""
+
+#: ../../peewee/api.rst:1262
+msgid "One or more columns to select from the CTE."
+msgstr ""
+
+#: ../../peewee/api.rst:1263
+msgid ":py:class:`Select` query utilizing the common table expression"
+msgstr ""
+
+#: ../../peewee/api.rst:1267
+msgid "Used on the base-case CTE to construct the recursive term of the CTE."
+msgstr ""
+
+#: ../../peewee/api.rst:1269
+msgid "recursive term, generally a :py:class:`Select` query."
+msgstr ""
+
+#: ../../peewee/api.rst:1270
+msgid "a recursive :py:class:`CTE` with the given recursive term."
+msgstr ""
+
+#: ../../peewee/api.rst:1275
+msgid "Base-class for column-like objects, attributes or expressions."
+msgstr ""
+
+#: ../../peewee/api.rst:1277
+msgid ""
+"Column-like objects can be composed using various operators and special "
+"methods."
+msgstr ""
+
+#: ../../peewee/api.rst:1280
+msgid "``&``: Logical AND"
+msgstr ""
+
+#: ../../peewee/api.rst:1281
+msgid "``|``: Logical OR"
+msgstr ""
+
+#: ../../peewee/api.rst:1282
+msgid "``+``: Addition"
+msgstr ""
+
+#: ../../peewee/api.rst:1283
+msgid "``-``: Subtraction"
+msgstr ""
+
+#: ../../peewee/api.rst:1284
+msgid "``*``: Multiplication"
+msgstr ""
+
+#: ../../peewee/api.rst:1285
+msgid "``/``: Division"
+msgstr ""
+
+#: ../../peewee/api.rst:1286
+msgid "``^``: Exclusive-OR"
+msgstr ""
+
+#: ../../peewee/api.rst:1287
+msgid "``==``: Equality"
+msgstr ""
+
+#: ../../peewee/api.rst:1288
+msgid "``!=``: Inequality"
+msgstr ""
+
+#: ../../peewee/api.rst:1289
+msgid "``>``: Greater-than"
+msgstr ""
+
+#: ../../peewee/api.rst:1290
+msgid "``<``: Less-than"
+msgstr ""
+
+#: ../../peewee/api.rst:1291
+msgid "``>=``: Greater-than or equal"
+msgstr ""
+
+#: ../../peewee/api.rst:1292
+msgid "``<=``: Less-than or equal"
+msgstr ""
+
+#: ../../peewee/api.rst:1293
+msgid "``<<``: ``IN``"
+msgstr ""
+
+#: ../../peewee/api.rst:1294
+msgid "``>>``: ``IS`` (i.e. ``IS NULL``)"
+msgstr ""
+
+#: ../../peewee/api.rst:1295
+msgid "``%``: ``LIKE``"
+msgstr ""
+
+#: ../../peewee/api.rst:1296
+msgid "``**``: ``ILIKE``"
+msgstr ""
+
+#: ../../peewee/api.rst:1297
+msgid "``bin_and()``: Binary AND"
+msgstr ""
+
+#: ../../peewee/api.rst:1298
+msgid "``bin_or()``: Binary OR"
+msgstr ""
+
+#: ../../peewee/api.rst:1299
+msgid "``in_()``: ``IN``"
+msgstr ""
+
+#: ../../peewee/api.rst:1300
+msgid "``not_in()``: ``NOT IN``"
+msgstr ""
+
+#: ../../peewee/api.rst:1301
+msgid "``regexp()``: ``REGEXP``"
+msgstr ""
+
+#: ../../peewee/api.rst:1302
+msgid "``is_null(True/False)``: ``IS NULL`` or ``IS NOT NULL``"
+msgstr ""
+
+#: ../../peewee/api.rst:1303
+#, python-format
+msgid "``contains(s)``: ``LIKE %s%``"
+msgstr ""
+
+#: ../../peewee/api.rst:1304
+msgid "``startswith(s)``: ``LIKE s%``"
+msgstr ""
+
+#: ../../peewee/api.rst:1305
+#, python-format
+msgid "``endswith(s)``: ``LIKE %s``"
+msgstr ""
+
+#: ../../peewee/api.rst:1306
+msgid "``between(low, high)``: ``BETWEEN low AND high``"
+msgstr ""
+
+#: ../../peewee/api.rst:1307
+msgid "``concat()``: ``||``"
+msgstr ""
+
+#: ../../peewee/api.rst:1311
+msgid "Alias for the given column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1312
+msgid "a :py:class:`Alias` object."
+msgstr ""
+
+#: ../../peewee/api.rst:1314
+msgid ""
+"Indicate the alias that should be given to the specified column-like "
+"object."
+msgstr ""
+
+#: ../../peewee/api.rst:1319
+msgid "Type name to cast to."
+msgstr ""
+
+#: ../../peewee/api.rst:1320
+msgid "a :py:class:`Cast` object."
+msgstr ""
+
+#: ../../peewee/api.rst:1322
+msgid "Create a ``CAST`` expression."
+msgstr ""
+
+#: ../../peewee/api.rst:1326 ../../peewee/api.rst:1332
+#: ../../peewee/api.rst:1403 ../../peewee/api.rst:1414
+msgid "Collation name to use for sorting."
+msgstr ""
+
+#: ../../peewee/api.rst:1327 ../../peewee/api.rst:1333
+#: ../../peewee/api.rst:1404
+msgid "Sort nulls (FIRST or LAST)."
+msgstr ""
+
+#: ../../peewee/api.rst:1328
+msgid "an ascending :py:class:`Ordering` object for the column."
+msgstr ""
+
+#: ../../peewee/api.rst:1334
+msgid "an descending :py:class:`Ordering` object for the column."
+msgstr ""
+
+#: ../../peewee/api.rst:1338
+msgid "a :py:class:`Negated` wrapper for the column."
+msgstr ""
+
+#: ../../peewee/api.rst:1343
+msgid "Source for column."
+msgstr ""
+
+#: ../../peewee/api.rst:1344
+msgid "Column name."
+msgstr ""
+
+#: ../../peewee/api.rst:1346
+msgid "Column on a table or a column returned by a sub-query."
+msgstr ""
+
+#: ../../peewee/api.rst:1351
+msgid "a column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1352
+msgid "alias to assign to column."
+msgstr ""
+
+#: ../../peewee/api.rst:1354
+msgid "Create a named alias for the given column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1358
+msgid "new name (or None) for aliased column."
+msgstr ""
+
+#: ../../peewee/api.rst:1360
+msgid ""
+"Create a new :py:class:`Alias` for the aliased column-like object. If the"
+" new alias is ``None``, then the original column-like object is returned."
+msgstr ""
+
+#: ../../peewee/api.rst:1367
+msgid "Represents a negated column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1372
+msgid "Python object or scalar value."
+msgstr ""
+
+#: ../../peewee/api.rst:1373
+msgid "Function used to convert value into type the database understands."
+msgstr ""
+
+#: ../../peewee/api.rst:1375
+msgid ""
+"Whether lists or tuples should be unpacked into a list of values or "
+"treated as-is."
+msgstr ""
+
+#: ../../peewee/api.rst:1378
+msgid ""
+"Value to be used in a parameterized query. It is the responsibility of "
+"the caller to ensure that the value passed in can be adapted to a type "
+"the database driver understands."
+msgstr ""
+
+#: ../../peewee/api.rst:1385
+msgid ""
+"Represents a :py:class:`Value` that is treated as-is, and passed directly"
+" back to the database driver. This may be useful if you are using "
+"database extensions that accept native Python data-types and you do not "
+"wish Peewee to impose any handling of the values."
+msgstr ""
+
+#: ../../peewee/api.rst:1393 ../../peewee/api.rst:1401
+msgid "A column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1394
+msgid "Type to cast to."
+msgstr ""
+
+#: ../../peewee/api.rst:1396
+msgid "Represents a ``CAST(<node> AS <cast>)`` expression."
+msgstr ""
+
+#: ../../peewee/api.rst:1402
+msgid "ASC or DESC"
+msgstr ""
+
+#: ../../peewee/api.rst:1406
+msgid "Represent ordering by a column-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:1408
+msgid ""
+"Postgresql supports a non-standard clause (\"NULLS FIRST/LAST\"). Peewee "
+"will automatically use an equivalent ``CASE`` statement for databases "
+"that do not support this (Sqlite / MySQL)."
+msgstr ""
+
+#: ../../peewee/api.rst:1419
+msgid "Short-hand for instantiating an ascending :py:class:`Ordering` object."
+msgstr ""
+
+#: ../../peewee/api.rst:1424
+msgid "Short-hand for instantiating an descending :py:class:`Ordering` object."
+msgstr ""
+
+#: ../../peewee/api.rst:1429
+msgid "Left-hand side."
+msgstr ""
+
+#: ../../peewee/api.rst:1430
+msgid "Operation."
+msgstr ""
+
+#: ../../peewee/api.rst:1431
+msgid "Right-hand side."
+msgstr ""
+
+#: ../../peewee/api.rst:1432
+msgid "Whether to wrap expression in parentheses."
+msgstr ""
+
+#: ../../peewee/api.rst:1434
+msgid "Represent a binary expression of the form (lhs op rhs), e.g. (foo + 1)."
+msgstr ""
+
+#: ../../peewee/api.rst:1439
+msgid "Components that make up the dotted-path of the entity name."
+msgstr ""
+
+#: ../../peewee/api.rst:1441
+msgid ""
+"Represent a quoted entity in a query, such as a table, column, alias. The"
+" name may consist of multiple components, e.g. "
+"\"a_table\".\"column_name\"."
+msgstr ""
+
+#: ../../peewee/api.rst:1446
+msgid "Factory method for creating sub-entities."
+msgstr ""
+
+#: ../../peewee/api.rst:1451
+msgid "SQL query string."
+msgstr ""
+
+#: ../../peewee/api.rst:1452
+msgid "Parameters for query (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1454
+msgid "Represent a parameterized SQL query or query-fragment."
+msgstr ""
+
+#: ../../peewee/api.rst:1459
+msgid "Constraint SQL."
+msgstr ""
+
+#: ../../peewee/api.rst:1461
+msgid "Represent a CHECK constraint."
+msgstr ""
+
+#: ../../peewee/api.rst:1466
+msgid "Function name."
+msgstr ""
+
+#: ../../peewee/api.rst:1467
+msgid "Arguments to function."
+msgstr ""
+
+#: ../../peewee/api.rst:1468
+msgid ""
+"Whether to coerce the function result to a particular data-type when "
+"reading function return values from the cursor."
+msgstr ""
+
+#: ../../peewee/api.rst:1470 ../../peewee/api.rst:1555
+msgid "Function to use for converting the return value from the cursor."
+msgstr ""
+
+#: ../../peewee/api.rst:1473
+msgid "Represent an arbitrary SQL function call."
+msgstr ""
+
+#: ../../peewee/api.rst:1476
+msgid ""
+"Rather than instantiating this class directly, it is recommended to use "
+"the ``fn`` helper."
+msgstr ""
+
+#: ../../peewee/api.rst:1479
+msgid "Example of using ``fn`` to call an arbitrary SQL function::"
+msgstr ""
+
+#: ../../peewee/api.rst:1490 ../../peewee/api.rst:1616
+msgid "List of columns to partition by."
+msgstr ""
+
+#: ../../peewee/api.rst:1491
+msgid "List of columns / expressions to order window by."
+msgstr ""
+
+#: ../../peewee/api.rst:1492 ../../peewee/api.rst:1618
+msgid ""
+"A :py:class:`SQL` instance or a string expressing the start of the window"
+" range."
+msgstr ""
+
+#: ../../peewee/api.rst:1494 ../../peewee/api.rst:1620
+msgid ""
+"A :py:class:`SQL` instance or a string expressing the end of the window "
+"range."
+msgstr ""
+
+#: ../../peewee/api.rst:1496 ../../peewee/api.rst:1622
+msgid "``Window.RANGE``, ``Window.ROWS`` or ``Window.GROUPS``."
+msgstr ""
+
+#: ../../peewee/api.rst:1498
+msgid "A :py:class:`Window` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:1499 ../../peewee/api.rst:1626
+#: ../../peewee/api.rst:1680
+msgid ""
+"Frame exclusion, one of ``Window.CURRENT_ROW``, ``Window.GROUP``, "
+"``Window.TIES`` or ``Window.NO_OTHERS``."
+msgstr ""
+
+#: ../../peewee/api.rst:1503 ../../peewee/api.rst:1633
+msgid ""
+"For an in-depth guide to using window functions with Peewee, see the :ref"
+":`window-functions` section."
+msgstr ""
+
+#: ../../peewee/api.rst:1506 ../../peewee/api.rst:1695
+msgid "Examples::"
+msgstr ""
+
+#: ../../peewee/api.rst:1537
+msgid "Expression for filtering aggregate."
+msgstr ""
+
+#: ../../peewee/api.rst:1539
+msgid ""
+"Add a ``FILTER (WHERE...)`` clause to an aggregate function. The where "
+"expression is evaluated to determine which rows are fed to the aggregate "
+"function. This SQL feature is supported for Postgres and SQLite."
+msgstr ""
+
+#: ../../peewee/api.rst:1546
+msgid "Whether to attempt to coerce function-call result to a Python data-type."
+msgstr ""
+
+#: ../../peewee/api.rst:1549
+msgid ""
+"When coerce is ``True``, the target data-type is inferred using several "
+"heuristics. Read the source for "
+"``BaseModelCursorWrapper._initialize_columns`` method to see how this "
+"works."
+msgstr ""
+
+#: ../../peewee/api.rst:1558
+msgid ""
+"Specify a particular function to use when converting values returned by "
+"the database cursor. For example:"
+msgstr ""
+
+#: ../../peewee/api.rst:1584
+msgid ""
+"The :py:func:`fn` helper is actually an instance of :py:class:`Function` "
+"that implements a ``__getattr__`` hook to provide a nice API for calling "
+"SQL functions."
+msgstr ""
+
+#: ../../peewee/api.rst:1588
+msgid ""
+"To create a node representative of a SQL function call, use the function "
+"name as an attribute on ``fn`` and then provide the arguments as you "
+"would if calling a Python function:"
+msgstr ""
+
+#: ../../peewee/api.rst:1607
+msgid "Function calls can, like anything else, be composed and nested:"
+msgstr ""
+
+#: ../../peewee/api.rst:1617
+msgid "List of columns to order by."
+msgstr ""
+
+#: ../../peewee/api.rst:1624 ../../peewee/api.rst:1675
+msgid ""
+"A :py:class:`Window` definition to extend. Alternately, you may specify "
+"the window's alias instead."
+msgstr ""
+
+#: ../../peewee/api.rst:1628
+msgid "Alias for the window."
+msgstr ""
+
+#: ../../peewee/api.rst:1630
+msgid "Represent a WINDOW clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1640
+msgid "Specify the window ``frame_type``. See :ref:`window-frame-types`."
+msgstr ""
+
+#: ../../peewee/api.rst:1644
+msgid ""
+"Reference to current row for use in start/end clause or the frame "
+"exclusion parameter."
+msgstr ""
+
+#: ../../peewee/api.rst:1651
+msgid "Specify the window frame exclusion parameter."
+msgstr ""
+
+#: ../../peewee/api.rst:1655
+msgid "Number of rows preceding. If ``None`` is UNBOUNDED."
+msgstr ""
+
+#: ../../peewee/api.rst:1657
+msgid ""
+"Convenience method for generating SQL suitable for passing in as the "
+"``start`` parameter for a window range."
+msgstr ""
+
+#: ../../peewee/api.rst:1662
+msgid "Number of rows following. If ``None`` is UNBOUNDED."
+msgstr ""
+
+#: ../../peewee/api.rst:1664
+msgid ""
+"Convenience method for generating SQL suitable for passing in as the "
+"``end`` parameter for a window range."
+msgstr ""
+
+#: ../../peewee/api.rst:1671
+msgid "Specify the frame type."
+msgstr ""
+
+#: ../../peewee/api.rst:1685
+msgid "Alias to use for window."
+msgstr ""
+
+#: ../../peewee/api.rst:1690
+msgid "Predicate for CASE query (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1691
+msgid "One or more cases to evaluate."
+msgstr ""
+
+#: ../../peewee/api.rst:1692
+msgid "Default value (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1693
+msgid "Representation of CASE statement."
+msgstr ""
+
+#: ../../peewee/api.rst:1733 ../../peewee/api.rst:1742
+#: ../../peewee/api.rst:1750
+msgid "Zero or more nodes."
+msgstr ""
+
+#: ../../peewee/api.rst:1734
+msgid "How to join the nodes when converting to SQL."
+msgstr ""
+
+#: ../../peewee/api.rst:1735
+msgid "Whether to wrap the resulting SQL in parentheses."
+msgstr ""
+
+#: ../../peewee/api.rst:1737
+msgid "Represent a list of nodes, a multi-part clause, a list of parameters, etc."
+msgstr ""
+
+#: ../../peewee/api.rst:1743 ../../peewee/api.rst:1751
+msgid "a :py:class:`NodeList`"
+msgstr ""
+
+#: ../../peewee/api.rst:1745
+msgid "Represent a list of nodes joined by commas."
+msgstr ""
+
+#: ../../peewee/api.rst:1753
+msgid "Represent a list of nodes joined by commas and wrapped in parentheses."
+msgstr ""
+
+#: ../../peewee/api.rst:1758
+msgid "Arbitrary filter expressions using Django-style lookups."
+msgstr ""
+
+#: ../../peewee/api.rst:1760
+msgid ""
+"Represent a composable Django-style filter expression suitable for use "
+"with the :py:meth:`Model.filter` or :py:meth:`ModelSelect.filter` "
+"methods."
+msgstr ""
+
+#: ../../peewee/api.rst:1766
+msgid ""
+"Represent a SQL `row value <https://www.sqlite.org/rowvalue.html>`_. Row-"
+"values are supported by most databases."
+msgstr ""
+
+#: ../../peewee/api.rst:1772
+msgid "Action to take when resolving conflict."
+msgstr ""
+
+#: ../../peewee/api.rst:1773 ../../peewee/api.rst:2575
+msgid "A dictionary mapping column to new value."
+msgstr ""
+
+#: ../../peewee/api.rst:1774
+msgid ""
+"A list of columns whose values should be preserved from the original "
+"INSERT. See also :py:class:`EXCLUDED`."
+msgstr ""
+
+#: ../../peewee/api.rst:1775 ../../peewee/api.rst:2577
+msgid "Expression to restrict the conflict resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:1776 ../../peewee/api.rst:2578
+msgid "Column(s) that comprise the constraint."
+msgstr ""
+
+#: ../../peewee/api.rst:1777 ../../peewee/api.rst:2579
+msgid ""
+"Expressions needed to match the constraint target if it is a partial "
+"index (index with a WHERE clause)."
+msgstr ""
+
+#: ../../peewee/api.rst:1778 ../../peewee/api.rst:2580
+msgid ""
+"Name of constraint to use for conflict resolution. Currently only "
+"supported by Postgres."
+msgstr ""
+
+#: ../../peewee/api.rst:1781
+msgid "Represent a conflict resolution clause for a data-modification query."
+msgstr ""
+
+#: ../../peewee/api.rst:1783
+msgid ""
+"Depending on the database-driver being used, one or more of the above "
+"parameters may be required."
+msgstr ""
+
+#: ../../peewee/api.rst:1788
+msgid "Columns whose values should be preserved."
+msgstr ""
+
+#: ../../peewee/api.rst:1792
+msgid "Dictionary mapping column to new value."
+msgstr ""
+
+#: ../../peewee/api.rst:1793
+msgid "Dictionary mapping column name to new value."
+msgstr ""
+
+#: ../../peewee/api.rst:1795
+msgid ""
+"The ``update()`` method supports being called with either a dictionary of"
+" column-to-value, **or** keyword arguments representing the same."
+msgstr ""
+
+#: ../../peewee/api.rst:1800
+msgid "Expressions that restrict the action of the conflict resolution clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1805
+msgid "Column(s) to use as target for conflict resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:1809
+msgid ""
+"Expressions that match the conflict target index, in the case the "
+"conflict target is a partial index."
+msgstr ""
+
+#: ../../peewee/api.rst:1814
+msgid ""
+"Name of constraints to use as target for conflict resolution. Currently "
+"only supported by Postgres."
+msgstr ""
+
+#: ../../peewee/api.rst:1820
+msgid ""
+"Helper object that exposes the ``EXCLUDED`` namespace that is used with "
+"``INSERT ... ON CONFLICT`` to reference values in the conflicting data. "
+"This is a \"magic\" helper, such that one uses it by accessing attributes"
+" on it that correspond to a particular column."
+msgstr ""
+
+#: ../../peewee/api.rst:1858
+msgid ""
+"The parent class from which all other query classes are derived. While "
+"you will not deal with :py:class:`BaseQuery` directly in your code, it "
+"implements some methods that are common across all query types."
+msgstr ""
+
+#: ../../peewee/api.rst:1866
+msgid "Database to execute query against."
+msgstr ""
+
+#: ../../peewee/api.rst:1868
+msgid "Bind the query to the given database for execution."
+msgstr ""
+
+#: ../../peewee/api.rst:1872
+msgid "Specify whether to return rows as dictionaries."
+msgstr ""
+
+#: ../../peewee/api.rst:1874
+msgid "Return rows as dictionaries."
+msgstr ""
+
+#: ../../peewee/api.rst:1878
+msgid "Specify whether to return rows as tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:1880
+msgid "Return rows as tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:1884
+msgid "Specify whether to return rows as named tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:1887
+msgid "Return rows as named tuples."
+msgstr ""
+
+#: ../../peewee/api.rst:1891
+msgid "Function that accepts row dict and returns an arbitrary object."
+msgstr ""
+
+#: ../../peewee/api.rst:1894
+msgid "Return rows as arbitrary objects using the given constructor."
+msgstr ""
+
+#: ../../peewee/api.rst:1898
+msgid "A 2-tuple consisting of the query's SQL and parameters."
+msgstr ""
+
+#: ../../peewee/api.rst:1902 ../../peewee/api.rst:1911
+msgid ""
+"Database to execute query against. Not required if query was previously "
+"bound to a database."
+msgstr ""
+
+#: ../../peewee/api.rst:1905
+msgid ""
+"Execute the query and return result (depends on type of query being "
+"executed). For example, select queries the return result will be an "
+"iterator over the query results."
+msgstr ""
+
+#: ../../peewee/api.rst:1914
+msgid ""
+"Execute the query and return an iterator over the result-set. For large "
+"result-sets this method is preferable as rows are not cached in-memory "
+"during iteration."
+msgstr ""
+
+#: ../../peewee/api.rst:1919
+msgid ""
+"Because rows are not cached, the query may only be iterated over once. "
+"Subsequent iterations will return empty result-sets as the cursor will "
+"have been consumed."
+msgstr ""
+
+#: ../../peewee/api.rst:1933
+msgid "Execute the query and return an iterator over the result-set."
+msgstr ""
+
+#: ../../peewee/api.rst:1935
+msgid ""
+"Unlike :py:meth:`~BaseQuery.iterator`, this method will cause rows to be "
+"cached in order to allow efficient iteration, indexing and slicing."
+msgstr ""
+
+#: ../../peewee/api.rst:1940
+msgid "Either an integer index or a slice."
+msgstr ""
+
+#: ../../peewee/api.rst:1942
+msgid "Retrieve a row or range of rows from the result-set."
+msgstr ""
+
+#: ../../peewee/api.rst:1946
+msgid "Return the number of rows in the result-set."
+msgstr ""
+
+#: ../../peewee/api.rst:1949
+msgid ""
+"This does not issue a ``COUNT()`` query. Instead, the result-set is "
+"loaded as it would be during normal iteration, and the length is "
+"determined from the size of the result set."
+msgstr ""
+
+#: ../../peewee/api.rst:1956
+msgid "SQL query."
+msgstr ""
+
+#: ../../peewee/api.rst:1957
+msgid "Parameters (optional)."
+msgstr ""
+
+#: ../../peewee/api.rst:1959
+msgid "Create a query by directly specifying the SQL to execute."
+msgstr ""
+
+#: ../../peewee/api.rst:1964
+msgid "Representation of WHERE clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1965
+msgid "Columns or values to order by."
+msgstr ""
+
+#: ../../peewee/api.rst:1966
+msgid "Value of LIMIT clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1967
+msgid "Value of OFFSET clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1969
+msgid "Base-class for queries that support method-chaining APIs."
+msgstr ""
+
+#: ../../peewee/api.rst:1973
+msgid "zero or more :py:class:`CTE` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:1975
+msgid ""
+"Include the given common-table expressions in the query. Any previously "
+"specified CTEs will be overwritten. For examples of common-table "
+"expressions, see :ref:`cte`."
+msgstr ""
+
+#: ../../peewee/api.rst:1981 ../../peewee/api.rst:2020
+#: ../../peewee/api.rst:2663
+msgid "zero or more expressions to include in the WHERE clause."
+msgstr ""
+
+#: ../../peewee/api.rst:1984
+msgid ""
+"Include the given expressions in the WHERE clause of the query. The "
+"expressions will be AND-ed together with any previously-specified WHERE "
+"expressions."
+msgstr ""
+
+#: ../../peewee/api.rst:1988
+msgid "Example selection users where the username is equal to 'somebody':"
+msgstr ""
+
+#: ../../peewee/api.rst:1994
+msgid ""
+"Example selecting tweets made by users who are either editors or "
+"administrators:"
+msgstr ""
+
+#: ../../peewee/api.rst:2003
+msgid "Example of deleting tweets by users who are no longer active:"
+msgstr ""
+
+#: ../../peewee/api.rst:2015
+msgid ""
+":py:meth:`~Query.where` calls are chainable.  Multiple calls will be "
+"\"AND\"-ed together."
+msgstr ""
+
+#: ../../peewee/api.rst:2023
+msgid ""
+"Include the given expressions in the WHERE clause of the query. This "
+"method is the same as the :py:meth:`Query.where` method, except that the "
+"expressions will be OR-ed together with any previously-specified WHERE "
+"expressions."
+msgstr ""
+
+#: ../../peewee/api.rst:2030 ../../peewee/api.rst:2037
+msgid "zero or more Column-like objects to order by."
+msgstr ""
+
+#: ../../peewee/api.rst:2032
+msgid ""
+"Define the ORDER BY clause. Any previously-specified values will be "
+"overwritten."
+msgstr ""
+
+#: ../../peewee/api.rst:2039
+msgid "Extend any previously-specified ORDER BY clause with the given values."
+msgstr ""
+
+#: ../../peewee/api.rst:2043
+msgid "specify value for LIMIT clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2047
+msgid "specify value for OFFSET clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2051
+msgid "Page number of results (starting from 1)."
+msgstr ""
+
+#: ../../peewee/api.rst:2052
+msgid "Rows-per-page."
+msgstr ""
+
+#: ../../peewee/api.rst:2054
+msgid ""
+"Convenience method for specifying the LIMIT and OFFSET in a more "
+"intuitive way."
+msgstr ""
+
+#: ../../peewee/api.rst:2057
+msgid ""
+"This feature is designed with web-site pagination in mind, so the first "
+"page starts with ``page=1``."
+msgstr ""
+
+#: ../../peewee/api.rst:2063
+msgid ""
+"Select query helper-class that implements operator-overloads for creating"
+" compound queries."
+msgstr ""
+
+#: ../../peewee/api.rst:2068
+msgid "Alias for common table expression."
+msgstr ""
+
+#: ../../peewee/api.rst:2069
+msgid "Will this be a recursive CTE?"
+msgstr ""
+
+#: ../../peewee/api.rst:2070
+msgid "List of column names (as strings)."
+msgstr ""
+
+#: ../../peewee/api.rst:2072
+msgid ""
+"Indicate that a query will be used as a common table expression. For "
+"example, if we are modelling a category tree and are using a parent-link "
+"foreign key, we can retrieve all categories and their absolute depths "
+"using a recursive CTE:"
+msgstr ""
+
+#: ../../peewee/api.rst:2109
+msgid "For more examples of CTEs, see :ref:`cte`."
+msgstr ""
+
+#: ../../peewee/api.rst:2113
+msgid "one or more columns to select from the inner query."
+msgstr ""
+
+#: ../../peewee/api.rst:2114
+msgid "a new query that wraps the calling query."
+msgstr ""
+
+#: ../../peewee/api.rst:2116
+msgid ""
+"Create a new query that wraps the current (calling) query. For example, "
+"suppose you have a simple ``UNION`` query, and need to apply an "
+"aggregation on the union result-set. To do this, you need to write "
+"something like:"
+msgstr ""
+
+#: ../../peewee/api.rst:2132
+msgid ""
+"The :py:meth:`~SelectQuery.select_from` method is designed to simplify "
+"constructing this type of query."
+msgstr ""
+
+#: ../../peewee/api.rst:2135
+msgid "Example peewee code:"
+msgstr ""
+
+#: ../../peewee/api.rst:2163 ../../peewee/api.rst:2167
+msgid "Create a UNION ALL query with ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:2171 ../../peewee/api.rst:2175
+msgid "Create a UNION query with ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:2179 ../../peewee/api.rst:2183
+msgid "Create an INTERSECT query with ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:2187
+msgid ""
+"Create an EXCEPT query with ``dest``. Note that the method name has a "
+"trailing \"_\" character since ``except`` is a Python reserved word."
+msgstr ""
+
+#: ../../peewee/api.rst:2192
+msgid "Create an EXCEPT query with ``dest``."
+msgstr ""
+
+#: ../../peewee/api.rst:2197
+msgid "Base-class for :py:class:`Select` and :py:class:`CompoundSelect` queries."
+msgstr ""
+
+#: ../../peewee/api.rst:2201 ../../peewee/api.rst:2211
+#: ../../peewee/api.rst:2222 ../../peewee/api.rst:2240
+#: ../../peewee/api.rst:2250 ../../peewee/api.rst:2257
+msgid "database to execute query against."
+msgstr ""
+
+#: ../../peewee/api.rst:2202 ../../peewee/api.rst:2212
+msgid "Number of rows to return."
+msgstr ""
+
+#: ../../peewee/api.rst:2203 ../../peewee/api.rst:2213
+msgid "A single row if n = 1, else a list of rows."
+msgstr ""
+
+#: ../../peewee/api.rst:2205
+msgid ""
+"Execute the query and return the given number of rows from the start of "
+"the cursor. This function may be called multiple times safely, and will "
+"always return the first N rows of results."
+msgstr ""
+
+#: ../../peewee/api.rst:2215
+msgid ""
+"Like the :py:meth:`~SelectBase.peek` method, except a ``LIMIT`` is "
+"applied to the query to ensure that only ``n`` rows are returned. "
+"Multiple calls for the same value of ``n`` will not result in multiple "
+"executions."
+msgstr ""
+
+#: ../../peewee/api.rst:2223
+msgid "Return the result as a tuple?"
+msgstr ""
+
+#: ../../peewee/api.rst:2224
+msgid "Single scalar value if ``as_tuple = False``, else row tuple."
+msgstr ""
+
+#: ../../peewee/api.rst:2226
+msgid ""
+"Return a scalar value from the first row of results. If multiple scalar "
+"values are anticipated (e.g. multiple aggregations in a single query) "
+"then you may specify ``as_tuple=True`` to get the row tuple."
+msgstr ""
+
+#: ../../peewee/api.rst:2241
+msgid "Clear any LIMIT clause when counting."
+msgstr ""
+
+#: ../../peewee/api.rst:2242
+msgid "Number of rows in the query result-set."
+msgstr ""
+
+#: ../../peewee/api.rst:2244
+msgid "Return number of rows in the query result-set."
+msgstr ""
+
+#: ../../peewee/api.rst:2246
+msgid "Implemented by running SELECT COUNT(1) FROM (<current query>)."
+msgstr ""
+
+#: ../../peewee/api.rst:2251
+msgid "Whether any results exist for the current query."
+msgstr ""
+
+#: ../../peewee/api.rst:2253
+msgid "Return a boolean indicating whether the current query has any results."
+msgstr ""
+
+#: ../../peewee/api.rst:2258
+msgid "A single row from the database or ``None``."
+msgstr ""
+
+#: ../../peewee/api.rst:2260
+msgid ""
+"Execute the query and return the first row, if it exists. Multiple calls "
+"will result in multiple queries being executed."
+msgstr ""
+
+#: ../../peewee/api.rst:2266 ../../peewee/api.rst:2268
+msgid "A Select or CompoundSelect query."
+msgstr ""
+
+#: ../../peewee/api.rst:2267
+msgid "Operation (e.g. UNION, INTERSECT, EXCEPT)."
+msgstr ""
+
+#: ../../peewee/api.rst:2270
+msgid "Class representing a compound SELECT query."
+msgstr ""
+
+#: ../../peewee/api.rst:2275
+msgid "List of sources for FROM clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2276
+msgid "Columns or values to select."
+msgstr ""
+
+#: ../../peewee/api.rst:2277
+msgid "List of columns or values to group by."
+msgstr ""
+
+#: ../../peewee/api.rst:2278
+msgid "Expression for HAVING clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2279
+msgid "Either a boolean or a list of column-like objects."
+msgstr ""
+
+#: ../../peewee/api.rst:2280
+msgid "List of :py:class:`Window` clauses."
+msgstr ""
+
+#: ../../peewee/api.rst:2281
+msgid "Boolean or str indicating if SELECT...FOR UPDATE."
+msgstr ""
+
+#: ../../peewee/api.rst:2282
+msgid "One or more tables for FOR UPDATE OF clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2283
+msgid "Specify NOWAIT locking."
+msgstr ""
+
+#: ../../peewee/api.rst:2285
+msgid "Class representing a SELECT query."
+msgstr ""
+
+#: ../../peewee/api.rst:2288
+msgid ""
+"Rather than instantiating this directly, most-commonly you will use a "
+"factory method like :py:meth:`Table.select` or :py:meth:`Model.select`."
+msgstr ""
+
+#: ../../peewee/api.rst:2291
+msgid "Methods on the select query can be chained together."
+msgstr ""
+
+#: ../../peewee/api.rst:2293
+msgid ""
+"Example selecting some user instances from the database.  Only the ``id``"
+" and ``username`` columns are selected.  When iterated, will return "
+"instances of the ``User`` model:"
+msgstr ""
+
+#: ../../peewee/api.rst:2303
+msgid ""
+"Example selecting users and additionally the number of tweets made by the"
+" user.  The ``User`` instances returned will have an additional "
+"attribute, 'count', that corresponds to the number of tweets made:"
+msgstr ""
+
+#: ../../peewee/api.rst:2317
+msgid ""
+"While it is possible to instantiate :py:class:`Select` directly, more "
+"commonly you will build the query using the method-chaining APIs."
+msgstr ""
+
+#: ../../peewee/api.rst:2322 ../../peewee/api.rst:2328
+#: ../../peewee/api.rst:2335
+msgid "Zero or more column-like objects to SELECT."
+msgstr ""
+
+#: ../../peewee/api.rst:2324
+msgid "Specify which columns or column-like values to SELECT."
+msgstr ""
+
+#: ../../peewee/api.rst:2330
+msgid "Same as :py:meth:`Select.columns`, provided for backwards-compatibility."
+msgstr ""
+
+#: ../../peewee/api.rst:2337
+msgid "Extend the current selection with the given columns."
+msgstr ""
+
+#: ../../peewee/api.rst:2354
+msgid "Zero or more sources for the FROM clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2356
+msgid "Specify which table-like objects should be used in the FROM clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2371
+msgid "A table or table-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:2372
+msgid "Type of JOIN, default is \"INNER\"."
+msgstr ""
+
+#: ../../peewee/api.rst:2373
+msgid "Join predicate."
+msgstr ""
+
+#: ../../peewee/api.rst:2384
+msgid "Express a JOIN::"
+msgstr ""
+
+#: ../../peewee/api.rst:2395 ../../peewee/api.rst:2414
+msgid "zero or more Column-like objects to group by."
+msgstr ""
+
+#: ../../peewee/api.rst:2397
+msgid ""
+"Define the GROUP BY clause. Any previously-specified values will be "
+"overwritten."
+msgstr ""
+
+#: ../../peewee/api.rst:2400
+msgid ""
+"Additionally, to specify all columns on a given table, you can pass the "
+"table/model object in place of the individual columns."
+msgstr ""
+
+#: ../../peewee/api.rst:2416
+msgid "Extend the GROUP BY clause with the given columns."
+msgstr ""
+
+#: ../../peewee/api.rst:2420
+msgid "zero or more expressions to include in the HAVING clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2423
+msgid ""
+"Include the given expressions in the HAVING clause of the query. The "
+"expressions will be AND-ed together with any previously-specified HAVING "
+"expressions."
+msgstr ""
+
+#: ../../peewee/api.rst:2429
+msgid "Zero or more column-like objects."
+msgstr ""
+
+#: ../../peewee/api.rst:2431
+msgid ""
+"Indicate whether this query should use a DISTINCT clause. By specifying a"
+" single value of ``True`` the query will use a simple SELECT DISTINCT. "
+"Specifying one or more columns will result in a SELECT DISTINCT ON."
+msgstr ""
+
+#: ../../peewee/api.rst:2437
+msgid "zero or more :py:class:`Window` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:2439
+msgid ""
+"Define the WINDOW clause. Any previously-specified values will be "
+"overwritten."
+msgstr ""
+
+#: ../../peewee/api.rst:2458
+msgid ""
+"Either a boolean or a string indicating the desired expression, e.g. "
+"\"FOR SHARE\"."
+msgstr ""
+
+#: ../../peewee/api.rst:2460
+msgid "One or more models to restrict locking to."
+msgstr ""
+
+#: ../../peewee/api.rst:2461
+msgid "Specify NOWAIT option when locking."
+msgstr ""
+
+#: ../../peewee/api.rst:2466
+msgid "Table to write to."
+msgstr ""
+
+#: ../../peewee/api.rst:2467
+msgid "List of columns for RETURNING clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2469
+msgid "Base-class for write queries."
+msgstr ""
+
+#: ../../peewee/api.rst:2473
+msgid "Zero or more column-like objects for RETURNING clause"
+msgstr ""
+
+#: ../../peewee/api.rst:2475
+msgid "Specify the RETURNING clause of query (if supported by your database)."
+msgstr ""
+
+#: ../../peewee/api.rst:2491
+msgid "Table to update."
+msgstr ""
+
+#: ../../peewee/api.rst:2492
+msgid "Data to update."
+msgstr ""
+
+#: ../../peewee/api.rst:2494
+msgid "Class representing an UPDATE query."
+msgstr ""
+
+#: ../../peewee/api.rst:2508
+msgid ""
+"one or more :py:class:`Table`, :py:class:`Model`, query, or "
+":py:class:`ValuesList` to join with."
+msgstr ""
+
+#: ../../peewee/api.rst:2511
+msgid ""
+"Specify additional tables to join with using the UPDATE ... FROM syntax, "
+"which is supported by Postgres. The `Postgres documentation "
+"<https://www.postgresql.org/docs/10/static/sql-"
+"update.html#id-1.9.3.176.8>`_ provides additional detail, but to "
+"summarize:"
+msgstr ""
+
+#: ../../peewee/api.rst:2515
+msgid ""
+"When a ``FROM`` clause is present, what essentially happens is that the "
+"target table is joined to the tables mentioned in the from_list, and each"
+" output row of the join represents an update operation for the target "
+"table. When using ``FROM`` you should ensure that the join produces at "
+"most one output row for each row to be modified."
+msgstr ""
+
+#: ../../peewee/api.rst:2539
+msgid "The above query produces the following SQL:"
+msgstr ""
+
+#: ../../peewee/api.rst:2552
+msgid "Table to INSERT data into."
+msgstr ""
+
+#: ../../peewee/api.rst:2553
+msgid "Either a dict, a list, or a query."
+msgstr ""
+
+#: ../../peewee/api.rst:2554
+msgid "List of columns when ``insert`` is a list or query."
+msgstr ""
+
+#: ../../peewee/api.rst:2555
+msgid "Conflict resolution strategy."
+msgstr ""
+
+#: ../../peewee/api.rst:2557
+msgid "Class representing an INSERT query."
+msgstr ""
+
+#: ../../peewee/api.rst:2561
+msgid "Whether to add ON CONFLICT IGNORE clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2563
+msgid "Specify IGNORE conflict resolution strategy."
+msgstr ""
+
+#: ../../peewee/api.rst:2567
+msgid "Whether to add ON CONFLICT REPLACE clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2569
+msgid "Specify REPLACE conflict resolution strategy."
+msgstr ""
+
+#: ../../peewee/api.rst:2573
+msgid ""
+"Action to take when resolving conflict. If blank, action is assumed to be"
+" \"update\"."
+msgstr ""
+
+#: ../../peewee/api.rst:2576
+msgid ""
+"A list of columns whose values should be preserved from the original "
+"INSERT."
+msgstr ""
+
+#: ../../peewee/api.rst:2583
+msgid ""
+"Specify the parameters for an :py:class:`OnConflict` clause to use for "
+"conflict resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:2611
+msgid "Example using the special :py:class:`EXCLUDED` namespace:"
+msgstr ""
+
+#: ../../peewee/api.rst:2644
+msgid "Class representing a DELETE query."
+msgstr ""
+
+#: ../../peewee/api.rst:2649
+msgid "Index name."
+msgstr ""
+
+#: ../../peewee/api.rst:2650
+msgid "Table to create index on."
+msgstr ""
+
+#: ../../peewee/api.rst:2651
+msgid "List of columns to index on (or expressions)."
+msgstr ""
+
+#: ../../peewee/api.rst:2652 ../../peewee/api.rst:2679
+#: ../../peewee/api.rst:4478
+msgid "Whether index is UNIQUE."
+msgstr ""
+
+#: ../../peewee/api.rst:2653 ../../peewee/api.rst:2659
+#: ../../peewee/api.rst:2680 ../../peewee/api.rst:4479
+msgid "Whether to add IF NOT EXISTS clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2654 ../../peewee/api.rst:2681
+#: ../../peewee/api.rst:4480
+msgid "Optional WHERE clause for index."
+msgstr ""
+
+#: ../../peewee/api.rst:2655 ../../peewee/api.rst:4481
+msgid "Index algorithm."
+msgstr ""
+
+#: ../../peewee/api.rst:2666
+msgid ""
+"Include the given expressions in the WHERE clause of the index. The "
+"expressions will be AND-ed together with any previously-specified WHERE "
+"expressions."
+msgstr ""
+
+#: ../../peewee/api.rst:2672
+msgid "Specify index algorithm for USING clause."
+msgstr ""
+
+#: ../../peewee/api.rst:2677
+msgid "Model class to create index on."
+msgstr ""
+
+#: ../../peewee/api.rst:2678 ../../peewee/api.rst:4477
+msgid "Fields to index."
+msgstr ""
+
+#: ../../peewee/api.rst:2682
+msgid "Index algorithm or type, e.g. 'BRIN', 'GiST' or 'GIN'."
+msgstr ""
+
+#: ../../peewee/api.rst:2683 ../../peewee/api.rst:4482
+msgid "Optional index name."
+msgstr ""
+
+#: ../../peewee/api.rst:2685
+msgid "Expressive method for declaring an index on a model."
+msgstr ""
+
+#: ../../peewee/api.rst:2712
+msgid "You can also use :py:meth:`Model.index`:"
+msgstr ""
+
+#: ../../peewee/api.rst:2718
+msgid "To add an index to a model definition use :py:meth:`Model.add_index`:"
+msgstr ""
+
+#: ../../peewee/api.rst:2732
+msgid "Fields"
+msgstr ""
+
+#: ../../peewee/api.rst:2736
+msgid "Field allows NULLs."
+msgstr ""
+
+#: ../../peewee/api.rst:2737
+msgid "Create an index on field."
+msgstr ""
+
+#: ../../peewee/api.rst:2738
+msgid "Create a unique index on field."
+msgstr ""
+
+#: ../../peewee/api.rst:2739
+msgid "Specify column name for field."
+msgstr ""
+
+#: ../../peewee/api.rst:2740
+msgid "Default value (enforced in Python, not on server)."
+msgstr ""
+
+#: ../../peewee/api.rst:2741
+msgid "Field is the primary key."
+msgstr ""
+
+#: ../../peewee/api.rst:2742
+msgid ""
+"List of constraints to apply to column, for example: ``[Check('price > "
+"0')]``."
+msgstr ""
+
+#: ../../peewee/api.rst:2744
+msgid "Sequence name for field."
+msgstr ""
+
+#: ../../peewee/api.rst:2745
+msgid "Collation name for field."
+msgstr ""
+
+#: ../../peewee/api.rst:2746
+msgid "Declare field UNINDEXED (sqlite only)."
+msgstr ""
+
+#: ../../peewee/api.rst:2747
+msgid ""
+"An iterable of 2-tuples mapping column values to display labels. Used for"
+" metadata purposes only, to help when displaying a dropdown of choices "
+"for field values, for example."
+msgstr ""
+
+#: ../../peewee/api.rst:2750
+msgid "Help-text for field, metadata purposes only."
+msgstr ""
+
+#: ../../peewee/api.rst:2751
+msgid "Verbose name for field, metadata purposes only."
+msgstr ""
+
+#: ../../peewee/api.rst:2752
+msgid "Specify index type (postgres only), e.g. 'BRIN'."
+msgstr ""
+
+#: ../../peewee/api.rst:2754
+msgid "Fields on a :py:class:`Model` are analogous to columns on a table."
+msgstr ""
+
+#: ../../peewee/api.rst:2758
+msgid ""
+"Attribute used to map this field to a column type, e.g. \"INT\". See the "
+"``FIELD`` object in the source for more information."
+msgstr ""
+
+#: ../../peewee/api.rst:2763
+msgid "Retrieve a reference to the underlying :py:class:`Column` object."
+msgstr ""
+
+#: ../../peewee/api.rst:2767
+msgid "The model the field is bound to."
+msgstr ""
+
+#: ../../peewee/api.rst:2771
+msgid "The name of the field."
+msgstr ""
+
+#: ../../peewee/api.rst:2775
+msgid ""
+"Coerce a Python value into a value suitable for storage in the database. "
+"Sub-classes operating on special data-types will most likely want to "
+"override this method."
+msgstr ""
+
+#: ../../peewee/api.rst:2781
+msgid ""
+"Coerce a value from the database into a Python object. Sub-classes "
+"operating on special data-types will most likely want to override this "
+"method."
+msgstr ""
+
+#: ../../peewee/api.rst:2787
+msgid ""
+"This method is a shorthand that is used, by default, by both "
+":py:meth:`~Field.db_value` and :py:meth:`~Field.python_value`."
+msgstr ""
+
+#: ../../peewee/api.rst:2790
+msgid "arbitrary data from app or backend"
+msgstr ""
+
+#: ../../peewee/api.rst:2795
+msgid "Field class for storing integers."
+msgstr ""
+
+#: ../../peewee/api.rst:2799
+msgid "Field class for storing big integers (if supported by database)."
+msgstr ""
+
+#: ../../peewee/api.rst:2803
+msgid "Field class for storing small integers (if supported by database)."
+msgstr ""
+
+#: ../../peewee/api.rst:2807
+msgid "Field class for storing auto-incrementing primary keys."
+msgstr ""
+
+#: ../../peewee/api.rst:2810
+msgid ""
+"In SQLite, for performance reasons, the default primary key type simply "
+"uses the max existing value + 1 for new values, as opposed to the max "
+"ever value + 1. This means deleted records can have their primary keys "
+"reused. In conjunction with SQLite having foreign keys disabled by "
+"default (meaning ON DELETE is ignored, even if you specify it "
+"explicitly), this can lead to surprising and dangerous behaviour. To "
+"avoid this, you may want to use one or both of "
+":py:class:`AutoIncrementField` and ``pragmas=[('foreign_keys', 'on')]`` "
+"when you instantiate :py:class:`SqliteDatabase`."
+msgstr ""
+
+#: ../../peewee/api.rst:2822
+msgid "Field class for storing auto-incrementing primary keys using 64-bits."
+msgstr ""
+
+#: ../../peewee/api.rst:2826
+msgid ""
+"if specified, then the identity will always be generated (and specifying "
+"the value explicitly during INSERT will raise a programming error). "
+"Otherwise, the identity value is only generated as-needed."
+msgstr ""
+
+#: ../../peewee/api.rst:2831
+msgid ""
+"Field class for storing auto-incrementing primary keys using the new "
+"Postgres 10 *IDENTITY* column type. The column definition ends up looking"
+" like this:"
+msgstr ""
+
+#: ../../peewee/api.rst:2840
+msgid "Only supported by Postgres 10.0 and newer."
+msgstr ""
+
+#: ../../peewee/api.rst:2844
+msgid "Field class for storing floating-point numbers."
+msgstr ""
+
+#: ../../peewee/api.rst:2848
+msgid "Field class for storing double-precision floating-point numbers."
+msgstr ""
+
+#: ../../peewee/api.rst:2852
+msgid "Maximum digits to store."
+msgstr ""
+
+#: ../../peewee/api.rst:2853
+msgid "Maximum precision."
+msgstr ""
+
+#: ../../peewee/api.rst:2854
+msgid "Automatically round values."
+msgstr ""
+
+#: ../../peewee/api.rst:2855
+msgid ""
+"Defaults to ``decimal.DefaultContext.rounding``.  Field class for storing"
+" decimal numbers. Values are represented as ``decimal.Decimal`` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:2855
+msgid "Defaults to ``decimal.DefaultContext.rounding``."
+msgstr ""
+
+#: ../../peewee/api.rst:2857
+msgid ""
+"Field class for storing decimal numbers. Values are represented as "
+"``decimal.Decimal`` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:2862
+msgid "Field class for storing strings."
+msgstr ""
+
+#: ../../peewee/api.rst:2864 ../../peewee/api.rst:2870
+msgid "Values that exceed length are not truncated automatically."
+msgstr ""
+
+#: ../../peewee/api.rst:2868
+msgid "Field class for storing fixed-length strings."
+msgstr ""
+
+#: ../../peewee/api.rst:2874
+msgid "Field class for storing text."
+msgstr ""
+
+#: ../../peewee/api.rst:2878
+msgid "Field class for storing binary data."
+msgstr ""
+
+#: ../../peewee/api.rst:2882
+msgid "Field class for storing options in a 64-bit integer column."
+msgstr ""
+
+#: ../../peewee/api.rst:2884 ../../peewee/api.rst:4955
+msgid "Usage:"
+msgstr ""
+
+#: ../../peewee/api.rst:2907
+msgid ""
+"We can use the flags on the Post class to build expressions in queries as"
+" well:"
+msgstr ""
+
+#: ../../peewee/api.rst:2921
+msgid "Value associated with flag, typically a power of 2."
+msgstr ""
+
+#: ../../peewee/api.rst:2923
+msgid ""
+"Returns a descriptor that can get or set specific bits in the overall "
+"value. When accessed on the class itself, it returns a "
+":py:class:`Expression` object suitable for use in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:2927
+msgid ""
+"If the value is not provided, it is assumed that each flag will be an "
+"increasing power of 2, so if you had four flags, they would have the "
+"values 1, 2, 4, 8."
+msgstr ""
+
+#: ../../peewee/api.rst:2933
+msgid ""
+"Field class for storing arbitrarily-large bitmaps in a ``BLOB``. The "
+"field will grow the underlying buffer as necessary, ensuring there are "
+"enough bytes of data to support the number of bits of data being stored."
+msgstr ""
+
+#: ../../peewee/api.rst:2937
+msgid "Example usage:"
+msgstr ""
+
+#: ../../peewee/api.rst:2966
+msgid "Bit to set, indexed starting from zero."
+msgstr ""
+
+#: ../../peewee/api.rst:2968
+msgid "Sets the *idx*-th bit in the bitmap."
+msgstr ""
+
+#: ../../peewee/api.rst:2972
+msgid "Bit to clear, indexed starting from zero."
+msgstr ""
+
+#: ../../peewee/api.rst:2974
+msgid "Clears the *idx*-th bit in the bitmap."
+msgstr ""
+
+#: ../../peewee/api.rst:2978
+msgid "Bit to toggle, indexed starting from zero."
+msgstr ""
+
+#: ../../peewee/api.rst:2979 ../../peewee/api.rst:2997
+msgid "Whether the bit is set or not."
+msgstr ""
+
+#: ../../peewee/api.rst:2981
+msgid ""
+"Toggles the *idx*-th bit in the bitmap and returns whether the bit is set"
+" or not."
+msgstr ""
+
+#: ../../peewee/api.rst:2996
+msgid "Bit index, indexed starting from zero."
+msgstr ""
+
+#: ../../peewee/api.rst:2999
+msgid "Returns boolean indicating whether the *idx*-th bit is set or not."
+msgstr ""
+
+#: ../../peewee/api.rst:3004
+msgid ""
+"Field class for storing ``uuid.UUID`` objects. With Postgres, the "
+"underlying column's data-type will be *UUID*. Since SQLite and MySQL do "
+"not have a native UUID type, the UUID is stored as a *VARCHAR* instead."
+msgstr ""
+
+#: ../../peewee/api.rst:3010
+msgid ""
+"Field class for storing ``uuid.UUID`` objects efficiently in 16-bytes. "
+"Uses the database's *BLOB* data-type (or *VARBINARY* in MySQL, or *BYTEA*"
+" in Postgres)."
+msgstr ""
+
+#: ../../peewee/api.rst:3016
+msgid "A list of format strings to use when coercing a string to a date-time."
+msgstr ""
+
+#: ../../peewee/api.rst:3019
+msgid "Field class for storing ``datetime.datetime`` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:3021
+msgid ""
+"Accepts a special parameter ``formats``, which contains a list of formats"
+" the datetime can be encoded with (for databases that do not have support"
+" for a native datetime data-type). The default supported formats are:"
+msgstr ""
+
+#: ../../peewee/api.rst:3032
+msgid ""
+"SQLite does not have a native datetime data-type, so datetimes are stored"
+" as strings. This is handled transparently by Peewee, but if you have "
+"pre-existing data you should ensure it is stored as ``YYYY-mm-dd "
+"HH:MM:SS`` or one of the other supported formats."
+msgstr ""
+
+#: ../../peewee/api.rst:3039 ../../peewee/api.rst:3113
+msgid "Reference the year of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3047 ../../peewee/api.rst:3121
+msgid "Reference the month of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3051 ../../peewee/api.rst:3125
+msgid "Reference the day of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3055 ../../peewee/api.rst:3161
+msgid "Reference the hour of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3059 ../../peewee/api.rst:3169
+msgid "Reference the minute of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3063 ../../peewee/api.rst:3173
+msgid "Reference the second of the value stored in the column in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:3067
+msgid ""
+"Method that returns a database-specific function call that will allow you"
+" to work with the given date-time value as a numeric timestamp. This can "
+"sometimes simplify tasks like date math in a compatible way."
+msgstr ""
+
+#: ../../peewee/api.rst:3084
+msgid "year, month, day, hour, minute or second."
+msgstr ""
+
+#: ../../peewee/api.rst:3085
+msgid "expression node to truncate date/time to given resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:3087
+msgid ""
+"Truncates the value in the column to the given part. This method is "
+"useful for finding all rows within a given month, for instance."
+msgstr ""
+
+#: ../../peewee/api.rst:3093
+msgid "A list of format strings to use when coercing a string to a date."
+msgstr ""
+
+#: ../../peewee/api.rst:3096
+msgid "Field class for storing ``datetime.date`` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:3098
+msgid ""
+"Accepts a special parameter ``formats``, which contains a list of formats"
+" the datetime can be encoded with (for databases that do not have support"
+" for a native date data-type). The default supported formats are:"
+msgstr ""
+
+#: ../../peewee/api.rst:3109 ../../peewee/api.rst:3157
+msgid "If the incoming value does not match a format, it is returned as-is."
+msgstr ""
+
+#: ../../peewee/api.rst:3129
+msgid "See :py:meth:`DateTimeField.to_timestamp`."
+msgstr ""
+
+#: ../../peewee/api.rst:3133
+msgid ""
+"See :py:meth:`DateTimeField.truncate`. Note that only *year*, *month*, "
+"and *day* are meaningful for :py:class:`DateField`."
+msgstr ""
+
+#: ../../peewee/api.rst:3139
+msgid "A list of format strings to use when coercing a string to a time."
+msgstr ""
+
+#: ../../peewee/api.rst:3142
+msgid "Field class for storing ``datetime.time`` objects (not ``timedelta``)."
+msgstr ""
+
+#: ../../peewee/api.rst:3144
+msgid ""
+"Accepts a special parameter ``formats``, which contains a list of formats"
+" the datetime can be encoded with (for databases that do not have support"
+" for a native time data-type). The default supported formats are:"
+msgstr ""
+
+#: ../../peewee/api.rst:3177
+msgid ""
+"Can be provided as either a power of 10, or as an exponent indicating how"
+" many decimal places to store."
+msgstr ""
+
+#: ../../peewee/api.rst:3179
+msgid "Treat timestamps as UTC."
+msgstr ""
+
+#: ../../peewee/api.rst:3181
+msgid ""
+"Field class for storing date-times as integer timestamps. Sub-second "
+"resolution is supported by multiplying by a power of 10 to get an "
+"integer."
+msgstr ""
+
+#: ../../peewee/api.rst:3184
+msgid ""
+"If the ``resolution`` parameter is ``0`` *or* ``1``, then the timestamp "
+"is stored using second resolution. A resolution between ``2`` and ``6`` "
+"is treated as the number of decimal places, e.g. ``resolution=3`` "
+"corresponds to milliseconds. Alternatively, the decimal can be provided "
+"as a multiple of 10, such that ``resolution=10`` will store 1/10th of a "
+"second resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:3191
+msgid ""
+"The ``resolution`` parameter can be either 0-6 *or* 10, 100, etc up to "
+"1000000 (for microsecond resolution). This allows sub-second precision "
+"while still using an :py:class:`IntegerField` for storage. The default is"
+" second resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:3196
+msgid ""
+"Also accepts a boolean parameter ``utc``, used to indicate whether the "
+"timestamps should be UTC. Default is ``False``."
+msgstr ""
+
+#: ../../peewee/api.rst:3199
+msgid ""
+"Finally, the field ``default`` is the current timestamp. If you do not "
+"want this behavior, then explicitly pass in ``default=None``."
+msgstr ""
+
+#: ../../peewee/api.rst:3204
+msgid "Field class for storing IPv4 addresses efficiently (as integers)."
+msgstr ""
+
+#: ../../peewee/api.rst:3208
+msgid "Field class for storing boolean values."
+msgstr ""
+
+#: ../../peewee/api.rst:3212
+msgid "Optional function to use for converting raw values into a specific format."
+msgstr ""
+
+#: ../../peewee/api.rst:3215
+msgid "Field class that does not specify a data-type (**SQLite-only**)."
+msgstr ""
+
+#: ../../peewee/api.rst:3217
+msgid ""
+"Since data-types are not enforced, you can declare fields without *any* "
+"data-type. It is also common for SQLite virtual tables to use meta-"
+"columns or untyped columns, so for those cases as well you may wish to "
+"use an untyped field."
+msgstr ""
+
+#: ../../peewee/api.rst:3222
+msgid ""
+"Accepts a special ``coerce`` parameter, a function that takes a value "
+"coming from the database and converts it into the appropriate Python "
+"type."
+msgstr ""
+
+#: ../../peewee/api.rst:3227
+msgid ""
+"Model to reference or the string 'self' if declaring a self-referential "
+"foreign key."
+msgstr ""
+
+#: ../../peewee/api.rst:3229
+msgid "Field to reference on ``model`` (default is primary key)."
+msgstr ""
+
+#: ../../peewee/api.rst:3231
+msgid ""
+"Accessor name for back-reference, or \"+\" to disable the back-reference "
+"accessor."
+msgstr ""
+
+#: ../../peewee/api.rst:3233
+msgid "ON DELETE action, e.g. ``'CASCADE'``.."
+msgstr ""
+
+#: ../../peewee/api.rst:3234
+msgid "ON UPDATE action."
+msgstr ""
+
+#: ../../peewee/api.rst:3235
+msgid "Control when constraint is enforced, e.g. ``'INITIALLY DEFERRED'``."
+msgstr ""
+
+#: ../../peewee/api.rst:3236
+msgid "Name for object-id accessor."
+msgstr ""
+
+#: ../../peewee/api.rst:3237
+msgid ""
+"Fetch the related object when the foreign-key field attribute is accessed"
+" (if it was not already loaded). If this is disabled, accessing the "
+"foreign-key field will return the value stored in the foreign-key column."
+msgstr ""
+
+#: ../../peewee/api.rst:3242
+msgid "Field class for storing a foreign key."
+msgstr ""
+
+#: ../../peewee/api.rst:3264 ../../peewee/api.rst:4700
+msgid ""
+"For an in-depth discussion of foreign-keys, joins and relationships "
+"between models, refer to :ref:`relationships`."
+msgstr ""
+
+#: ../../peewee/api.rst:3268
+msgid ""
+"Foreign keys do not have a particular ``field_type`` as they will take "
+"their field type depending on the type of primary key on the model they "
+"are related to."
+msgstr ""
+
+#: ../../peewee/api.rst:3273
+msgid ""
+"If you manually specify a ``field``, that field must be either a primary "
+"key or have a unique constraint."
+msgstr ""
+
+#: ../../peewee/api.rst:3277
+msgid ""
+"Take care with foreign keys in SQLite. By default, ON DELETE has no "
+"effect, which can have surprising (and usually unwanted) effects on your "
+"database integrity. This can affect you even if you don't specify "
+"``on_delete``, since the default ON DELETE behaviour (to fail without "
+"modifying your data) does not happen, and your data can be silently "
+"relinked. The safest thing to do is to specify ``pragmas={'foreign_keys':"
+" 1}`` when you instantiate :py:class:`SqliteDatabase`."
+msgstr ""
+
+#: ../../peewee/api.rst:3288
+msgid "Model name to reference."
+msgstr ""
+
+#: ../../peewee/api.rst:3290
+msgid ""
+"Field class for representing a deferred foreign key. Useful for circular "
+"foreign-key references, for example:"
+msgstr ""
+
+#: ../../peewee/api.rst:3303
+msgid ""
+"In the above example, when the ``Wife`` model is declared, the foreign-"
+"key ``Husband.wife`` is automatically resolved and turned into a regular "
+":py:class:`ForeignKeyField`."
+msgstr ""
+
+#: ../../peewee/api.rst:3308
+msgid ""
+":py:class:`DeferredForeignKey` references are resolved when model classes"
+" are declared and created. This means that if you declare a "
+":py:class:`DeferredForeignKey` to a model class that has already been "
+"imported and created, the deferred foreign key instance will never be "
+"resolved. For example:"
+msgstr ""
+
+#: ../../peewee/api.rst:3325
+msgid ""
+"In cases like these you should use the regular "
+":py:class:`ForeignKeyField` *or* you can manually resolve deferred "
+"foreign keys like so:"
+msgstr ""
+
+#: ../../peewee/api.rst:3336
+msgid "Model to create relationship with."
+msgstr ""
+
+#: ../../peewee/api.rst:3337
+msgid "Accessor name for back-reference"
+msgstr ""
+
+#: ../../peewee/api.rst:3338
+msgid ""
+":py:class:`Model` to use for the intermediary table. If not provided, a "
+"simple through table will be automatically created."
+msgstr ""
+
+#: ../../peewee/api.rst:3341
+msgid ""
+"ON DELETE action, e.g. ``'CASCADE'``. Will be used for foreign-keys in "
+"through model."
+msgstr ""
+
+#: ../../peewee/api.rst:3343
+msgid "ON UPDATE action. Will be used for foreign-keys in through model."
+msgstr ""
+
+#: ../../peewee/api.rst:3346
+msgid ""
+"The :py:class:`ManyToManyField` provides a simple interface for working "
+"with many-to-many relationships, inspired by Django. A many-to-many "
+"relationship is typically implemented by creating a junction table with "
+"foreign keys to the two models being related. For instance, if you were "
+"building a syllabus manager for college students, the relationship "
+"between students and courses would be many-to-many. Here is the schema "
+"using standard APIs:"
+msgstr ""
+
+#: ../../peewee/api.rst:3355
+msgid ""
+"This is not a field in the sense that there is no column associated with "
+"it. Rather, it provides a convenient interface for accessing rows of data"
+" related via a through model."
+msgstr ""
+
+#: ../../peewee/api.rst:3359
+msgid ""
+"Standard way of declaring a many-to-many relationship (without the use of"
+" the :py:class:`ManyToManyField`):"
+msgstr ""
+
+#: ../../peewee/api.rst:3374
+msgid ""
+"To query the courses for a particular student, you would join through the"
+" junction table:"
+msgstr ""
+
+#: ../../peewee/api.rst:3388
+msgid ""
+"The :py:class:`ManyToManyField` is designed to simplify this use-case by "
+"providing a *field-like* API for querying and modifying data in the "
+"junction table. Here is how our code looks using "
+":py:class:`ManyToManyField`:"
+msgstr ""
+
+#: ../../peewee/api.rst:3403
+msgid ""
+"It does not matter from Peewee's perspective which model the "
+":py:class:`ManyToManyField` goes on, since the back-reference is just the"
+" mirror image. In order to write valid Python, though, you will need to "
+"add the ``ManyToManyField`` on the second model so that the name of the "
+"first model is in the scope."
+msgstr ""
+
+#: ../../peewee/api.rst:3409
+msgid ""
+"We still need a junction table to store the relationships between "
+"students and courses. This model can be accessed by calling the "
+":py:meth:`~ManyToManyField.get_through_model` method. This is useful when"
+" creating tables."
+msgstr ""
+
+#: ../../peewee/api.rst:3423
+msgid ""
+"When accessed from a model instance, the :py:class:`ManyToManyField` "
+"exposes a :py:class:`ModelSelect` representing the set of related "
+"objects. Let's use the interactive shell to see how all this works:"
+msgstr ""
+
+#: ../../peewee/api.rst:3437
+msgid ""
+"To add new relationships between objects, you can either assign the "
+"objects directly to the ``ManyToManyField`` attribute, or call the "
+":py:meth:`~ManyToManyField.add` method. The difference between the two is"
+" that simply assigning will clear out any existing relationships, whereas"
+" ``add()`` can preserve existing relationships."
+msgstr ""
+
+#: ../../peewee/api.rst:3460
+msgid ""
+"This is quite a few courses, so let's remove the 200-level english "
+"courses. To remove objects, use the :py:meth:`~ManyToManyField.remove` "
+"method."
+msgstr ""
+
+#: ../../peewee/api.rst:3470
+msgid ""
+"To remove all relationships from a collection, you can use the "
+":py:meth:`~SelectQuery.clear` method. Let's say that English 101 is "
+"canceled, so we need to remove all the students from it:"
+msgstr ""
+
+#: ../../peewee/api.rst:3480
+msgid ""
+"For an overview of implementing many-to-many relationships using standard"
+" Peewee APIs, check out the :ref:`manytomany` section. For all but the "
+"most simple cases, you will be better off implementing many-to-many using"
+" the standard APIs."
+msgstr ""
+
+#: ../../peewee/api.rst:3487
+msgid ""
+"The :py:class:`Model` representing the many-to-many junction table. Will "
+"be auto-generated if not explicitly declared."
+msgstr ""
+
+#: ../../peewee/api.rst:3492
+msgid ""
+"Either a :py:class:`Model` instance, a list of model instances, or a "
+":py:class:`SelectQuery`."
+msgstr ""
+
+#: ../../peewee/api.rst:3494
+msgid "Whether to remove existing relationships."
+msgstr ""
+
+#: ../../peewee/api.rst:3496
+msgid ""
+"Associate ``value`` with the current instance. You can pass in a single "
+"model instance, a list of model instances, or even a "
+":py:class:`ModelSelect`."
+msgstr ""
+
+#: ../../peewee/api.rst:3499 ../../peewee/api.rst:3526
+#: ../../peewee/api.rst:3546
+msgid "Example code:"
+msgstr ""
+
+#: ../../peewee/api.rst:3519
+msgid ""
+"Either a :py:class:`Model` instance, a list of model instances, or a "
+":py:class:`ModelSelect`."
+msgstr ""
+
+#: ../../peewee/api.rst:3522
+msgid ""
+"Disassociate ``value`` from the current instance. Like "
+":py:meth:`~ManyToManyField.add`, you can pass in a model instance, a list"
+" of model instances, or even a :py:class:`ModelSelect`."
+msgstr ""
+
+#: ../../peewee/api.rst:3544
+msgid "Remove all associated objects."
+msgstr ""
+
+#: ../../peewee/api.rst:3557
+msgid ""
+"Return the :py:class:`Model` representing the many-to-many junction "
+"table. This can be specified manually when the field is being "
+"instantiated using the ``through_model`` parameter. If a "
+"``through_model`` is not specified, one will automatically be created."
+msgstr ""
+
+#: ../../peewee/api.rst:3562
+msgid ""
+"When creating tables for an application that uses "
+":py:class:`ManyToManyField`, **you must create the through table "
+"expicitly**."
+msgstr ""
+
+#: ../../peewee/api.rst:3578
+msgid ""
+"Place-holder for a through-model in cases where, due to a dependency, you"
+" cannot declare either a model or a many-to-many field without "
+"introducing NameErrors."
+msgstr ""
+
+#: ../../peewee/api.rst:3606
+msgid "Names of fields that comprise the primary key."
+msgstr ""
+
+#: ../../peewee/api.rst:3608
+msgid ""
+"A primary key composed of multiple columns. Unlike the other fields, a "
+"composite key is defined in the model's ``Meta`` class after the fields "
+"have been defined. It takes as parameters the string names of the fields "
+"to use as the primary key:"
+msgstr ""
+
+#: ../../peewee/api.rst:3624
+msgid "Schema Manager"
+msgstr ""
+
+#: ../../peewee/api.rst:3628 ../../peewee/api.rst:3740
+msgid "Model class."
+msgstr ""
+
+#: ../../peewee/api.rst:3629
+msgid "If unspecified defaults to model._meta.database."
+msgstr ""
+
+#: ../../peewee/api.rst:3631
+msgid ""
+"Provides methods for managing the creation and deletion of tables and "
+"indexes for the given model."
+msgstr ""
+
+#: ../../peewee/api.rst:3636 ../../peewee/api.rst:3661
+msgid "Specify IF NOT EXISTS clause."
+msgstr ""
+
+#: ../../peewee/api.rst:3637 ../../peewee/api.rst:3646
+#: ../../peewee/api.rst:3730
+msgid "Arbitrary options."
+msgstr ""
+
+#: ../../peewee/api.rst:3639
+msgid "Execute CREATE TABLE query for the given model."
+msgstr ""
+
+#: ../../peewee/api.rst:3643 ../../peewee/api.rst:3667
+msgid "Specify IF EXISTS clause."
+msgstr ""
+
+#: ../../peewee/api.rst:3644 ../../peewee/api.rst:3728
+msgid ""
+"Drop any sequences associated with the columns on the table (postgres "
+"only)."
+msgstr ""
+
+#: ../../peewee/api.rst:3648
+msgid "Execute DROP TABLE query for the given model."
+msgstr ""
+
+#: ../../peewee/api.rst:3652 ../../peewee/api.rst:4470
+msgid "Restart the id sequence (postgres-only)."
+msgstr ""
+
+#: ../../peewee/api.rst:3653 ../../peewee/api.rst:4471
+msgid "Truncate related tables as well (postgres-only)."
+msgstr ""
+
+#: ../../peewee/api.rst:3655
+msgid ""
+"Execute TRUNCATE TABLE for the given model. If the database is Sqlite, "
+"which does not support TRUNCATE, then an equivalent DELETE query will be "
+"executed."
+msgstr ""
+
+#: ../../peewee/api.rst:3663
+msgid "Execute CREATE INDEX queries for the indexes defined for the model."
+msgstr ""
+
+#: ../../peewee/api.rst:3669
+msgid "Execute DROP INDEX queries for the indexes defined for the model."
+msgstr ""
+
+#: ../../peewee/api.rst:3673 ../../peewee/api.rst:3679
+msgid "Field instance which specifies a sequence."
+msgstr ""
+
+#: ../../peewee/api.rst:3675
+msgid "Create sequence for the given :py:class:`Field`."
+msgstr ""
+
+#: ../../peewee/api.rst:3681
+msgid "Drop sequence for the given :py:class:`Field`."
+msgstr ""
+
+#: ../../peewee/api.rst:3685
+msgid "Foreign-key field constraint to add."
+msgstr ""
+
+#: ../../peewee/api.rst:3687
+msgid ""
+"Add a foreign-key constraint for the given field. This method should not "
+"be necessary in most cases, as foreign-key constraints are created as "
+"part of table creation. The exception is when you are creating a circular"
+" foreign-key relationship using :py:class:`DeferredForeignKey`. In those "
+"cases, it is necessary to first create the tables, then add the "
+"constraint for the deferred foreign-key:"
+msgstr ""
+
+#: ../../peewee/api.rst:3712
+msgid "For more information, see documentation on :ref:`circular-fks`."
+msgstr ""
+
+#: ../../peewee/api.rst:3715
+msgid ""
+"Because SQLite has limited support for altering existing tables, it is "
+"not possible to add a foreign-key constraint to an existing SQLite table."
+msgstr ""
+
+#: ../../peewee/api.rst:3721
+msgid "Whether to specify IF NOT EXISTS."
+msgstr ""
+
+#: ../../peewee/api.rst:3723
+msgid "Create sequence(s), index(es) and table for the model."
+msgstr ""
+
+#: ../../peewee/api.rst:3727
+msgid "Whether to specify IF EXISTS."
+msgstr ""
+
+#: ../../peewee/api.rst:3732
+msgid "Drop table for the model and associated indexes."
+msgstr ""
+
+#: ../../peewee/api.rst:3736
+msgid "Model"
+msgstr ""
+
+#: ../../peewee/api.rst:3741
+msgid "database model is bound to."
+msgstr ""
+
+#: ../../peewee/api.rst:3742
+msgid "Specify table name for model."
+msgstr ""
+
+#: ../../peewee/api.rst:3743
+msgid "List of :py:class:`ModelIndex` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:3744
+msgid ""
+"Primary key for model (only specified if this is a "
+":py:class:`CompositeKey` or ``False`` for no primary key."
+msgstr ""
+
+#: ../../peewee/api.rst:3746
+msgid "List of table constraints."
+msgstr ""
+
+#: ../../peewee/api.rst:3747
+msgid "Schema table exists in."
+msgstr ""
+
+#: ../../peewee/api.rst:3748
+msgid ""
+"When :py:meth:`~Model.save` is called, only save the fields which have "
+"been modified."
+msgstr ""
+
+#: ../../peewee/api.rst:3750
+msgid "Arbitrary options for the model."
+msgstr ""
+
+#: ../../peewee/api.rst:3751
+msgid "Specify WITHOUT ROWID (sqlite only)."
+msgstr ""
+
+#: ../../peewee/api.rst:3752
+msgid "Arbitrary setting attributes and values."
+msgstr ""
+
+#: ../../peewee/api.rst:3754
+msgid "Store metadata for a :py:class:`Model`."
+msgstr ""
+
+#: ../../peewee/api.rst:3756
+msgid ""
+"This class should not be instantiated directly, but is instantiated using"
+" the attributes of a :py:class:`Model` class' inner ``Meta`` class. "
+"Metadata attributes are then available on ``Model._meta``."
+msgstr ""
+
+#: ../../peewee/api.rst:3762
+msgid "Return a reference to the underlying :py:class:`Table` object."
+msgstr ""
+
+#: ../../peewee/api.rst:3766
+msgid "Follow foreign-key references."
+msgstr ""
+
+#: ../../peewee/api.rst:3767
+msgid "Follow foreign-key back-references."
+msgstr ""
+
+#: ../../peewee/api.rst:3768
+msgid "Do a depth-first search (``False`` for breadth-first)."
+msgstr ""
+
+#: ../../peewee/api.rst:3771
+msgid ""
+"Traverse the model graph and return a list of 3-tuples, consisting of "
+"``(foreign key field, model class, is_backref)``."
+msgstr ""
+
+#: ../../peewee/api.rst:3776
+msgid "database object to bind Model to."
+msgstr ""
+
+#: ../../peewee/api.rst:3778
+msgid "Bind the model class to the given :py:class:`Database` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:3781
+msgid ""
+"This API should not need to be used. Instead, to change a "
+":py:class:`Model` database at run-time, use one of the following:"
+msgstr ""
+
+#: ../../peewee/api.rst:3784
+msgid ":py:meth:`Model.bind`"
+msgstr ""
+
+#: ../../peewee/api.rst:3785
+msgid ":py:meth:`Model.bind_ctx` (bind for scope of a context manager)."
+msgstr ""
+
+#: ../../peewee/api.rst:3786
+msgid ":py:meth:`Database.bind`"
+msgstr ""
+
+#: ../../peewee/api.rst:3787
+msgid ":py:meth:`Database.bind_ctx`"
+msgstr ""
+
+#: ../../peewee/api.rst:3791
+msgid "table name to bind Model to."
+msgstr ""
+
+#: ../../peewee/api.rst:3793
+msgid "Bind the model class to the given table name at run-time."
+msgstr ""
+
+#: ../../peewee/api.rst:3798
+msgid "Metadata subclass that tracks :py:class:`Model` subclasses."
+msgstr ""
+
+#: ../../peewee/api.rst:3802
+msgid "Apply a function to all subclasses."
+msgstr ""
+
+#: ../../peewee/api.rst:3807
+msgid "Mapping of field-name to value to initialize model with."
+msgstr ""
+
+#: ../../peewee/api.rst:3809
+msgid ""
+"Model class provides a high-level abstraction for working with database "
+"tables. Models are a one-to-one mapping with a database table (or a "
+"table-like object, such as a view). Subclasses of ``Model`` declare any "
+"number of :py:class:`Field` instances as class attributes. These fields "
+"correspond to columns on the table."
+msgstr ""
+
+#: ../../peewee/api.rst:3815
+msgid ""
+"Table-level operations, such as :py:meth:`~Model.select`, "
+":py:meth:`~Model.update`, :py:meth:`~Model.insert` and "
+":py:meth:`~Model.delete` are implemented as classmethods. Row-level "
+"operations, such as :py:meth:`~Model.save` and "
+":py:meth:`~Model.delete_instance` are implemented as instancemethods."
+msgstr ""
+
+#: ../../peewee/api.rst:3837
+msgid "Optional name for alias."
+msgstr ""
+
+#: ../../peewee/api.rst:3838
+msgid ":py:class:`ModelAlias` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:3840
+msgid ""
+"Create an alias to the model-class. Model aliases allow you to reference "
+"the same :py:class:`Model` multiple times in a query, for example when "
+"doing a self-join or sub-query."
+msgstr ""
+
+#: ../../peewee/api.rst:3856
+msgid ""
+"A list of model classes, field instances, functions or expressions. If no"
+" arguments are provided, all columns for the given model will be selected"
+" by default."
+msgstr ""
+
+#: ../../peewee/api.rst:3859 ../../peewee/api.rst:4349
+msgid ":py:class:`ModelSelect` query."
+msgstr ""
+
+#: ../../peewee/api.rst:3861
+msgid ""
+"Create a SELECT query. If no fields are explicitly provided, the query "
+"will by default SELECT all the fields defined on the model, unless you "
+"are using the query as a sub-query, in which case only the primary key "
+"will be selected by default."
+msgstr ""
+
+#: ../../peewee/api.rst:3866
+msgid "Example of selecting all columns:"
+msgstr ""
+
+#: ../../peewee/api.rst:3872
+msgid ""
+"Example of selecting all columns on *Tweet* and the parent model, *User*."
+" When the ``user`` foreign key is accessed on a *Tweet* instance no "
+"additional query will be needed (see :ref:`N+1 <nplusone>` for more "
+"details):"
+msgstr ""
+
+#: ../../peewee/api.rst:3887
+msgid "Example of subquery only selecting the primary key:"
+msgstr ""
+
+#: ../../peewee/api.rst:3899
+msgid "``dict`` of fields to values."
+msgstr ""
+
+#: ../../peewee/api.rst:3900 ../../peewee/api.rst:3930
+#: ../../peewee/api.rst:4080
+msgid "Field-name to value mapping."
+msgstr ""
+
+#: ../../peewee/api.rst:3902
+msgid "Create an UPDATE query."
+msgstr ""
+
+#: ../../peewee/api.rst:3904
+msgid ""
+"Example showing users being marked inactive if their registration has "
+"expired:"
+msgstr ""
+
+#: ../../peewee/api.rst:3914
+msgid "Example showing an atomic update:"
+msgstr ""
+
+#: ../../peewee/api.rst:3924
+msgid ""
+"When an update query is executed, the number of rows modified will be "
+"returned."
+msgstr ""
+
+#: ../../peewee/api.rst:3929 ../../peewee/api.rst:4079
+msgid "``dict`` of fields to values to insert."
+msgstr ""
+
+#: ../../peewee/api.rst:3932
+msgid "Create an INSERT query."
+msgstr ""
+
+#: ../../peewee/api.rst:3934
+msgid ""
+"Insert a new row into the database. If any fields on the model have "
+"default values, these values will be used if the fields are not "
+"explicitly set in the ``insert`` dictionary."
+msgstr ""
+
+#: ../../peewee/api.rst:3938
+msgid "Example showing creation of a new user:"
+msgstr ""
+
+#: ../../peewee/api.rst:3945
+msgid "You can also use :py:class:`Field` objects as the keys:"
+msgstr ""
+
+#: ../../peewee/api.rst:3951
+msgid ""
+"If you have a model with a default value on one of the fields, and that "
+"field is not specified in the ``insert`` parameter, the default will be "
+"used:"
+msgstr ""
+
+#: ../../peewee/api.rst:3965
+msgid ""
+"When an insert query is executed on a table with an auto-incrementing "
+"primary key, the primary key of the new row will be returned."
+msgstr ""
+
+#: ../../peewee/api.rst:3971 ../../peewee/api.rst:4088
+msgid "An iterable that yields rows to insert."
+msgstr ""
+
+#: ../../peewee/api.rst:3972 ../../peewee/api.rst:4089
+msgid "List of fields being inserted."
+msgstr ""
+
+#: ../../peewee/api.rst:3973 ../../peewee/api.rst:4053
+msgid "number of rows modified (see note)."
+msgstr ""
+
+#: ../../peewee/api.rst:3975
+msgid "INSERT multiple rows of data."
+msgstr ""
+
+#: ../../peewee/api.rst:3977
+msgid ""
+"The ``rows`` parameter must be an iterable that yields dictionaries or "
+"tuples, where the ordering of the tuple values corresponds to the fields "
+"specified in the ``fields`` argument. As with :py:meth:`~Model.insert`, "
+"fields that are not specified in the dictionary will use their default "
+"value, if one exists."
+msgstr ""
+
+#: ../../peewee/api.rst:3984
+msgid ""
+"Due to the nature of bulk inserts, each row must contain the same fields."
+" The following will not work:"
+msgstr ""
+
+#: ../../peewee/api.rst:3994
+msgid "Example of inserting multiple Users:"
+msgstr ""
+
+#: ../../peewee/api.rst:4005
+msgid "Equivalent example using dictionaries:"
+msgstr ""
+
+#: ../../peewee/api.rst:4017
+msgid ""
+"Because the ``rows`` parameter can be an arbitrary iterable, you can also"
+" use a generator:"
+msgstr ""
+
+#: ../../peewee/api.rst:4028
+msgid ""
+"If you are using SQLite, your SQLite library must be version 3.7.11 or "
+"newer to take advantage of bulk inserts."
+msgstr ""
+
+#: ../../peewee/api.rst:4032
+msgid ""
+"SQLite has a default limit of 999 bound variables per statement. This "
+"limit can be modified at compile-time or at run-time, **but** if "
+"modifying at run-time, you can only specify a *lower* value than the "
+"default limit."
+msgstr ""
+
+#: ../../peewee/api.rst:4037
+msgid "For more information, check out the following SQLite documents:"
+msgstr ""
+
+#: ../../peewee/api.rst:4039
+msgid ""
+"`Max variable number limit "
+"<https://www.sqlite.org/limits.html#max_variable_number>`_"
+msgstr ""
+
+#: ../../peewee/api.rst:4040
+msgid "`Changing run-time limits <https://www.sqlite.org/c3ref/limit.html>`_"
+msgstr ""
+
+#: ../../peewee/api.rst:4041
+msgid "`SQLite compile-time flags <https://www.sqlite.org/compile.html>`_"
+msgstr ""
+
+#: ../../peewee/api.rst:4044 ../../peewee/api.rst:4072
+msgid ""
+"The default return value is the number of rows modified. However, when "
+"using Postgres, Peewee will return a cursor by default that yields the "
+"primary-keys of the inserted rows. To disable this functionality with "
+"Postgres, use an empty call to ``returning()``."
+msgstr ""
+
+#: ../../peewee/api.rst:4051
+msgid "SELECT query to use as source of data."
+msgstr ""
+
+#: ../../peewee/api.rst:4052
+msgid "Fields to insert data into."
+msgstr ""
+
+#: ../../peewee/api.rst:4055
+msgid ""
+"INSERT data using a SELECT query as the source. This API should be used "
+"for queries of the form *INSERT INTO ... SELECT FROM ...*."
+msgstr ""
+
+#: ../../peewee/api.rst:4058
+msgid "Example of inserting data across tables for denormalization purposes:"
+msgstr ""
+
+#: ../../peewee/api.rst:4082
+msgid "Create an INSERT query that uses REPLACE for conflict-resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:4084
+msgid "See :py:meth:`Model.insert` for examples."
+msgstr ""
+
+#: ../../peewee/api.rst:4091
+msgid "INSERT multiple rows of data using REPLACE for conflict-resolution."
+msgstr ""
+
+#: ../../peewee/api.rst:4093
+msgid "See :py:meth:`Model.insert_many` for examples."
+msgstr ""
+
+#: ../../peewee/api.rst:4097
+msgid "SQL query to execute."
+msgstr ""
+
+#: ../../peewee/api.rst:4100
+msgid "Execute a SQL query directly."
+msgstr ""
+
+#: ../../peewee/api.rst:4102
+msgid "Example selecting rows from the User table:"
+msgstr ""
+
+#: ../../peewee/api.rst:4111
+msgid ""
+"Generally the use of ``raw`` is reserved for those cases where you can "
+"significantly optimize a select query. It is useful for select queries "
+"since it will return instances of the model."
+msgstr ""
+
+#: ../../peewee/api.rst:4117
+msgid "Create a DELETE query."
+msgstr ""
+
+#: ../../peewee/api.rst:4119
+msgid "Example showing the deletion of all inactive users:"
+msgstr ""
+
+#: ../../peewee/api.rst:4127
+msgid ""
+"This method performs a delete on the *entire table*. To delete a single "
+"instance, see :py:meth:`Model.delete_instance`."
+msgstr ""
+
+#: ../../peewee/api.rst:4132 ../../peewee/api.rst:4311
+msgid "Mapping of field-name to value."
+msgstr ""
+
+#: ../../peewee/api.rst:4134
+msgid "INSERT new row into table and return corresponding model instance."
+msgstr ""
+
+#: ../../peewee/api.rst:4136
+msgid ""
+"Example showing the creation of a user (a row will be added to the "
+"database):"
+msgstr ""
+
+#: ../../peewee/api.rst:4144
+msgid "The create() method is a shorthand for instantiate-then-save."
+msgstr ""
+
+#: ../../peewee/api.rst:4148
+msgid "a list or other iterable of unsaved :py:class:`Model` instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4150 ../../peewee/api.rst:4196
+msgid ""
+"number of rows to batch per insert. If unspecified, all models will be "
+"inserted in a single query."
+msgstr ""
+
+#: ../../peewee/api.rst:4154
+msgid ""
+"Efficiently INSERT multiple unsaved model instances into the database. "
+"Unlike :py:meth:`~Model.insert_many`, which accepts row data as a list of"
+" either dictionaries or lists, this method accepts a list of unsaved "
+"model instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4169
+msgid "Batches:"
+msgstr ""
+
+#: ../../peewee/api.rst:4181
+msgid ""
+"The primary-key value for the newly-created models will only be set if "
+"you are using Postgresql (which supports the ``RETURNING`` clause)."
+msgstr ""
+
+#: ../../peewee/api.rst:4184
+msgid ""
+"SQLite generally has a limit of 999 bound parameters for a query, so the "
+"batch size should be roughly 1000 / number-of-fields."
+msgstr ""
+
+#: ../../peewee/api.rst:4186 ../../peewee/api.rst:4229
+msgid ""
+"When a batch-size is provided it is **strongly recommended** that you "
+"wrap the call in a transaction or savepoint using "
+":py:meth:`Database.atomic`. Otherwise an error in a batch mid-way through"
+" could leave the database in an inconsistent state."
+msgstr ""
+
+#: ../../peewee/api.rst:4193
+msgid "a list or other iterable of :py:class:`Model` instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4195
+msgid "list of fields to update."
+msgstr ""
+
+#: ../../peewee/api.rst:4198
+msgid "total number of rows updated."
+msgstr ""
+
+#: ../../peewee/api.rst:4200
+msgid "Efficiently UPDATE multiple model instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4217
+msgid ""
+"If you have a large number of objects to update, it is strongly "
+"recommended that you specify a ``batch_size`` and wrap the operation in a"
+" transaction:"
+msgstr ""
+
+#: ../../peewee/api.rst:4228
+msgid "SQLite generally has a limit of 999 bound parameters for a query."
+msgstr ""
+
+#: ../../peewee/api.rst:4236
+msgid "Zero or more :py:class:`Expression` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:4237
+msgid "Mapping of field-name to value for Django-style filter."
+msgstr ""
+
+#: ../../peewee/api.rst:4238
+msgid ":py:class:`DoesNotExist`"
+msgstr ""
+
+#: ../../peewee/api.rst:4239
+msgid "Model instance matching the specified filters."
+msgstr ""
+
+#: ../../peewee/api.rst:4241
+msgid ""
+"Retrieve a single model instance matching the given filters. If no model "
+"is returned, a :py:class:`DoesNotExist` is raised."
+msgstr ""
+
+#: ../../peewee/api.rst:4248
+msgid ""
+"This method is also exposed via the :py:class:`SelectQuery`, though it "
+"takes no parameters:"
+msgstr ""
+
+#: ../../peewee/api.rst:4263
+msgid ""
+"The :py:meth:`~Model.get` method is shorthand for selecting with a limit "
+"of 1. It has the added behavior of raising an exception when no matching "
+"row is found. If more than one row is found, the first row returned by "
+"the database cursor will be used."
+msgstr ""
+
+#: ../../peewee/api.rst:4270
+msgid ""
+"Identical to :py:meth:`Model.get` but returns ``None`` if no model "
+"matches the given filters."
+msgstr ""
+
+#: ../../peewee/api.rst:4275 ../../peewee/api.rst:4289
+#: ../../peewee/api.rst:4304
+msgid "Primary-key value."
+msgstr ""
+
+#: ../../peewee/api.rst:4277
+msgid ""
+"Short-hand for calling :py:meth:`Model.get` specifying a lookup by "
+"primary key. Raises a :py:class:`DoesNotExist` if instance with the given"
+" primary key value does not exist."
+msgstr ""
+
+#: ../../peewee/api.rst:4290
+msgid "Mapping of field to value to update."
+msgstr ""
+
+#: ../../peewee/api.rst:4292
+msgid ""
+"Short-hand for updating the data with the given primary-key. If no row "
+"exists with the given primary key, no exception will be raised."
+msgstr ""
+
+#: ../../peewee/api.rst:4306
+msgid ""
+"Short-hand for deleting the row with the given primary-key. If no row "
+"exists with the given primary key, no exception will be raised."
+msgstr ""
+
+#: ../../peewee/api.rst:4312
+msgid "Default values to use if creating a new row."
+msgstr ""
+
+#: ../../peewee/api.rst:4313
+msgid ""
+"Tuple of :py:class:`Model` instance and boolean indicating if a new "
+"object was created."
+msgstr ""
+
+#: ../../peewee/api.rst:4316
+msgid ""
+"Attempt to get the row matching the given filters. If no matching row is "
+"found, create a new row."
+msgstr ""
+
+#: ../../peewee/api.rst:4319
+msgid "Race-conditions are possible when using this method."
+msgstr ""
+
+#: ../../peewee/api.rst:4321
+msgid "Example **without** ``get_or_create``:"
+msgstr ""
+
+#: ../../peewee/api.rst:4336
+msgid "Equivalent code using ``get_or_create``:"
+msgstr ""
+
+#: ../../peewee/api.rst:4347 ../../peewee/api.rst:4714
+msgid "Zero or more :py:class:`DQ` objects."
+msgstr ""
+
+#: ../../peewee/api.rst:4348
+msgid "Django-style filters."
+msgstr ""
+
+#: ../../peewee/api.rst:4353
+msgid "The primary-key of the model instance."
+msgstr ""
+
+#: ../../peewee/api.rst:4357
+msgid "Force INSERT query."
+msgstr ""
+
+#: ../../peewee/api.rst:4358
+msgid "Only save the given :py:class:`Field` instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4359
+msgid "Number of rows modified."
+msgstr ""
+
+#: ../../peewee/api.rst:4361
+msgid ""
+"Save the data in the model instance. By default, the presence of a "
+"primary-key value will cause an UPDATE query to be executed."
+msgstr ""
+
+#: ../../peewee/api.rst:4364
+msgid "Example showing saving a model instance:"
+msgstr ""
+
+#: ../../peewee/api.rst:4374
+msgid "Return list of fields that have been modified."
+msgstr ""
+
+#: ../../peewee/api.rst:4379
+msgid ""
+"If you just want to persist modified fields, you can call "
+"``model.save(only=model.dirty_fields)``."
+msgstr ""
+
+#: ../../peewee/api.rst:4382
+msgid ""
+"If you **always** want to only save a model's dirty fields, you can use "
+"the Meta option ``only_save_dirty = True``. Then, any time you call "
+":py:meth:`Model.save()`, by default only the dirty fields will be saved, "
+"e.g."
+msgstr ""
+
+#: ../../peewee/api.rst:4398
+msgid ""
+"Peewee determines whether a field is \"dirty\" by observing when the "
+"field attribute is set on a model instance. If the field contains a value"
+" that is mutable, such as a dictionary instance, and that dictionary is "
+"then modified, Peewee will not notice the change."
+msgstr ""
+
+#: ../../peewee/api.rst:4405
+msgid "Return boolean indicating whether any fields were manually set."
+msgstr ""
+
+#: ../../peewee/api.rst:4409
+msgid "Delete related models."
+msgstr ""
+
+#: ../../peewee/api.rst:4410
+msgid ""
+"Delete related models that have a null foreign key. If ``False`` nullable"
+" relations will be set to NULL."
+msgstr ""
+
+#: ../../peewee/api.rst:4413
+msgid ""
+"Delete the given instance.  Any foreign keys set to cascade on delete "
+"will be deleted automatically.  For more programmatic control, you can "
+"specify ``recursive=True``, which will delete any non-nullable related "
+"models (those that *are* nullable will be set to NULL).  If you wish to "
+"delete all dependencies regardless of whether they are nullable, set "
+"``delete_nullable=True``."
+msgstr ""
+
+#: ../../peewee/api.rst:4420
+msgid "example:"
+msgstr ""
+
+#: ../../peewee/api.rst:4428
+msgid "database to bind to."
+msgstr ""
+
+#: ../../peewee/api.rst:4432
+msgid "Bind the model (and specified relations) to the given database."
+msgstr ""
+
+#: ../../peewee/api.rst:4434
+msgid "See also: :py:meth:`Database.bind`."
+msgstr ""
+
+#: ../../peewee/api.rst:4438
+msgid ""
+"Like :py:meth:`~Model.bind`, but returns a context manager that only "
+"binds the models for the duration of the wrapped block."
+msgstr ""
+
+#: ../../peewee/api.rst:4441
+msgid "See also: :py:meth:`Database.bind_ctx`."
+msgstr ""
+
+#: ../../peewee/api.rst:4445
+msgid "boolean indicating whether the table exists."
+msgstr ""
+
+#: ../../peewee/api.rst:4449
+msgid ""
+"If set to ``True``, the create table query will include an ``IF NOT "
+"EXISTS`` clause."
+msgstr ""
+
+#: ../../peewee/api.rst:4452
+msgid "Create the model table, indexes, constraints and sequences."
+msgstr ""
+
+#: ../../peewee/api.rst:4463
+msgid ""
+"If set to ``True``, the create table query will include an ``IF EXISTS`` "
+"clause."
+msgstr ""
+
+#: ../../peewee/api.rst:4466
+msgid "Drop the model table."
+msgstr ""
+
+#: ../../peewee/api.rst:4473
+msgid "Truncate (delete all rows) for the model."
+msgstr ""
+
+#: ../../peewee/api.rst:4484
+msgid ""
+"Expressive method for declaring an index on a model. Wraps the "
+"declaration of a :py:class:`ModelIndex` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:4519
+msgid ""
+"a :py:class:`ModelIndex` instance, Field(s) to index, or a "
+":py:class:`SQL` instance that contains the SQL for creating the index."
+msgstr ""
+
+#: ../../peewee/api.rst:4522
+msgid "Keyword arguments passed to :py:class:`ModelIndex` constructor."
+msgstr ""
+
+#: ../../peewee/api.rst:4525
+msgid "Add an index to the model's definition."
+msgstr ""
+
+#: ../../peewee/api.rst:4528
+msgid ""
+"This method does not actually create the index in the database. Rather, "
+"it adds the index definition to the model's metadata, so that a "
+"subsequent call to :py:meth:`~Model.create_table` will create the new "
+"index (along with the table)."
+msgstr ""
+
+#: ../../peewee/api.rst:4569
+msgid "Search models related via a nullable foreign key"
+msgstr ""
+
+#: ../../peewee/api.rst:4573
+msgid ""
+"Generate a list of queries of dependent models. Yields a 2-tuple "
+"containing the query and corresponding foreign key field.  Useful for "
+"searching dependencies of a model, i.e. things that would be orphaned in "
+"the event of a delete."
+msgstr ""
+
+#: ../../peewee/api.rst:4580
+msgid "a :py:class:`ModelSelect` for the given class."
+msgstr ""
+
+#: ../../peewee/api.rst:4582
+msgid "Convenience function for iterating over all instances of a model."
+msgstr ""
+
+#: ../../peewee/api.rst:4598
+msgid "Count of rows in table."
+msgstr ""
+
+#: ../../peewee/api.rst:4612
+msgid "Model class to reference."
+msgstr ""
+
+#: ../../peewee/api.rst:4613
+msgid "(optional) name for alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4615
+msgid "Provide a separate reference to a model in a query."
+msgstr ""
+
+#: ../../peewee/api.rst:4620
+msgid "Model class to select."
+msgstr ""
+
+#: ../../peewee/api.rst:4621
+msgid "List of fields or model classes to select."
+msgstr ""
+
+#: ../../peewee/api.rst:4623
+msgid "Model-specific implementation of SELECT query."
+msgstr ""
+
+#: ../../peewee/api.rst:4627
+msgid ""
+"A :py:class:`Model`, :py:class:`ModelAlias`, subquery, or other object "
+"that was joined-on."
+msgstr ""
+
+#: ../../peewee/api.rst:4630
+msgid ""
+"Switch the *join context* - the source which subsequent calls to "
+":py:meth:`~ModelSelect.join` will be joined against. Used for specifying "
+"multiple joins against a single table."
+msgstr ""
+
+#: ../../peewee/api.rst:4634
+msgid "If the ``ctx`` is not given, then the query's model will be used."
+msgstr ""
+
+#: ../../peewee/api.rst:4636
+msgid ""
+"The following example selects from tweet and joins on both user and "
+"tweet-flag:"
+msgstr ""
+
+#: ../../peewee/api.rst:4648
+msgid "Constructor (defaults to returning model instances)"
+msgstr ""
+
+#: ../../peewee/api.rst:4650
+msgid ""
+"Return result rows as objects created using the given constructor. The "
+"default behavior is to create model instances."
+msgstr ""
+
+#: ../../peewee/api.rst:4654
+msgid ""
+"This method can be used, when selecting field data from multiple "
+"sources/models, to make all data available as attributes on the model "
+"being queried (as opposed to constructing the graph of joined model "
+"instances). For very complex queries this can have a positive performance"
+" impact, especially iterating large result sets."
+msgstr ""
+
+#: ../../peewee/api.rst:4660
+msgid ""
+"Similarly, you can use :py:meth:`~BaseQuery.dicts`, "
+":py:meth:`~BaseQuery.tuples` or :py:meth:`~BaseQuery.namedtuples` to "
+"achieve even more performance."
+msgstr ""
+
+#: ../../peewee/api.rst:4666
+msgid ""
+"A :py:class:`Model`, :py:class:`ModelAlias`, :py:class:`Select` query, or"
+" other object to join to."
+msgstr ""
+
+#: ../../peewee/api.rst:4668
+msgid "Join type, defaults to INNER."
+msgstr ""
+
+#: ../../peewee/api.rst:4669
+msgid "Join predicate or a :py:class:`ForeignKeyField` to join on."
+msgstr ""
+
+#: ../../peewee/api.rst:4670
+msgid ""
+"Explicitly specify the source of the join. If not specified then the "
+"current *join context* will be used."
+msgstr ""
+
+#: ../../peewee/api.rst:4672
+msgid "Attribute to use when projecting columns from the joined model."
+msgstr ""
+
+#: ../../peewee/api.rst:4675
+msgid "Join with another table-like object."
+msgstr ""
+
+#: ../../peewee/api.rst:4686
+msgid ""
+"Example selecting tweets and joining on user in order to restrict to only"
+" those tweets made by \"admin\" users:"
+msgstr ""
+
+#: ../../peewee/api.rst:4693
+msgid ""
+"Example selecting users and joining on a particular foreign key field. "
+"See the :py:ref:`example app <example-app>` for a real-life usage:"
+msgstr ""
+
+#: ../../peewee/api.rst:4705
+msgid "Source for join."
+msgstr ""
+
+#: ../../peewee/api.rst:4706
+msgid "Table to join to."
+msgstr ""
+
+#: ../../peewee/api.rst:4708
+msgid ""
+"Use same parameter order as the non-model-specific "
+":py:meth:`~ModelSelect.join`. Bypasses the *join context* by requiring "
+"the join source to be specified."
+msgstr ""
+
+#: ../../peewee/api.rst:4715
+msgid "Django-style keyword-argument filters."
+msgstr ""
+
+#: ../../peewee/api.rst:4717
+msgid "Use Django-style filters to express a WHERE clause."
+msgstr ""
+
+#: ../../peewee/api.rst:4721
+msgid "A list of :py:class:`Model` classes or select queries to prefetch."
+msgstr ""
+
+#: ../../peewee/api.rst:4723 ../../peewee/api.rst:4746
+msgid "a list of models with selected relations prefetched."
+msgstr ""
+
+#: ../../peewee/api.rst:4725
+msgid "Execute the query, prefetching the given additional resources."
+msgstr ""
+
+#: ../../peewee/api.rst:4727
+msgid "See also :py:func:`prefetch` standalone function."
+msgstr ""
+
+#: ../../peewee/api.rst:4743
+msgid "Query to use as starting-point."
+msgstr ""
+
+#: ../../peewee/api.rst:4744
+msgid "One or more models or :py:class:`ModelSelect` queries to eagerly fetch."
+msgstr ""
+
+#: ../../peewee/api.rst:4748
+msgid ""
+"Eagerly fetch related objects, allowing efficient querying of multiple "
+"tables when a 1-to-many relationship exists."
+msgstr ""
+
+#: ../../peewee/api.rst:4751
+msgid "For example, it is simple to query a many-to-1 relationship efficiently::"
+msgstr ""
+
+#: ../../peewee/api.rst:4761
+msgid ""
+"To efficiently do the inverse, query users and their tweets, you can use "
+"prefetch::"
+msgstr ""
+
+#: ../../peewee/api.rst:4772
+msgid "Query-builder Internals"
+msgstr ""
+
+#: ../../peewee/api.rst:4776
+msgid ""
+"Manages the aliases assigned to :py:class:`Source` objects in SELECT "
+"queries, so as to avoid ambiguous references when multiple sources are "
+"used in a single query."
+msgstr ""
+
+#: ../../peewee/api.rst:4782
+msgid ""
+"Add a source to the AliasManager's internal registry at the current "
+"scope. The alias will be automatically generated using the following "
+"scheme (where each level of indentation refers to a new scope):"
+msgstr ""
+
+#: ../../peewee/api.rst:4786
+msgid ""
+"Make the manager aware of a new source. If the source has already been "
+"added, the call is a no-op."
+msgstr ""
+
+#: ../../peewee/api.rst:4791
+msgid ""
+"Return the alias for the source in the current scope. If the source does "
+"not have an alias, it will be given the next available alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4794
+msgid "The source whose alias should be retrieved."
+msgstr ""
+
+#: ../../peewee/api.rst:4795
+msgid "The alias already assigned to the source, or the next available alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4801
+msgid "Manually set the alias for the source at the current scope."
+msgstr ""
+
+#: ../../peewee/api.rst:4803
+msgid "The source for which we set the alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4807
+msgid "Push a new scope onto the stack."
+msgstr ""
+
+#: ../../peewee/api.rst:4811
+msgid "Pop scope from the stack."
+msgstr ""
+
+#: ../../peewee/api.rst:4816
+msgid ""
+"Lightweight object for representing the state at a given scope. During "
+"SQL generation, each object visited by the :py:class:`Context` can "
+"inspect the state. The :py:class:`State` class allows Peewee to do things"
+" like:"
+msgstr ""
+
+#: ../../peewee/api.rst:4820
+msgid ""
+"Use a common interface for field types or SQL expressions, but use "
+"vendor-specific data-types or operators."
+msgstr ""
+
+#: ../../peewee/api.rst:4822
+msgid ""
+"Compile a :py:class:`Column` instance into a fully-qualified attribute, "
+"as a named alias, etc, depending on the value of the ``scope``."
+msgstr ""
+
+#: ../../peewee/api.rst:4824
+msgid "Ensure parentheses are used appropriately."
+msgstr ""
+
+#: ../../peewee/api.rst:4826
+msgid "The scope rules to be applied while the state is active."
+msgstr ""
+
+#: ../../peewee/api.rst:4827
+msgid "Wrap the contained SQL in parentheses."
+msgstr ""
+
+#: ../../peewee/api.rst:4828
+msgid "Whether the current state is a child of an outer query."
+msgstr ""
+
+#: ../../peewee/api.rst:4830
+msgid "Arbitrary settings which should be applied in the current state."
+msgstr ""
+
+#: ../../peewee/api.rst:4836
+msgid "Converts Peewee structures into parameterized SQL queries."
+msgstr ""
+
+#: ../../peewee/api.rst:4838
+msgid ""
+"Peewee structures should all implement a `__sql__` method, which will be "
+"called by the `Context` class during SQL generation. The `__sql__` method"
+" accepts a single parameter, the `Context` instance, which allows for "
+"recursive descent and introspection of scope and state."
+msgstr ""
+
+#: ../../peewee/api.rst:4845
+msgid "Return the currently-active scope rules."
+msgstr ""
+
+#: ../../peewee/api.rst:4849
+msgid "Return whether the current state is wrapped in parentheses."
+msgstr ""
+
+#: ../../peewee/api.rst:4853
+msgid "Return whether the current state is the child of another query."
+msgstr ""
+
+#: ../../peewee/api.rst:4857
+msgid ""
+"The default scope. Sources are referred to by alias, columns by dotted-"
+"path from the source."
+msgstr ""
+
+#: ../../peewee/api.rst:4862
+msgid ""
+"Scope used when defining sources, e.g. in the column list and FROM clause"
+" of a SELECT query. This scope is used for defining the fully-qualified "
+"name of the source and assigning an alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4868
+msgid ""
+"Scope used for UPDATE, INSERT or DELETE queries, where instead of "
+"referencing a source by an alias, we refer to it directly. Similarly, "
+"since there is a single table, columns do not need to be referenced by "
+"dotted-path."
+msgstr ""
+
+#: ../../peewee/api.rst:4875
+msgid ""
+"Scope used when generating the contents of a common-table-expression. "
+"Used after a WITH statement, when generating the definition for a CTE (as"
+" opposed to merely a reference to one)."
+msgstr ""
+
+#: ../../peewee/api.rst:4881
+msgid ""
+"Scope used when generating SQL for a column. Ensures that the column is "
+"rendered with it's correct alias. Was needed because when referencing the"
+" inner projection of a sub-select, Peewee would render the full SELECT "
+"query as the \"source\" of the column (instead of the query's alias + . +"
+" column).  This scope allows us to avoid rendering the full query when we"
+" only need the alias."
+msgstr ""
+
+#: ../../peewee/api.rst:4890
+msgid ""
+"Append a composable Node object, sub-context, or other object to the "
+"query AST. Python values, such as integers, strings, floats, etc. are "
+"treated as parameterized values."
+msgstr ""
+
+#: ../../peewee/api.rst:4894 ../../peewee/api.rst:4900
+msgid "The updated Context object."
+msgstr ""
+
+#: ../../peewee/api.rst:4898
+msgid "Append a string-literal to the current query AST."
+msgstr ""
+
+#: ../../peewee/api.rst:4904
+msgid "Instance of a Node subclass."
+msgstr ""
+
+#: ../../peewee/api.rst:4905
+msgid "a 2-tuple consisting of (sql, parameters)."
+msgstr ""
+
+#: ../../peewee/api.rst:4907
+msgid ""
+"Convert the given node to a SQL AST and return a 2-tuple consisting of "
+"the SQL query and the parameters."
+msgstr ""
+
+#: ../../peewee/api.rst:4912
+msgid "a 2-tuple consisting of (sql, parameters) for the context."
+msgstr ""
+
+#: ../../peewee/api.rst:4916
+msgid "Constants and Helpers"
+msgstr ""
+
+#: ../../peewee/api.rst:4920
+msgid "Create a proxy or placeholder for another object."
+msgstr ""
+
+#: ../../peewee/api.rst:4924
+msgid "Object to proxy to."
+msgstr ""
+
+#: ../../peewee/api.rst:4926
+msgid ""
+"Bind the proxy to the given object. Afterwards all attribute lookups and "
+"method calls on the proxy will be sent to the given object."
+msgstr ""
+
+#: ../../peewee/api.rst:4929
+msgid "Any callbacks that have been registered will be called."
+msgstr ""
+
+#: ../../peewee/api.rst:4933
+msgid "A function that accepts a single parameter, the bound object."
+msgstr ""
+
+#: ../../peewee/api.rst:4935
+msgid "self"
+msgstr ""
+
+#: ../../peewee/api.rst:4937
+msgid "Add a callback to be executed when the proxy is initialized."
+msgstr ""
+
+#: ../../peewee/api.rst:4941
+msgid ""
+"Proxy subclass that is suitable to use as a placeholder for a "
+":py:class:`Database` instance."
+msgstr ""
+
+#: ../../peewee/api.rst:4944
+msgid "See :ref:`dynamic_db` for details on usage."
+msgstr ""
+
+#: ../../peewee/api.rst:4948
+msgid "an iterable that is the source of the data to be chunked."
+msgstr ""
+
+#: ../../peewee/api.rst:4949
+msgid "chunk size"
+msgstr ""
+
+#: ../../peewee/api.rst:4950
+msgid "a new iterable that yields *n*-length chunks of the source data."
+msgstr ""
+
+#: ../../peewee/api.rst:4952
+msgid ""
+"Efficient implementation for breaking up large lists of data into "
+"smaller-sized chunks."
+msgstr ""
+

@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/example.rst:4
+msgid "Example app"
+msgstr ""
+
+#: ../../peewee/example.rst:6
+msgid ""
+"We'll be building a simple *twitter*-like site. The source code for the "
+"example can be found in the ``examples/twitter`` directory. You can also "
+"`browse the source-code "
+"<https://github.com/coleifer/peewee/tree/master/examples/twitter>`_ on "
+"github. There is also an example `blog app "
+"<https://github.com/coleifer/peewee/tree/master/examples/blog>`_ if "
+"that's more to your liking, however it is not covered in this guide."
+msgstr ""
+
+#: ../../peewee/example.rst:13
+msgid ""
+"The example app uses the `flask <http://flask.pocoo.org/>`_ web framework"
+" which is very easy to get started with. If you don't have flask already,"
+" you will need to install it to run the example:"
+msgstr ""
+
+#: ../../peewee/example.rst:22
+msgid "Running the example"
+msgstr ""
+
+#: ../../peewee/example.rst:26
+msgid ""
+"After ensuring that flask is installed, ``cd`` into the twitter example "
+"directory and execute the ``run_example.py`` script:"
+msgstr ""
+
+#: ../../peewee/example.rst:33
+msgid "The example app will be accessible at http://localhost:5000/"
+msgstr ""
+
+#: ../../peewee/example.rst:36
+msgid "Diving into the code"
+msgstr ""
+
+#: ../../peewee/example.rst:38
+msgid ""
+"For simplicity all example code is contained within a single module, "
+"``examples/twitter/app.py``. For a guide on structuring larger Flask apps"
+" with peewee, check out `Structuring Flask Apps "
+"<http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-"
+"coming-from-django/>`_."
+msgstr ""
+
+#: ../../peewee/example.rst:46
+msgid "Models"
+msgstr ""
+
+#: ../../peewee/example.rst:48
+msgid ""
+"In the spirit of the popular web framework Django, peewee uses "
+"declarative model definitions. If you're not familiar with Django, the "
+"idea is that you declare a model class for each table. The model class "
+"then defines one or more field attributes which correspond to the table's"
+" columns. For the twitter clone, there are just three models:"
+msgstr ""
+
+#: ../../peewee/example.rst:57
+msgid "*User*:"
+msgstr ""
+
+#: ../../peewee/example.rst:55
+msgid ""
+"Represents a user account and stores the username and password, an email "
+"address for generating avatars using *gravatar*, and a datetime field "
+"indicating when that account was created."
+msgstr ""
+
+#: ../../peewee/example.rst:61
+msgid "*Relationship*:"
+msgstr ""
+
+#: ../../peewee/example.rst:60
+msgid ""
+"This is a utility model that contains two foreign-keys to the *User* "
+"model and stores which users follow one another."
+msgstr ""
+
+#: ../../peewee/example.rst:65
+msgid "*Message*:"
+msgstr ""
+
+#: ../../peewee/example.rst:64
+msgid ""
+"Analogous to a tweet. The Message model stores the text content of the "
+"tweet, when it was created, and who posted it (foreign key to User)."
+msgstr ""
+
+#: ../../peewee/example.rst:67
+msgid "If you like UML, these are the tables and relationships:"
+msgstr ""
+
+#: ../../peewee/example.rst:71
+msgid ""
+"In order to create these models we need to instantiate a "
+":py:class:`SqliteDatabase` object. Then we define our model classes, "
+"specifying the columns as :py:class:`Field` instances on the class."
+msgstr ""
+
+#: ../../peewee/example.rst:121
+msgid ""
+"Note that we create a *BaseModel* class that simply defines what database"
+" we would like to use.  All other models then extend this class and will "
+"also use the correct database connection."
+msgstr ""
+
+#: ../../peewee/example.rst:126
+msgid ""
+"Peewee supports many different :ref:`field types <fields>` which map to "
+"different column types commonly supported by database engines.  "
+"Conversion between python types and those used in the database is handled"
+" transparently, allowing you to use the following in your application:"
+msgstr ""
+
+#: ../../peewee/example.rst:131
+msgid "Strings (unicode or otherwise)"
+msgstr ""
+
+#: ../../peewee/example.rst:132
+msgid "Integers, floats, and ``Decimal`` numbers."
+msgstr ""
+
+#: ../../peewee/example.rst:133
+msgid "Boolean values"
+msgstr ""
+
+#: ../../peewee/example.rst:134
+msgid "Dates, times and datetimes"
+msgstr ""
+
+#: ../../peewee/example.rst:135
+msgid "``None`` (NULL)"
+msgstr ""
+
+#: ../../peewee/example.rst:136
+msgid "Binary data"
+msgstr ""
+
+#: ../../peewee/example.rst:139
+msgid "Creating tables"
+msgstr ""
+
+#: ../../peewee/example.rst:141
+msgid ""
+"In order to start using the models, its necessary to create the tables. "
+"This is a one-time operation and can be done quickly using the "
+"interactive interpreter. We can create a small helper function to "
+"accomplish this:"
+msgstr ""
+
+#: ../../peewee/example.rst:151
+msgid ""
+"Open a python shell in the directory alongside the example app and "
+"execute the following:"
+msgstr ""
+
+#: ../../peewee/example.rst:160
+msgid ""
+"If you encounter an *ImportError* it means that either *flask* or "
+"*peewee* was not found and may not be installed correctly. Check the "
+":ref:`installation` document for instructions on installing peewee."
+msgstr ""
+
+#: ../../peewee/example.rst:164
+msgid ""
+"Every model has a :py:meth:`~Model.create_table` classmethod which runs a"
+" SQL *CREATE TABLE* statement in the database. This method will create "
+"the table, including all columns, foreign-key constraints, indexes, and "
+"sequences. Usually this is something you'll only do once, whenever a new "
+"model is added."
+msgstr ""
+
+#: ../../peewee/example.rst:169
+msgid ""
+"Peewee provides a helper method :py:meth:`Database.create_tables` which "
+"will resolve inter-model dependencies and call "
+":py:meth:`~Model.create_table` on each model, ensuring the tables are "
+"created in order."
+msgstr ""
+
+#: ../../peewee/example.rst:174
+msgid ""
+"Adding fields after the table has been created will require you to either"
+" drop the table and re-create it or manually add the columns using an "
+"*ALTER TABLE* query."
+msgstr ""
+
+#: ../../peewee/example.rst:178
+msgid ""
+"Alternatively, you can use the :ref:`schema migrations <migrate>` "
+"extension to alter your database schema using Python."
+msgstr ""
+
+#: ../../peewee/example.rst:182
+msgid "Establishing a database connection"
+msgstr ""
+
+#: ../../peewee/example.rst:184
+msgid ""
+"You may have noticed in the above model code that there is a class "
+"defined on the base model named *Meta* that sets the ``database`` "
+"attribute. Peewee allows every model to specify which database it uses. "
+"There are many :ref:`Meta options <model-options>` you can specify which "
+"control the behavior of your model."
+msgstr ""
+
+#: ../../peewee/example.rst:190
+msgid "This is a peewee idiom:"
+msgstr ""
+
+#: ../../peewee/example.rst:207
+msgid ""
+"When developing a web application, it's common to open a connection when "
+"a request starts, and close it when the response is returned. **You "
+"should always manage your connections explicitly**. For instance, if you "
+"are using a :ref:`connection pool <pool>`, connections will only be "
+"recycled correctly if you call :py:meth:`~Database.connect` and "
+":py:meth:`~Database.close`."
+msgstr ""
+
+#: ../../peewee/example.rst:213
+msgid ""
+"We will tell flask that during the request/response cycle we need to "
+"create a connection to the database. Flask provides some handy decorators"
+" to make this a snap:"
+msgstr ""
+
+#: ../../peewee/example.rst:229
+msgid ""
+"Peewee uses thread local storage to manage connection state, so this "
+"pattern can be used with multi-threaded WSGI servers."
+msgstr ""
+
+#: ../../peewee/example.rst:233
+msgid "Making queries"
+msgstr ""
+
+#: ../../peewee/example.rst:235
+msgid ""
+"In the *User* model there are a few instance methods that encapsulate "
+"some user-specific functionality:"
+msgstr ""
+
+#: ../../peewee/example.rst:238
+msgid "``following()``: who is this user following?"
+msgstr ""
+
+#: ../../peewee/example.rst:239
+msgid "``followers()``: who is following this user?"
+msgstr ""
+
+#: ../../peewee/example.rst:241
+msgid ""
+"These methods are similar in their implementation but with an important "
+"difference in the SQL *JOIN* and *WHERE* clauses:"
+msgstr ""
+
+#: ../../peewee/example.rst:262
+msgid "Creating new objects"
+msgstr ""
+
+#: ../../peewee/example.rst:264
+msgid ""
+"When a new user wants to join the site we need to make sure the username "
+"is available, and if so, create a new *User* record. Looking at the "
+"*join()* view, we can see that our application attempts to create the "
+"User using :py:meth:`Model.create`. We defined the *User.username* field "
+"with a unique constraint, so if the username is taken the database will "
+"raise an ``IntegrityError``."
+msgstr ""
+
+#: ../../peewee/example.rst:290
+msgid ""
+"We will use a similar approach when a user wishes to follow someone. To "
+"indicate a following relationship, we create a row in the *Relationship* "
+"table pointing from one user to another. Due to the unique index on "
+"``from_user`` and ``to_user``, we will be sure not to end up with "
+"duplicate rows:"
+msgstr ""
+
+#: ../../peewee/example.rst:307
+msgid "Performing subqueries"
+msgstr ""
+
+#: ../../peewee/example.rst:309
+msgid ""
+"If you are logged-in and visit the twitter homepage, you will see tweets "
+"from the users that you follow. In order to implement this cleanly, we "
+"can use a subquery:"
+msgstr ""
+
+#: ../../peewee/example.rst:314
+msgid ""
+"The subquery, ``user.following()``, by default would ordinarily select "
+"all the columns on the ``User`` model. Because we're using it as a "
+"subquery, peewee will only select the primary key."
+msgstr ""
+
+#: ../../peewee/example.rst:327
+msgid "This code corresponds to the following SQL query:"
+msgstr ""
+
+#: ../../peewee/example.rst:342
+msgid "Other topics of interest"
+msgstr ""
+
+#: ../../peewee/example.rst:344
+msgid ""
+"There are a couple other neat things going on in the example app that are"
+" worth mentioning briefly."
+msgstr ""
+
+#: ../../peewee/example.rst:347
+msgid ""
+"Support for paginating lists of results is implemented in a simple "
+"function called ``object_list`` (after it's corollary in Django).  This "
+"function is used by all the views that return lists of objects."
+msgstr ""
+
+#: ../../peewee/example.rst:360
+msgid ""
+"Simple authentication system with a ``login_required`` decorator.  The "
+"first function simply adds user data into the current session when a user"
+" successfully logs in.  The decorator ``login_required`` can be used to "
+"wrap view functions, checking for whether the session is authenticated "
+"and if not redirecting to the login page."
+msgstr ""
+
+#: ../../peewee/example.rst:382
+msgid ""
+"Return a 404 response instead of throwing exceptions when an object is "
+"not found in the database."
+msgstr ""
+
+#: ../../peewee/example.rst:394
+msgid ""
+"To avoid having to frequently copy/paste :py:func:`object_list` or "
+":py:func:`get_object_or_404`, these functions are included as part of the"
+" playhouse :ref:`flask extension module <flask_utils>`."
+msgstr ""
+
+#: ../../peewee/example.rst:403
+msgid "More examples"
+msgstr ""
+
+#: ../../peewee/example.rst:405
+msgid ""
+"There are more examples included in the peewee `examples directory "
+"<https://github.com/coleifer/peewee/blob/master/examples/>`_, including:"
+msgstr ""
+
+#: ../../peewee/example.rst:408
+msgid ""
+"`Example blog app "
+"<https://github.com/coleifer/peewee/tree/master/examples/blog>`_ using "
+"Flask and peewee. Also see `accompanying blog post "
+"<http://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-"
+"less/>`_."
+msgstr ""
+
+#: ../../peewee/example.rst:409
+msgid ""
+"`An encrypted command-line diary "
+"<https://github.com/coleifer/peewee/blob/master/examples/diary.py>`_. "
+"There is a `companion blog post <http://charlesleifer.com/blog/dear-"
+"diary-an-encrypted-command-line-diary-with-python/>`_ you might enjoy as "
+"well."
+msgstr ""
+
+#: ../../peewee/example.rst:410
+msgid ""
+"`Analytics web-service "
+"<https://github.com/coleifer/peewee/tree/master/examples/analytics>`_ "
+"(like a lite version of Google Analytics). Also check out the `companion "
+"blog post <http://charlesleifer.com/blog/saturday-morning-hacks-building-"
+"an-analytics-app-with-flask/>`_."
+msgstr ""
+
+#: ../../peewee/example.rst:413
+msgid ""
+"Like these snippets and interested in more?  Check out `flask-peewee "
+"<https://github.com/coleifer/flask-peewee>`_ - a flask plugin that "
+"provides a django-like Admin interface, RESTful API, Authentication and "
+"more for your peewee models."
+msgstr ""
+

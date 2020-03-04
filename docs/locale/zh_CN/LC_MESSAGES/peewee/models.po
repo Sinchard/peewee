@@ -1,0 +1,1662 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/models.rst:4
+msgid "Models and Fields"
+msgstr ""
+
+#: ../../peewee/models.rst:6
+msgid ""
+":py:class:`Model` classes, :py:class:`Field` instances and model "
+"instances all map to database concepts:"
+msgstr ""
+
+#: ../../peewee/models.rst:10
+msgid "Thing"
+msgstr ""
+
+#: ../../peewee/models.rst:10
+msgid "Corresponds to..."
+msgstr ""
+
+#: ../../peewee/models.rst:12
+msgid "Model class"
+msgstr ""
+
+#: ../../peewee/models.rst:12
+msgid "Database table"
+msgstr ""
+
+#: ../../peewee/models.rst:13
+msgid "Field instance"
+msgstr ""
+
+#: ../../peewee/models.rst:13
+msgid "Column on a table"
+msgstr ""
+
+#: ../../peewee/models.rst:14
+msgid "Model instance"
+msgstr ""
+
+#: ../../peewee/models.rst:14
+msgid "Row in a database table"
+msgstr ""
+
+#: ../../peewee/models.rst:17
+msgid ""
+"The following code shows the typical way you will define your database "
+"connection and model classes."
+msgstr ""
+
+#: ../../peewee/models.rst:42
+msgid "Create an instance of a :py:class:`Database`."
+msgstr ""
+
+#: ../../peewee/models.rst:48
+msgid ""
+"The ``db`` object will be used to manage the connections to the Sqlite "
+"database. In this example we're using :py:class:`SqliteDatabase`, but you"
+" could also use one of the other :ref:`database engines <database>`."
+msgstr ""
+
+#: ../../peewee/models.rst:52
+msgid "Create a base model class which specifies our database."
+msgstr ""
+
+#: ../../peewee/models.rst:60
+msgid ""
+"It is good practice to define a base model class which establishes the "
+"database connection. This makes your code DRY as you will not have to "
+"specify the database for subsequent models."
+msgstr ""
+
+#: ../../peewee/models.rst:64
+msgid ""
+"Model configuration is kept namespaced in a special class called "
+"``Meta``. This convention is borrowed from Django. :ref:`Meta <model-"
+"options>` configuration is passed on to subclasses, so our project's "
+"models will all subclass *BaseModel*. There are :ref:`many different "
+"attributes <model-options>` you can configure using *Model.Meta*."
+msgstr ""
+
+#: ../../peewee/models.rst:70
+msgid "Define a model class."
+msgstr ""
+
+#: ../../peewee/models.rst:77
+msgid ""
+"Model definition uses the declarative style seen in other popular ORMs "
+"like SQLAlchemy or Django. Note that we are extending the *BaseModel* "
+"class so the *User* model will inherit the database connection."
+msgstr ""
+
+#: ../../peewee/models.rst:81
+msgid ""
+"We have explicitly defined a single *username* column with a unique "
+"constraint. Because we have not specified a primary key, peewee will "
+"automatically add an auto-incrementing integer primary key field named "
+"*id*."
+msgstr ""
+
+#: ../../peewee/models.rst:87
+msgid ""
+"If you would like to start using peewee with an existing database, you "
+"can use :ref:`pwiz` to automatically generate model definitions."
+msgstr ""
+
+#: ../../peewee/models.rst:93
+msgid "Fields"
+msgstr ""
+
+#: ../../peewee/models.rst:95
+msgid ""
+"The :py:class:`Field` class is used to describe the mapping of "
+":py:class:`Model` attributes to database columns. Each field type has a "
+"corresponding SQL storage class (i.e. varchar, int), and conversion "
+"between python data types and underlying storage is handled "
+"transparently."
+msgstr ""
+
+#: ../../peewee/models.rst:100
+msgid ""
+"When creating a :py:class:`Model` class, fields are defined as class "
+"attributes. This should look familiar to users of the django framework. "
+"Here's an example:"
+msgstr ""
+
+#: ../../peewee/models.rst:111
+msgid ""
+"In the above example, because none of the fields are initialized with "
+"``primary_key=True``, an auto-incrementing primary key will automatically"
+" be created and named \"id\". Peewee uses :py:class:`AutoField` to "
+"signify an auto-incrementing integer primary key, which implies "
+"``primary_key=True``."
+msgstr ""
+
+#: ../../peewee/models.rst:116
+msgid ""
+"There is one special type of field, :py:class:`ForeignKeyField`, which "
+"allows you to represent foreign-key relationships between models in an "
+"intuitive way:"
+msgstr ""
+
+#: ../../peewee/models.rst:126
+msgid "This allows you to write code like the following:"
+msgstr ""
+
+#: ../../peewee/models.rst:140
+msgid ""
+"Refer to the :ref:`relationships` document for an in-depth discussion of "
+"foreign-keys, joins and relationships between models."
+msgstr ""
+
+#: ../../peewee/models.rst:143
+msgid ""
+"For full documentation on fields, see the :ref:`Fields API notes <fields-"
+"api>`"
+msgstr ""
+
+#: ../../peewee/models.rst:148
+msgid "Field types table"
+msgstr ""
+
+#: ../../peewee/models.rst:151
+msgid "Field Type"
+msgstr ""
+
+#: ../../peewee/models.rst:151
+msgid "Sqlite"
+msgstr ""
+
+#: ../../peewee/models.rst:151
+msgid "Postgresql"
+msgstr ""
+
+#: ../../peewee/models.rst:151
+msgid "MySQL"
+msgstr ""
+
+#: ../../peewee/models.rst:153
+msgid "``AutoField``"
+msgstr ""
+
+#: ../../peewee/models.rst:153 ../../peewee/models.rst:154
+#: ../../peewee/models.rst:155 ../../peewee/models.rst:156
+#: ../../peewee/models.rst:157 ../../peewee/models.rst:166
+#: ../../peewee/models.rst:173 ../../peewee/models.rst:174
+#: ../../peewee/models.rst:175 ../../peewee/models.rst:177
+msgid "integer"
+msgstr ""
+
+#: ../../peewee/models.rst:153
+msgid "serial"
+msgstr ""
+
+#: ../../peewee/models.rst:154
+msgid "``BigAutoField``"
+msgstr ""
+
+#: ../../peewee/models.rst:154
+msgid "bigserial"
+msgstr ""
+
+#: ../../peewee/models.rst:154 ../../peewee/models.rst:156
+#: ../../peewee/models.rst:166 ../../peewee/models.rst:174
+msgid "bigint"
+msgstr ""
+
+#: ../../peewee/models.rst:155
+msgid "``IntegerField``"
+msgstr ""
+
+#: ../../peewee/models.rst:156
+msgid "``BigIntegerField``"
+msgstr ""
+
+#: ../../peewee/models.rst:157
+msgid "``SmallIntegerField``"
+msgstr ""
+
+#: ../../peewee/models.rst:157
+msgid "smallint"
+msgstr ""
+
+#: ../../peewee/models.rst:158
+msgid "``IdentityField``"
+msgstr ""
+
+#: ../../peewee/models.rst:158 ../../peewee/models.rst:176
+msgid "not supported"
+msgstr ""
+
+#: ../../peewee/models.rst:158
+msgid "int identity"
+msgstr ""
+
+#: ../../peewee/models.rst:159
+msgid "``FloatField``"
+msgstr ""
+
+#: ../../peewee/models.rst:159 ../../peewee/models.rst:160
+msgid "real"
+msgstr ""
+
+#: ../../peewee/models.rst:160
+msgid "``DoubleField``"
+msgstr ""
+
+#: ../../peewee/models.rst:160
+msgid "double precision"
+msgstr ""
+
+#: ../../peewee/models.rst:161
+msgid "``DecimalField``"
+msgstr ""
+
+#: ../../peewee/models.rst:161
+msgid "decimal"
+msgstr ""
+
+#: ../../peewee/models.rst:161
+msgid "numeric"
+msgstr ""
+
+#: ../../peewee/models.rst:162
+msgid "``CharField``"
+msgstr ""
+
+#: ../../peewee/models.rst:162
+msgid "varchar"
+msgstr ""
+
+#: ../../peewee/models.rst:163
+msgid "``FixedCharField``"
+msgstr ""
+
+#: ../../peewee/models.rst:163
+msgid "char"
+msgstr ""
+
+#: ../../peewee/models.rst:164
+msgid "``TextField``"
+msgstr ""
+
+#: ../../peewee/models.rst:164 ../../peewee/models.rst:168
+msgid "text"
+msgstr ""
+
+#: ../../peewee/models.rst:165
+msgid "``BlobField``"
+msgstr ""
+
+#: ../../peewee/models.rst:165 ../../peewee/models.rst:167
+#: ../../peewee/models.rst:169
+msgid "blob"
+msgstr ""
+
+#: ../../peewee/models.rst:165 ../../peewee/models.rst:167
+#: ../../peewee/models.rst:169
+msgid "bytea"
+msgstr ""
+
+#: ../../peewee/models.rst:166
+msgid "``BitField``"
+msgstr ""
+
+#: ../../peewee/models.rst:167
+msgid "``BigBitField``"
+msgstr ""
+
+#: ../../peewee/models.rst:168
+msgid "``UUIDField``"
+msgstr ""
+
+#: ../../peewee/models.rst:168
+msgid "uuid"
+msgstr ""
+
+#: ../../peewee/models.rst:168
+msgid "varchar(40)"
+msgstr ""
+
+#: ../../peewee/models.rst:169
+msgid "``BinaryUUIDField``"
+msgstr ""
+
+#: ../../peewee/models.rst:169
+msgid "varbinary(16)"
+msgstr ""
+
+#: ../../peewee/models.rst:170
+msgid "``DateTimeField``"
+msgstr ""
+
+#: ../../peewee/models.rst:170
+msgid "datetime"
+msgstr ""
+
+#: ../../peewee/models.rst:170
+msgid "timestamp"
+msgstr ""
+
+#: ../../peewee/models.rst:171
+msgid "``DateField``"
+msgstr ""
+
+#: ../../peewee/models.rst:171
+msgid "date"
+msgstr ""
+
+#: ../../peewee/models.rst:172
+msgid "``TimeField``"
+msgstr ""
+
+#: ../../peewee/models.rst:172
+msgid "time"
+msgstr ""
+
+#: ../../peewee/models.rst:173
+msgid "``TimestampField``"
+msgstr ""
+
+#: ../../peewee/models.rst:174
+msgid "``IPField``"
+msgstr ""
+
+#: ../../peewee/models.rst:175
+msgid "``BooleanField``"
+msgstr ""
+
+#: ../../peewee/models.rst:175
+msgid "boolean"
+msgstr ""
+
+#: ../../peewee/models.rst:175
+msgid "bool"
+msgstr ""
+
+#: ../../peewee/models.rst:176
+msgid "``BareField``"
+msgstr ""
+
+#: ../../peewee/models.rst:176
+msgid "untyped"
+msgstr ""
+
+#: ../../peewee/models.rst:177
+msgid "``ForeignKeyField``"
+msgstr ""
+
+#: ../../peewee/models.rst:181
+msgid ""
+"Don't see the field you're looking for in the above table? It's easy to "
+"create custom field types and use them with your models."
+msgstr ""
+
+#: ../../peewee/models.rst:184
+msgid ":ref:`custom-fields`"
+msgstr ""
+
+#: ../../peewee/models.rst:185
+msgid ":py:class:`Database`, particularly the ``fields`` parameter."
+msgstr ""
+
+#: ../../peewee/models.rst:188
+msgid "Field initialization arguments"
+msgstr ""
+
+#: ../../peewee/models.rst:190
+msgid "Parameters accepted by all field types and their default values:"
+msgstr ""
+
+#: ../../peewee/models.rst:192
+msgid "``null = False`` -- allow null values"
+msgstr ""
+
+#: ../../peewee/models.rst:193
+msgid "``index = False`` -- create an index on this column"
+msgstr ""
+
+#: ../../peewee/models.rst:194
+msgid ""
+"``unique = False`` -- create a unique index on this column. See also "
+":ref:`adding composite indexes <model_indexes>`."
+msgstr ""
+
+#: ../../peewee/models.rst:195
+msgid ""
+"``column_name = None`` -- explicitly specify the column name in the "
+"database."
+msgstr ""
+
+#: ../../peewee/models.rst:196
+msgid ""
+"``default = None`` -- any value or callable to use as a default for "
+"uninitialized models"
+msgstr ""
+
+#: ../../peewee/models.rst:197
+msgid "``primary_key = False`` -- primary key for the table"
+msgstr ""
+
+#: ../../peewee/models.rst:198
+msgid ""
+"``constraints = None`` - one or more constraints, e.g. ``[Check('price > "
+"0')]``"
+msgstr ""
+
+#: ../../peewee/models.rst:199
+msgid "``sequence = None`` -- sequence name (if backend supports it)"
+msgstr ""
+
+#: ../../peewee/models.rst:200
+msgid "``collation = None`` -- collation to use for ordering the field / index"
+msgstr ""
+
+#: ../../peewee/models.rst:201
+msgid ""
+"``unindexed = False`` -- indicate field on virtual table should be "
+"unindexed (**SQLite-only**)"
+msgstr ""
+
+#: ../../peewee/models.rst:202
+msgid ""
+"``choices = None`` -- optional iterable containing 2-tuples of ``value``,"
+" ``display``"
+msgstr ""
+
+#: ../../peewee/models.rst:203
+msgid ""
+"``help_text = None`` -- string representing any helpful text for this "
+"field"
+msgstr ""
+
+#: ../../peewee/models.rst:204
+msgid ""
+"``verbose_name = None`` -- string representing the \"user-friendly\" name"
+" of this field"
+msgstr ""
+
+#: ../../peewee/models.rst:205
+msgid ""
+"``index_type = None`` -- specify a custom index-type, e.g. for Postgres "
+"you might specify a ``'BRIN'`` or ``'GIN'`` index."
+msgstr ""
+
+#: ../../peewee/models.rst:208
+msgid "Some fields take special parameters..."
+msgstr ""
+
+#: ../../peewee/models.rst:211
+msgid "Field type"
+msgstr ""
+
+#: ../../peewee/models.rst:211
+msgid "Special Parameters"
+msgstr ""
+
+#: ../../peewee/models.rst:213
+msgid ":py:class:`CharField`"
+msgstr ""
+
+#: ../../peewee/models.rst:213 ../../peewee/models.rst:215
+msgid "``max_length``"
+msgstr ""
+
+#: ../../peewee/models.rst:215
+msgid ":py:class:`FixedCharField`"
+msgstr ""
+
+#: ../../peewee/models.rst:217
+msgid ":py:class:`DateTimeField`"
+msgstr ""
+
+#: ../../peewee/models.rst:217 ../../peewee/models.rst:219
+#: ../../peewee/models.rst:221
+msgid "``formats``"
+msgstr ""
+
+#: ../../peewee/models.rst:219
+msgid ":py:class:`DateField`"
+msgstr ""
+
+#: ../../peewee/models.rst:221
+msgid ":py:class:`TimeField`"
+msgstr ""
+
+#: ../../peewee/models.rst:223
+msgid ":py:class:`TimestampField`"
+msgstr ""
+
+#: ../../peewee/models.rst:223
+msgid "``resolution``, ``utc``"
+msgstr ""
+
+#: ../../peewee/models.rst:225
+msgid ":py:class:`DecimalField`"
+msgstr ""
+
+#: ../../peewee/models.rst:225
+msgid "``max_digits``, ``decimal_places``, ``auto_round``, ``rounding``"
+msgstr ""
+
+#: ../../peewee/models.rst:228
+msgid ":py:class:`ForeignKeyField`"
+msgstr ""
+
+#: ../../peewee/models.rst:228
+msgid ""
+"``model``, ``field``, ``backref``, ``on_delete``, ``on_update``, "
+"``deferrable`` ``lazy_load``"
+msgstr ""
+
+#: ../../peewee/models.rst:232
+msgid ":py:class:`BareField`"
+msgstr ""
+
+#: ../../peewee/models.rst:232
+msgid "``adapt``"
+msgstr ""
+
+#: ../../peewee/models.rst:236
+msgid ""
+"Both ``default`` and ``choices`` could be implemented at the database "
+"level as *DEFAULT* and *CHECK CONSTRAINT* respectively, but any "
+"application change would require a schema change. Because of this, "
+"``default`` is implemented purely in python and ``choices`` are not "
+"validated but exist for metadata purposes only."
+msgstr ""
+
+#: ../../peewee/models.rst:242
+msgid ""
+"To add database (server-side) constraints, use the ``constraints`` "
+"parameter."
+msgstr ""
+
+#: ../../peewee/models.rst:246
+msgid "Default field values"
+msgstr ""
+
+#: ../../peewee/models.rst:248
+msgid ""
+"Peewee can provide default values for fields when objects are created. "
+"For example to have an ``IntegerField`` default to zero rather than "
+"``NULL``, you could declare the field with a default value:"
+msgstr ""
+
+#: ../../peewee/models.rst:258
+msgid ""
+"In some instances it may make sense for the default value to be dynamic. "
+"A common scenario is using the current date and time. Peewee allows you "
+"to specify a function in these cases, whose return value will be used "
+"when the object is created. Note we only provide the function, we do not "
+"actually *call* it:"
+msgstr ""
+
+#: ../../peewee/models.rst:271
+msgid ""
+"If you are using a field that accepts a mutable type (`list`, `dict`, "
+"etc), and would like to provide a default, it is a good idea to wrap your"
+" default value in a simple function so that multiple model instances are "
+"not sharing a reference to the same underlying object:"
+msgstr ""
+
+#: ../../peewee/models.rst:286
+msgid ""
+"The database can also provide the default value for a field. While peewee"
+" does not explicitly provide an API for setting a server-side default "
+"value, you can use the ``constraints`` parameter to specify the server "
+"default:"
+msgstr ""
+
+#: ../../peewee/models.rst:297
+msgid ""
+"**Remember:** when using the ``default`` parameter, the values are set by"
+" Peewee rather than being a part of the actual table and column "
+"definition."
+msgstr ""
+
+#: ../../peewee/models.rst:301
+msgid "ForeignKeyField"
+msgstr ""
+
+#: ../../peewee/models.rst:303
+msgid ""
+":py:class:`ForeignKeyField` is a special field type that allows one model"
+" to reference another. Typically a foreign key will contain the primary "
+"key of the model it relates to (but you can specify a particular column "
+"by specifying a ``field``)."
+msgstr ""
+
+#: ../../peewee/models.rst:308
+msgid ""
+"Foreign keys allow data to be `normalized "
+"<http://en.wikipedia.org/wiki/Database_normalization>`_. In our example "
+"models, there is a foreign key from ``Tweet`` to ``User``. This means "
+"that all the users are stored in their own table, as are the tweets, and "
+"the foreign key from tweet to user allows each tweet to *point* to a "
+"particular user object."
+msgstr ""
+
+#: ../../peewee/models.rst:315
+msgid ""
+"Refer to the :ref:`relationships` document for an in-depth discussion of "
+"foreign keys, joins and relationships between models."
+msgstr ""
+
+#: ../../peewee/models.rst:318
+msgid ""
+"In peewee, accessing the value of a :py:class:`ForeignKeyField` will "
+"return the entire related object, e.g.:"
+msgstr ""
+
+#: ../../peewee/models.rst:331
+msgid ""
+"In the example above the ``User`` data was selected as part of the query."
+" For more examples of this technique, see the :ref:`Avoiding N+1 "
+"<nplusone>` document."
+msgstr ""
+
+#: ../../peewee/models.rst:335
+msgid ""
+"If we did not select the ``User``, though, then an **additional query** "
+"would be issued to fetch the associated ``User`` data:"
+msgstr ""
+
+#: ../../peewee/models.rst:346
+msgid ""
+"Sometimes you only need the associated primary key value from the foreign"
+" key column. In this case, Peewee follows the convention established by "
+"Django, of allowing you to access the raw foreign key value by appending "
+"``\"_id\"`` to the foreign key field's name:"
+msgstr ""
+
+#: ../../peewee/models.rst:359
+msgid ""
+"To prevent accidentally resolving a foreign-key and triggering an "
+"additional query, :py:class:`ForeignKeyField` supports an initialization "
+"paramater ``lazy_load`` which, when disabled, behaves like the "
+"``\"_id\"`` attribute. For example:"
+msgstr ""
+
+#: ../../peewee/models.rst:391
+msgid "ForeignKeyField Back-references"
+msgstr ""
+
+#: ../../peewee/models.rst:393
+msgid ""
+":py:class:`ForeignKeyField` allows for a backreferencing property to be "
+"bound to the target model. Implicitly, this property will be named "
+"``classname_set``, where ``classname`` is the lowercase name of the "
+"class, but can be overridden using the parameter ``backref``:"
+msgstr ""
+
+#: ../../peewee/models.rst:415
+msgid "DateTimeField, DateField and TimeField"
+msgstr ""
+
+#: ../../peewee/models.rst:417
+msgid ""
+"The three fields devoted to working with dates and times have special "
+"properties which allow access to things like the year, month, hour, etc."
+msgstr ""
+
+#: ../../peewee/models.rst:420
+msgid ":py:class:`DateField` has properties for:"
+msgstr ""
+
+#: ../../peewee/models.rst:422
+msgid "``year``"
+msgstr ""
+
+#: ../../peewee/models.rst:423
+msgid "``month``"
+msgstr ""
+
+#: ../../peewee/models.rst:424
+msgid "``day``"
+msgstr ""
+
+#: ../../peewee/models.rst:426
+msgid ":py:class:`TimeField` has properties for:"
+msgstr ""
+
+#: ../../peewee/models.rst:428
+msgid "``hour``"
+msgstr ""
+
+#: ../../peewee/models.rst:429
+msgid "``minute``"
+msgstr ""
+
+#: ../../peewee/models.rst:430
+msgid "``second``"
+msgstr ""
+
+#: ../../peewee/models.rst:432
+msgid ":py:class:`DateTimeField` has all of the above."
+msgstr ""
+
+#: ../../peewee/models.rst:434
+msgid ""
+"These properties can be used just like any other expression. Let's say we"
+" have an events calendar and want to highlight all the days in the "
+"current month that have an event attached:"
+msgstr ""
+
+#: ../../peewee/models.rst:449
+msgid ""
+"SQLite does not have a native date type, so dates are stored in formatted"
+" text columns. To ensure that comparisons work correctly, the dates need "
+"to be formatted so they are sorted lexicographically. That is why they "
+"are stored, by default, as ``YYYY-MM-DD HH:MM:SS``."
+msgstr ""
+
+#: ../../peewee/models.rst:455
+msgid "BitField and BigBitField"
+msgstr ""
+
+#: ../../peewee/models.rst:457
+msgid ""
+"The :py:class:`BitField` and :py:class:`BigBitField` are new as of 3.0.0."
+" The former provides a subclass of :py:class:`IntegerField` that is "
+"suitable for storing feature toggles as an integer bitmask. The latter is"
+" suitable for storing a bitmap for a large data-set, e.g. expressing "
+"membership or bitmap-type data."
+msgstr ""
+
+#: ../../peewee/models.rst:463
+msgid ""
+"As an example of using :py:class:`BitField`, let's say we have a *Post* "
+"model and we wish to store certain True/False flags about how the post. "
+"We could store all these feature toggles in their own "
+":py:class:`BooleanField` objects, or we could use :py:class:`BitField` "
+"instead:"
+msgstr ""
+
+#: ../../peewee/models.rst:479
+msgid "Using these flags is quite simple:"
+msgstr ""
+
+#: ../../peewee/models.rst:493
+msgid ""
+"We can also use the flags on the Post class to build expressions in "
+"queries:"
+msgstr ""
+
+#: ../../peewee/models.rst:504
+msgid ""
+"Since the :py:class:`BitField` is stored in an integer, there is a "
+"maximum of 64 flags you can represent (64-bits is common size of integer "
+"column). For storing arbitrarily large bitmaps, you can instead use "
+":py:class:`BigBitField`, which uses an automatically managed buffer of "
+"bytes, stored in a :py:class:`BlobField`."
+msgstr ""
+
+#: ../../peewee/models.rst:510
+msgid "Example usage:"
+msgstr ""
+
+#: ../../peewee/models.rst:538
+msgid "BareField"
+msgstr ""
+
+#: ../../peewee/models.rst:540
+msgid ""
+"The :py:class:`BareField` class is intended to be used only with SQLite. "
+"Since SQLite uses dynamic typing and data-types are not enforced, it can "
+"be perfectly fine to declare fields without *any* data-type. In those "
+"cases you can use :py:class:`BareField`. It is also common for SQLite "
+"virtual tables to use meta-columns or untyped columns, so for those cases"
+" as well you may wish to use an untyped field (although for full-text "
+"search, you should use :py:class:`SearchField` instead!)."
+msgstr ""
+
+#: ../../peewee/models.rst:548
+msgid ""
+":py:class:`BareField` accepts a special parameter ``adapt``. This "
+"parameter is a function that takes a value coming from the database and "
+"converts it into the appropriate Python type. For instance, if you have a"
+" virtual table with an un-typed column but you know that it will return "
+"``int`` objects, you can specify ``adapt=int``."
+msgstr ""
+
+#: ../../peewee/models.rst:554
+msgid "Example:"
+msgstr ""
+
+#: ../../peewee/models.rst:574
+msgid "Creating a custom field"
+msgstr ""
+
+#: ../../peewee/models.rst:576
+msgid ""
+"It is easy to add support for custom field types in peewee. In this "
+"example we will create a UUID field for postgresql (which has a native "
+"UUID column type)."
+msgstr ""
+
+#: ../../peewee/models.rst:579
+msgid ""
+"To add a custom field type you need to first identify what type of column"
+" the field data will be stored in. If you just want to add python "
+"behavior atop, say, a decimal field (for instance to make a currency "
+"field) you would just subclass :py:class:`DecimalField`. On the other "
+"hand, if the database offers a custom column type you will need to let "
+"peewee know. This is controlled by the :py:attr:`Field.field_type` "
+"attribute."
+msgstr ""
+
+#: ../../peewee/models.rst:587
+msgid ""
+"Peewee ships with a :py:class:`UUIDField`, the following code is intended"
+" only as an example."
+msgstr ""
+
+#: ../../peewee/models.rst:590
+msgid "Let's start by defining our UUID field:"
+msgstr ""
+
+#: ../../peewee/models.rst:597
+msgid ""
+"We will store the UUIDs in a native UUID column. Since psycopg2 treats "
+"the data as a string by default, we will add two methods to the field to "
+"handle:"
+msgstr ""
+
+#: ../../peewee/models.rst:600
+msgid "The data coming out of the database to be used in our application"
+msgstr ""
+
+#: ../../peewee/models.rst:601
+msgid "The data from our python app going into the database"
+msgstr ""
+
+#: ../../peewee/models.rst:616
+msgid ""
+"**This step is optional.** By default, the ``field_type`` value will be "
+"used for the columns data-type in the database schema. If you need to "
+"support multiple databases which use different data-types for your field-"
+"data, we need to let the database know how to map this *uuid* label to an"
+" actual *uuid* column type in the database. Specify the overrides in the "
+":py:class:`Database` constructor:"
+msgstr ""
+
+#: ../../peewee/models.rst:630
+msgid ""
+"That is it! Some fields may support exotic operations, like the "
+"postgresql HStore field acts like a key/value store and has custom "
+"operators for things like *contains* and *update*. You can specify "
+":ref:`custom operations <custom-operators>` as well. For example code, "
+"check out the source code for the :py:class:`HStoreField`, in "
+"``playhouse.postgres_ext``."
+msgstr ""
+
+#: ../../peewee/models.rst:637
+msgid "Field-naming conflicts"
+msgstr ""
+
+#: ../../peewee/models.rst:639
+msgid ""
+":py:class:`Model` classes implement a number of class- and instance-"
+"methods, for example :py:meth:`Model.save` or :py:meth:`Model.create`. If"
+" you declare a field whose name coincides with a model method, it could "
+"cause problems. Consider:"
+msgstr ""
+
+#: ../../peewee/models.rst:651
+msgid ""
+"To avoid this problem while still using the desired column name in the "
+"database schema, explicitly specify the ``column_name`` while providing "
+"an alternative name for the field attribute:"
+msgstr ""
+
+#: ../../peewee/models.rst:664
+msgid "Creating model tables"
+msgstr ""
+
+#: ../../peewee/models.rst:666
+msgid ""
+"In order to start using our models, its necessary to open a connection to"
+" the database and create the tables first. Peewee will run the necessary "
+"*CREATE TABLE* queries, additionally creating any constraints and "
+"indexes."
+msgstr ""
+
+#: ../../peewee/models.rst:679
+msgid ""
+"Strictly speaking, it is not necessary to call "
+":py:meth:`~Database.connect` but it is good practice to be explicit. That"
+" way if something goes wrong, the error occurs at the connect step, "
+"rather than some arbitrary time later."
+msgstr ""
+
+#: ../../peewee/models.rst:685
+msgid ""
+"By default, Peewee includes an ``IF NOT EXISTS`` clause when creating "
+"tables. If you want to disable this, specify ``safe=False``."
+msgstr ""
+
+#: ../../peewee/models.rst:688
+msgid ""
+"After you have created your tables, if you choose to modify your database"
+" schema (by adding, removing or otherwise changing the columns) you will "
+"need to either:"
+msgstr ""
+
+#: ../../peewee/models.rst:692
+msgid "Drop the table and re-create it."
+msgstr ""
+
+#: ../../peewee/models.rst:693
+msgid ""
+"Run one or more *ALTER TABLE* queries. Peewee comes with a schema "
+"migration tool which can greatly simplify this. Check the :ref:`schema "
+"migrations <migrate>` docs for details."
+msgstr ""
+
+#: ../../peewee/models.rst:700
+msgid "Model options and table metadata"
+msgstr ""
+
+#: ../../peewee/models.rst:702
+msgid ""
+"In order not to pollute the model namespace, model-specific configuration"
+" is placed in a special class called *Meta* (a convention borrowed from "
+"the django framework):"
+msgstr ""
+
+#: ../../peewee/models.rst:718
+msgid ""
+"This instructs peewee that whenever a query is executed on *Person* to "
+"use the contacts database."
+msgstr ""
+
+#: ../../peewee/models.rst:722
+msgid ""
+"Take a look at :ref:`the sample models <blog-models>` - you will notice "
+"that we created a ``BaseModel`` that defined the database, and then "
+"extended. This is the preferred way to define a database and create "
+"models."
+msgstr ""
+
+#: ../../peewee/models.rst:726
+msgid ""
+"Once the class is defined, you should not access ``ModelClass.Meta``, but"
+" instead use ``ModelClass._meta``:"
+msgstr ""
+
+#: ../../peewee/models.rst:739
+msgid ""
+"The :py:class:`ModelOptions` class implements several methods which may "
+"be of use for retrieving model metadata (such as lists of fields, foreign"
+" key relationships, and more)."
+msgstr ""
+
+#: ../../peewee/models.rst:755
+msgid ""
+"There are several options you can specify as ``Meta`` attributes. While "
+"most options are inheritable, some are table-specific and will not be "
+"inherited by subclasses."
+msgstr ""
+
+#: ../../peewee/models.rst:760
+msgid "Option"
+msgstr ""
+
+#: ../../peewee/models.rst:760
+msgid "Meaning"
+msgstr ""
+
+#: ../../peewee/models.rst:760
+msgid "Inheritable?"
+msgstr ""
+
+#: ../../peewee/models.rst:762
+msgid "``database``"
+msgstr ""
+
+#: ../../peewee/models.rst:762
+msgid "database for model"
+msgstr ""
+
+#: ../../peewee/models.rst:762 ../../peewee/models.rst:764
+#: ../../peewee/models.rst:765 ../../peewee/models.rst:766
+#: ../../peewee/models.rst:767 ../../peewee/models.rst:768
+#: ../../peewee/models.rst:769 ../../peewee/models.rst:770
+#: ../../peewee/models.rst:771 ../../peewee/models.rst:772
+#: ../../peewee/models.rst:773
+msgid "yes"
+msgstr ""
+
+#: ../../peewee/models.rst:763
+msgid "``table_name``"
+msgstr ""
+
+#: ../../peewee/models.rst:763
+msgid "name of the table to store data"
+msgstr ""
+
+#: ../../peewee/models.rst:763 ../../peewee/models.rst:774
+#: ../../peewee/models.rst:775
+msgid "no"
+msgstr ""
+
+#: ../../peewee/models.rst:764
+msgid "``table_function``"
+msgstr ""
+
+#: ../../peewee/models.rst:764
+msgid "function to generate table name dynamically"
+msgstr ""
+
+#: ../../peewee/models.rst:765
+msgid "``indexes``"
+msgstr ""
+
+#: ../../peewee/models.rst:765
+msgid "a list of fields to index"
+msgstr ""
+
+#: ../../peewee/models.rst:766
+msgid "``primary_key``"
+msgstr ""
+
+#: ../../peewee/models.rst:766
+msgid "a :py:class:`CompositeKey` instance"
+msgstr ""
+
+#: ../../peewee/models.rst:767
+msgid "``constraints``"
+msgstr ""
+
+#: ../../peewee/models.rst:767
+msgid "a list of table constraints"
+msgstr ""
+
+#: ../../peewee/models.rst:768
+msgid "``schema``"
+msgstr ""
+
+#: ../../peewee/models.rst:768
+msgid "the database schema for the model"
+msgstr ""
+
+#: ../../peewee/models.rst:769
+msgid "``only_save_dirty``"
+msgstr ""
+
+#: ../../peewee/models.rst:769
+msgid "when calling model.save(), only save dirty fields"
+msgstr ""
+
+#: ../../peewee/models.rst:770
+msgid "``options``"
+msgstr ""
+
+#: ../../peewee/models.rst:770
+msgid "dictionary of options for create table extensions"
+msgstr ""
+
+#: ../../peewee/models.rst:771
+msgid "``table_settings``"
+msgstr ""
+
+#: ../../peewee/models.rst:771
+msgid "list of setting strings to go after close parentheses"
+msgstr ""
+
+#: ../../peewee/models.rst:772
+msgid "``temporary``"
+msgstr ""
+
+#: ../../peewee/models.rst:772
+msgid "indicate temporary table"
+msgstr ""
+
+#: ../../peewee/models.rst:773
+msgid "``legacy_table_names``"
+msgstr ""
+
+#: ../../peewee/models.rst:773
+msgid "use legacy table name generation (enabled by default)"
+msgstr ""
+
+#: ../../peewee/models.rst:774
+msgid "``depends_on``"
+msgstr ""
+
+#: ../../peewee/models.rst:774
+msgid "indicate this table depends on another for creation"
+msgstr ""
+
+#: ../../peewee/models.rst:775
+msgid "``without_rowid``"
+msgstr ""
+
+#: ../../peewee/models.rst:775
+msgid "indicate table should not have rowid (SQLite only)"
+msgstr ""
+
+#: ../../peewee/models.rst:778
+msgid "Here is an example showing inheritable versus non-inheritable attributes:"
+msgstr ""
+
+#: ../../peewee/models.rst:797
+msgid "Meta.primary_key"
+msgstr ""
+
+#: ../../peewee/models.rst:799
+msgid ""
+"The ``Meta.primary_key`` attribute is used to specify either a "
+":py:class:`CompositeKey` or to indicate that the model has *no* primary "
+"key. Composite primary keys are discussed in more detail here: :ref"
+":`composite-key`."
+msgstr ""
+
+#: ../../peewee/models.rst:803
+msgid ""
+"To indicate that a model should not have a primary key, then set "
+"``primary_key = False``."
+msgstr ""
+
+#: ../../peewee/models.rst:805 ../../peewee/models.rst:963
+msgid "Examples:"
+msgstr ""
+
+#: ../../peewee/models.rst:826
+msgid "Table Names"
+msgstr ""
+
+#: ../../peewee/models.rst:828
+msgid ""
+"By default Peewee will automatically generate a table name based on the "
+"name of your model class. The way the table-name is generated depends on "
+"the value of ``Meta.legacy_table_names``. By default, "
+"``legacy_table_names=True`` so as to avoid breaking backwards-"
+"compatibility. However, if you wish to use the new and improved table-"
+"name generation, you can specify ``legacy_table_names=False``."
+msgstr ""
+
+#: ../../peewee/models.rst:834
+msgid ""
+"This table shows the differences in how a model name is converted to a "
+"SQL table name, depending on the value of ``legacy_table_names``:"
+msgstr ""
+
+#: ../../peewee/models.rst:838
+msgid "Model name"
+msgstr ""
+
+#: ../../peewee/models.rst:838
+msgid "legacy_table_names=True"
+msgstr ""
+
+#: ../../peewee/models.rst:838
+msgid "legacy_table_names=False (new)"
+msgstr ""
+
+#: ../../peewee/models.rst:840
+msgid "User"
+msgstr ""
+
+#: ../../peewee/models.rst:840
+msgid "user"
+msgstr ""
+
+#: ../../peewee/models.rst:841
+msgid "UserProfile"
+msgstr ""
+
+#: ../../peewee/models.rst:841
+msgid "userprofile"
+msgstr ""
+
+#: ../../peewee/models.rst:841
+msgid "user_profile"
+msgstr ""
+
+#: ../../peewee/models.rst:842
+msgid "APIResponse"
+msgstr ""
+
+#: ../../peewee/models.rst:842
+msgid "apiresponse"
+msgstr ""
+
+#: ../../peewee/models.rst:842
+msgid "api_response"
+msgstr ""
+
+#: ../../peewee/models.rst:843
+msgid "WebHTTPRequest"
+msgstr ""
+
+#: ../../peewee/models.rst:843
+msgid "webhttprequest"
+msgstr ""
+
+#: ../../peewee/models.rst:843
+msgid "web_http_request"
+msgstr ""
+
+#: ../../peewee/models.rst:844
+msgid "mixedCamelCase"
+msgstr ""
+
+#: ../../peewee/models.rst:844
+msgid "mixedcamelcase"
+msgstr ""
+
+#: ../../peewee/models.rst:844
+msgid "mixed_camel_case"
+msgstr ""
+
+#: ../../peewee/models.rst:845
+msgid "Name2Numbers3XYZ"
+msgstr ""
+
+#: ../../peewee/models.rst:845
+msgid "name2numbers3xyz"
+msgstr ""
+
+#: ../../peewee/models.rst:845
+msgid "name2_numbers3_xyz"
+msgstr ""
+
+#: ../../peewee/models.rst:849
+msgid ""
+"To preserve backwards-compatibility, the current release (Peewee 3.x) "
+"specifies ``legacy_table_names=True`` by default."
+msgstr ""
+
+#: ../../peewee/models.rst:852
+msgid ""
+"In the next major release (Peewee 4.0), ``legacy_table_names`` will have "
+"a default value of ``False``."
+msgstr ""
+
+#: ../../peewee/models.rst:855
+msgid ""
+"To explicitly specify the table name for a model class, use the "
+"``table_name`` Meta option. This feature can be useful for dealing with "
+"pre-existing database schemas that may have used awkward naming "
+"conventions:"
+msgstr ""
+
+#: ../../peewee/models.rst:865
+msgid ""
+"If you wish to implement your own naming convention, you can specify the "
+"``table_function`` Meta option. This function will be called with your "
+"model class and should return the desired table name as a string. Suppose"
+" our company specifies that table names should be lower-cased and end "
+"with \"_tbl\", we can implement this as a table function:"
+msgstr ""
+
+#: ../../peewee/models.rst:890
+msgid "Indexes and Constraints"
+msgstr ""
+
+#: ../../peewee/models.rst:892
+msgid ""
+"Peewee can create indexes on single or multiple columns, optionally "
+"including a *UNIQUE* constraint. Peewee also supports user-defined "
+"constraints on both models and fields."
+msgstr ""
+
+#: ../../peewee/models.rst:897
+msgid "Single-column indexes and constraints"
+msgstr ""
+
+#: ../../peewee/models.rst:899
+msgid ""
+"Single column indexes are defined using field initialization parameters. "
+"The following example adds a unique index on the *username* field, and a "
+"normal index on the *email* field:"
+msgstr ""
+
+#: ../../peewee/models.rst:909
+msgid ""
+"To add a user-defined constraint on a column, you can pass it in using "
+"the ``constraints`` parameter. You may wish to specify a default value as"
+" part of the schema, or add a ``CHECK`` constraint, for example:"
+msgstr ""
+
+#: ../../peewee/models.rst:922
+msgid "Multi-column indexes"
+msgstr ""
+
+#: ../../peewee/models.rst:924
+msgid ""
+"Multi-column indexes may be defined as *Meta* attributes using a nested "
+"tuple. Each database index is a 2-tuple, the first part of which is a "
+"tuple of the names of the fields, the second part a boolean indicating "
+"whether the index should be unique."
+msgstr ""
+
+#: ../../peewee/models.rst:947
+msgid ""
+"Remember to add a **trailing comma** if your tuple of indexes contains "
+"only one item:"
+msgstr ""
+
+#: ../../peewee/models.rst:957
+msgid "Advanced Index Creation"
+msgstr ""
+
+#: ../../peewee/models.rst:959
+msgid ""
+"Peewee supports a more structured API for declaring indexes on a model "
+"using the :py:meth:`Model.add_index` method or by directly using the "
+":py:class:`ModelIndex` helper class."
+msgstr ""
+
+#: ../../peewee/models.rst:988
+msgid ""
+"SQLite does not support parameterized ``CREATE INDEX`` queries. This "
+"means that when using SQLite to create an index that involves an "
+"expression or scalar value, you will need to declare the index using the "
+":py:class:`SQL` helper:"
+msgstr ""
+
+#: ../../peewee/models.rst:999
+msgid "See :py:meth:`~Model.add_index` for details."
+msgstr ""
+
+#: ../../peewee/models.rst:1001
+msgid "For more information, see:"
+msgstr ""
+
+#: ../../peewee/models.rst:1003
+msgid ":py:meth:`Model.add_index`"
+msgstr ""
+
+#: ../../peewee/models.rst:1004
+msgid ":py:meth:`Model.index`"
+msgstr ""
+
+#: ../../peewee/models.rst:1005
+msgid ":py:class:`ModelIndex`"
+msgstr ""
+
+#: ../../peewee/models.rst:1006
+msgid ":py:class:`Index`"
+msgstr ""
+
+#: ../../peewee/models.rst:1009
+msgid "Table constraints"
+msgstr ""
+
+#: ../../peewee/models.rst:1011
+msgid ""
+"Peewee allows you to add arbitrary constraints to your :py:class:`Model`,"
+" that will be part of the table definition when the schema is created."
+msgstr ""
+
+#: ../../peewee/models.rst:1014
+msgid ""
+"For instance, suppose you have a *people* table with a composite primary "
+"key of two columns, the person's first and last name. You wish to have "
+"another table relate to the *people* table, and to do this, you will need"
+" to define a foreign key constraint:"
+msgstr ""
+
+#: ../../peewee/models.rst:1037
+msgid "You can also implement ``CHECK`` constraints at the table level:"
+msgstr ""
+
+#: ../../peewee/models.rst:1051
+msgid "Primary Keys, Composite Keys and other Tricks"
+msgstr ""
+
+#: ../../peewee/models.rst:1053
+msgid ""
+"The :py:class:`AutoField` is used to identify an auto-incrementing "
+"integer primary key. If you do not specify a primary key, Peewee will "
+"automatically create an auto-incrementing primary key named \"id\"."
+msgstr ""
+
+#: ../../peewee/models.rst:1057
+msgid ""
+"To specify an auto-incrementing ID using a different field name, you can "
+"write:"
+msgstr ""
+
+#: ../../peewee/models.rst:1067
+msgid ""
+"You can identify a different field as the primary key, in which case an "
+"\"id\" column will not be created. In this example we will use a person's"
+" email address as the primary key:"
+msgstr ""
+
+#: ../../peewee/models.rst:1079
+msgid ""
+"I frequently see people write the following, expecting an auto-"
+"incrementing integer primary key:"
+msgstr ""
+
+#: ../../peewee/models.rst:1087
+msgid ""
+"Peewee understands the above model declaration as a model with an integer"
+" primary key, but the value of that ID is determined by the application. "
+"To create an auto-incrementing integer primary key, you would instead "
+"write:"
+msgstr ""
+
+#: ../../peewee/models.rst:1096
+msgid ""
+"Composite primary keys can be declared using :py:class:`CompositeKey`. "
+"Note that doing this may cause issues with :py:class:`ForeignKeyField`, "
+"as Peewee does not support the concept of a \"composite foreign-key\". As"
+" such, I've found it only advisable to use composite primary keys in a "
+"handful of situations, such as trivial many-to-many junction tables:"
+msgstr ""
+
+#: ../../peewee/models.rst:1118
+msgid ""
+"In the extremely rare case you wish to declare a model with *no* primary "
+"key, you can specify ``primary_key = False`` in the model ``Meta`` "
+"options."
+msgstr ""
+
+#: ../../peewee/models.rst:1122
+msgid "Non-integer primary keys"
+msgstr ""
+
+#: ../../peewee/models.rst:1124
+msgid ""
+"If you would like use a non-integer primary key (which I generally don't "
+"recommend), you can specify ``primary_key=True`` when creating a field. "
+"When you wish to create a new instance for a model using a non-"
+"autoincrementing primary key, you need to be sure you "
+":py:meth:`~Model.save` specifying ``force_insert=True``."
+msgstr ""
+
+#: ../../peewee/models.rst:1137
+msgid ""
+"Auto-incrementing IDs are, as their name says, automatically generated "
+"for you when you insert a new row into the database. When you call "
+":py:meth:`~Model.save`, peewee determines whether to do an *INSERT* "
+"versus an *UPDATE* based on the presence of a primary key value. Since, "
+"with our uuid example, the database driver won't generate a new ID, we "
+"need to specify it manually. When we call save() for the first time, pass"
+" in ``force_insert = True``:"
+msgstr ""
+
+#: ../../peewee/models.rst:1159
+msgid ""
+"Any foreign keys to a model with a non-integer primary key will have a "
+"``ForeignKeyField`` use the same underlying storage type as the primary "
+"key they are related to."
+msgstr ""
+
+#: ../../peewee/models.rst:1166
+msgid "Composite primary keys"
+msgstr ""
+
+#: ../../peewee/models.rst:1168
+msgid ""
+"Peewee has very basic support for composite keys.  In order to use a "
+"composite key, you must set the ``primary_key`` attribute of the model "
+"options to a :py:class:`CompositeKey` instance:"
+msgstr ""
+
+#: ../../peewee/models.rst:1183
+msgid ""
+"Peewee does not support foreign-keys to models that define a "
+":py:class:`CompositeKey` primary key. If you wish to add a foreign-key to"
+" a model that has a composite primary key, replicate the columns on the "
+"related model and add a custom accessor (e.g. a property)."
+msgstr ""
+
+#: ../../peewee/models.rst:1189
+msgid "Manually specifying primary keys"
+msgstr ""
+
+#: ../../peewee/models.rst:1191
+msgid ""
+"Sometimes you do not want the database to automatically generate a value "
+"for the primary key, for instance when bulk loading relational data. To "
+"handle this on a *one-off* basis, you can simply tell peewee to turn off "
+"``auto_increment`` during the import:"
+msgstr ""
+
+#: ../../peewee/models.rst:1208
+msgid ""
+"Although a better way to accomplish the above, without resorting to "
+"hacks, is to use the :py:meth:`Model.insert_many` API:"
+msgstr ""
+
+#: ../../peewee/models.rst:1218
+msgid ""
+"If you *always* want to have control over the primary key, simply do not "
+"use the :py:class:`AutoField` field type, but use a normal "
+":py:class:`IntegerField` (or other column type):"
+msgstr ""
+
+#: ../../peewee/models.rst:1235
+msgid "Models without a Primary Key"
+msgstr ""
+
+#: ../../peewee/models.rst:1237
+msgid ""
+"If you wish to create a model with no primary key, you can specify "
+"``primary_key = False`` in the inner ``Meta`` class:"
+msgstr ""
+
+#: ../../peewee/models.rst:1249
+msgid "This will yield the following DDL:"
+msgstr ""
+
+#: ../../peewee/models.rst:1259
+msgid ""
+"Some model APIs may not work correctly for models without a primary key, "
+"for instance :py:meth:`~Model.save` and :py:meth:`~Model.delete_instance`"
+" (you can instead use :py:meth:`~Model.insert`, :py:meth:`~Model.update` "
+"and :py:meth:`~Model.delete`)."
+msgstr ""
+
+#: ../../peewee/models.rst:1265
+msgid "Self-referential foreign keys"
+msgstr ""
+
+#: ../../peewee/models.rst:1267
+msgid ""
+"When creating a hierarchical structure it is necessary to create a self-"
+"referential foreign key which links a child object to its parent.  "
+"Because the model class is not defined at the time you instantiate the "
+"self-referential foreign key, use the special string ``'self'`` to "
+"indicate a self-referential foreign key:"
+msgstr ""
+
+#: ../../peewee/models.rst:1279
+msgid ""
+"As you can see, the foreign key points *upward* to the parent object and "
+"the back-reference is named *children*."
+msgstr ""
+
+#: ../../peewee/models.rst:1282
+msgid "Self-referential foreign-keys should always be ``null=True``."
+msgstr ""
+
+#: ../../peewee/models.rst:1284
+msgid ""
+"When querying against a model that contains a self-referential foreign "
+"key you may sometimes need to perform a self-join. In those cases you can"
+" use :py:meth:`Model.alias` to create a table reference. Here is how you "
+"might query the category and parent model using a self-join:"
+msgstr ""
+
+#: ../../peewee/models.rst:1303
+msgid "Circular foreign key dependencies"
+msgstr ""
+
+#: ../../peewee/models.rst:1305
+msgid ""
+"Sometimes it happens that you will create a circular dependency between "
+"two tables."
+msgstr ""
+
+#: ../../peewee/models.rst:1309
+msgid ""
+"My personal opinion is that circular foreign keys are a code smell and "
+"should be refactored (by adding an intermediary table, for instance)."
+msgstr ""
+
+#: ../../peewee/models.rst:1312
+msgid ""
+"Adding circular foreign keys with peewee is a bit tricky because at the "
+"time you are defining either foreign key, the model it points to will not"
+" have been defined yet, causing a ``NameError``."
+msgstr ""
+
+#: ../../peewee/models.rst:1326
+msgid ""
+"One option is to simply use an :py:class:`IntegerField` to store the raw "
+"ID:"
+msgstr ""
+
+#: ../../peewee/models.rst:1334
+msgid ""
+"By using :py:class:`DeferredForeignKey` we can get around the problem and"
+" still use a foreign key field:"
+msgstr ""
+
+#: ../../peewee/models.rst:1353
+msgid ""
+"There is one more quirk to watch out for, though. When you call "
+":py:class:`~Model.create_table` we will again encounter the same issue. "
+"For this reason peewee will not automatically create a foreign key "
+"constraint for any *deferred* foreign keys."
+msgstr ""
+
+#: ../../peewee/models.rst:1358
+msgid ""
+"To create the tables *and* the foreign-key constraint, you can use the "
+":py:meth:`SchemaManager.create_foreign_key` method to create the "
+"constraint after creating the tables:"
+msgstr ""
+
+#: ../../peewee/models.rst:1372
+msgid ""
+"Because SQLite has limited support for altering tables, foreign-key "
+"constraints cannot be added to a table after it has been created."
+msgstr ""
+

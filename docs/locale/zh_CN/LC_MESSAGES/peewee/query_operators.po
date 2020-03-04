@@ -1,0 +1,639 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/query_operators.rst:4
+msgid "Query operators"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:6
+msgid "The following types of comparisons are supported by peewee:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:9
+msgid "Comparison"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:9 ../../peewee/query_operators.rst:29
+#: ../../peewee/query_operators.rst:51
+msgid "Meaning"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:11
+msgid "``==``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:11
+msgid "x equals y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:12
+msgid "``<``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:12
+msgid "x is less than y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:13
+msgid "``<=``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:13
+msgid "x is less than or equal to y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:14
+msgid "``>``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:14
+msgid "x is greater than y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:15
+msgid "``>=``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:15
+msgid "x is greater than or equal to y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:16
+msgid "``!=``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:16
+msgid "x is not equal to y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:17
+msgid "``<<``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:17
+msgid "x IN y, where y is a list or query"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:18
+msgid "``>>``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:18
+msgid "x IS y, where y is None/NULL"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:19
+msgid "``%``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:19
+msgid "x LIKE y where y may contain wildcards"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:20
+msgid "``**``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:20
+msgid "x ILIKE y where y may contain wildcards"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:21
+msgid "``^``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:21
+msgid "x XOR y"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:22 ../../peewee/query_operators.rst:55
+msgid "``~``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:22
+msgid "Unary negation (e.g., NOT x)"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:25
+msgid ""
+"Because I ran out of operators to override, there are some additional "
+"query operations available as methods:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:29
+msgid "Method"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:31
+msgid "``.in_(value)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:31
+msgid "IN lookup (identical to ``<<``)."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:32
+msgid "``.not_in(value)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:32
+msgid "NOT IN lookup."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:33
+msgid "``.is_null(is_null)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:33
+msgid "IS NULL or IS NOT NULL. Accepts boolean param."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:34
+msgid "``.contains(substr)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:34
+msgid "Wild-card search for substring."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:35
+msgid "``.startswith(prefix)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:35
+msgid "Search for values beginning with ``prefix``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:36
+msgid "``.endswith(suffix)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:36
+msgid "Search for values ending with ``suffix``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:37
+msgid "``.between(low, high)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:37
+msgid "Search for values between ``low`` and ``high``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:38
+msgid "``.regexp(exp)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:38
+msgid "Regular expression match (case-sensitive)."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:39
+msgid "``.iregexp(exp)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:39
+msgid "Regular expression match (case-insensitive)."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:40
+msgid "``.bin_and(value)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:40
+msgid "Binary AND."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:41
+msgid "``.bin_or(value)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:41
+msgid "Binary OR."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:42
+msgid "``.concat(other)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:42
+msgid "Concatenate two strings or objects using ``||``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:43
+msgid "``.distinct()``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:43
+msgid "Mark column for DISTINCT selection."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:44
+msgid "``.collate(collation)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:44
+msgid "Specify column with the given collation."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:45
+msgid "``.cast(type)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:45
+msgid "Cast the value of the column to the given type."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:48
+msgid "To combine clauses using logical operators, use:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:51
+msgid "Operator"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:51
+msgid "Example"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:53
+msgid "``&``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:53
+msgid "AND"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:53
+msgid "``(User.is_active == True) & (User.is_admin == True)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:54
+msgid "``|`` (pipe)"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:54
+msgid "OR"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:54
+msgid "``(User.is_admin) | (User.is_superuser)``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:55
+msgid "NOT (unary negation)"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:55
+msgid "``~(User.username.contains('admin'))``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:58
+msgid "Here is how you might use some of these query operators:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:74
+msgid ""
+"Here is how you might combine expressions. Comparisons can be arbitrarily"
+" complex."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:78
+msgid ""
+"Note that the actual comparisons are wrapped in parentheses. Python's "
+"operator precedence necessitates that comparisons be wrapped in "
+"parentheses."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:102
+msgid ""
+"Although you may be tempted to use python's ``in``, ``and``, ``or`` and "
+"``not`` operators in your query expressions, these **will not work.** The"
+" return value of an ``in`` expression is always coerced to a boolean "
+"value. Similarly, ``and``, ``or`` and ``not`` all treat their arguments "
+"as boolean values and cannot be overloaded."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:108
+msgid "So just remember:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:110
+msgid "Use ``.in_()`` and ``.not_in()`` instead of ``in`` and ``not in``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:111
+msgid "Use ``&`` instead of ``and``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:112
+msgid "Use ``|`` instead of ``or``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:113
+msgid "Use ``~`` instead of ``not``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:114
+msgid "Use ``.is_null()`` instead of ``is None`` or ``== None``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:115
+msgid ""
+"**Don't forget to wrap your comparisons in parentheses when using logical"
+" operators.**"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:117
+msgid "For more examples, see the :ref:`expressions` section."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:120
+msgid "**LIKE and ILIKE with SQLite**"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:122
+msgid ""
+"Because SQLite's ``LIKE`` operation is case-insensitive by default, "
+"peewee will use the SQLite ``GLOB`` operation for case-sensitive "
+"searches. The glob operation uses asterisks for wildcards as opposed to "
+"the usual percent-sign. If you are using SQLite and want case-sensitive "
+"partial string matching, remember to use asterisks for the wildcard."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:129
+msgid "Three valued logic"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:131
+msgid ""
+"Because of the way SQL handles ``NULL``, there are some special "
+"operations available for expressing:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:134
+msgid "``IS NULL``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:135
+msgid "``IS NOT NULL``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:136
+msgid "``IN``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:137
+msgid "``NOT IN``"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:139
+msgid ""
+"While it would be possible to use the ``IS NULL`` and ``IN`` operators "
+"with the negation operator (``~``), sometimes to get the correct "
+"semantics you will need to explicitly use ``IS NOT NULL`` and ``NOT IN``."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:143
+msgid ""
+"The simplest way to use ``IS NULL`` and ``IN`` is to use the operator "
+"overloads:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:155
+msgid ""
+"If you don't like operator overloads, you can call the Field methods "
+"instead:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:166
+msgid ""
+"To negate the above queries, you can use unary negation, but for the "
+"correct semantics you may need to use the special ``IS NOT`` and ``NOT "
+"IN`` operators:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:188
+msgid "Adding user-defined operators"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:190
+msgid ""
+"Because I ran out of python operators to overload, there are some missing"
+" operators in peewee, for instance ``modulo``. If you find that you need "
+"to support an operator that is not in the table above, it is very easy to"
+" add your own."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:195
+msgid "Here is how you might add support for ``modulo`` in SQLite:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:205
+msgid "Now you can use these custom operators to build richer queries:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:212
+msgid ""
+"For more examples check out the source to the "
+"``playhouse.postgresql_ext`` module, as it contains numerous operators "
+"specific to postgresql's hstore."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:218
+msgid "Expressions"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:220
+msgid ""
+"Peewee is designed to provide a simple, expressive, and pythonic way of "
+"constructing SQL queries. This section will provide a quick overview of "
+"some common types of expressions."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:224
+msgid ""
+"There are two primary types of objects that can be composed to create "
+"expressions:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:227
+msgid ":py:class:`Field` instances"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:228
+msgid "SQL aggregations and functions using :py:class:`fn`"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:230
+msgid ""
+"We will assume a simple \"User\" model with fields for username and other"
+" things. It looks like this:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:243
+msgid "Comparisons use the :ref:`query-operators`:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:253
+msgid ""
+"Comparisons can be combined using **bitwise** *and* and *or*. Operator "
+"precedence is controlled by python and comparisons can be nested to an "
+"arbitrary depth:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:265
+msgid "Comparisons can be used with functions as well:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:272
+msgid ""
+"We can do some fairly interesting things, as expressions can be compared "
+"against other expressions. Expressions also support arithmetic "
+"operations:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:281
+msgid "Expressions allow us to do *atomic updates*:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:288
+msgid "Expressions can be used in all parts of a query, so experiment!"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:291
+msgid "Row values"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:293
+msgid ""
+"Many databases support `row values "
+"<https://www.sqlite.org/rowvalue.html>`_, which are similar to Python "
+"`tuple` objects. In Peewee, it is possible to use row-values in "
+"expressions via :py:class:`Tuple`. For example,"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:304
+msgid ""
+"The more common use for row-values is to compare against multiple columns"
+" from a subquery in a single expression. There are other ways to express "
+"these types of queries, but row-values may offer a concise and readable "
+"approach."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:308
+msgid ""
+"For example, assume we have a table \"EventLog\" which contains an event "
+"type, an event source, and some metadata. We also have an "
+"\"IncidentLog\", which has incident type, incident source, and metadata "
+"columns. We can use row-values to correlate incidents with certain "
+"events:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:339
+msgid ""
+"Other ways to express this type of query would be to use a :ref:`join "
+"<relationships>` or to :ref:`join on a subquery <join-subquery>`. The "
+"above example is there just to give you and idea how :py:class:`Tuple` "
+"might be used."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:343
+msgid ""
+"You can also use row-values to update multiple columns in a table, when "
+"the new data is derived from a subquery. For an example, see `here "
+"<https://www.sqlite.org/rowvalue.html#update_multiple_columns_of_a_table_based_on_a_query>`_."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:347
+msgid "SQL Functions"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:349
+msgid ""
+"SQL functions, like ``COUNT()`` or ``SUM()``, can be expressed using the "
+":py:func:`fn` helper:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:364
+msgid ""
+"The ``fn`` helper exposes any SQL function as if it were a method. The "
+"parameters can be fields, values, subqueries, or even nested functions."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:368
+msgid "Nesting function calls"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:370
+msgid ""
+"Suppose you need to want to get a list of all users whose username begins"
+" with *a*. There are a couple ways to do this, but one method might be to"
+" use some SQL functions like *LOWER* and *SUBSTR*. To use arbitrary SQL "
+"functions, use the special :py:func:`fn` object to construct queries:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:388
+msgid "SQL Helper"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:390
+msgid ""
+"There are times when you may want to simply pass in some arbitrary sql. "
+"You can do this using the special :py:class:`SQL` class. One use-case is "
+"when referencing an alias:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:409
+msgid "There are two ways to execute hand-crafted SQL statements with peewee:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:411
+msgid ":py:meth:`Database.execute_sql` for executing any type of query"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:412
+msgid ""
+":py:class:`RawQuery` for executing ``SELECT`` queries and returning model"
+" instances."
+msgstr ""
+
+#: ../../peewee/query_operators.rst:416
+msgid "Security and SQL Injection"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:418
+msgid ""
+"By default peewee will parameterize queries, so any parameters passed in "
+"by the user will be escaped. The only exception to this rule is if you "
+"are writing a raw SQL query or are passing in a ``SQL`` object which may "
+"contain untrusted data. To mitigate this, ensure that any user-defined "
+"data is passed in as a query parameter and not part of the actual SQL "
+"query:"
+msgstr ""
+
+#: ../../peewee/query_operators.rst:439
+#, python-format
+msgid ""
+"MySQL and Postgresql use ``'%s'`` to denote parameters. SQLite, on the "
+"other hand, uses ``'?'``. Be sure to use the character appropriate to "
+"your database. You can also find this parameter by checking "
+":py:attr:`Database.param`."
+msgstr ""
+

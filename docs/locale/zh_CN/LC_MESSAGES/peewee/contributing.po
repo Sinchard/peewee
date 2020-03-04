@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/contributing.rst:4
+msgid "Contributing"
+msgstr ""
+
+#: ../../peewee/contributing.rst:6
+msgid ""
+"In order to continually improve, Peewee needs the help of developers like"
+" you. Whether it's contributing patches, submitting bug reports, or just "
+"asking and answering questions, you are helping to make Peewee a better "
+"library."
+msgstr ""
+
+#: ../../peewee/contributing.rst:10
+msgid "In this document I'll describe some of the ways you can help."
+msgstr ""
+
+#: ../../peewee/contributing.rst:13
+msgid "Patches"
+msgstr ""
+
+#: ../../peewee/contributing.rst:15
+msgid ""
+"Do you have an idea for a new feature, or is there a clunky API you'd "
+"like to improve? Before coding it up and submitting a pull-request, `open"
+" a new issue <https://github.com/coleifer/peewee/issues/new>`_ on GitHub "
+"describing your proposed changes. This doesn't have to be anything "
+"formal, just a description of what you'd like to do and why."
+msgstr ""
+
+#: ../../peewee/contributing.rst:21
+msgid ""
+"When you're ready, you can submit a pull-request with your changes. "
+"Successful patches will have the following:"
+msgstr ""
+
+#: ../../peewee/contributing.rst:24
+msgid "Unit tests."
+msgstr ""
+
+#: ../../peewee/contributing.rst:25
+msgid "Documentation, both prose form and general :ref:`API documentation <api>`."
+msgstr ""
+
+#: ../../peewee/contributing.rst:26
+msgid "Code that conforms stylistically with the rest of the Peewee codebase."
+msgstr ""
+
+#: ../../peewee/contributing.rst:29
+msgid "Bugs"
+msgstr ""
+
+#: ../../peewee/contributing.rst:31
+msgid ""
+"If you've found a bug, please check to see if it has `already been "
+"reported <https://github.com/coleifer/peewee/issues/>`_, and if not "
+"`create an issue on GitHub "
+"<https://github.com/coleifer/peewee/issues/new>`_. The more information "
+"you include, the more quickly the bug will get fixed, so please try to "
+"include the following:"
+msgstr ""
+
+#: ../../peewee/contributing.rst:36
+msgid ""
+"Traceback and the error message (please `format your code "
+"<https://help.github.com/articles/markdown-basics/>`_!)"
+msgstr ""
+
+#: ../../peewee/contributing.rst:37
+msgid "Relevant portions of your code or code to reproduce the error"
+msgstr ""
+
+#: ../../peewee/contributing.rst:38
+msgid ""
+"Peewee version: ``python -c \"from peewee import __version__; "
+"print(__version__)\"``"
+msgstr ""
+
+#: ../../peewee/contributing.rst:39
+msgid "Which database you're using"
+msgstr ""
+
+#: ../../peewee/contributing.rst:41
+msgid ""
+"If you have found a bug in the code and submit a failing test-case, then "
+"hats-off to you, you are a hero!"
+msgstr ""
+
+#: ../../peewee/contributing.rst:44
+msgid "Questions"
+msgstr ""
+
+#: ../../peewee/contributing.rst:46
+msgid ""
+"If you have questions about how to do something with peewee, then I "
+"recommend either:"
+msgstr ""
+
+#: ../../peewee/contributing.rst:49
+msgid ""
+"Ask on StackOverflow. I check SO just about every day for new peewee "
+"questions and try to answer them. This has the benefit also of preserving"
+" the question and answer for other people to find."
+msgstr ""
+
+#: ../../peewee/contributing.rst:52
+msgid "Ask on the mailing list, https://groups.google.com/group/peewee-orm"
+msgstr ""
+

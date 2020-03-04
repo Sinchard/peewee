@@ -1,0 +1,730 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) charles leifer
+# This file is distributed under the same license as the peewee package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: peewee 3.13.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../peewee/query_examples.rst:4
+msgid "Query Examples"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:6
+msgid ""
+"These query examples are taken from the site `PostgreSQL Exercises "
+"<https://pgexercises.com/>`_. A sample data-set can be found on the "
+"`getting started page <https://pgexercises.com/gettingstarted.html>`_."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:10
+msgid "Here is a visual representation of the schema used in these examples:"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:15
+msgid "Model Definitions"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:17
+msgid ""
+"To begin working with the data, we'll define the model classes that "
+"correspond to the tables in the diagram."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:21
+msgid ""
+"In some cases we explicitly specify column names for a particular field. "
+"This is so our models are compatible with the database schema used for "
+"the postgres exercises."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:80
+msgid "Schema Creation"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:82
+msgid ""
+"If you downloaded the SQL file from the PostgreSQL Exercises site, then "
+"you can load the data into a PostgreSQL database using the following "
+"commands::"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:88
+msgid ""
+"To create the schema using Peewee, without loading the sample data, you "
+"can run the following:"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:98
+msgid "Basic Exercises"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:100
+msgid ""
+"This category deals with the basics of SQL. It covers select and where "
+"clauses, case expressions, unions, and a few other odds and ends."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:104
+msgid "Retrieve everything"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:106
+msgid "Retrieve all information from facilities table."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:119
+msgid "Retrieve specific columns from a table"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:121
+msgid "Retrieve names of facilities and cost to members."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:136
+msgid "Control which rows are retrieved"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:138
+msgid "Retrieve list of facilities that have a cost to members."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:149
+msgid "Control which rows are retrieved - part 2"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:151
+msgid ""
+"Retrieve list of facilities that have a cost to members, and that fee is "
+"less than 1/50th of the monthly maintenance cost. Return id, name, cost "
+"and monthly-maintenance."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:171
+msgid "Basic string searches"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:173
+msgid ""
+"How can you produce a list of all facilities with the word 'Tennis' in "
+"their name?"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:189
+msgid "Matching against multiple possible values"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:191
+msgid ""
+"How can you retrieve the details of facilities with ID 1 and 5? Try to do"
+" it without using the OR operator."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:207
+msgid "Classify results into buckets"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:209
+msgid ""
+"How can you produce a list of facilities, with each labelled as 'cheap' "
+"or 'expensive' depending on if their monthly maintenance cost is more "
+"than $100? Return the name and monthly maintenance of the facilities in "
+"question."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:224
+msgid "See documentation :py:class:`Case` for more examples."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:228
+msgid "Working with dates"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:230
+msgid ""
+"How can you produce a list of members who joined after the start of "
+"September 2012? Return the memid, surname, firstname, and joindate of the"
+" members in question."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:247
+msgid "Removing duplicates, and ordering results"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:249
+msgid ""
+"How can you produce an ordered list of the first 10 surnames in the "
+"members table? The list must not contain duplicates."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:266
+msgid "Combining results from multiple queries"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:268
+msgid ""
+"You, for some reason, want a combined list of all surnames and all "
+"facility names."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:281
+msgid "Queries can be composed using the following operators:"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:283
+msgid "``|`` - ``UNION``"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:284
+msgid "``+`` - ``UNION ALL``"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:285
+msgid "``&`` - ``INTERSECT``"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:286
+msgid "``-`` - ``EXCEPT``"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:289
+msgid "Simple aggregation"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:291
+msgid ""
+"You'd like to get the signup date of your last member. How can you "
+"retrieve this information?"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:305
+msgid "More aggregation"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:307
+msgid ""
+"You'd like to get the first and last name of the last member(s) who "
+"signed up - not just the date."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:326
+msgid "Joins and Subqueries"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:328
+msgid ""
+"This category deals primarily with a foundational concept in relational "
+"database systems: joining. Joining allows you to combine related "
+"information from multiple tables to answer a question. This isn't just "
+"beneficial for ease of querying: a lack of join capability encourages "
+"denormalisation of data, which increases the complexity of keeping your "
+"data internally consistent."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:334
+msgid ""
+"This topic covers inner, outer, and self joins, as well as spending a "
+"little time on subqueries (queries within queries)."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:338
+msgid "Retrieve the start times of members' bookings"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:340
+msgid ""
+"How can you produce a list of the start times for bookings by members "
+"named 'David Farrell'?"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:359
+msgid "Work out the start times of bookings for tennis courts"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:361
+msgid ""
+"How can you produce a list of the start times for bookings for tennis "
+"courts, for the date '2012-09-21'? Return a list of start time and "
+"facility name pairings, ordered by the time."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:390
+msgid "Produce a list of all members who have recommended another member"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:392
+msgid ""
+"How can you output a list of all members who have recommended another "
+"member? Ensure that there are no duplicates in the list, and that results"
+" are ordered by (surname, firstname)."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:413
+msgid "Produce a list of all members, along with their recommender"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:415
+msgid ""
+"How can you output a list of all members, including the individual who "
+"recommended them (if any)? Ensure that results are ordered by (surname, "
+"firstname)."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:442
+msgid "Produce a list of all members who have used a tennis court"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:444
+msgid ""
+"How can you produce a list of all members who have used a tennis court? "
+"Include in your output the name of the court, and the name of the member "
+"formatted as a single column. Ensure no duplicate data, and order by the "
+"member name."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:471
+msgid "Produce a list of costly bookings"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:473
+msgid ""
+"How can you produce a list of bookings on the day of 2012-09-14 which "
+"will cost the member (or guest) more than $30? Remember that guests have "
+"different costs to members (the listed costs are per half-hour 'slot'), "
+"and the guest user is always ID 0. Include in your output the name of the"
+" facility, the name of the member formatted as a single column, and the "
+"cost. Order by descending cost, and do not use any subqueries."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:517
+msgid ""
+"Produce a list of all members, along with their recommender, using no "
+"joins."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:519
+msgid ""
+"How can you output a list of all members, including the individual who "
+"recommended them (if any), without using any joins? Ensure that there are"
+" no duplicates in the list, and that each firstname + surname pairing is "
+"formatted as a column and ordered."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:544
+msgid "Produce a list of costly bookings, using a subquery"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:546
+msgid ""
+"The \"Produce a list of costly bookings\" exercise contained some messy "
+"logic: we had to calculate the booking cost in both the WHERE clause and "
+"the CASE statement. Try to simplify this calculation using subqueries."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:591
+msgid "Modifying Data"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:593
+msgid ""
+"Querying data is all well and good, but at some point you're probably "
+"going to want to put data into your database! This section deals with "
+"inserting, updating, and deleting information. Operations that alter your"
+" data like this are collectively known as Data Manipulation Language, or "
+"DML."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:598
+msgid ""
+"In previous sections, we returned to you the results of the query you've "
+"performed. Since modifications like the ones we're making in this section"
+" don't return any query results, we instead show you the updated content "
+"of the table you're supposed to be working on."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:604
+msgid "Insert some data into a table"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:606
+msgid ""
+"The club is adding a new facility - a spa. We need to add it into the "
+"facilities table. Use the following values: facid: 9, Name: 'Spa', "
+"membercost: 20, guestcost: 30, initialoutlay: 100000, monthlymaintenance:"
+" 800"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:633
+msgid "Insert multiple rows of data into a table"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:635
+msgid ""
+"In the previous exercise, you learned how to add a facility. Now you're "
+"going to add multiple facilities in one command. Use the following "
+"values:"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:638
+msgid ""
+"facid: 9, Name: 'Spa', membercost: 20, guestcost: 30, initialoutlay: "
+"100000, monthlymaintenance: 800."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:641
+msgid ""
+"facid: 10, Name: 'Squash Court 2', membercost: 3.5, guestcost: 17.5, "
+"initialoutlay: 5000, monthlymaintenance: 80."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:659
+msgid "Insert calculated data into a table"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:661
+msgid ""
+"Let's try adding the spa to the facilities table again. This time, "
+"though, we want to automatically generate the value for the next facid, "
+"rather than specifying it as a constant. Use the following values for "
+"everything else: Name: 'Spa', membercost: 20, guestcost: 30, "
+"initialoutlay: 100000, monthlymaintenance: 800."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:681
+msgid "Update some existing data"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:683
+msgid ""
+"We made a mistake when entering the data for the second tennis court. The"
+" initial outlay was 10000 rather than 8000: you need to alter the data to"
+" fix the error."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:705
+msgid "Update multiple rows and columns at the same time"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:707
+msgid ""
+"We want to increase the price of the tennis courts for both members and "
+"guests. Update the costs to be 6 for members, and 30 for guests."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:722
+msgid "Update a row based on the contents of another row"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:724
+msgid ""
+"We want to alter the price of the second tennis court so that it costs "
+"10% more than the first one. Try to do this without using constant values"
+" for the prices, so that we can reuse the statement if we want to."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:767
+msgid "Delete all bookings"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:769
+msgid ""
+"As part of a clearout of our database, we want to delete all bookings "
+"from the bookings table."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:782
+msgid "Delete a member from the cd.members table"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:784
+msgid ""
+"We want to remove member 37, who has never made a booking, from our "
+"database."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:795
+msgid "Delete based on a subquery"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:797
+msgid ""
+"How can we make that more general, to delete all members who have never "
+"made a booking?"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:812
+msgid "Aggregation"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:814
+msgid ""
+"Aggregation is one of those capabilities that really make you appreciate "
+"the power of relational database systems. It allows you to move beyond "
+"merely persisting your data, into the realm of asking truly interesting "
+"questions that can be used to inform decision making. This category "
+"covers aggregation at length, making use of standard grouping as well as "
+"more recent window functions."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:822
+msgid "Count the number of facilities"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:824
+msgid ""
+"For our first foray into aggregates, we're going to stick to something "
+"simple. We want to know how many facilities exist - simply produce a "
+"total count."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:841
+msgid "Count the number of expensive facilities"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:843
+msgid ""
+"Produce a count of the number of facilities that have a cost to guests of"
+" 10 or more."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:859
+msgid "Count the number of recommendations each member makes."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:861
+msgid ""
+"Produce a count of the number of recommendations each member has made. "
+"Order by member ID."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:881
+msgid "List the total slots booked per facility"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:883
+msgid ""
+"Produce a list of the total number of slots booked per facility. For now,"
+" just produce an output table consisting of facility id and slots, sorted"
+" by facility id."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:900
+msgid "List the total slots booked per facility in a given month"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:902
+msgid ""
+"Produce a list of the total number of slots booked per facility in the "
+"month of September 2012. Produce an output table consisting of facility "
+"id and slots, sorted by the number of slots."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:923
+msgid "List the total slots booked per facility per month"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:925
+msgid ""
+"Produce a list of the total number of slots booked per facility per month"
+" in the year of 2012. Produce an output table consisting of facility id "
+"and slots, sorted by the id and month."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:948
+msgid "Find the count of members who have made at least one booking"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:950
+msgid "Find the total number of members who have made at least one booking."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:968
+msgid "List facilities with more than 1000 slots booked"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:970
+msgid ""
+"Produce a list of facilities with more than 1000 slots booked. Produce an"
+" output table consisting of facility id and hours, sorted by facility id."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:989
+msgid "Find the total revenue of each facility"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:991
+msgid ""
+"Produce a list of facilities along with their total revenue. The output "
+"table should consist of facility name and revenue, sorted by revenue. "
+"Remember that there's a different cost for guests and members!"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1018
+msgid "Find facilities with a total revenue less than 1000"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1020
+msgid ""
+"Produce a list of facilities with a total revenue less than 1000. Produce"
+" an output table consisting of facility name and revenue, sorted by "
+"revenue. Remember that there's a different cost for guests and members!"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1049
+msgid "Output the facility id that has the highest number of slots booked"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1051
+msgid "Output the facility id that has the highest number of slots booked."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1072
+msgid "List the total slots booked per facility per month, part 2"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1074
+msgid ""
+"Produce a list of the total number of slots booked per facility per month"
+" in the year of 2012. In this version, include output rows containing "
+"totals for all months per facility, and a total for all months for all "
+"facilities. The output table should consist of facility id, month and "
+"slots, sorted by the id and month. When calculating the aggregated values"
+" for all months and all facids, return null values in the month and facid"
+" columns."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1081
+msgid "Postgres ONLY."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1104
+msgid "List the total hours booked per named facility"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1106
+msgid ""
+"Produce a list of the total number of hours booked per facility, "
+"remembering that a slot lasts half an hour. The output table should "
+"consist of the facility id, name, and hours booked, sorted by facility "
+"id."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1128
+msgid "List each member's first booking after September 1st 2012"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1130
+msgid ""
+"Produce a list of each member name, id, and their first booking after "
+"September 1st 2012. Order by member ID."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1153
+msgid ""
+"Produce a list of member names, with each row containing the total member"
+" count"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1155
+msgid ""
+"Produce a list of member names, with each row containing the total member"
+" count. Order by join date."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1158 ../../peewee/query_examples.rst:1179
+#: ../../peewee/query_examples.rst:1199 ../../peewee/query_examples.rst:1237
+#: ../../peewee/query_examples.rst:1266 ../../peewee/query_examples.rst:1304
+msgid "Postgres ONLY (as written)."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1173
+msgid "Produce a numbered list of members"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1175
+msgid ""
+"Produce a monotonically increasing numbered list of members, ordered by "
+"their date of joining. Remember that member IDs are not guaranteed to be "
+"sequential."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1194
+msgid "Output the facility id that has the highest number of slots booked, again"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1196
+msgid ""
+"Output the facility id that has the highest number of slots booked. "
+"Ensure that in the event of a tie, all tieing results get output."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1230
+msgid "Rank members by (rounded) hours used"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1232
+msgid ""
+"Produce a list of members, along with the number of hours they've booked "
+"in facilities, rounded to the nearest ten hours. Rank them by this "
+"rounded figure, producing output of first name, surname, rounded hours, "
+"rank. Sort by rank, surname, and first name."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1261
+msgid "Find the top three revenue generating facilities"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1263
+msgid ""
+"Produce a list of the top three revenue generating facilities (including "
+"ties). Output facility name and rank, sorted by rank and facility name."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1299
+msgid "Classify facilities by value"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1301
+msgid ""
+"Classify facilities into equally sized groups of high, average, and low "
+"based on their revenue. Order by classification and facility name."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1337
+msgid "Recursion"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1339
+msgid ""
+"Common Table Expressions allow us to, effectively, create our own "
+"temporary tables for the duration of a query - they're largely a "
+"convenience to help us make more readable SQL. Using the WITH RECURSIVE "
+"modifier, however, it's possible for us to create recursive queries. This"
+" is enormously advantageous for working with tree and graph-structured "
+"data - imagine retrieving all of the relations of a graph node to a given"
+" depth, for example."
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1347
+msgid "Find the upward recommendation chain for member ID 27"
+msgstr ""
+
+#: ../../peewee/query_examples.rst:1349
+msgid ""
+"Find the upward recommendation chain for member ID 27: that is, the "
+"member who recommended them, and the member who recommended that member, "
+"and so on. Return member ID, first name, and surname. Order by descending"
+" member id."
+msgstr ""
+
