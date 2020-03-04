@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peewee 3.13.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"POT-Creation-Date: 2020-03-03 15:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Sinchard <sinchard420@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,71 +19,74 @@ msgstr ""
 
 #: ../../index.rst:7
 msgid "peewee"
-msgstr ""
+msgstr "peewee"
 
 #: ../../index.rst:11
 msgid ""
 "Peewee is a simple and small ORM. It has few (but expressive) concepts, "
 "making it easy to learn and intuitive to use."
 msgstr ""
+"Peewee是一个简单小巧的ORM框架。它只有几个（但功能强大的）概念，使它易于学习和直观的使用。"
 
 #: ../../index.rst:14
 msgid "a small, expressive ORM"
-msgstr ""
+msgstr "一个小巧但强大的ORM框架"
 
 #: ../../index.rst:15
 msgid "python 2.7+ and 3.4+ (developed with 3.6)"
-msgstr ""
+msgstr "python 2.7+ and 3.4+ (developed with 3.6)"
 
 #: ../../index.rst:16
 msgid "supports sqlite, mysql, postgresql and cockroachdb"
-msgstr ""
+msgstr "支持sqlite、mysql、postgresql和cockroachdb"
 
 #: ../../index.rst:17
 msgid ":ref:`tons of extensions <playhouse>`"
-msgstr ""
+msgstr ":ref:`许多扩展功能 <playhouse>` "
 
 #: ../../index.rst:35
 msgid ""
 "Peewee's source code hosted on `GitHub "
 "<https://github.com/coleifer/peewee>`_."
 msgstr ""
+"Peewee的源代码托管在`GitHub "
+"<https://github.com/coleifer/peewee>`_."
 
 #: ../../index.rst:37
 msgid "New to peewee? These may help:"
-msgstr ""
+msgstr "对peewee不熟悉？以下内容可以提供："
 
 #: ../../index.rst:39
 msgid ":ref:`Quickstart <quickstart>`"
-msgstr ""
+msgstr ":ref:`快速开始 <quickstart>`"
 
 #: ../../index.rst:40
 msgid ":ref:`Example twitter app <example-app>`"
-msgstr ""
+msgstr ":ref:`twitter应用示例 <example-app>`"
 
 #: ../../index.rst:41
 msgid ":ref:`Using peewee interactively <interactive>`"
-msgstr ""
+msgstr ":ref:`交互使用peewee <interactive>`"
 
 #: ../../index.rst:42
 msgid ":ref:`Models and fields <models>`"
-msgstr ""
+msgstr ":ref:`模型和字段 <models>`"
 
 #: ../../index.rst:43
 msgid ":ref:`Querying <querying>`"
-msgstr ""
+msgstr ":ref:`查询 <querying>`"
 
 #: ../../index.rst:44
 msgid ":ref:`Relationships and joins <relationships>`"
-msgstr ""
+msgstr ":ref:`模型关系和连接查询 <relationships>`"
 
 #: ../../index.rst:47
 msgid "Contents:"
-msgstr ""
+msgstr "目录:"
 
 #: ../../index.rst:72
 msgid "Note"
-msgstr ""
+msgstr "注意"
 
 #: ../../index.rst:74
 msgid ""
@@ -92,20 +95,23 @@ msgid ""
 "<https://github.com/coleifer/peewee/issues?state=open>`_ on GitHub or "
 "`contact me <http://charlesleifer.com/contact/>`_."
 msgstr ""
+"如果您发现任何错误、奇怪的行为或对新功能有想法， 请不要犹豫立刻在GitHub上"
+"`新建issue<https://github.com/coleifer/peewee/issues?state=open>`或者"
+"`联系我 <http://charlesleifer.com/contact/>`_."
 
 #: ../../index.rst:77
 msgid "Indices and tables"
-msgstr ""
+msgstr "索引和表"
 
 #: ../../index.rst:79
 msgid ":ref:`genindex`"
-msgstr ""
+msgstr ":ref:`genindex`"
 
 #: ../../index.rst:80
 msgid ":ref:`modindex`"
-msgstr ""
+msgstr ":ref:`modindex`"
 
 #: ../../index.rst:81
 msgid ":ref:`search`"
-msgstr ""
+msgstr ":ref:`search`"
 
