@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peewee 3.13.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-04 10:15+0800\n"
+"POT-Creation-Date: 2020-03-03 15:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Sinchard <sinchard420@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,60 +19,64 @@ msgstr ""
 
 #: ../../peewee/installation.rst:4
 msgid "Installing and Testing"
-msgstr ""
+msgstr "安装和测试"
 
 #: ../../peewee/installation.rst:6
 msgid "Most users will want to simply install the latest version, hosted on PyPI:"
-msgstr ""
+msgstr "大多数人都会通过PyPI来便捷的安装最新版本："
 
 #: ../../peewee/installation.rst:12
 msgid ""
 "Peewee comes with a couple C extensions that will be built if Cython is "
 "available."
-msgstr ""
+msgstr "如果系统中存在CPython，那么Peewee将附带安装几个C的扩展包。"
 
 #: ../../peewee/installation.rst:15
 msgid ""
 "Sqlite extensions, which includes Cython implementations of the SQLite "
 "date manipulation functions, the REGEXP operator, and full-text search "
 "result ranking algorithms."
-msgstr ""
+msgstr "Sqlite扩展, 包含SQLite的日期处理、正则表达式、全文搜索结果排序算法的CPython实现。"
 
 #: ../../peewee/installation.rst:21
 msgid "Installing with git"
-msgstr ""
+msgstr "通过git安装"
 
 #: ../../peewee/installation.rst:23
 msgid ""
 "The project is hosted at https://github.com/coleifer/peewee and can be "
 "installed using git:"
-msgstr ""
+msgstr "该项目托管于https://github.com/coleifer/peewee，可以通过git来安装:"
 
 #: ../../peewee/installation.rst:33
 msgid ""
 "On some systems you may need to use ``sudo python setup.py install`` to "
 "install peewee system-wide."
 msgstr ""
+"在部分操作系统中，可能需要使用``sudo python setup.py install``命令将peewee安装"
+"到系统目录下。"
 
 #: ../../peewee/installation.rst:36
 msgid ""
 "If you would like to build the SQLite extension in a git checkout, you "
 "can run:"
-msgstr ""
+msgstr "如果想通过git checkout来安装SQLite扩展，您可以运行:"
 
 #: ../../peewee/installation.rst:45
 msgid "Running tests"
-msgstr ""
+msgstr "运行测试"
 
 #: ../../peewee/installation.rst:47
 msgid "You can test your installation by running the test suite."
-msgstr ""
+msgstr "您可以通过运行测试套件来检查安装是否正确。"
 
 #: ../../peewee/installation.rst:53
 msgid ""
 "You can test specific features or specific database drivers using the "
 "``runtests.py`` script. To view the available test runner options, use:"
 msgstr ""
+"您可以使用``runtests.py`` 脚本来测试Peewee的特定功能或特定的数据库驱动程序。"
+"可以使用如下命令来查看可用的测试运行程序选项："
 
 #: ../../peewee/installation.rst:61
 msgid ""
@@ -80,10 +84,12 @@ msgid ""
 "named \"peewee_test\". To test the Postgres extension module, you will "
 "also want to install the HStore extension in the postgres test database:"
 msgstr ""
+"如果要在Postgres或MySQL数据库运行测试，需要手动创建一个名为\"peewee_test\"的"
+"数据库。要测试Postgres扩展模块，还需要在Postgres测试数据库中安装HStore扩展:"
 
 #: ../../peewee/installation.rst:72
 msgid "Optional dependencies"
-msgstr ""
+msgstr "可选依赖项"
 
 #: ../../peewee/installation.rst:75
 msgid ""
@@ -94,6 +100,10 @@ msgid ""
 "2.0-compatible drivers out there, such as ``pymysql`` or ``psycopg2`` for"
 " MySQL and Postgres respectively."
 msgstr ""
+"由于大多数的Python发行版都支持SQLite，所以在使用Peewee时通常不需要标准库之外的"
+"其他东西。可以通过在Python控制台中运行``import sqlite3``进行测试是否支持SQLite。"
+"如果你想使用其他的数据库，有很多DB-API2.0兼容的驱动程序，比如MySQL的``pymysql``，"
+"Postgres的``psycopg2``。"
 
 #: ../../peewee/installation.rst:82
 msgid ""
@@ -103,6 +113,8 @@ msgid ""
 "package distribution, Cython is no longer required to use the C "
 "extensions."
 msgstr ""
+"`Cython <http://cython.org/>`_: 使用SQLite时使用附加功能，以更高效的方式实现搜索"
+"结果排名。由于生成的C文件包含在包发行版中，因此Cython不再需要使用C扩展。"
 
 #: ../../peewee/installation.rst:86
 msgid ""
@@ -110,6 +122,8 @@ msgid ""
 "SQLite binding offering greater performance and comprehensive support for"
 " SQLite's C APIs. Use with :py:class:`APSWDatabase`."
 msgstr ""
+"`apsw <https://github.com/rogerbinns/apsw>`_: 可选的第三方SQLite库，为SQLite"
+"的C语音API提供了更高的性能和全面的支持。 使用 :py:class:`APSWDatabase`。"
 
 #: ../../peewee/installation.rst:89
 msgid ""
@@ -117,6 +131,8 @@ msgid ""
 ":py:class:`SqliteQueueDatabase` (though it works with ``threading`` just "
 "fine)."
 msgstr ""
+"`gevent <http://www.gevent.org/>`_ 是 :py:class:`SqliteQueueDatabase`类的"
+"可选支持 (虽然它和``threading``配合使用还可以)。"
 
 #: ../../peewee/installation.rst:92
 msgid ""
@@ -127,16 +143,21 @@ msgid ""
 "instructions-for-compiling-berkeleydb-with-sqlite-for-use-with-"
 "python/>`_."
 msgstr ""
+"`BerkeleyDB <http://www.oracle.com/technetwork/database/database-"
+"technologies/berkeleydb/downloads/index.html>`_  可以和SQLite前端一起编译时"
+"可以和peewee配合使用。编译工作可能很棘手，<http://charlesleifer.com/blog/updated-"
+"instructions-for-compiling-berkeleydb-with-sqlite-for-use-with-"
+"python/>`_ 可以查看。"
 
 #: ../../peewee/installation.rst:95
 msgid ""
 "Lastly, if you use the *Flask* framework, there are helper extension "
 "modules available."
-msgstr ""
+msgstr "最后，如果使用*Flask*框架，Peewee中还包含对应的helper模块"
 
 #: ../../peewee/installation.rst:100
 msgid "Note on the SQLite extensions"
-msgstr ""
+msgstr "关于SQLite扩展的说明"
 
 #: ../../peewee/installation.rst:102
 msgid ""
@@ -146,6 +167,9 @@ msgid ""
 "only build the SQLite extensions if the SQLite shared-library is "
 "available on your system."
 msgstr ""
+"Peewee包含两个特定于SQLite的C扩展，它们为SQLite数据库用户提供了额外的功能和改进"
+"的性能。Peewee将提前确定是否安装了SQLite3，并且仅在系统上有SQLite共享库可用时才"
+"构建SQLite扩展。"
 
 #: ../../peewee/installation.rst:107
 msgid ""
@@ -153,10 +177,13 @@ msgid ""
 "install Peewee, you can explicitly disable the compilation of the SQLite "
 "C extensions by settings the ``NO_SQLITE`` environment variable."
 msgstr ""
+"但是，如果在尝试安装Peewee时收到如下错误，可以通过设置``NO_SQLite``环境变量显式"
+"禁用SQLite C扩展的编译。"
 
 #: ../../peewee/installation.rst:115
 msgid ""
 "Here is how to install Peewee with the SQLite extensions explicitly "
 "disabled:"
 msgstr ""
+"下面展示如何在显式禁用SQLite扩展的情况下安装Peewee："
 
