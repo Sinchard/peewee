@@ -61,6 +61,9 @@ release = __version__
 # for a list of supported languages.
 #language = None
 
+locale_dirs = ['locale/']  # path is example but recommended.
+gettext_compact = False  # optional.
+
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
 #today = ''
@@ -90,7 +93,6 @@ add_module_names = False
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
-
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -173,7 +175,6 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'peeweedoc'
 
-
 # -- Options for LaTeX output --------------------------------------------------
 
 # The paper size ('letter' or 'a4').
@@ -185,8 +186,8 @@ htmlhelp_basename = 'peeweedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'peewee.tex', u'peewee Documentation',
-   u'charles leifer', 'manual'),
+    ('index', 'peewee.tex', u'peewee Documentation', u'charles leifer',
+     'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -215,12 +216,9 @@ latex_documents = [
 autodoc_default_flags = ['members', 'show-inheritance']
 autodoc_member_order = 'bysource'
 
-
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'peewee', u'peewee Documentation',
-     [u'charles leifer'], 1)
-]
+man_pages = [('index', 'peewee', u'peewee Documentation', [u'charles leifer'],
+              1)]
