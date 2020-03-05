@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../peewee/quickstart.rst:4
 msgid "Quickstart"
-msgstr "快速上手"
+msgstr "快速入门"
 
 #: ../../peewee/quickstart.rst:6
 msgid ""
@@ -303,50 +303,53 @@ msgid ""
 "We can do another cool thing here to get bob's pets. Since we already "
 "have an object to represent Bob, we can do this instead:"
 msgstr ""
+"我们可以通过另一种很酷的方法来得到鲍勃的宠物。因为我们已经有一个对象来表示Bob，"
+"所以我们可以这样做："
 
 #: ../../peewee/quickstart.rst:270
 msgid "Sorting"
-msgstr ""
+msgstr "排序"
 
 #: ../../peewee/quickstart.rst:272
 msgid ""
 "Let's make sure these are sorted alphabetically by adding an "
 ":py:meth:`~Select.order_by` clause:"
 msgstr ""
+"我们可以通过添加:py:meth:`~Select.order_by`来确保结果按字母顺序排序："
 
 #: ../../peewee/quickstart.rst:284
 msgid "Let's list all the people now, youngest to oldest:"
-msgstr ""
+msgstr "现在让我们从小到大列出所有的人："
 
 #: ../../peewee/quickstart.rst:297
 msgid "Combining filter expressions"
-msgstr ""
+msgstr "组合筛选表达式"
 
 #: ../../peewee/quickstart.rst:299
 msgid ""
 "Peewee supports arbitrarily-nested expressions. Let's get all the people "
 "whose birthday was either:"
-msgstr ""
+msgstr "Peewee支持任意嵌套的表达式。让我们把所有生日符合一下条件的筛选出来："
 
 #: ../../peewee/quickstart.rst:302
 msgid "before 1940 (grandma)"
-msgstr ""
+msgstr "小于1940 (grandma)"
 
 #: ../../peewee/quickstart.rst:303
 msgid "after 1959 (bob)"
-msgstr ""
+msgstr "大于1959(bob)"
 
 #: ../../peewee/quickstart.rst:320
 msgid "Now let's do the opposite. People whose birthday is between 1940 and 1960:"
-msgstr ""
+msgstr "现在让我们反过来做，筛选1940年至1960年间生日的人："
 
 #: ../../peewee/quickstart.rst:335
 msgid "Aggregates and Prefetch"
-msgstr ""
+msgstr "聚合和预取"
 
 #: ../../peewee/quickstart.rst:337
 msgid "Now let's list all the people *and* how many pets they have:"
-msgstr ""
+msgstr "现在让我们列出所有的人和他们的宠物数量："
 
 #: ../../peewee/quickstart.rst:349
 msgid ""
@@ -355,6 +358,8 @@ msgid ""
 "every ``Person`` returned by the original ``SELECT``! We can avoid this "
 "by performing a *JOIN* and using a SQL function to aggregate the results."
 msgstr ""
+"我们再次遇到一个N+1查询行为的经典示例。在本例中，我们对原始SELECT返回的每个人"
+"执行一个附加查询！我们可以通过执行JOIN并使用SQL函数来聚合结果来避免这种情况。"
 
 #: ../../peewee/quickstart.rst:372
 msgid ""
@@ -363,6 +368,8 @@ msgid ""
 "``fn.COUNT(Pet.id).alias('pet_count')`` would be translated into "
 "``COUNT(pet.id) AS pet_count``."
 msgstr ""
+"Peewee提供了一个神奇的函数:py:func:`fn`，可以用来调用任何SQL函数。在上面的例子中，"
+"``fn.COUNT(Pet.id).alias('pet_count')``将转换为``COUNT(pet.id) AS pet_count``。"
 
 #: ../../peewee/quickstart.rst:376
 msgid ""
@@ -370,6 +377,8 @@ msgid ""
 " have guessed, this could easily turn into another :ref:`N+1 <nplusone>` "
 "situation if we're not careful."
 msgstr ""
+"现在让我们列出所有人和他们所有宠物的名字。你可能已经猜到了，如果我们不小心的话，"
+"这很容易变成另一个N+1的情况。"
 
 #: ../../peewee/quickstart.rst:380
 msgid ""
@@ -383,10 +392,15 @@ msgid ""
 "``Person`` to ``Pet`` then every person with multiple pets would be "
 "repeated, once for each pet."
 msgstr ""
+ "在写这段代码之前，考虑一下这个例子与前面的例子有什么不同，我们列出了所有宠物及 "
+"其主人的名字。宠物只能有一个主人，所以当我们执行从``Pet``到``Person``的连接时，"
+"总是会有一个匹配项。但当我们将``Person``连接``Pet``时，情况就不同了，因为一个人"
+"可能没有宠物，或者他们可能有几个宠物。因为我们使用的是关系数据库，如果我们要从"
+"``Person``连接``Pet``时，那么每个有多个宠物的人员信息都会被重复添加到他的宠物一次。"
 
 #: ../../peewee/quickstart.rst:389
 msgid "It would look like this:"
-msgstr ""
+msgstr "代码如下："
 
 #: ../../peewee/quickstart.rst:411
 msgid ""
@@ -395,30 +409,34 @@ msgid ""
 "list** of that person's pets, we can use a special method called "
 ":py:meth:`~ModelSelect.prefetch`:"
 msgstr ""
+"通常这种复制是不可取的。为了实现列出每个人及其宠物的功能，我们需要使用一种更常见"
+"（更直观）的方法:py:meth:`~ModelSelect.prefetch`："
 
 #: ../../peewee/quickstart.rst:433
 msgid "SQL Functions"
-msgstr ""
+msgstr "SQL函数"
 
 #: ../../peewee/quickstart.rst:435
 msgid ""
 "One last query. This will use a SQL function to find all people whose "
 "names start with either an upper or lower-case *G*:"
 msgstr ""
+"接下来是最后一个查询示例。这将使用一个SQL函数来查找所有名字以大写或小写字母*G*开头的人："
 
 #: ../../peewee/quickstart.rst:447
 msgid ""
 "This is just the basics! You can make your queries as complex as you "
 "like. Check the documentation on :ref:`querying` for more info."
 msgstr ""
+"以上的例子只是一些基础，您可以使查询尽可能复杂。查看有关文档:ref:`querying`来获得更多的信息。"
 
 #: ../../peewee/quickstart.rst:451
 msgid "Database"
-msgstr ""
+msgstr "数据库"
 
 #: ../../peewee/quickstart.rst:453
 msgid "We're done with our database, let's close the connection:"
-msgstr ""
+msgstr "我们数据库已经使用完毕，现在关闭数据库："
 
 #: ../../peewee/quickstart.rst:459
 msgid ""
@@ -429,6 +447,9 @@ msgid ""
 "pool <connection_pooling>` can help eliminate latency associated with "
 "startup costs."
 msgstr ""
+"在实际的应用程序中，对于管理数据库连接生存期，有一些已有的模式。例如，web应用程序"
+"通常会在请求开始时打开连接，并在生成响应后关闭连接。可以使用:ref:`connection"
+" pool <connection_pooling>`来帮助减少与启动成本相关的延迟。"
 
 #: ../../peewee/quickstart.rst:465
 msgid ""
@@ -437,10 +458,13 @@ msgid ""
 ":ref:`configuring the database at run-time <deferring_initialization>` as"
 " well as setting or changing the database at any time."
 msgstr ""
+"要了解如何设置数据库，请参阅:ref:`database`文档，其中提供了许多示例。"
+"Peewee还支持在运行时配置数据库:ref:`configuring the database at "
+"run-time <deferring_initialization>`，以便随时设置或更改数据库。"
 
 #: ../../peewee/quickstart.rst:470
 msgid "Working with existing databases"
-msgstr ""
+msgstr "使用现有数据库"
 
 #: ../../peewee/quickstart.rst:472
 msgid ""
@@ -448,14 +472,17 @@ msgid ""
 ":ref:`pwiz`. For instance, if I have a postgresql database named "
 "*charles_blog*, I might run:"
 msgstr ""
+"如果已经有了数据库，可以使用模型生成器pwiz自动生成peewee模型。例如，如果我有一个"
+"名为charles_blog的postgresql数据库，我可以运行："
 
 #: ../../peewee/quickstart.rst:481
 msgid "What next?"
-msgstr ""
+msgstr "接下来呢？"
 
 #: ../../peewee/quickstart.rst:483
 msgid ""
 "That's it for the quickstart. If you want to look at a full web-app, "
 "check out the :ref:`example-app`."
 msgstr ""
+"这就是快速入门。如果您想查看完整的web应用程序，请查看示例应用程序 :ref:`example-app`。"
 
