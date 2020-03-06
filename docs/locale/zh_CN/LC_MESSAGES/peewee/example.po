@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-04 10:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Sinchard <sinchard420@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../peewee/example.rst:4
 msgid "Example app"
-msgstr ""
+msgstr "应用示例"
 
 #: ../../peewee/example.rst:6
 msgid ""
@@ -31,6 +31,9 @@ msgid ""
 "<https://github.com/coleifer/peewee/tree/master/examples/blog>`_ if "
 "that's more to your liking, however it is not covered in this guide."
 msgstr ""
+"我们将建立一个简单的类似twitter的网站，示例的源代码在examples/twitter目录下。"
+"您还可以在`github<https://github.com/coleifer/peewee/tree/master/examples/twitter>`"
+"上浏览源代码。如果你喜欢其他的，还有一个没有包含在文档内的博客应用。"
 
 #: ../../peewee/example.rst:13
 msgid ""
@@ -38,24 +41,26 @@ msgid ""
 " which is very easy to get started with. If you don't have flask already,"
 " you will need to install it to run the example:"
 msgstr ""
+"示例应用用到了flask web框架，这个框架很容易入门。如果您还没有安装，则需要安装它来运行示例："
 
 #: ../../peewee/example.rst:22
 msgid "Running the example"
-msgstr ""
+msgstr "运行示例"
 
 #: ../../peewee/example.rst:26
 msgid ""
 "After ensuring that flask is installed, ``cd`` into the twitter example "
 "directory and execute the ``run_example.py`` script:"
 msgstr ""
+"在确保flask安装后，cd进入twitter示例目录并执行run_example.py脚本："
 
 #: ../../peewee/example.rst:33
 msgid "The example app will be accessible at http://localhost:5000/"
-msgstr ""
+msgstr "这个应用可以通过http://localhost:5000/ 网址访问"
 
 #: ../../peewee/example.rst:36
 msgid "Diving into the code"
-msgstr ""
+msgstr "深入源码"
 
 #: ../../peewee/example.rst:38
 msgid ""
@@ -65,10 +70,14 @@ msgid ""
 "<http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-"
 "coming-from-django/>`_."
 msgstr ""
+"为了简单起见，所有示例代码都包含在单个模块examples/twitter/app.py中。如果想了解如何"
+"使用peewee构建大型应用，请查看`Structuring Flask Apps "
+"<http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-"
+"coming-from-django/>`_."
 
 #: ../../peewee/example.rst:46
 msgid "Models"
-msgstr ""
+msgstr "模型"
 
 #: ../../peewee/example.rst:48
 msgid ""
@@ -78,10 +87,13 @@ msgid ""
 "then defines one or more field attributes which correspond to the table's"
 " columns. For the twitter clone, there are just three models:"
 msgstr ""
+"和流行的Django框架类似，peewee使用声明性模型定义。如果您不熟悉Django，那么您需要"
+"为每个表声明一个模型类。然后，模型类定义一个或多个字段属性，这些属性对应于表的列。"
+"对于twitter的克隆应用，只有三个模型："
 
 #: ../../peewee/example.rst:57
 msgid "*User*:"
-msgstr ""
+msgstr "*User*:"
 
 #: ../../peewee/example.rst:55
 msgid ""
@@ -89,30 +101,33 @@ msgid ""
 "address for generating avatars using *gravatar*, and a datetime field "
 "indicating when that account was created."
 msgstr ""
+"表示用户帐户，存储用户名、密码、使用*gravatar*生成头像的电子邮件地址，帐户创建"
+"时间的日期时间字段。"
 
 #: ../../peewee/example.rst:61
 msgid "*Relationship*:"
-msgstr ""
+msgstr "*关系表*:"
 
 #: ../../peewee/example.rst:60
 msgid ""
 "This is a utility model that contains two foreign-keys to the *User* "
 "model and stores which users follow one another."
 msgstr ""
+"这是一个功能模型，包含*User*模型的两个外键，保存用户关注信息。"
 
 #: ../../peewee/example.rst:65
 msgid "*Message*:"
-msgstr ""
+msgstr "*消息*:"
 
 #: ../../peewee/example.rst:64
 msgid ""
 "Analogous to a tweet. The Message model stores the text content of the "
 "tweet, when it was created, and who posted it (foreign key to User)."
-msgstr ""
+msgstr "类似于推特，消息模型存储tweet的文本内容、创建时间和发布者（用户外键）。"
 
 #: ../../peewee/example.rst:67
 msgid "If you like UML, these are the tables and relationships:"
-msgstr ""
+msgstr "如果你喜欢UML，下面是表和关系的UML表示："
 
 #: ../../peewee/example.rst:71
 msgid ""
@@ -120,6 +135,8 @@ msgid ""
 ":py:class:`SqliteDatabase` object. Then we define our model classes, "
 "specifying the columns as :py:class:`Field` instances on the class."
 msgstr ""
+"为了创建这些模型，我们需要实例化一个:py:class:`SqliteDatabase`对象。"
+"然后定义模型类，将列指定为类上的:py:class:`Field`实例。
 
 #: ../../peewee/example.rst:121
 msgid ""
@@ -127,6 +144,8 @@ msgid ""
 " we would like to use.  All other models then extend this class and will "
 "also use the correct database connection."
 msgstr ""
+"注意，我们创建了一个BaseModel类，它只是简单定义了我们想要使用的数据库。所有其他模型"
+"都会扩展这个类，使用正确的数据库连接。"
 
 #: ../../peewee/example.rst:126
 msgid ""
@@ -135,6 +154,8 @@ msgid ""
 "Conversion between python types and those used in the database is handled"
 " transparently, allowing you to use the following in your application:"
 msgstr ""
+"Peewee支持许多不同的字段类型，这些字段类型映射到数据库支持的列类型。python类型和"
+"数据库中使用的类型之间的转换是透明的，允许您在应用中使用以下内容："
 
 #: ../../peewee/example.rst:131
 msgid "Strings (unicode or otherwise)"
@@ -162,7 +183,7 @@ msgstr ""
 
 #: ../../peewee/example.rst:139
 msgid "Creating tables"
-msgstr ""
+msgstr "创建表"
 
 #: ../../peewee/example.rst:141
 msgid ""
@@ -171,12 +192,14 @@ msgid ""
 "interactive interpreter. We can create a small helper function to "
 "accomplish this:"
 msgstr ""
+"为了使用模型，必须首先创建表。这是一次性操作，可以使用交互式解释器快速完成。"
+"我们可以创建一个小的helper函数来实现这一点："
 
 #: ../../peewee/example.rst:151
 msgid ""
 "Open a python shell in the directory alongside the example app and "
 "execute the following:"
-msgstr ""
+msgstr "在示例应用目录中打开一个python shell并执行以下命令："
 
 #: ../../peewee/example.rst:160
 msgid ""
@@ -184,6 +207,8 @@ msgid ""
 "*peewee* was not found and may not be installed correctly. Check the "
 ":ref:`installation` document for instructions on installing peewee."
 msgstr ""
+如果遇到*ImportError*错误，则意味没有找到*flask*或*peewee*，或者安装不正确。"
+"有关安装peewee的说明，请参阅:ref:`installation`安装和测试文档。"
 
 #: ../../peewee/example.rst:164
 msgid ""
@@ -193,6 +218,9 @@ msgid ""
 "sequences. Usually this is something you'll only do once, whenever a new "
 "model is added."
 msgstr ""
+"每个模型都有一个:py:meth:`~Model.create_table`类方法，该方法将在数据库中运行一个"
+"SQL *CREATE TABLE*语句。此方法将创建表，包括所有列、外键约束、索引和序列。通常，只有"
+"添加新模型时需要且只能执行一次此操作。"
 
 #: ../../peewee/example.rst:169
 msgid ""
@@ -201,23 +229,26 @@ msgid ""
 ":py:meth:`~Model.create_table` on each model, ensuring the tables are "
 "created in order."
 msgstr ""
+"Peewee提供了一个helper方法，:py:meth:`Database.create_tables`将解析模型间的"
+"依赖关系，并对每个模型调用:py:meth:`~Model.create_table`，确保按顺序创建表。"
 
 #: ../../peewee/example.rst:174
 msgid ""
 "Adding fields after the table has been created will require you to either"
 " drop the table and re-create it or manually add the columns using an "
 "*ALTER TABLE* query."
-msgstr ""
+msgstr "如果创建表后添加字段，将需要删除表并重新创建它，或者使用*ALTER TABLE* "
+"手动添加列。"
 
 #: ../../peewee/example.rst:178
 msgid ""
 "Alternatively, you can use the :ref:`schema migrations <migrate>` "
 "extension to alter your database schema using Python."
-msgstr ""
+msgstr "或者，可以使用:ref:`schema migrations <migrate>`扩展更改数据库表。"
 
 #: ../../peewee/example.rst:182
 msgid "Establishing a database connection"
-msgstr ""
+msgstr "建立数据库连接"
 
 #: ../../peewee/example.rst:184
 msgid ""
@@ -227,10 +258,13 @@ msgid ""
 "There are many :ref:`Meta options <model-options>` you can specify which "
 "control the behavior of your model."
 msgstr ""
+"您可能已经注意到，在上面的模型代码中在基本模型类上定义了一个设置``database``属性"
+"的*Meta*类。Peewee允许每个模型指定它使用的数据库，还有很多:ref:`Meta options"
+" <model-options>`配置选项来控制模型的行为。"
 
 #: ../../peewee/example.rst:190
 msgid "This is a peewee idiom:"
-msgstr ""
+msgstr "以下是典型的Peewee应用："
 
 #: ../../peewee/example.rst:207
 msgid ""
@@ -241,6 +275,9 @@ msgid ""
 "recycled correctly if you call :py:meth:`~Database.connect` and "
 ":py:meth:`~Database.close`."
 msgstr ""
+"开发web应用程序时，通常在请求启动时打开连接，在返回响应时关闭连接。**您应该始终显式"
+"地管理连接。**例如，如果使用的是:ref:`connection pool <pool>`，则只有调用"
+":py:meth:`~Database.connect`和:py:meth:`~Database.close`，连接才能正确回收。
 
 #: ../../peewee/example.rst:213
 msgid ""
@@ -248,6 +285,8 @@ msgid ""
 "create a connection to the database. Flask provides some handy decorators"
 " to make this a snap:"
 msgstr ""
+我们将通知flask，在请求/响应周期中建立到数据库连接。Flask提供了一些方便的装饰函数，"
+"使得这一点很容易实现："
 
 #: ../../peewee/example.rst:229
 msgid ""
